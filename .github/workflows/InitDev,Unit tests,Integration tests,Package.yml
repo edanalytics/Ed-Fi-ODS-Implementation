@@ -25,6 +25,7 @@ env:
   REPOSITORY_DISPATCH_BRANCH: ${{ github.event.client_payload.branch }}
   EDFI_SUITE_NUMBER: "Suite3"
   msbuild_buildConfiguration: "release"
+  NUGET_CERT_REVOCATION_MODE: offline
 
 jobs:
   build:
