@@ -49,6 +49,16 @@ jobs:
       uses: actions/setup-dotnet@c0d4ad69d8bd405d234f1c9166d383b7a4f69ed8 # 2.1.0
       with:
         dotnet-version: 6.0.x
+    - name: Get nuget cache key
+      id: nuget-key
+      run: echo "::set-output name=key::$(date +'%Y-%m-%d.%H:%M')"
+    - name: Restore nuget cache
+      uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ steps.nuget-key.outputs.key }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
     - name: Checkout Ed-Fi-ODS-Implementation
       uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
       with:
