@@ -8,7 +8,7 @@ VALUES ('assessmentAdministration'
         ,'http://ed-fi.org/ods/identity/claims/ed-fi-xassessment-roster/assessmentAdministration'
         ,(table _ParentResourceClaimId)
         ,(table _ApplicationId)
-        )
+        );
 
 
 WITH 
@@ -21,4 +21,4 @@ VALUES ('studentAssessmentRegistration'
         ,'http://ed-fi.org/ods/identity/claims/ed-fi-xassessment-roster/studentAssessmentRegistration'
         ,(table _ParentResourceClaimId)
         ,(table _ApplicationId)
-        )
+        );
