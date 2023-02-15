@@ -14,21 +14,29 @@ CREATE NONCLUSTERED INDEX [FK_AssessmentAdministration_EducationOrganization]
 ON [edfixassessmentroster].[AssessmentAdministration] ([AssigningEducationOrganizationId] ASC)
 GO
 
-ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationContact] WITH CHECK ADD CONSTRAINT [FK_AssessmentAdministrationContact_AssessmentAdministration] FOREIGN KEY ([AdministrationIdentifier], [AssessmentIdentifier], [AssigningEducationOrganizationId], [Namespace])
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] WITH CHECK ADD CONSTRAINT [FK_AssessmentAdministrationParticipation_AssessmentAdministration] FOREIGN KEY ([AdministrationIdentifier], [AssessmentIdentifier], [AssigningEducationOrganizationId], [Namespace])
 REFERENCES [edfixassessmentroster].[AssessmentAdministration] ([AdministrationIdentifier], [AssessmentIdentifier], [AssigningEducationOrganizationId], [Namespace])
-ON DELETE CASCADE
 GO
 
-CREATE NONCLUSTERED INDEX [FK_AssessmentAdministrationContact_AssessmentAdministration]
-ON [edfixassessmentroster].[AssessmentAdministrationContact] ([AdministrationIdentifier] ASC, [AssessmentIdentifier] ASC, [AssigningEducationOrganizationId] ASC, [Namespace] ASC)
+CREATE NONCLUSTERED INDEX [FK_AssessmentAdministrationParticipation_AssessmentAdministration]
+ON [edfixassessmentroster].[AssessmentAdministrationParticipation] ([AdministrationIdentifier] ASC, [AssessmentIdentifier] ASC, [AssigningEducationOrganizationId] ASC, [Namespace] ASC)
 GO
 
-ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationContact] WITH CHECK ADD CONSTRAINT [FK_AssessmentAdministrationContact_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] WITH CHECK ADD CONSTRAINT [FK_AssessmentAdministrationParticipation_EducationOrganization] FOREIGN KEY ([ParticipatingEducationOrganizationId])
 REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_AssessmentAdministrationContact_EducationOrganization]
-ON [edfixassessmentroster].[AssessmentAdministrationContact] ([EducationOrganizationId] ASC)
+CREATE NONCLUSTERED INDEX [FK_AssessmentAdministrationParticipation_EducationOrganization]
+ON [edfixassessmentroster].[AssessmentAdministrationParticipation] ([ParticipatingEducationOrganizationId] ASC)
+GO
+
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipationAdministrationContact] WITH CHECK ADD CONSTRAINT [FK_AssessmentAdministrationParticipationAdministrationContact_AssessmentAdministrationParticipation] FOREIGN KEY ([AdministrationIdentifier], [AssessmentIdentifier], [AssigningEducationOrganizationId], [Namespace], [ParticipatingEducationOrganizationId])
+REFERENCES [edfixassessmentroster].[AssessmentAdministrationParticipation] ([AdministrationIdentifier], [AssessmentIdentifier], [AssigningEducationOrganizationId], [Namespace], [ParticipatingEducationOrganizationId])
+ON DELETE CASCADE
+GO
+
+CREATE NONCLUSTERED INDEX [FK_AssessmentAdministrationParticipationAdministrationContact_AssessmentAdministrationParticipation]
+ON [edfixassessmentroster].[AssessmentAdministrationParticipationAdministrationContact] ([AdministrationIdentifier] ASC, [AssessmentIdentifier] ASC, [AssigningEducationOrganizationId] ASC, [Namespace] ASC, [ParticipatingEducationOrganizationId] ASC)
 GO
 
 ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationPeriod] WITH CHECK ADD CONSTRAINT [FK_AssessmentAdministrationPeriod_AssessmentAdministration] FOREIGN KEY ([AdministrationIdentifier], [AssessmentIdentifier], [AssigningEducationOrganizationId], [Namespace])

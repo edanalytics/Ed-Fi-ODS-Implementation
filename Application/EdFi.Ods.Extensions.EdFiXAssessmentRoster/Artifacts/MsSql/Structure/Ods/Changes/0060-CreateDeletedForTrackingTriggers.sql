@@ -1,3 +1,20 @@
+CREATE TRIGGER [edfixassessmentroster].[edfixassessmentroster_AssessmentAdministrationParticipation_TR_DeleteTracking] ON [edfixassessmentroster].[AssessmentAdministrationParticipation] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_edfixassessmentroster].[AssessmentAdministrationParticipation](AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace, ParticipatingEducationOrganizationId, Id, ChangeVersion)
+    SELECT  AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace, ParticipatingEducationOrganizationId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+END
+GO
+
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] ENABLE TRIGGER [edfixassessmentroster_AssessmentAdministrationParticipation_TR_DeleteTracking]
+GO
+
+
 CREATE TRIGGER [edfixassessmentroster].[edfixassessmentroster_AssessmentAdministration_TR_DeleteTracking] ON [edfixassessmentroster].[AssessmentAdministration] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 

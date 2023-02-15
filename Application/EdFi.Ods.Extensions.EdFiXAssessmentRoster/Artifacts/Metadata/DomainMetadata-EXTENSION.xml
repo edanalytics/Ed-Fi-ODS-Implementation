@@ -2,8 +2,11 @@
 <AggregateExtensions logicalSchema="EdFiXAssessmentRoster" schema="edfixassessmentroster">
   <Aggregate root="AssessmentAdministration">
     <Entity table="AssessmentAdministration" schema="edfixassessmentroster"/>
-    <Entity table="AssessmentAdministrationContact" schema="edfixassessmentroster"/>
     <Entity table="AssessmentAdministrationPeriod" schema="edfixassessmentroster"/>
+  </Aggregate>
+  <Aggregate root="AssessmentAdministrationParticipation">
+    <Entity table="AssessmentAdministrationParticipation" schema="edfixassessmentroster"/>
+    <Entity table="AssessmentAdministrationParticipationAdministrationContact" schema="edfixassessmentroster"/>
   </Aggregate>
   <Aggregate root="StudentAssessmentRegistration">
     <Entity table="StudentAssessmentRegistration" schema="edfixassessmentroster"/>

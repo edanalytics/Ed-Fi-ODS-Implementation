@@ -23,29 +23,56 @@ GO
 ALTER TABLE [edfixassessmentroster].[AssessmentAdministration] ADD CONSTRAINT [AssessmentAdministration_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
--- Table [edfixassessmentroster].[AssessmentAdministrationContact] --
-CREATE TABLE [edfixassessmentroster].[AssessmentAdministrationContact] (
+-- Table [edfixassessmentroster].[AssessmentAdministrationParticipation] --
+CREATE TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] (
     [AdministrationIdentifier] [NVARCHAR](100) NOT NULL,
     [AssessmentIdentifier] [NVARCHAR](60) NOT NULL,
     [AssigningEducationOrganizationId] [INT] NOT NULL,
-    [EducationOrganizationId] [INT] NOT NULL,
+    [Namespace] [NVARCHAR](255) NOT NULL,
+    [ParticipatingEducationOrganizationId] [INT] NOT NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
+    [Id] [UNIQUEIDENTIFIER] NOT NULL,
+    CONSTRAINT [AssessmentAdministrationParticipation_PK] PRIMARY KEY CLUSTERED (
+        [AdministrationIdentifier] ASC,
+        [AssessmentIdentifier] ASC,
+        [AssigningEducationOrganizationId] ASC,
+        [Namespace] ASC,
+        [ParticipatingEducationOrganizationId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] ADD CONSTRAINT [AssessmentAdministrationParticipation_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] ADD CONSTRAINT [AssessmentAdministrationParticipation_DF_Id] DEFAULT (newid()) FOR [Id]
+GO
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipation] ADD CONSTRAINT [AssessmentAdministrationParticipation_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [edfixassessmentroster].[AssessmentAdministrationParticipationAdministrationContact] --
+CREATE TABLE [edfixassessmentroster].[AssessmentAdministrationParticipationAdministrationContact] (
+    [AdministrationIdentifier] [NVARCHAR](100) NOT NULL,
+    [AssessmentIdentifier] [NVARCHAR](60) NOT NULL,
+    [AssigningEducationOrganizationId] [INT] NOT NULL,
     [ElectronicMailAddress] [NVARCHAR](128) NOT NULL,
     [Namespace] [NVARCHAR](255) NOT NULL,
+    [ParticipatingEducationOrganizationId] [INT] NOT NULL,
     [FirstName] [NVARCHAR](75) NOT NULL,
     [LastSurname] [NVARCHAR](75) NOT NULL,
     [LoginId] [NVARCHAR](60) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [AssessmentAdministrationContact_PK] PRIMARY KEY CLUSTERED (
+    CONSTRAINT [AssessmentAdministrationParticipationAdministrationContact_PK] PRIMARY KEY CLUSTERED (
         [AdministrationIdentifier] ASC,
         [AssessmentIdentifier] ASC,
         [AssigningEducationOrganizationId] ASC,
-        [EducationOrganizationId] ASC,
         [ElectronicMailAddress] ASC,
-        [Namespace] ASC
+        [Namespace] ASC,
+        [ParticipatingEducationOrganizationId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationContact] ADD CONSTRAINT [AssessmentAdministrationContact_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+ALTER TABLE [edfixassessmentroster].[AssessmentAdministrationParticipationAdministrationContact] ADD CONSTRAINT [AssessmentAdministrationParticipationAdministrationContact_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [edfixassessmentroster].[AssessmentAdministrationPeriod] --

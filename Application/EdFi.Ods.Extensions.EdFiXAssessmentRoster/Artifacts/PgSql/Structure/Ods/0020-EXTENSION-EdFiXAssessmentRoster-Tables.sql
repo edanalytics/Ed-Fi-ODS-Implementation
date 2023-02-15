@@ -14,21 +14,38 @@ ALTER TABLE edfixassessmentroster.AssessmentAdministration ALTER COLUMN CreateDa
 ALTER TABLE edfixassessmentroster.AssessmentAdministration ALTER COLUMN Id SET DEFAULT gen_random_uuid();
 ALTER TABLE edfixassessmentroster.AssessmentAdministration ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
 
--- Table edfixassessmentroster.AssessmentAdministrationContact --
-CREATE TABLE edfixassessmentroster.AssessmentAdministrationContact (
+-- Table edfixassessmentroster.AssessmentAdministrationParticipation --
+CREATE TABLE edfixassessmentroster.AssessmentAdministrationParticipation (
     AdministrationIdentifier VARCHAR(100) NOT NULL,
     AssessmentIdentifier VARCHAR(60) NOT NULL,
     AssigningEducationOrganizationId INT NOT NULL,
-    EducationOrganizationId INT NOT NULL,
+    Namespace VARCHAR(255) NOT NULL,
+    ParticipatingEducationOrganizationId INT NOT NULL,
+    Discriminator VARCHAR(128) NULL,
+    CreateDate TIMESTAMP NOT NULL,
+    LastModifiedDate TIMESTAMP NOT NULL,
+    Id UUID NOT NULL,
+    CONSTRAINT AssessmentAdministrationParticipation_PK PRIMARY KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace, ParticipatingEducationOrganizationId)
+); 
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationParticipation ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationParticipation ALTER COLUMN Id SET DEFAULT gen_random_uuid();
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationParticipation ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
+
+-- Table edfixassessmentroster.AssessmentAdministrationParticipationAdministrationContact --
+CREATE TABLE edfixassessmentroster.AssessmentAdministrationParticipationAdministrationContact (
+    AdministrationIdentifier VARCHAR(100) NOT NULL,
+    AssessmentIdentifier VARCHAR(60) NOT NULL,
+    AssigningEducationOrganizationId INT NOT NULL,
     ElectronicMailAddress VARCHAR(128) NOT NULL,
     Namespace VARCHAR(255) NOT NULL,
+    ParticipatingEducationOrganizationId INT NOT NULL,
     FirstName VARCHAR(75) NOT NULL,
     LastSurname VARCHAR(75) NOT NULL,
     LoginId VARCHAR(60) NULL,
     CreateDate TIMESTAMP NOT NULL,
-    CONSTRAINT AssessmentAdministrationContact_PK PRIMARY KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, EducationOrganizationId, ElectronicMailAddress, Namespace)
+    CONSTRAINT AssessmentAdministrationParticipationAdministrationContact_PK PRIMARY KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, ElectronicMailAddress, Namespace, ParticipatingEducationOrganizationId)
 ); 
-ALTER TABLE edfixassessmentroster.AssessmentAdministrationContact ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationParticipationAdministrationContact ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 
 -- Table edfixassessmentroster.AssessmentAdministrationPeriod --
 CREATE TABLE edfixassessmentroster.AssessmentAdministrationPeriod (

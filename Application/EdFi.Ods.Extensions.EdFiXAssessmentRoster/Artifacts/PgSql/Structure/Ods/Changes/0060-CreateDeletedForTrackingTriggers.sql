@@ -1,3 +1,16 @@
+CREATE FUNCTION tracked_deletes_edfixassessmentroster.AssessmentAdministrationParticipation_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_edfixassessmentroster.AssessmentAdministrationParticipation(AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace, ParticipatingEducationOrganizationId, Id, ChangeVersion)
+    VALUES (OLD.AdministrationIdentifier, OLD.AssessmentIdentifier, OLD.AssigningEducationOrganizationId, OLD.Namespace, OLD.ParticipatingEducationOrganizationId, OLD.Id, nextval('changes.ChangeVersionSequence'));
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON edfixassessmentroster.AssessmentAdministrationParticipation 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_edfixassessmentroster.AssessmentAdministrationParticipation_TR_DelTrkg();
+
 CREATE FUNCTION tracked_deletes_edfixassessmentroster.AssessmentAdministration_TR_DelTrkg()
     RETURNS trigger AS
 $BODY$

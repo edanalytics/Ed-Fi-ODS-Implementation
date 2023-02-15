@@ -19,11 +19,23 @@
         },
         {
           "schema": "edfixassessmentroster",
-          "name": "AssessmentAdministrationContact"
+          "name": "AssessmentAdministrationPeriod"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixassessmentroster",
+        "name": "AssessmentAdministrationParticipation"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixassessmentroster",
+          "name": "AssessmentAdministrationParticipation"
         },
         {
           "schema": "edfixassessmentroster",
-          "name": "AssessmentAdministrationPeriod"
+          "name": "AssessmentAdministrationParticipationAdministrationContact"
         }
       ]
     },
@@ -157,7 +169,100 @@
     },
     {
       "schema": "edfixassessmentroster",
-      "name": "AssessmentAdministrationContact",
+      "name": "AssessmentAdministrationParticipation",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "AssessmentAdministrationParticipation_PK",
+          "identifyingPropertyNames": [
+            "AdministrationIdentifier",
+            "AssessmentIdentifier",
+            "AssigningEducationOrganizationId",
+            "Namespace",
+            "ParticipatingEducationOrganizationId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "AssessmentAdministrationParticipation_PK",
+            "postgreSql": "AssessmentAdministrationParticipation_PK"
+          }
+        },
+        {
+          "identifierName": "UX_AssessmentAdministrationParticipation_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_AssessmentAdministrationParticipation_Id",
+            "postgreSql": "UX_77818e_Id"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "The anticipated administration of an assessment under the purview of an EducationOrganization.",
+      "tableNames": {
+        "sqlServer": "AssessmentAdministrationParticipation",
+        "postgreSql": "AssessmentAdministrationParticipation"
+      }
+    },
+    {
+      "schema": "edfixassessmentroster",
+      "name": "AssessmentAdministrationParticipationAdministrationContact",
       "locallyDefinedProperties": [
         {
           "propertyName": "CreateDate",
@@ -247,28 +352,28 @@
       ],
       "identifiers": [
         {
-          "identifierName": "AssessmentAdministrationContact_PK",
+          "identifierName": "AssessmentAdministrationParticipationAdministrationContact_PK",
           "identifyingPropertyNames": [
             "AdministrationIdentifier",
             "AssessmentIdentifier",
             "AssigningEducationOrganizationId",
-            "EducationOrganizationId",
             "ElectronicMailAddress",
-            "Namespace"
+            "Namespace",
+            "ParticipatingEducationOrganizationId"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "AssessmentAdministrationContact_PK",
-            "postgreSql": "AssessmentAdministrationContact_PK"
+            "sqlServer": "AssessmentAdministrationParticipationAdministrationContact_PK",
+            "postgreSql": "AssessmentAdministrationParticipationAdministrationContact_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "Pre-identified contacts for education organizations administering the assessment",
       "tableNames": {
-        "sqlServer": "AssessmentAdministrationContact",
-        "postgreSql": "AssessmentAdministrationContact"
+        "sqlServer": "AssessmentAdministrationParticipationAdministrationContact",
+        "postgreSql": "AssessmentAdministrationParticipationAdministrationContact"
       }
     },
     {
@@ -688,7 +793,7 @@
     {
       "fullName": {
         "schema": "edfixassessmentroster",
-        "name": "FK_AssessmentAdministrationContact_AssessmentAdministration"
+        "name": "FK_AssessmentAdministrationParticipation_AssessmentAdministration"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -767,7 +872,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "edfixassessmentroster",
-        "name": "AssessmentAdministrationContact"
+        "name": "AssessmentAdministrationParticipation"
       },
       "secondaryEntityProperties": [
         {
@@ -842,15 +947,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_AssessmentAdministrationContact_AssessmentAdministration",
-        "postgreSql": "FK_0614bd_AssessmentAdministration"
+        "sqlServer": "FK_AssessmentAdministrationParticipation_AssessmentAdministration",
+        "postgreSql": "FK_77818e_AssessmentAdministration"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "edfixassessmentroster",
-        "name": "FK_AssessmentAdministrationContact_EducationOrganization"
+        "name": "FK_AssessmentAdministrationParticipation_EducationOrganization"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -878,11 +983,11 @@
       ],
       "secondaryEntityFullName": {
         "schema": "edfixassessmentroster",
-        "name": "AssessmentAdministrationContact"
+        "name": "AssessmentAdministrationParticipation"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "EducationOrganizationId",
+          "propertyName": "ParticipatingEducationOrganizationId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -894,16 +999,212 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
+            "sqlServer": "ParticipatingEducationOrganizationId",
+            "postgreSql": "ParticipatingEducationOrganizationId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_AssessmentAdministrationContact_EducationOrganization",
-        "postgreSql": "FK_0614bd_EducationOrganization"
+        "sqlServer": "FK_AssessmentAdministrationParticipation_EducationOrganization",
+        "postgreSql": "FK_77818e_EducationOrganization"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixassessmentroster",
+        "name": "FK_AssessmentAdministrationParticipationAdministrationContact_AssessmentAdministrationParticipation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixassessmentroster",
+        "name": "AssessmentAdministrationParticipation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "AdministrationIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The title or name of the assessment in the context of it's administration.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AdministrationIdentifier",
+            "postgreSql": "AdministrationIdentifier"
+          }
+        },
+        {
+          "propertyName": "AssessmentIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an assessment.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssessmentIdentifier",
+            "postgreSql": "AssessmentIdentifier"
+          }
+        },
+        {
+          "propertyName": "AssigningEducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssigningEducationOrganizationId",
+            "postgreSql": "AssigningEducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Namespace for the Assessment.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        },
+        {
+          "propertyName": "ParticipatingEducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ParticipatingEducationOrganizationId",
+            "postgreSql": "ParticipatingEducationOrganizationId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixassessmentroster",
+        "name": "AssessmentAdministrationParticipationAdministrationContact"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "AdministrationIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The title or name of the assessment in the context of it's administration.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AdministrationIdentifier",
+            "postgreSql": "AdministrationIdentifier"
+          }
+        },
+        {
+          "propertyName": "AssessmentIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an assessment.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssessmentIdentifier",
+            "postgreSql": "AssessmentIdentifier"
+          }
+        },
+        {
+          "propertyName": "AssigningEducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssigningEducationOrganizationId",
+            "postgreSql": "AssigningEducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Namespace for the Assessment.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        },
+        {
+          "propertyName": "ParticipatingEducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ParticipatingEducationOrganizationId",
+            "postgreSql": "ParticipatingEducationOrganizationId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_AssessmentAdministrationParticipationAdministrationContact_AssessmentAdministrationParticipation",
+        "postgreSql": "FK_82c0a8_AssessmentAdministrationParticipation"
       },
       "potentiallyLogical": false
     },

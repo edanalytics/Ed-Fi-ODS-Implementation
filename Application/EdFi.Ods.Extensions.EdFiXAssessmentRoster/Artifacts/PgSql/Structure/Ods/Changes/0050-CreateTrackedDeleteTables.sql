@@ -9,6 +9,18 @@ CREATE TABLE tracked_deletes_edfixassessmentroster.AssessmentAdministration
        CONSTRAINT AssessmentAdministration_PK PRIMARY KEY (ChangeVersion)
 );
 
+CREATE TABLE tracked_deletes_edfixassessmentroster.AssessmentAdministrationParticipation
+(
+       AdministrationIdentifier VARCHAR(100) NOT NULL,
+       AssessmentIdentifier VARCHAR(60) NOT NULL,
+       AssigningEducationOrganizationId INT NOT NULL,
+       Namespace VARCHAR(255) NOT NULL,
+       ParticipatingEducationOrganizationId INT NOT NULL,
+       Id UUID NOT NULL,
+       ChangeVersion BIGINT NOT NULL,
+       CONSTRAINT AssessmentAdministrationParticipation_PK PRIMARY KEY (ChangeVersion)
+);
+
 CREATE TABLE tracked_deletes_edfixassessmentroster.StudentAssessmentRegistration
 (
        AdministrationIdentifier VARCHAR(100) NOT NULL,

@@ -8,6 +8,17 @@ CREATE TABLE [tracked_deletes_edfixassessmentroster].[AssessmentAdministration]
        ChangeVersion bigint NOT NULL,
        CONSTRAINT PK_AssessmentAdministration PRIMARY KEY CLUSTERED (ChangeVersion)
 )
+CREATE TABLE [tracked_deletes_edfixassessmentroster].[AssessmentAdministrationParticipation]
+(
+       AdministrationIdentifier [NVARCHAR](100) NOT NULL,
+       AssessmentIdentifier [NVARCHAR](60) NOT NULL,
+       AssigningEducationOrganizationId [INT] NOT NULL,
+       Namespace [NVARCHAR](255) NOT NULL,
+       ParticipatingEducationOrganizationId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_AssessmentAdministrationParticipation PRIMARY KEY CLUSTERED (ChangeVersion)
+)
 CREATE TABLE [tracked_deletes_edfixassessmentroster].[StudentAssessmentRegistration]
 (
        AdministrationIdentifier [NVARCHAR](100) NOT NULL,
