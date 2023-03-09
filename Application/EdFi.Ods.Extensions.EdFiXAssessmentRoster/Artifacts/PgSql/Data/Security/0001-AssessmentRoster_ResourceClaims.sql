@@ -6,7 +6,7 @@ INSERT INTO dbo.resourceclaims
 VALUES ('assessmentAdministration'
         ,'assessmentAdministration'
         ,'http://ed-fi.org/ods/identity/claims/ed-fi-xassessment-roster/assessmentAdministration'
-        ,(table _ParentResourceClaimId)
+        ,NULL --(table _ParentResourceClaimId)
         ,(table _ApplicationId)
         );
 
@@ -19,7 +19,7 @@ INSERT INTO dbo.resourceclaims
 VALUES ('studentAssessmentRegistration'
         ,'studentAssessmentRegistration'
         ,'http://ed-fi.org/ods/identity/claims/ed-fi-xassessment-roster/studentAssessmentRegistration'
-        ,(table _ParentResourceClaimId)
+        ,NULL --(table _ParentResourceClaimId)
         ,(table _ApplicationId)
         );
 
@@ -32,6 +32,6 @@ INSERT INTO dbo.resourceclaims
 VALUES ('assessmentAdministrationParticipation'
         ,'assessmentAdministrationParticipation'
         ,'http://ed-fi.org/ods/identity/claims/ed-fi-xassessment-roster/assessmentAdministrationParticipation'
-        ,(table _ParentResourceClaimId)
+        ,NULL --(table _ParentResourceClaimId)
         ,(table _ApplicationId)
         );
