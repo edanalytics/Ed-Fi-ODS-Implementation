@@ -2758,8 +2758,8 @@
             "precision": 5,
             "scale": 2,
             "isNullable": false,
-            "minValue": 0,
-            "maxValue": 999
+            "minValue": 0.01,
+            "maxValue": 999.99
           },
           "description": "E0980. TotalContractedInstrStaffFTE is a standard measurement of the portion of professional contracted instructional staff, expressed as a multiple of the standard work day, such as 7.7 FTEs.",
           "isIdentifying": false,
@@ -3841,8 +3841,8 @@
             "precision": 4,
             "scale": 1,
             "isNullable": false,
-            "minValue": 0,
-            "maxValue": 999
+            "minValue": 0.5,
+            "maxValue": 999.5
           },
           "description": "E1013. TotalESYContactHoursInFirstInstructionalSetting indicates the total contact hours in a special education setting provided to the student through the extended school year services component of special education. InstructionalSetting1 reported is the EducationalEnvironment in which the student was served during the regular school year.",
           "isIdentifying": false,
@@ -3860,8 +3860,8 @@
             "precision": 4,
             "scale": 1,
             "isNullable": true,
-            "minValue": 0,
-            "maxValue": 999
+            "minValue": 0.5,
+            "maxValue": 999.5
           },
           "description": "E1013. TotalESYContactHoursInSecondInstructionalSetting indicates the total contact hours in a special education setting provided to the student through the extended school year services component of special education. InstructionalSetting1 reported is the EducationalEnvironment in which the student was served during the regular school year.",
           "isIdentifying": false,
@@ -9396,7 +9396,7 @@
             "precision": 4,
             "scale": 1,
             "isNullable": true,
-            "minValue": 0,
+            "minValue": 0.5,
             "maxValue": 180
           },
           "description": "E0944. EligibleDaysPresentInInstrSetting indicates the number of days the student was eligible and present in a designated instructional setting during a particular reporting period.",
@@ -36748,7 +36748,7 @@
         "schema": "tx",
         "name": "FK_StudentEducationOrganizationAssociationLanguageSet_StudentEducationOrganizationAssociationLanguage"
       },
-      "cardinality": "OneToZeroOrMore",
+      "cardinality": "OneToOneOrMore",
       "primaryEntityFullName": {
         "schema": "edfi",
         "name": "StudentEducationOrganizationAssociationLanguage"
@@ -39572,7 +39572,7 @@
         "schema": "tx",
         "name": "FK_StudentSpecialEducationProgramAssociationDisabilitySet_StudentSpecialEducationProgramAssociationDisability"
       },
-      "cardinality": "OneToZeroOrMore",
+      "cardinality": "OneToOneOrMore",
       "primaryEntityFullName": {
         "schema": "edfi",
         "name": "StudentSpecialEducationProgramAssociationDisability"
