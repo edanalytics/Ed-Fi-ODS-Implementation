@@ -34,6 +34,18 @@
     {
       "aggregateRootEntityName": {
         "schema": "tx",
+        "name": "ApiOperationTypeDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "tx",
+          "name": "ApiOperationTypeDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "tx",
         "name": "ApplicationTypeDescriptor"
       },
       "aggregateEntityNames": [
@@ -256,6 +268,18 @@
         {
           "schema": "tx",
           "name": "CTEServiceIdDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "tx",
+        "name": "DescriptorMappingHistory"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "tx",
+          "name": "DescriptorMappingHistory"
         }
       ]
     },
@@ -1724,6 +1748,31 @@
       "tableNames": {
         "sqlServer": "ADAEligibilityDescriptor",
         "postgreSql": "ADAEligibilityDescriptor"
+      }
+    },
+    {
+      "schema": "tx",
+      "name": "ApiOperationTypeDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "ApiOperationTypeDescriptor_PK",
+          "identifyingPropertyNames": [
+            "ApiOperationTypeDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ApiOperationTypeDescriptor_PK",
+            "postgreSql": "ApiOperationTypeDescriptor_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "Represents the type of operation on the API, e.g. create, delete, update",
+      "tableNames": {
+        "sqlServer": "ApiOperationTypeDescriptor",
+        "postgreSql": "ApiOperationTypeDescriptor"
       }
     },
     {
@@ -3277,6 +3326,218 @@
       "tableNames": {
         "sqlServer": "CTEServiceIdDescriptor",
         "postgreSql": "CTEServiceIdDescriptor"
+      }
+    },
+    {
+      "schema": "tx",
+      "name": "DescriptorMappingHistory",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "AccountName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "User name of the account which created/modified the mapping",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountName",
+            "postgreSql": "AccountName"
+          }
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "DateOfOperation",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date/time when the operation occurred",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DateOfOperation",
+            "postgreSql": "DateOfOperation"
+          }
+        },
+        {
+          "propertyName": "DescriptorMappingId",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 36,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The id of the resource in question",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DescriptorMappingId",
+            "postgreSql": "DescriptorMappingId"
+          }
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
+        },
+        {
+          "propertyName": "MappedNamespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The namespace of the descriptor value to which the from descriptor value is mapped to.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MappedNamespace",
+            "postgreSql": "MappedNamespace"
+          }
+        },
+        {
+          "propertyName": "MappedValue",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 50,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The descriptor value to which the from descriptor value is being mapped to.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MappedValue",
+            "postgreSql": "MappedValue"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The namespace of the descriptor value that is being mapped to another value.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        },
+        {
+          "propertyName": "Value",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 50,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The descriptor value that is being mapped to another value.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Value",
+            "postgreSql": "Value"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "DescriptorMappingHistory_PK",
+          "identifyingPropertyNames": [
+            "DateOfOperation",
+            "MappedNamespace",
+            "MappedValue",
+            "Namespace",
+            "Value"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "DescriptorMappingHistory_PK",
+            "postgreSql": "DescriptorMappingHistory_PK"
+          }
+        },
+        {
+          "identifierName": "UX_DescriptorMappingHistory_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_DescriptorMappingHistory_Id",
+            "postgreSql": "UX_18b242_Id"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "This entity is intended to log all changes to the descriptormapping table",
+      "tableNames": {
+        "sqlServer": "DescriptorMappingHistory",
+        "postgreSql": "DescriptorMappingHistory"
       }
     },
     {
@@ -15244,6 +15505,66 @@
     {
       "fullName": {
         "schema": "tx",
+        "name": "FK_ApiOperationTypeDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "ApiOperationTypeDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ApiOperationTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "ApiOperationTypeDescriptorId",
+            "postgreSql": "ApiOperationTypeDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ApiOperationTypeDescriptor_Descriptor",
+        "postgreSql": "FK_354a01_Descriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
         "name": "FK_ApplicationTypeDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
@@ -18095,6 +18416,186 @@
       "constraintNames": {
         "sqlServer": "FK_CTEServiceIdDescriptor_Descriptor",
         "postgreSql": "FK_80f1cf_Descriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
+        "name": "FK_DescriptorMappingHistory_ApiOperationTypeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "tx",
+        "name": "ApiOperationTypeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ApiOperationTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ApiOperationTypeDescriptorId",
+            "postgreSql": "ApiOperationTypeDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "DescriptorMappingHistory"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ApiOperationTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of operation performed on the descriptor",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ApiOperationTypeDescriptorId",
+            "postgreSql": "ApiOperationTypeDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_DescriptorMappingHistory_ApiOperationTypeDescriptor",
+        "postgreSql": "FK_18b242_ApiOperationTypeDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
+        "name": "FK_DescriptorMappingHistory_EducationOrganization"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "EducationOrganization"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "DescriptorMappingHistory"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_DescriptorMappingHistory_EducationOrganization",
+        "postgreSql": "FK_18b242_EducationOrganization"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
+        "name": "FK_DescriptorMappingHistory_SchoolYearType"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "SchoolYearType"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Key for School Year",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolYear",
+            "postgreSql": "SchoolYear"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "DescriptorMappingHistory"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "School year in which the mapping was created/modified",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolYear",
+            "postgreSql": "SchoolYear"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_DescriptorMappingHistory_SchoolYearType",
+        "postgreSql": "FK_18b242_SchoolYearType"
       },
       "potentiallyLogical": false
     },

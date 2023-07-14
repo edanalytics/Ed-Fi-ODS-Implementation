@@ -48,6 +48,14 @@ ALTER TABLE [tx].[ContractedInstructionalStaffFTEExt] ADD CONSTRAINT ContractedI
 END
 
 
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[tx].[DescriptorMappingHistory]') AND name = 'ChangeVersion')
+BEGIN
+ALTER TABLE [tx].[DescriptorMappingHistory] ADD [ChangeVersion] [BIGINT] CONSTRAINT DescriptorMappingHistory_DF_ChangeVersion DEFAULT (0) NOT NULL;
+ALTER TABLE [tx].[DescriptorMappingHistory] DROP CONSTRAINT DescriptorMappingHistory_DF_ChangeVersion;
+ALTER TABLE [tx].[DescriptorMappingHistory] ADD CONSTRAINT DescriptorMappingHistory_DF_ChangeVersion DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) For [ChangeVersion];
+END
+
+
 IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[tx].[ExtendedSchoolYearServicesAttendance]') AND name = 'ChangeVersion')
 BEGIN
 ALTER TABLE [tx].[ExtendedSchoolYearServicesAttendance] ADD [ChangeVersion] [BIGINT] CONSTRAINT ExtendedSchoolYearServicesAttendance_DF_ChangeVersion DEFAULT (0) NOT NULL;

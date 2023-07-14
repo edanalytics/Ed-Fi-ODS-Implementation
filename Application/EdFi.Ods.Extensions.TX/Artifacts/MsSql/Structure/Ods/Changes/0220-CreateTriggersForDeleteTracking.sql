@@ -47,6 +47,27 @@ ALTER TABLE [tx].[ADAEligibilityDescriptor] ENABLE TRIGGER [tx_ADAEligibilityDes
 GO
 
 
+DROP TRIGGER IF EXISTS [tx].[tx_ApiOperationTypeDescriptor_TR_DeleteTracking]
+GO
+
+CREATE TRIGGER [tx].[tx_ApiOperationTypeDescriptor_TR_DeleteTracking] ON [tx].[ApiOperationTypeDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
+    SELECT  d.ApiOperationTypeDescriptorId, b.CodeValue, b.Namespace, b.Id, 'tx.ApiOperationTypeDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.ApiOperationTypeDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [tx].[ApiOperationTypeDescriptor] ENABLE TRIGGER [tx_ApiOperationTypeDescriptor_TR_DeleteTracking]
+GO
+
+
 DROP TRIGGER IF EXISTS [tx].[tx_ApplicationTypeDescriptor_TR_DeleteTracking]
 GO
 
@@ -470,6 +491,26 @@ END
 GO
 
 ALTER TABLE [tx].[CTEServiceIdDescriptor] ENABLE TRIGGER [tx_CTEServiceIdDescriptor_TR_DeleteTracking]
+GO
+
+
+DROP TRIGGER IF EXISTS [tx].[tx_DescriptorMappingHistory_TR_DeleteTracking]
+GO
+
+CREATE TRIGGER [tx].[tx_DescriptorMappingHistory_TR_DeleteTracking] ON [tx].[DescriptorMappingHistory] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_changes_tx].[DescriptorMappingHistory](OldDateOfOperation, OldMappedNamespace, OldMappedValue, OldNamespace, OldValue, Id, Discriminator, ChangeVersion)
+    SELECT d.DateOfOperation, d.MappedNamespace, d.MappedValue, d.Namespace, d.Value, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+END
+GO
+
+ALTER TABLE [tx].[DescriptorMappingHistory] ENABLE TRIGGER [tx_DescriptorMappingHistory_TR_DeleteTracking]
 GO
 
 

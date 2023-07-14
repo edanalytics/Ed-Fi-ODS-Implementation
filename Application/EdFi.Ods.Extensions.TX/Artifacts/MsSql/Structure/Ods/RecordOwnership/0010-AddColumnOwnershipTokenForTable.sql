@@ -10,6 +10,8 @@ ALTER TABLE [tx].[ContractedInstructionalStaffFTEExt] ADD [CreatedByOwnershipTok
 
 ALTER TABLE [tx].[CTEProgramReportingPeriodAttendance] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
+ALTER TABLE [tx].[DescriptorMappingHistory] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
+
 ALTER TABLE [tx].[ExtendedSchoolYearServicesAttendance] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
 ALTER TABLE [tx].[FlexibleBilingualESLProgramReportingPeriodAttendance] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;

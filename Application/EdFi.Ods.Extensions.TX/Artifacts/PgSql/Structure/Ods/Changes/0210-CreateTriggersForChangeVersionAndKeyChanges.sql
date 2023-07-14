@@ -30,6 +30,11 @@ CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON tx.cteprogramreportingperiod
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
 END IF;
 
+IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'updatechangeversion' AND event_object_schema = 'tx' AND event_object_table = 'descriptormappinghistory') THEN
+CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON tx.descriptormappinghistory
+    FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
+END IF;
+
 IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'updatechangeversion' AND event_object_schema = 'tx' AND event_object_table = 'extendedschoolyearservicesattendance') THEN
 CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON tx.extendedschoolyearservicesattendance
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();

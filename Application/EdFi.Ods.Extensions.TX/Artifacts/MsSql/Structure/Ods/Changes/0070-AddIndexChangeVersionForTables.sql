@@ -35,6 +35,12 @@ BEGIN TRANSACTION
 COMMIT
 
 BEGIN TRANSACTION
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'tx.DescriptorMappingHistory') AND name = N'UX_DescriptorMappingHistory_ChangeVersion')
+    CREATE INDEX [UX_DescriptorMappingHistory_ChangeVersion] ON [tx].[DescriptorMappingHistory] ([ChangeVersion] ASC)
+    GO
+COMMIT
+
+BEGIN TRANSACTION
     IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'tx.ExtendedSchoolYearServicesAttendance') AND name = N'UX_ExtendedSchoolYearServicesAttendance_ChangeVersion')
     CREATE INDEX [UX_ExtendedSchoolYearServicesAttendance_ChangeVersion] ON [tx].[ExtendedSchoolYearServicesAttendance] ([ChangeVersion] ASC)
     GO

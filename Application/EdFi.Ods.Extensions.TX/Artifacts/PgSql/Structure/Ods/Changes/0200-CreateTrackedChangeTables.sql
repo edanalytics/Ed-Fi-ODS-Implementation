@@ -213,6 +213,27 @@ CREATE TABLE tracked_changes_tx.cteprogramreportingperiodattendance
 );
 END IF;
 
+IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'tracked_changes_tx' AND table_name = 'descriptormappinghistory') THEN
+CREATE TABLE tracked_changes_tx.descriptormappinghistory
+(
+       olddateofoperation TIMESTAMP NOT NULL,
+       oldmappednamespace VARCHAR(255) NOT NULL,
+       oldmappedvalue VARCHAR(50) NOT NULL,
+       oldnamespace VARCHAR(255) NOT NULL,
+       oldvalue VARCHAR(50) NOT NULL,
+       newdateofoperation TIMESTAMP NULL,
+       newmappednamespace VARCHAR(255) NULL,
+       newmappedvalue VARCHAR(50) NULL,
+       newnamespace VARCHAR(255) NULL,
+       newvalue VARCHAR(50) NULL,
+       id uuid NOT NULL,
+       changeversion bigint NOT NULL,
+       discriminator varchar(128) NULL,
+       createdate timestamp NOT NULL DEFAULT (now()),
+       CONSTRAINT descriptormappinghistory_pk PRIMARY KEY (ChangeVersion)
+);
+END IF;
+
 IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'tracked_changes_tx' AND table_name = 'extendedschoolyearservicesattendance') THEN
 CREATE TABLE tracked_changes_tx.extendedschoolyearservicesattendance
 (

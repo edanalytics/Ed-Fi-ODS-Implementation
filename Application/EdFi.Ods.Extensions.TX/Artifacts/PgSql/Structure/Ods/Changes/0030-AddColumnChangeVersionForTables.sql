@@ -31,6 +31,11 @@ ALTER TABLE tx.ContractedInstructionalStaffFTEExt ADD ChangeVersion BIGINT DEFAU
 ALTER TABLE tx.ContractedInstructionalStaffFTEExt ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');
 END IF;
 
+IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='tx' AND table_name='descriptormappinghistory' AND column_name='changeversion') THEN
+ALTER TABLE tx.DescriptorMappingHistory ADD ChangeVersion BIGINT DEFAULT (0) NOT NULL;
+ALTER TABLE tx.DescriptorMappingHistory ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');
+END IF;
+
 IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='tx' AND table_name='extendedschoolyearservicesattendance' AND column_name='changeversion') THEN
 ALTER TABLE tx.ExtendedSchoolYearServicesAttendance ADD ChangeVersion BIGINT DEFAULT (0) NOT NULL;
 ALTER TABLE tx.ExtendedSchoolYearServicesAttendance ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');

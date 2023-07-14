@@ -39,6 +39,15 @@ CREATE TABLE [tx].[ADAEligibilityDescriptor] (
 ) ON [PRIMARY]
 GO
 
+-- Table [tx].[ApiOperationTypeDescriptor] --
+CREATE TABLE [tx].[ApiOperationTypeDescriptor] (
+    [ApiOperationTypeDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [ApiOperationTypeDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [ApiOperationTypeDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [tx].[ApplicationTypeDescriptor] --
 CREATE TABLE [tx].[ApplicationTypeDescriptor] (
     [ApplicationTypeDescriptorId] [INT] NOT NULL,
@@ -389,6 +398,38 @@ CREATE TABLE [tx].[CTEServiceIdDescriptor] (
         [CTEServiceIdDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+
+-- Table [tx].[DescriptorMappingHistory] --
+CREATE TABLE [tx].[DescriptorMappingHistory] (
+    [DateOfOperation] [DATETIME2](7) NOT NULL,
+    [MappedNamespace] [NVARCHAR](255) NOT NULL,
+    [MappedValue] [NVARCHAR](50) NOT NULL,
+    [Namespace] [NVARCHAR](255) NOT NULL,
+    [Value] [NVARCHAR](50) NOT NULL,
+    [DescriptorMappingId] [NVARCHAR](36) NOT NULL,
+    [EducationOrganizationId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [ApiOperationTypeDescriptorId] [INT] NOT NULL,
+    [AccountName] [NVARCHAR](100) NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
+    [Id] [UNIQUEIDENTIFIER] NOT NULL,
+    CONSTRAINT [DescriptorMappingHistory_PK] PRIMARY KEY CLUSTERED (
+        [DateOfOperation] ASC,
+        [MappedNamespace] ASC,
+        [MappedValue] ASC,
+        [Namespace] ASC,
+        [Value] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [tx].[DescriptorMappingHistory] ADD CONSTRAINT [DescriptorMappingHistory_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+ALTER TABLE [tx].[DescriptorMappingHistory] ADD CONSTRAINT [DescriptorMappingHistory_DF_Id] DEFAULT (newid()) FOR [Id]
+GO
+ALTER TABLE [tx].[DescriptorMappingHistory] ADD CONSTRAINT [DescriptorMappingHistory_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
 -- Table [tx].[DisciplineActionExtension] --

@@ -198,6 +198,25 @@ CREATE TABLE [tracked_changes_tx].[CTEProgramReportingPeriodAttendance]
        CreateDate DateTime2 NOT NULL DEFAULT (getutcdate()),
        CONSTRAINT PK_CTEProgramReportingPeriodAttendance PRIMARY KEY CLUSTERED (ChangeVersion)
 )
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE object_id = OBJECT_ID(N'[tracked_changes_tx].[DescriptorMappingHistory]'))
+CREATE TABLE [tracked_changes_tx].[DescriptorMappingHistory]
+(
+       OldDateOfOperation [DATETIME2](7) NOT NULL,
+       OldMappedNamespace [NVARCHAR](255) NOT NULL,
+       OldMappedValue [NVARCHAR](50) NOT NULL,
+       OldNamespace [NVARCHAR](255) NOT NULL,
+       OldValue [NVARCHAR](50) NOT NULL,
+       NewDateOfOperation [DATETIME2](7) NULL,
+       NewMappedNamespace [NVARCHAR](255) NULL,
+       NewMappedValue [NVARCHAR](50) NULL,
+       NewNamespace [NVARCHAR](255) NULL,
+       NewValue [NVARCHAR](50) NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       Discriminator [NVARCHAR](128) NULL,
+       CreateDate DateTime2 NOT NULL DEFAULT (getutcdate()),
+       CONSTRAINT PK_DescriptorMappingHistory PRIMARY KEY CLUSTERED (ChangeVersion)
+)
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE object_id = OBJECT_ID(N'[tracked_changes_tx].[ExtendedSchoolYearServicesAttendance]'))
 CREATE TABLE [tracked_changes_tx].[ExtendedSchoolYearServicesAttendance]
 (

@@ -201,6 +201,7 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="VisaDescriptor" type="VisaDescriptor" />
         <xs:element name="WeaponDescriptor" type="WeaponDescriptor" />
         <xs:element name="ADAEligibilityDescriptor" type="EXTENSION-ADAEligibilityDescriptor" />
+        <xs:element name="ApiOperationTypeDescriptor" type="EXTENSION-ApiOperationTypeDescriptor" />
         <xs:element name="ApplicationTypeDescriptor" type="EXTENSION-ApplicationTypeDescriptor" />
         <xs:element name="ArmedServicesVocAptBatteryDescriptor" type="EXTENSION-ArmedServicesVocAptBatteryDescriptor" />
         <xs:element name="AsOfStatusLastDayEnrollmentDescriptor" type="EXTENSION-AsOfStatusLastDayEnrollmentDescriptor" />

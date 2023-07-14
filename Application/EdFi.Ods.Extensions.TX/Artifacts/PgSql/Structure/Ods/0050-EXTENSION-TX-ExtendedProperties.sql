@@ -13,6 +13,10 @@ COMMENT ON COLUMN tx.ActualExt.ActualAmount IS 'E0774. ActualAmount indicates th
 COMMENT ON TABLE tx.ADAEligibilityDescriptor IS 'Descriptor ADAEligibility is populated from Code Table C059.';
 COMMENT ON COLUMN tx.ADAEligibilityDescriptor.ADAEligibilityDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
 
+-- Extended Properties [tx].[ApiOperationTypeDescriptor] --
+COMMENT ON TABLE tx.ApiOperationTypeDescriptor IS 'Represents the type of operation on the API, e.g. create, delete, update';
+COMMENT ON COLUMN tx.ApiOperationTypeDescriptor.ApiOperationTypeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
 -- Extended Properties [tx].[ApplicationTypeDescriptor] --
 COMMENT ON TABLE tx.ApplicationTypeDescriptor IS 'Descriptor ApplicationType is populated from Code Table C327.';
 COMMENT ON COLUMN tx.ApplicationTypeDescriptor.ApplicationTypeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
@@ -163,6 +167,19 @@ COMMENT ON COLUMN tx.CTEProgramReportingPeriodAttendance.RAEligibleDaysPresentV3
 -- Extended Properties [tx].[CTEServiceIdDescriptor] --
 COMMENT ON TABLE tx.CTEServiceIdDescriptor IS 'CTEServiceId refers to the approved career and technical education course that generates countact hours during a particular reporting period.';
 COMMENT ON COLUMN tx.CTEServiceIdDescriptor.CTEServiceIdDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [tx].[DescriptorMappingHistory] --
+COMMENT ON TABLE tx.DescriptorMappingHistory IS 'This entity is intended to log all changes to the descriptormapping table';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.DateOfOperation IS 'The date/time when the operation occurred';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.MappedNamespace IS 'The namespace of the descriptor value to which the from descriptor value is mapped to.';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.MappedValue IS 'The descriptor value to which the from descriptor value is being mapped to.';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.Namespace IS 'The namespace of the descriptor value that is being mapped to another value.';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.Value IS 'The descriptor value that is being mapped to another value.';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.DescriptorMappingId IS 'The id of the resource in question';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.SchoolYear IS 'School year in which the mapping was created/modified';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.ApiOperationTypeDescriptorId IS 'The type of operation performed on the descriptor';
+COMMENT ON COLUMN tx.DescriptorMappingHistory.AccountName IS 'User name of the account which created/modified the mapping';
 
 -- Extended Properties [tx].[DisciplineActionExtension] --
 COMMENT ON TABLE tx.DisciplineActionExtension IS '';

@@ -38,6 +38,11 @@ REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
 ;
 
+ALTER TABLE tx.ApiOperationTypeDescriptor ADD CONSTRAINT FK_354a01_Descriptor FOREIGN KEY (ApiOperationTypeDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
 ALTER TABLE tx.ApplicationTypeDescriptor ADD CONSTRAINT FK_431e6e_Descriptor FOREIGN KEY (ApplicationTypeDescriptorId)
 REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
@@ -297,6 +302,27 @@ ALTER TABLE tx.CTEServiceIdDescriptor ADD CONSTRAINT FK_80f1cf_Descriptor FOREIG
 REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
 ;
+
+ALTER TABLE tx.DescriptorMappingHistory ADD CONSTRAINT FK_18b242_ApiOperationTypeDescriptor FOREIGN KEY (ApiOperationTypeDescriptorId)
+REFERENCES tx.ApiOperationTypeDescriptor (ApiOperationTypeDescriptorId)
+;
+
+CREATE INDEX FK_18b242_ApiOperationTypeDescriptor
+ON tx.DescriptorMappingHistory (ApiOperationTypeDescriptorId ASC);
+
+ALTER TABLE tx.DescriptorMappingHistory ADD CONSTRAINT FK_18b242_EducationOrganization FOREIGN KEY (EducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_18b242_EducationOrganization
+ON tx.DescriptorMappingHistory (EducationOrganizationId ASC);
+
+ALTER TABLE tx.DescriptorMappingHistory ADD CONSTRAINT FK_18b242_SchoolYearType FOREIGN KEY (SchoolYear)
+REFERENCES edfi.SchoolYearType (SchoolYear)
+;
+
+CREATE INDEX FK_18b242_SchoolYearType
+ON tx.DescriptorMappingHistory (SchoolYear ASC);
 
 ALTER TABLE tx.DisciplineActionExtension ADD CONSTRAINT FK_699fda_DisciplineAction FOREIGN KEY (DisciplineActionIdentifier, DisciplineDate, StudentUSI)
 REFERENCES edfi.DisciplineAction (DisciplineActionIdentifier, DisciplineDate, StudentUSI)

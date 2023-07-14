@@ -24,6 +24,12 @@ CREATE TABLE tx.ADAEligibilityDescriptor (
     CONSTRAINT ADAEligibilityDescriptor_PK PRIMARY KEY (ADAEligibilityDescriptorId)
 ); 
 
+-- Table tx.ApiOperationTypeDescriptor --
+CREATE TABLE tx.ApiOperationTypeDescriptor (
+    ApiOperationTypeDescriptorId INT NOT NULL,
+    CONSTRAINT ApiOperationTypeDescriptor_PK PRIMARY KEY (ApiOperationTypeDescriptorId)
+); 
+
 -- Table tx.ApplicationTypeDescriptor --
 CREATE TABLE tx.ApplicationTypeDescriptor (
     ApplicationTypeDescriptorId INT NOT NULL,
@@ -259,6 +265,28 @@ CREATE TABLE tx.CTEServiceIdDescriptor (
     CTEServiceIdDescriptorId INT NOT NULL,
     CONSTRAINT CTEServiceIdDescriptor_PK PRIMARY KEY (CTEServiceIdDescriptorId)
 ); 
+
+-- Table tx.DescriptorMappingHistory --
+CREATE TABLE tx.DescriptorMappingHistory (
+    DateOfOperation TIMESTAMP NOT NULL,
+    MappedNamespace VARCHAR(255) NOT NULL,
+    MappedValue VARCHAR(50) NOT NULL,
+    Namespace VARCHAR(255) NOT NULL,
+    Value VARCHAR(50) NOT NULL,
+    DescriptorMappingId VARCHAR(36) NOT NULL,
+    EducationOrganizationId INT NOT NULL,
+    SchoolYear SMALLINT NOT NULL,
+    ApiOperationTypeDescriptorId INT NOT NULL,
+    AccountName VARCHAR(100) NULL,
+    Discriminator VARCHAR(128) NULL,
+    CreateDate TIMESTAMP NOT NULL,
+    LastModifiedDate TIMESTAMP NOT NULL,
+    Id UUID NOT NULL,
+    CONSTRAINT DescriptorMappingHistory_PK PRIMARY KEY (DateOfOperation, MappedNamespace, MappedValue, Namespace, Value)
+); 
+ALTER TABLE tx.DescriptorMappingHistory ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
+ALTER TABLE tx.DescriptorMappingHistory ALTER COLUMN Id SET DEFAULT gen_random_uuid();
+ALTER TABLE tx.DescriptorMappingHistory ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
 
 -- Table tx.DisciplineActionExtension --
 CREATE TABLE tx.DisciplineActionExtension (

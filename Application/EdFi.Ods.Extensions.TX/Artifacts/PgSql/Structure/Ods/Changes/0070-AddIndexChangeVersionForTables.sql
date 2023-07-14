@@ -10,6 +10,8 @@ CREATE INDEX IF NOT EXISTS UX_61641a_ChangeVersion ON tx.CTEProgramReportingPeri
 
 CREATE INDEX IF NOT EXISTS UX_c6c091_ChangeVersion ON tx.ContractedInstructionalStaffFTEExt(ChangeVersion);
 
+CREATE INDEX IF NOT EXISTS UX_18b242_ChangeVersion ON tx.DescriptorMappingHistory(ChangeVersion);
+
 CREATE INDEX IF NOT EXISTS UX_25d61d_ChangeVersion ON tx.ExtendedSchoolYearServicesAttendance(ChangeVersion);
 
 CREATE INDEX IF NOT EXISTS UX_2f01d3_ChangeVersion ON tx.FlexibleBilingualESLProgramReportingPeriodAttendance(ChangeVersion);

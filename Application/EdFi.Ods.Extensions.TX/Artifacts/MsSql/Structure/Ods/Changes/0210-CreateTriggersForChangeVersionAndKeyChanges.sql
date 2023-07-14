@@ -76,6 +76,19 @@ BEGIN
 END	
 GO
 
+DROP TRIGGER IF EXISTS [tx].[tx_DescriptorMappingHistory_TR_UpdateChangeVersion]
+GO
+
+CREATE TRIGGER [tx].[tx_DescriptorMappingHistory_TR_UpdateChangeVersion] ON [tx].[DescriptorMappingHistory] AFTER UPDATE AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [tx].[DescriptorMappingHistory]
+    SET ChangeVersion = (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM [tx].[DescriptorMappingHistory] u
+    WHERE EXISTS (SELECT 1 FROM inserted i WHERE i.id = u.id);
+END	
+GO
+
 DROP TRIGGER IF EXISTS [tx].[tx_ExtendedSchoolYearServicesAttendance_TR_UpdateChangeVersion]
 GO
 

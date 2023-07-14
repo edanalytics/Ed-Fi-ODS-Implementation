@@ -24,6 +24,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ADAEligibilityDescriptor', @level2type=N'COLUMN', @level2name=N'ADAEligibilityDescriptorId'
 GO
 
+-- Extended Properties [tx].[ApiOperationTypeDescriptor] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Represents the type of operation on the API, e.g. create, delete, update', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ApiOperationTypeDescriptor'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ApiOperationTypeDescriptor', @level2type=N'COLUMN', @level2name=N'ApiOperationTypeDescriptorId'
+GO
+
 -- Extended Properties [tx].[ApplicationTypeDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ApplicationType is populated from Code Table C327.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ApplicationTypeDescriptor'
 GO
@@ -280,6 +286,30 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'CTEServiceId refers to the approved career and technical education course that generates countact hours during a particular reporting period.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'CTEServiceIdDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'CTEServiceIdDescriptor', @level2type=N'COLUMN', @level2name=N'CTEServiceIdDescriptorId'
+GO
+
+-- Extended Properties [tx].[DescriptorMappingHistory] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity is intended to log all changes to the descriptormapping table', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The date/time when the operation occurred', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'DateOfOperation'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The namespace of the descriptor value to which the from descriptor value is mapped to.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'MappedNamespace'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The descriptor value to which the from descriptor value is being mapped to.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'MappedValue'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The namespace of the descriptor value that is being mapped to another value.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The descriptor value that is being mapped to another value.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'Value'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The id of the resource in question', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'DescriptorMappingId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'School year in which the mapping was created/modified', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of operation performed on the descriptor', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'ApiOperationTypeDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'User name of the account which created/modified the mapping', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'DescriptorMappingHistory', @level2type=N'COLUMN', @level2name=N'AccountName'
 GO
 
 -- Extended Properties [tx].[DisciplineActionExtension] --

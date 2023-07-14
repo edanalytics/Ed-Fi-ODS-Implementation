@@ -10,6 +10,8 @@ CREATE UNIQUE INDEX IF NOT EXISTS UX_c6c091_Id ON tx.ContractedInstructionalStaf
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_61641a_Id ON tx.CTEProgramReportingPeriodAttendance(Id);
 
+CREATE UNIQUE INDEX IF NOT EXISTS UX_18b242_Id ON tx.DescriptorMappingHistory(Id);
+
 CREATE UNIQUE INDEX IF NOT EXISTS UX_25d61d_Id ON tx.ExtendedSchoolYearServicesAttendance(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_2f01d3_Id ON tx.FlexibleBilingualESLProgramReportingPeriodAttendance(Id);

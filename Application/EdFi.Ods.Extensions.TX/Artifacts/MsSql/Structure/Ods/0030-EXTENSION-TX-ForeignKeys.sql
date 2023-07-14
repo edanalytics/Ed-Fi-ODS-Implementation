@@ -43,6 +43,11 @@ REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
 
+ALTER TABLE [tx].[ApiOperationTypeDescriptor] WITH CHECK ADD CONSTRAINT [FK_ApiOperationTypeDescriptor_Descriptor] FOREIGN KEY ([ApiOperationTypeDescriptorId])
+REFERENCES [edfi].[Descriptor] ([DescriptorId])
+ON DELETE CASCADE
+GO
+
 ALTER TABLE [tx].[ApplicationTypeDescriptor] WITH CHECK ADD CONSTRAINT [FK_ApplicationTypeDescriptor_Descriptor] FOREIGN KEY ([ApplicationTypeDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
@@ -326,6 +331,30 @@ GO
 ALTER TABLE [tx].[CTEServiceIdDescriptor] WITH CHECK ADD CONSTRAINT [FK_CTEServiceIdDescriptor_Descriptor] FOREIGN KEY ([CTEServiceIdDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
+GO
+
+ALTER TABLE [tx].[DescriptorMappingHistory] WITH CHECK ADD CONSTRAINT [FK_DescriptorMappingHistory_ApiOperationTypeDescriptor] FOREIGN KEY ([ApiOperationTypeDescriptorId])
+REFERENCES [tx].[ApiOperationTypeDescriptor] ([ApiOperationTypeDescriptorId])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_DescriptorMappingHistory_ApiOperationTypeDescriptor]
+ON [tx].[DescriptorMappingHistory] ([ApiOperationTypeDescriptorId] ASC)
+GO
+
+ALTER TABLE [tx].[DescriptorMappingHistory] WITH CHECK ADD CONSTRAINT [FK_DescriptorMappingHistory_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
+REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_DescriptorMappingHistory_EducationOrganization]
+ON [tx].[DescriptorMappingHistory] ([EducationOrganizationId] ASC)
+GO
+
+ALTER TABLE [tx].[DescriptorMappingHistory] WITH CHECK ADD CONSTRAINT [FK_DescriptorMappingHistory_SchoolYearType] FOREIGN KEY ([SchoolYear])
+REFERENCES [edfi].[SchoolYearType] ([SchoolYear])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_DescriptorMappingHistory_SchoolYearType]
+ON [tx].[DescriptorMappingHistory] ([SchoolYear] ASC)
 GO
 
 ALTER TABLE [tx].[DisciplineActionExtension] WITH CHECK ADD CONSTRAINT [FK_DisciplineActionExtension_DisciplineAction] FOREIGN KEY ([DisciplineActionIdentifier], [DisciplineDate], [StudentUSI])
