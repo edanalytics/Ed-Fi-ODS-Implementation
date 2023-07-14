@@ -2565,10 +2565,6 @@ REFERENCES [edfi].[StudentSpecialEducationProgramAssociationDisability] ([BeginD
 ON DELETE CASCADE
 GO
 
-CREATE NONCLUSTERED INDEX [FK_StudentSpecialEducationProgramAssociationDisabilitySet_StudentSpecialEducationProgramAssociationDisability]
-ON [tx].[StudentSpecialEducationProgramAssociationDisabilitySet] ([BeginDate] ASC, [DisabilityDescriptorId] ASC, [EducationOrganizationId] ASC, [ProgramEducationOrganizationId] ASC, [ProgramName] ASC, [ProgramTypeDescriptorId] ASC, [StudentUSI] ASC)
-GO
-
 ALTER TABLE [tx].[StudentSpecialEducationProgramAssociationExtension] WITH CHECK ADD CONSTRAINT [FK_StudentSpecialEducationProgramAssociationExtension_PreferredHomeCommunicationMethodDescriptor] FOREIGN KEY ([PreferredHomeCommunicationMethodDescriptorId])
 REFERENCES [tx].[PreferredHomeCommunicationMethodDescriptor] ([PreferredHomeCommunicationMethodDescriptorId])
 GO

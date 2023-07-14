@@ -1897,17 +1897,17 @@ ALTER TABLE tx.StudentSpecialEducationProgramAssociationAssessment ALTER COLUMN 
 CREATE TABLE tx.StudentSpecialEducationProgramAssociationDisabilitySet (
     BeginDate DATE NOT NULL,
     DisabilityDescriptorId INT NOT NULL,
-    DisabilitySetBeginDate DATE NOT NULL,
     EducationOrganizationId INT NOT NULL,
     ProgramEducationOrganizationId INT NOT NULL,
     ProgramName VARCHAR(60) NOT NULL,
     ProgramTypeDescriptorId INT NOT NULL,
     StudentUSI INT NOT NULL,
     EligibilityDateDisabilities DATE NULL,
+    DisabilitySetBeginDate DATE NOT NULL,
     DisabilitySetEndDate DATE NULL,
     OrderOfDisability INT NULL,
     CreateDate TIMESTAMP NOT NULL,
-    CONSTRAINT StudentSpecialEducationProgramAssociationDisabilitySet_PK PRIMARY KEY (BeginDate, DisabilityDescriptorId, DisabilitySetBeginDate, EducationOrganizationId, ProgramEducationOrganizationId, ProgramName, ProgramTypeDescriptorId, StudentUSI)
+    CONSTRAINT StudentSpecialEducationProgramAssociationDisabilitySet_PK PRIMARY KEY (BeginDate, DisabilityDescriptorId, EducationOrganizationId, ProgramEducationOrganizationId, ProgramName, ProgramTypeDescriptorId, StudentUSI)
 ); 
 ALTER TABLE tx.StudentSpecialEducationProgramAssociationDisabilitySet ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 

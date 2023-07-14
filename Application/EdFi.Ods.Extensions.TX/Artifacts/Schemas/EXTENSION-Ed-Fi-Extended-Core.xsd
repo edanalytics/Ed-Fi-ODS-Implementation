@@ -6227,7 +6227,7 @@
     <xs:complexContent>
       <xs:extension base="Disability">
         <xs:sequence>
-          <xs:element name="DisabilitySet" type="EXTENSION-DisabilitySet" maxOccurs="unbounded">
+          <xs:element name="DisabilitySet" type="EXTENSION-DisabilitySet" minOccurs="0">
             <xs:annotation>
               <xs:documentation>DisabilitySet</xs:documentation>
             </xs:annotation>

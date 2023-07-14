@@ -13915,7 +13915,7 @@
             "isNullable": false
           },
           "description": "E3016. DisabilitySetBeginDate indicates the month, day, and year the order of the disability becomes true.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "DisabilitySetBeginDate",
@@ -13980,7 +13980,6 @@
           "identifyingPropertyNames": [
             "BeginDate",
             "DisabilityDescriptorId",
-            "DisabilitySetBeginDate",
             "EducationOrganizationId",
             "ProgramEducationOrganizationId",
             "ProgramName",
@@ -40073,7 +40072,7 @@
         "schema": "tx",
         "name": "FK_StudentSpecialEducationProgramAssociationDisabilitySet_StudentSpecialEducationProgramAssociationDisability"
       },
-      "cardinality": "OneToOneOrMore",
+      "cardinality": "OneToOne",
       "primaryEntityFullName": {
         "schema": "edfi",
         "name": "StudentSpecialEducationProgramAssociationDisability"

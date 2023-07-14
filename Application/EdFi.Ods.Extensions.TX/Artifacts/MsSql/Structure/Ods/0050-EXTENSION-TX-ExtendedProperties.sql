@@ -2266,8 +2266,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The earliest d
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A disability category that describes a individual''s impairment.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'DisabilityDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3016. DisabilitySetBeginDate indicates the month, day, and year the order of the disability becomes true.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'DisabilitySetBeginDate'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'ProgramEducationOrganizationId'
@@ -2279,6 +2277,8 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'EligibilityDateDisabilities indicates the date upon which a student who is deaf or hard of hearing is eligible for services.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'EligibilityDateDisabilities'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3016. DisabilitySetBeginDate indicates the month, day, and year the order of the disability becomes true.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'DisabilitySetBeginDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3017. DisabilitySetEndDate indicates the month, day, and year the order of the disability becomes false.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationDisabilitySet', @level2type=N'COLUMN', @level2name=N'DisabilitySetEndDate'
 GO

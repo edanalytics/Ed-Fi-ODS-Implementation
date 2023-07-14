@@ -1329,13 +1329,13 @@ COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationAssessment.Assessm
 COMMENT ON TABLE tx.StudentSpecialEducationProgramAssociationDisabilitySet IS 'DisabilitySet';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.BeginDate IS 'The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.DisabilityDescriptorId IS 'A disability category that describes a individual''s impairment.';
-COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.DisabilitySetBeginDate IS 'E3016. DisabilitySetBeginDate indicates the month, day, and year the order of the disability becomes true.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.EducationOrganizationId IS 'The identifier assigned to an education organization.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.ProgramEducationOrganizationId IS 'The identifier assigned to an education organization.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.ProgramName IS 'The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.ProgramTypeDescriptorId IS 'The type of program.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.EligibilityDateDisabilities IS 'EligibilityDateDisabilities indicates the date upon which a student who is deaf or hard of hearing is eligible for services.';
+COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.DisabilitySetBeginDate IS 'E3016. DisabilitySetBeginDate indicates the month, day, and year the order of the disability becomes true.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.DisabilitySetEndDate IS 'E3017. DisabilitySetEndDate indicates the month, day, and year the order of the disability becomes false.';
 COMMENT ON COLUMN tx.StudentSpecialEducationProgramAssociationDisabilitySet.OrderOfDisability IS 'E3039. The OrderOfDisability is the order by severity of student''s disabilities:1. Primary 2. Secondary 3 Tertiary';
 

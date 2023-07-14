@@ -2312,9 +2312,6 @@ REFERENCES edfi.StudentSpecialEducationProgramAssociationDisability (BeginDate, 
 ON DELETE CASCADE
 ;
 
-CREATE INDEX FK_1cff3b_StudentSpecialEducationProgramAssociationDisability
-ON tx.StudentSpecialEducationProgramAssociationDisabilitySet (BeginDate ASC, DisabilityDescriptorId ASC, EducationOrganizationId ASC, ProgramEducationOrganizationId ASC, ProgramName ASC, ProgramTypeDescriptorId ASC, StudentUSI ASC);
-
 ALTER TABLE tx.StudentSpecialEducationProgramAssociationExtension ADD CONSTRAINT FK_3da84f_PreferredHomeCommunicationMethodDescriptor FOREIGN KEY (PreferredHomeCommunicationMethodDescriptorId)
 REFERENCES tx.PreferredHomeCommunicationMethodDescriptor (PreferredHomeCommunicationMethodDescriptorId)
 ;
