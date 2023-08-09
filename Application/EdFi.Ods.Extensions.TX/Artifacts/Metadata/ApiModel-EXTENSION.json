@@ -2542,10 +2542,10 @@
         {
           "propertyName": "SchoolDayInstructionalMinutes",
           "propertyType": {
-            "dbType": "Int32",
+            "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
+            "precision": 3,
+            "scale": 2,
             "isNullable": true
           },
           "description": "E1599. SchoolDayInstructionalMinutes indicates the portion of the school day in which instruction takes place along with certain other exceptions and are considered a subset of operational minutes.",
@@ -2559,10 +2559,10 @@
         {
           "propertyName": "SchoolDayOperationalMinutes",
           "propertyType": {
-            "dbType": "Int32",
+            "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
+            "precision": 3,
+            "scale": 2,
             "isNullable": true
           },
           "description": "E1571. SchoolDayOperationalMinutes indicates the minutes that a campus operated on a particular school day for the purpose of student instruction.",
@@ -2576,10 +2576,10 @@
         {
           "propertyName": "SchoolDayWaiverMinutes",
           "propertyType": {
-            "dbType": "Int32",
+            "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
+            "precision": 3,
+            "scale": 2,
             "isNullable": true
           },
           "description": "E1572. SchoolDayWaiverMinutes indicates the waiver minutes for the campus and calendar date.",
@@ -9103,10 +9103,10 @@
         {
           "propertyName": "CTEHours",
           "propertyType": {
-            "dbType": "Int32",
+            "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
+            "precision": 3,
+            "scale": 2,
             "isNullable": true
           },
           "description": "E3011. CTEHours indicate the number of contact hours assigned to a particular section of a course.",

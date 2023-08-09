@@ -335,17 +335,17 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="SchoolDayOperationalMinutes" type="xs:int" minOccurs="0">
+          <xs:element name="SchoolDayOperationalMinutes" type="EXTENSION-SchoolDayOperationalMinutes" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1571. SchoolDayOperationalMinutes indicates the minutes that a campus operated on a particular school day for the purpose of student instruction.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="SchoolDayInstructionalMinutes" type="xs:int" minOccurs="0">
+          <xs:element name="SchoolDayInstructionalMinutes" type="EXTENSION-SchoolDayInstructionalMinutes" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1599. SchoolDayInstructionalMinutes indicates the portion of the school day in which instruction takes place along with certain other exceptions and are considered a subset of operational minutes.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="SchoolDayWaiverMinutes" type="xs:int" minOccurs="0">
+          <xs:element name="SchoolDayWaiverMinutes" type="EXTENSION-SchoolDayWaiverMinutes" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1572. SchoolDayWaiverMinutes indicates the waiver minutes for the campus and calendar date.</xs:documentation>
             </xs:annotation>
@@ -6868,7 +6868,7 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="CTEHours" type="xs:int" minOccurs="0">
+      <xs:element name="CTEHours" type="EXTENSION-CTEHours" minOccurs="0">
         <xs:annotation>
           <xs:documentation>E3011. CTEHours indicate the number of contact hours assigned to a particular section of a course.</xs:documentation>
         </xs:annotation>
@@ -7387,6 +7387,18 @@
       <xs:maxInclusive value="600" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CTEHours">
+    <xs:annotation>
+      <xs:documentation>E3011. CTEHours indicate the number of contact hours assigned to a particular section of a course.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="3" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-EligibleDaysPresentInInstrSetting">
     <xs:annotation>
       <xs:documentation>E0944. EligibleDaysPresentInInstrSetting indicates the number of days the student was eligible and present in a designated instructional setting during a particular reporting period.</xs:documentation>
@@ -7855,6 +7867,42 @@
       <xs:maxInclusive value="180.00" />
       <xs:totalDigits value="4" />
       <xs:fractionDigits value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SchoolDayInstructionalMinutes">
+    <xs:annotation>
+      <xs:documentation>E1599. SchoolDayInstructionalMinutes indicates the portion of the school day in which instruction takes place along with certain other exceptions and are considered a subset of operational minutes.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="3" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SchoolDayOperationalMinutes">
+    <xs:annotation>
+      <xs:documentation>E1571. SchoolDayOperationalMinutes indicates the minutes that a campus operated on a particular school day for the purpose of student instruction.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="3" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SchoolDayWaiverMinutes">
+    <xs:annotation>
+      <xs:documentation>E1572. SchoolDayWaiverMinutes indicates the waiver minutes for the campus and calendar date.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="3" />
+      <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-TotalContractedInstrStaffFTE">
