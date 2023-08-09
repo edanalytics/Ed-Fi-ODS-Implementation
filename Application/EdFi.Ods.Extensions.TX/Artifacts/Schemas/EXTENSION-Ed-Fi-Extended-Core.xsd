@@ -7395,7 +7395,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="3" />
+      <xs:totalDigits value="4" />
       <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>
@@ -7877,7 +7877,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="3" />
+      <xs:totalDigits value="5" />
       <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>
@@ -7889,7 +7889,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="3" />
+      <xs:totalDigits value="5" />
       <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>
@@ -7901,7 +7901,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="3" />
+      <xs:totalDigits value="5" />
       <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>

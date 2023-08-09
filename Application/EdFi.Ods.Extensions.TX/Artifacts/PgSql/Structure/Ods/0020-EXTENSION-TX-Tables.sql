@@ -149,9 +149,9 @@ CREATE TABLE tx.CalendarDateExtension (
     SchoolId INT NOT NULL,
     SchoolYear SMALLINT NOT NULL,
     CalendarWaiverEventTypeDescriptorId INT NULL,
-    SchoolDayOperationalMinutes DECIMAL(3, 2) NULL,
-    SchoolDayInstructionalMinutes DECIMAL(3, 2) NULL,
-    SchoolDayWaiverMinutes DECIMAL(3, 2) NULL,
+    SchoolDayOperationalMinutes DECIMAL(5, 2) NULL,
+    SchoolDayInstructionalMinutes DECIMAL(5, 2) NULL,
+    SchoolDayWaiverMinutes DECIMAL(5, 2) NULL,
     CreateDate TIMESTAMP NOT NULL,
     CONSTRAINT CalendarDateExtension_PK PRIMARY KEY (CalendarCode, Date, SchoolId, SchoolYear)
 );
@@ -1190,7 +1190,7 @@ CREATE TABLE tx.SectionSet (
     PKSchoolTypeDescriptorId INT NULL,
     PKProgramEvaluationTypeDescriptorId INT NULL,
     ClassTypeDescriptorId INT NULL,
-    CTEHours DECIMAL(3, 2) NULL,
+    CTEHours DECIMAL(4, 2) NULL,
     EndDate DATE NULL,
     CreateDate TIMESTAMP NOT NULL,
     CONSTRAINT SectionSet_PK PRIMARY KEY (BeginDate, LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName)

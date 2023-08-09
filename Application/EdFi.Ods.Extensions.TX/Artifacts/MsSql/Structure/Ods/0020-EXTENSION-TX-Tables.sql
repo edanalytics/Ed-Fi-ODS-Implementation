@@ -223,9 +223,9 @@ CREATE TABLE [tx].[CalendarDateExtension] (
     [SchoolId] [INT] NOT NULL,
     [SchoolYear] [SMALLINT] NOT NULL,
     [CalendarWaiverEventTypeDescriptorId] [INT] NULL,
-    [SchoolDayOperationalMinutes] [DECIMAL](3, 2) NULL,
-    [SchoolDayInstructionalMinutes] [DECIMAL](3, 2) NULL,
-    [SchoolDayWaiverMinutes] [DECIMAL](3, 2) NULL,
+    [SchoolDayOperationalMinutes] [DECIMAL](5, 2) NULL,
+    [SchoolDayInstructionalMinutes] [DECIMAL](5, 2) NULL,
+    [SchoolDayWaiverMinutes] [DECIMAL](5, 2) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [CalendarDateExtension_PK] PRIMARY KEY CLUSTERED (
         [CalendarCode] ASC,
@@ -1741,7 +1741,7 @@ CREATE TABLE [tx].[SectionSet] (
     [PKSchoolTypeDescriptorId] [INT] NULL,
     [PKProgramEvaluationTypeDescriptorId] [INT] NULL,
     [ClassTypeDescriptorId] [INT] NULL,
-    [CTEHours] [DECIMAL](3, 2) NULL,
+    [CTEHours] [DECIMAL](4, 2) NULL,
     [EndDate] [DATE] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SectionSet_PK] PRIMARY KEY CLUSTERED (
