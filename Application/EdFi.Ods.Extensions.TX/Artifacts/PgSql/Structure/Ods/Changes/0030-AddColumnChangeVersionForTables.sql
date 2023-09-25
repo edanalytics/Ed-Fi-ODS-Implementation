@@ -81,6 +81,11 @@ ALTER TABLE tx.PriorYearLeaverStudentParentAssociation ADD ChangeVersion BIGINT 
 ALTER TABLE tx.PriorYearLeaverStudentParentAssociation ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');
 END IF;
 
+IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='tx' AND table_name='reportingperiodext' AND column_name='changeversion') THEN
+ALTER TABLE tx.ReportingPeriodExt ADD ChangeVersion BIGINT DEFAULT (0) NOT NULL;
+ALTER TABLE tx.ReportingPeriodExt ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');
+END IF;
+
 IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='tx' AND table_name='ssaorgassociationext' AND column_name='changeversion') THEN
 ALTER TABLE tx.SSAOrgAssociationExt ADD ChangeVersion BIGINT DEFAULT (0) NOT NULL;
 ALTER TABLE tx.SSAOrgAssociationExt ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');

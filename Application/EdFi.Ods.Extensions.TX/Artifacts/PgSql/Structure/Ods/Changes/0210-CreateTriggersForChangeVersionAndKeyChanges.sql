@@ -80,6 +80,11 @@ CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON tx.prioryearleaverstudentpar
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
 END IF;
 
+IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'updatechangeversion' AND event_object_schema = 'tx' AND event_object_table = 'reportingperiodext') THEN
+CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON tx.reportingperiodext
+    FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
+END IF;
+
 IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'updatechangeversion' AND event_object_schema = 'tx' AND event_object_table = 'sharedservicearrangementext') THEN
 CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON tx.sharedservicearrangementext
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();

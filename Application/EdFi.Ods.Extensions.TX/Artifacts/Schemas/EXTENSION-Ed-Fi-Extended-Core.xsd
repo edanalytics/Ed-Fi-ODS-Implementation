@@ -32,27 +32,27 @@
               <xs:documentation>E0774. ActualAmount indicates the dollar value associated with actual financial account information.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+          <xs:element name="ActualFund" type="EXTENSION-ActualFundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ActualFundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
+          <xs:element name="ActualFunction" type="EXTENSION-ActualFunctionDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ActualFunctionDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
+          <xs:element name="ActualObject" type="EXTENSION-ActualObjectDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ActualObjectDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -61,12 +61,22 @@
               <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+          <xs:element name="ActualProgramIntent" type="EXTENSION-ActualProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ActualProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BeginDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>E3020. EndDate indicates the month, day, and year for the specified data element becomes false of the student, staff, program, etc.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -128,14 +138,6 @@
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks)</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -174,6 +176,14 @@
               <xs:documentation>E1679. RATotalEligibleDaysPresent indicates the total number of days the student was remote asynchronous present and eligible for Foundation School Program funding during a particular reporting period.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -201,14 +211,6 @@
           <xs:element name="CalendarCode" type="EXTENSION-CalendarCode">
             <xs:annotation>
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
@@ -247,6 +249,14 @@
               <xs:documentation>E1683. RATotalEligBilingualESLDaysPresent indicates the total number of days the student was remote asynchronous present and an eligible participant in the state-approved bilingual/ESL program during a particular reporting period.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -276,27 +286,27 @@
               <xs:documentation>E0321. BudgetAmount indicates the dollar value associated with budget financial account information.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+          <xs:element name="BudgetFund" type="EXTENSION-BudgetFundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-BudgetFundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
+          <xs:element name="BudgetFunction" type="EXTENSION-BudgetFunctionDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-BudgetFunctionDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
+          <xs:element name="BudgetObject" type="EXTENSION-BudgetObjectDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-BudgetObjectDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -305,12 +315,22 @@
               <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+          <xs:element name="BudgetProgramIntent" type="EXTENSION-BudgetProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-BudgetProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BeginDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>E3020. EndDate indicates the month, day, and year for the specified data element becomes false of the student, staff, program, etc.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -374,11 +394,11 @@
               <xs:documentation>E0266. The School denotes the campus with which the contracted staff is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+          <xs:element name="CIStaffProgramIntent" type="EXTENSION-CIStaffProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-CIStaffProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -445,14 +465,6 @@
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -517,6 +529,14 @@
           <xs:element name="RAEligibleDaysPresentV3" type="EXTENSION-RAEligibleDaysPresentV3" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1704. RAEligibleDaysPresentV3 indicates the total number of days the student was eligible, remote asynchronous present and enrolled in an approved career and technical course that generated three contact hours during a particular reporting period.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -726,14 +746,6 @@
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -768,6 +780,14 @@
               <xs:documentation>E1050. FlexAttendExcessMinutesInInstrSetting indicates the total number of minutes the student was present in a designated instructional setting above the allowable 360-minute daily limit of combined career and technical education and special education and related services during a particular reporting period.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -797,14 +817,6 @@
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -829,6 +841,14 @@
           <xs:element name="FlexAttendTotalCareerTechMinutesPresent" type="EXTENSION-FlexAttendTotalCareerTechMinutesPresent">
             <xs:annotation>
               <xs:documentation>E1053. FlexAttendTotalCareerTechMinutesPresent indicates the total number of minutes the student was present in an approved career and technical education course(s) that the student was eligible for and enrolled in during a particular reporting period.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -858,14 +878,6 @@
           <xs:element name="CalendarCode" type="EXTENSION-CalendarCode">
             <xs:annotation>
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
@@ -914,6 +926,14 @@
               <xs:documentation>E1653. FlexTotalEligResidentialFacilityDaysPresent indicates the total number of days the student was present and eligible for LEA services while living in a Residential Facility in a flexible attendance program during a particular reporting period.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -941,14 +961,6 @@
           <xs:element name="CalendarCode" type="EXTENSION-CalendarCode">
             <xs:annotation>
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
@@ -988,6 +1000,14 @@
           <xs:element name="FlexAttendExcessMinutesInInstrSetting" type="EXTENSION-FlexAttendExcessMinutesInInstrSetting">
             <xs:annotation>
               <xs:documentation>E1052. NumberDaysTaught indicates the number of days of instruction offered, as shown on the school calendar, during a particular reporting period.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1107,27 +1127,27 @@
               <xs:documentation>E0425. PayrollAmount indicates the dollar value that is paid to a staff member for a given payroll activity per year.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+          <xs:element name="PayrollFund" type="EXTENSION-PayrollFundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund for payroll data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-PayrollFundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
+          <xs:element name="PayrollFunction" type="EXTENSION-PayrollFunctionDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-PayrollFunctionDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
+          <xs:element name="PayrollObject" type="EXTENSION-PayrollObjectDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-PayrollObjectDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1136,11 +1156,11 @@
               <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+          <xs:element name="PayrollProgramIntent" type="EXTENSION-PayrollProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-PayrollProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1246,9 +1266,12 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="AssociateDegreeIndicator" type="xs:boolean" minOccurs="0">
+          <xs:element name="AssociateDegreeIndicator" type="EXTENSION-AssociateDegreeIndicatorDescriptorReferenceType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1596. AssociateDegreeIndicator indicates that the student earned an associate degree by August 31 immediately following graduation.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-AssociateDegreeIndicatorDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="FinancialAidApplication" type="EXTENSION-FinancialAidApplicationDescriptorReferenceType" minOccurs="0">
@@ -1374,9 +1397,20 @@
               <xs:documentation>The set of elements that capture relevant data regarding a person's birth, including birth date and place of birth.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Language" type="Language" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Language" type="LanguageDescriptorReferenceType" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>A method of written or spoken communication.</xs:documentation>
+              <xs:documentation>E3033, C092. Language indicates the language spoken in the student’s home and the language spoken by the student most of the time, as determined by the student’s home language survey. (see 19 TAC §89.1215).</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LanguageDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LanguageUse" type="LanguageUseDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>E3035, C336. LanguageUse is a description of how the language is used (e.g., Home Language and Student Language).</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LanguageUseDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="IndustryBasedCertificationSet" type="EXTENSION-IndustryBasedCertificationSet" minOccurs="0" maxOccurs="unbounded">
@@ -1455,6 +1489,48 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-ReportingPeriodExt">
+    <xs:annotation>
+      <xs:documentation>The ActualExtension Domain Entity represents the sum of the financial transactions to date relating to a specific account.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="CalendarDateReference" type="CalendarDateReferenceType">
+            <xs:annotation>
+              <xs:documentation>The type of scheduled or unscheduled event for the day.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BeginDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>E3020. EndDate indicates the month, day, and year for the specified data element becomes false of the student, staff, program, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NumberDaysTaught" type="EXTENSION-NumberDaysTaught">
+            <xs:annotation>
+              <xs:documentation>E0935. NumberDaysTaught indicates the number of days of instruction offered, as shown on the school calendar, during a particular reporting period.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-RestraintEventExtension">
     <xs:annotation>
       <xs:documentation></xs:documentation>
@@ -1527,7 +1603,7 @@
               <xs:documentation>NSLPType with effective dates</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="CharterWaitlistSet" type="EXTENSION-CharterWaitlistSet" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="CharterWaitlistSet" type="EXTENSION-CharterWaitlistSet" minOccurs="0">
             <xs:annotation>
               <xs:documentation>CharterWaitlist with effective dates</xs:documentation>
             </xs:annotation>
@@ -1598,11 +1674,11 @@
               <xs:documentation>E0774. ActualAmount indicates the dollar value associated with actual financial account information.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+          <xs:element name="SSAFund" type="EXTENSION-SSAFundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-SSAFundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1633,14 +1709,6 @@
           <xs:element name="CalendarCode" type="EXTENSION-CalendarCode">
             <xs:annotation>
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
@@ -1707,6 +1775,14 @@
               <xs:documentation>E1527. LEAOfRDSPDService indicates the RDSPD Fiscal Agent district that provides the RDSPD service to a particular RDSPD student.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1734,14 +1810,6 @@
           <xs:element name="CalendarCode" type="EXTENSION-CalendarCode">
             <xs:annotation>
               <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Term" type="TermDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TermDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
@@ -1800,6 +1868,14 @@
           <xs:element name="RATotalEligResidentialFacilityDaysPresent" type="EXTENSION-RATotalEligResidentialFacilityDaysPresent" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1685. RATotalEligResidentialFacilityDaysPresent indicates the total number of days the student was remote asynchronous present and eligible for LEA services in a Residential Facility during a particular reporting period.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1907,7 +1983,7 @@
               <xs:documentation>StaffType with effective dates</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ParaprofessionalCertificationSet" type="EXTENSION-ParaprofessionalCertificationSet" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ParaprofessionalCertificationSet" type="EXTENSION-ParaprofessionalCertificationSet" minOccurs="0">
             <xs:annotation>
               <xs:documentation>ParaprofessionalCertification with effective dates</xs:documentation>
             </xs:annotation>
@@ -1944,9 +2020,12 @@
               <xs:documentation>E1563. IndividualGraduationCommitteeReview indicates whether an IGC has been established for a student regardless of which graduation program type is being pursued.  This is collected for students in grades 11 and 12.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="AssociateDegreeIndicator" type="xs:boolean" minOccurs="0">
+          <xs:element name="AssociateDegreeIndicator" type="EXTENSION-AssociateDegreeIndicatorDescriptorReferenceType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1596. AssociateDegreeIndicator indicates that the student earned an associate degree prior to graduation from high school. </xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-AssociateDegreeIndicatorDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="FHSPParticipant" type="xs:boolean" minOccurs="0">
@@ -2240,6 +2319,14 @@
               <xs:documentation>CommonType CrisisEvent indicates a state health or weather-related event that impacts a group of students, and may require additional funding, educational, or social services. The event may or may not cause the student to leave the district or campus of residence.  A crisis event is designated by the Commissioner of Education.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="NonEnrolledStudentUILActivity" type="EXTENSION-NonEnrolledStudentUILActivityDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>E1739. NonEnrolledStudentUILActivity indicates the University Interscholastic League (UIL) activity in which a non-enrolled student participated at a school district that allows participation of non-enrolled students under Section 33.0832.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-NonEnrolledStudentUILActivityDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2269,6 +2356,50 @@
   <xs:annotation>
     <xs:documentation>===== Descriptors =====</xs:documentation>
   </xs:annotation>
+  <xs:complexType name="EXTENSION-ActualFunctionDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C146A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ActualFundDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ActualObjectDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Object is populated from Code Table C159A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ActualProgramIntentDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-ADAEligibilityDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor ADAEligibility is populated from Code Table C059.</xs:documentation>
@@ -2346,6 +2477,17 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-AssociateDegreeIndicatorDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C235.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-AuxiliaryRoleIdDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor AuxiliaryRoleId is populated from code table C213.</xs:documentation>
@@ -2360,6 +2502,50 @@
   <xs:complexType name="EXTENSION-BilingualESLFundingDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor BilingualESLFunding is based on code table C225.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-BudgetFunctionDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C146B.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-BudgetFundDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145B.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-BudgetObjectDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Object is populated from Code Table C159B.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-BudgetProgramIntentDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147B.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -2393,6 +2579,17 @@
   <xs:complexType name="EXTENSION-ChildCountFundingDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor ChildCountFunding indicates under which federal program the student receiving special education and related services is counted. (C066)</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CIStaffProgramIntentDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147C.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -2786,6 +2983,17 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-NonEnrolledStudentUILActivityDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C234.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-NSLPTypeDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor NSLPType is populated from code table C212.</xs:documentation>
@@ -2822,6 +3030,50 @@
   <xs:complexType name="EXTENSION-PayrollActivityDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor PayrollActivity is populated from Code Table C018.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PayrollFunctionDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C146P.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PayrollFundDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145P.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PayrollObjectDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor Object is populated from Code Table C159P.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PayrollProgramIntentDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147P.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -2995,6 +3247,17 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-ReportingPeriodDescriptor">
+    <xs:annotation>
+      <xs:documentation>Descriptor ReportingPeriod is populated from Code Table C130.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-RestraintStaffTypeDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor RestraintStaffType indicates the kind of school staff person that performed a student restraint. (C194)</xs:documentation>
@@ -3006,9 +3269,9 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-ServiceIdDescriptor">
+  <xs:complexType name="EXTENSION-SharedServiceArrangementStaffDescriptor">
     <xs:annotation>
-      <xs:documentation>Descriptor ServiceId is populated from code table C022.</xs:documentation>
+      <xs:documentation>Descriptor SharedServiceArrangementStaff is populated from code table C169</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -3017,9 +3280,9 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-SharedServiceArrangementStaffDescriptor">
+  <xs:complexType name="EXTENSION-SSAFundDescriptor">
     <xs:annotation>
-      <xs:documentation>Descriptor SharedServiceArrangementStaff is populated from code table C169</xs:documentation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145S.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -3325,7 +3588,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="EXTENSION-StudentEducationOrganizationAssociationRestriction">
+      <xs:extension base="StudentEducationOrganizationAssociation">
         <xs:sequence>
           <xs:element name="EmergentBilingualSet" type="EXTENSION-EmergentBilingualSet" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
@@ -3350,11 +3613,6 @@
           <xs:element name="HomelessStatusSet" type="EXTENSION-HomelessStatusSet" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>HomelessStatus  with effective dates.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Language" type="EXTENSION-LanguageExtension" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>Language with effective dates.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="UnaccompaniedYouthSet" type="EXTENSION-UnaccompaniedYouthSet" minOccurs="0" maxOccurs="unbounded">
@@ -3397,205 +3655,8 @@
               <xs:documentation>DyslexiaServicesSet with effective dates.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="DyslexiaScreeningExceptionReasonSet" type="EXTENSION-DyslexiaScreeningExceptionReasonSet" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>DyslexiaScreeningExceptionReasonSet with effective dates.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
         </xs:sequence>
       </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentEducationOrganizationAssociationRestriction">
-    <xs:annotation>
-      <xs:documentation>Restriction to Student Education Organization Association for replacement of common type with common type extension</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:restriction base="StudentEducationOrganizationAssociation">
-        <xs:sequence>
-          <xs:element name="StudentReference" type="StudentReferenceType">
-            <xs:annotation>
-              <xs:documentation>A reference to the student.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
-            <xs:annotation>
-              <xs:documentation>A reference to the education organization representing the context of the student information.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="StudentIdentificationCode" type="StudentIdentificationCode" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Sex" type="SexDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The student's gender as last reported to the education organization.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>SexDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Address" type="Address" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The set of elements that describes an address, including the street address, city, state, and ZIP code.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="InternationalAddress" type="InternationalAddress" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The set of elements that describes an international address.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Telephone" type="Telephone" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The 10-digit telephone number, including the area code, for the person.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ElectronicMail" type="ElectronicMail" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ProfileThumbnail" type="ProfileThumbnail" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Locator reference for the student photo. The specification for that reference is left to local definition.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="HispanicLatinoEthnicity" type="xs:boolean" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, "Spanish origin," can be used in addition to "Hispanic or Latino."</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="OldEthnicity" type="OldEthnicityDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Previous definition of ethnicity combining Hispanic/Latino and race:
-                      1 - American Indian or Alaskan Native
-                      2 - Asian or Pacific Islander
-                      3 - Black, not of Hispanic origin
-                      4 - Hispanic
-                      5 - White, not of Hispanic origin.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>OldEthnicityDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Race" type="RaceDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies as last reported to the education organization. The data model allows for multiple entries so that each individual can specify all appropriate races.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>RaceDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TribalAffiliation" type="TribalAffiliationDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>An American Indian tribe with which the student is affiliated as last reported to the education organization.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>TribalAffiliationDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="StudentCharacteristic" type="StudentCharacteristic" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>Reflects important characteristics of a student. If a student has a characteristic present, that characteristic is considered true or active for that student. If a characteristic is not present, no assumption is made as to the applicability of the characteristic, but local policy may dictate otherwise.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="LimitedEnglishProficiency" type="LimitedEnglishProficiencyDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>LimitedEnglishProficiencyDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="Disability" type="Disability" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The disability condition(s) that best describes an individual's impairment, as determined by evaluation(s) conducted by the education organization.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="ProgramParticipation" type="ProgramParticipation" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>Key programs the student is participating in or receives services from.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CohortYear" type="CohortYear" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The type and year of a cohort (e.g., 9th grade) the student belongs to as determined by the year that student entered a specific grade.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="StudentIndicator" type="StudentIndicator" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>An indicator or metric computed for the student (e.g., at risk).</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="LoginId" type="IdentificationCode" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The login ID for the user; used for security access control interface.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="AncestryEthnicOrigin" type="AncestryEthnicOriginDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>The original peoples or cultures with which the individual identifies.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>AncestryEthnicOriginDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="PrimaryLearningDeviceAwayFromSchool" type="PrimaryLearningDeviceAwayFromSchoolDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The type of device the student uses most often to complete learning activities away from school.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>PrimaryLearningDeviceAwayFromSchoolDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="PrimaryLearningDeviceAccess" type="PrimaryLearningDeviceAccessDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>An indication of whether the primary learning device is shared or not shared with another individual.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>PrimaryLearningDeviceAccessDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="PrimaryLearningDeviceProvider" type="PrimaryLearningDeviceProviderDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The provider of the primary learning device.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>PrimaryLearningDeviceProviderDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="InternetAccessInResidence" type="xs:boolean" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>An indication of whether the student is able to access the internet in their primary place of residence.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="BarrierToInternetAccessInResidence" type="BarrierToInternetAccessInResidenceDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>An indication of the barrier to having internet access in the student’s primary place of residence.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>BarrierToInternetAccessInResidenceDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="InternetAccessTypeInResidence" type="InternetAccessTypeInResidenceDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The primary type of internet service used in the student’s primary place of residence.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>InternetAccessTypeInResidenceDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="InternetPerformanceInResidence" type="InternetPerformanceInResidenceDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>InternetPerformanceInResidenceDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="EXTENSION-StudentLanguageInstructionProgramAssociationExtension">
@@ -3661,6 +3722,16 @@
               <xs:appinfo>
                 <ann:Descriptor>EXTENSION-EnrollmentTrackingVerificationDescriptor</ann:Descriptor>
               </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CampusIdOfResidence" type="EXTENSION-CampusIdOfResidence" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>E0903. CampusIdOfResidence indicates the unique campus identification number corresponding to the campus attendance area in which the student currently resides.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CampusIdOfAccountability" type="EXTENSION-CampusIdOfAccountability" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>E1027. CampusIdOfAccountability indicates the unique campus identification number to which a student’s attendance and/or leaver accountability data are attributed for campus accountability purposes.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -3990,27 +4061,27 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+      <xs:element name="ActualFund" type="EXTENSION-ActualFundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ActualFundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
+      <xs:element name="ActualFunction" type="EXTENSION-ActualFunctionDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ActualFunctionDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
+      <xs:element name="ActualObject" type="EXTENSION-ActualObjectDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ActualObjectDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4019,12 +4090,17 @@
           <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+      <xs:element name="ActualProgramIntent" type="EXTENSION-ActualProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ActualProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -4071,19 +4147,19 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks)</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4131,14 +4207,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -4152,6 +4220,14 @@
           <xs:documentation>E1651, C225. BilingualESLFunding indicates the language program in which the student participates during the reporting period.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-BilingualESLFundingDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4194,27 +4270,27 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+      <xs:element name="BudgetFund" type="EXTENSION-BudgetFundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-BudgetFundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
+      <xs:element name="BudgetFunction" type="EXTENSION-BudgetFunctionDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-BudgetFunctionDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
+      <xs:element name="BudgetObject" type="EXTENSION-BudgetObjectDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-BudgetObjectDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4223,12 +4299,17 @@
           <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+      <xs:element name="BudgetProgramIntent" type="EXTENSION-BudgetProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-BudgetProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -4270,11 +4351,11 @@
           <xs:documentation>E0266. The School denotes the campus with which the contracted staff is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+      <xs:element name="CIStaffProgramIntent" type="EXTENSION-CIStaffProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-CIStaffProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4322,14 +4403,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -4343,6 +4416,14 @@
           <xs:documentation>E3013, C330. CTEServiceID refers to the approved career and technical education course that generates countact hours during a particular reporting period.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-CTEServiceIdDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4499,14 +4580,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -4528,6 +4601,14 @@
           <xs:documentation>E1651, C225. BilingualESLFunding indicates the language program in which the student participates during the reporting period.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-BilingualESLFundingDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4575,14 +4656,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -4596,6 +4669,14 @@
           <xs:documentation>E1045, C177. FlexAttendanceProgram indicates the unique type of flexible attendance program to which the student’s flexible attendance is related.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-FlexAttendanceProgramDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4643,14 +4724,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -4664,6 +4737,14 @@
           <xs:documentation>E1045, C177. FlexAttendanceProgram indicates the unique type of flexible attendance program to which the student’s flexible attendance is related.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-FlexAttendanceProgramDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4711,14 +4792,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -4740,6 +4813,14 @@
           <xs:documentation>E0173, C035. InstructionalSetting identifies the setting used in providing instruction to students.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-InstructionalSettingDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4787,27 +4868,27 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 1993-94 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+      <xs:element name="PayrollFund" type="EXTENSION-PayrollFundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund for payroll data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-PayrollFundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
+      <xs:element name="PayrollFunction" type="EXTENSION-PayrollFunctionDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-PayrollFunctionDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
+      <xs:element name="PayrollObject" type="EXTENSION-PayrollObjectDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-PayrollObjectDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4816,11 +4897,11 @@
           <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
+      <xs:element name="PayrollProgramIntent" type="EXTENSION-PayrollProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-PayrollProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4970,6 +5051,43 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-ReportingPeriodExtIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a ReportingPeriodExt.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ReportingPeriodExtReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a ReportingPeriodExt. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="ReportingPeriodExtIdentity" type="EXTENSION-ReportingPeriodExtIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a ReportingPeriodExt.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-SharedServiceArrangementExtIdentityType">
     <xs:annotation>
       <xs:documentation>Identity of a SharedServiceArrangementExt.</xs:documentation>
@@ -5001,11 +5119,11 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 2013-14 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
+      <xs:element name="SSAFund" type="EXTENSION-SSAFundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-SSAFundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -5053,14 +5171,6 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
@@ -5082,6 +5192,14 @@
           <xs:documentation>E0833. RegionalDaySchoolProgramForDeaf indicates the student is receiving instructional servies from the regional day school program for the deaf.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>EXTENSION-RegionalDaySchoolProgramForDeafDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -5129,19 +5247,19 @@
           <xs:documentation>E0975. CalendarCode indicates a unique campus calendar of school days for a particular group of students on a campus. Students with the same instructional track have the same number of days taught in a particular reporting period at a campus.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Term" type="TermDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E0934, C345. Term defines the term of a session during the school year (e.g., First Six Weeks).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>TermDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0017, C050. GradeLevel indicates the current grade level of the student.</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingPeriod" type="EXTENSION-ReportingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>E0934, C130. ReportingPeriod indicates the period for which the attendance data are being reported.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingPeriodDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -5304,6 +5422,42 @@
   <xs:annotation>
     <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
   </xs:annotation>
+  <xs:simpleType name="EXTENSION-ActualFunctionDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C146A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ActualFundDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ActualObjectDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Object is populated from Code Table C159A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ActualProgramIntentDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147A.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-ADAEligibilityDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor ADAEligibility is populated from Code Table C059.</xs:documentation>
@@ -5367,6 +5521,15 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-AssociateDegreeIndicatorDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C235.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-AuxiliaryRoleIdDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor AuxiliaryRoleId is populated from code table C213.</xs:documentation>
@@ -5379,6 +5542,42 @@
   <xs:simpleType name="EXTENSION-BilingualESLFundingDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor BilingualESLFunding is based on code table C225.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-BudgetFunctionDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C146B.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-BudgetFundDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145B.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-BudgetObjectDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Object is populated from Code Table C159B.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-BudgetProgramIntentDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147B.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -5406,6 +5605,15 @@
   <xs:simpleType name="EXTENSION-ChildCountFundingDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor ChildCountFunding indicates under which federal program the student receiving special education and related services is counted. (C066)</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CIStaffProgramIntentDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147C.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -5727,6 +5935,15 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NonEnrolledStudentUILActivityDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C234.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-NSLPTypeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor NSLPType is populated from code table C212.</xs:documentation>
@@ -5757,6 +5974,42 @@
   <xs:simpleType name="EXTENSION-PayrollActivityDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor PayrollActivity is populated from Code Table C018.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PayrollFunctionDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Function is populated from Code Table C146P.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PayrollFundDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145P.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PayrollObjectDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor Object is populated from Code Table C159P.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PayrollProgramIntentDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147P.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -5898,6 +6151,15 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ReportingPeriodDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Descriptor ReportingPeriod is populated from Code Table C130.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-RestraintStaffTypeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor RestraintStaffType indicates the kind of school staff person that performed a student restraint. (C194)</xs:documentation>
@@ -5907,18 +6169,18 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-ServiceIdDescriptorReferenceType">
+  <xs:simpleType name="EXTENSION-SharedServiceArrangementStaffDescriptorReferenceType">
     <xs:annotation>
-      <xs:documentation>Descriptor ServiceId is populated from code table C022.</xs:documentation>
+      <xs:documentation>Descriptor SharedServiceArrangementStaff is populated from code table C169</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-SharedServiceArrangementStaffDescriptorReferenceType">
+  <xs:simpleType name="EXTENSION-SSAFundDescriptorReferenceType">
     <xs:annotation>
-      <xs:documentation>Descriptor SharedServiceArrangementStaff is populated from code table C169</xs:documentation>
+      <xs:documentation>Descriptor Fund is populated from Code Table C145S.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -6132,16 +6394,6 @@
           <xs:documentation>E1676. CharterAdmissionWaitlist indicates whether the charter school campus uses a waitlist for admission.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="BeginDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>Begin date of the effecive date for the CharterWaitlistSet</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="EndDate" type="xs:date" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>End date of the effecive date for the CharterWaitlistSet</xs:documentation>
-        </xs:annotation>
-      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="EXTENSION-CrisisEventSet">
@@ -6227,7 +6479,7 @@
     <xs:complexContent>
       <xs:extension base="Disability">
         <xs:sequence>
-          <xs:element name="DisabilitySet" type="EXTENSION-DisabilitySet" minOccurs="0">
+          <xs:element name="DisabilitySet" type="EXTENSION-DisabilitySet" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>DisabilitySet</xs:documentation>
             </xs:annotation>
@@ -6453,16 +6705,6 @@
       <xs:element name="ELOActivitySet" type="EXTENSION-ELOActivitySet" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>Collection of SchoolELOActivity. For each expanded learning opportunity offered by a school, more than one ELO activity can be reported.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="BeginDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>Begin date of the effecive date for the ELOSet</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="EndDate" type="xs:date" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>End date of the effecive date for the ELOSet</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -6756,53 +6998,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-LanguageExtension">
-    <xs:annotation>
-      <xs:documentation></xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Common</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Language">
-        <xs:sequence>
-          <xs:element name="LanguageSet" type="EXTENSION-LanguageSet" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>LanguageSet being used</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-LanguageSet">
-    <xs:annotation>
-      <xs:documentation>LanguageSet</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Common</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="LanguageUse" type="LanguageUseDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>E3035, C336. A description of how the language is used (e.g. Home Language, Native Language, Spoken Language).</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>LanguageUseDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="BeginDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>Begin date of the effecive date for the Language</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="EndDate" type="xs:date" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>End date of the effecive date for the Language</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-MilitaryConnectedStudentSet">
     <xs:annotation>
       <xs:documentation>Common type MilitaryConnectedStudent indicates a student enrolled in a school district or open-enrollment charter school who is a dependent of a member of the United States military service in the Army, Navy, Air Force, Marine Corps, or Coast Guard on active duty, the Texas National Guard, or a reserve force of the United States military.</xs:documentation>
@@ -7065,7 +7260,7 @@
           <xs:documentation>The month, day, and year for the end of the period.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ChildCareOperationNumber" type="EXTENSION-ChildCareOperationNumber" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ChildCareOperationNumber" type="EXTENSION-ChildCareOperationNumber" minOccurs="0">
         <xs:annotation>
           <xs:documentation>E1726. ChildCareOperationNumber identifies the childcare facility operation number assigned by the Child Care Regulation (CCR) department. The facility serves students who are dually enrolled in the Local Education Agency's public prekindergarten course section and childcare program.</xs:documentation>
         </xs:annotation>
@@ -7104,7 +7299,7 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="MonthlyMinutes" type="EXTENSION-MonthlyMinutes">
+      <xs:element name="MonthlyMinutes" type="EXTENSION-MonthlyMinutes" minOccurs="0">
         <xs:annotation>
           <xs:documentation>E1057. MonthlyMinutes is the total number of minutes devoted to a particular service in a standard month. A standard month is considered to be the four weeks in October including the PEIMS Fall snapshot date (last Friday in October).</xs:documentation>
         </xs:annotation>
@@ -7117,6 +7312,11 @@
       <xs:element name="StaffServiceEndDate" type="xs:date" minOccurs="0">
         <xs:annotation>
           <xs:documentation>E3061. StaffServiceEndDate indicates the month, day, and year for when the services supplied by the staff becomes false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfStudentsInClass" type="EXTENSION-NumberOfStudentsInClass" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -7577,9 +7777,11 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:int">
+    <xs:restriction base="xs:decimal">
       <xs:minInclusive value="-9999999999" />
       <xs:maxInclusive value="9999999999" />
+      <xs:totalDigits value="10" />
+      <xs:fractionDigits value="0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-ActualLengthOfDisciplinaryAssignment">
@@ -7613,9 +7815,23 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:int">
+    <xs:restriction base="xs:decimal">
       <xs:minInclusive value="-9999999999" />
       <xs:maxInclusive value="9999999999" />
+      <xs:totalDigits value="10" />
+      <xs:fractionDigits value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CampusIdOfAccountability">
+    <xs:annotation>
+      <xs:documentation>E1027. CampusIdOfAccountability indicates the unique campus identification number to which a student’s attendance and/or leaver accountability data are attributed for campus accountability purposes.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="9" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-CampusIdOfEnrollmentSchoolDayLength">
@@ -7628,6 +7844,18 @@
     <xs:restriction base="xs:int">
       <xs:minInclusive value="0" />
       <xs:maxInclusive value="600" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CampusIdOfResidence">
+    <xs:annotation>
+      <xs:documentation>E0903. CampusIdOfResidence indicates the unique campus identification number corresponding to the campus attendance area in which the student currently resides.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="9" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-CharterEducationalEnrollmentCapacity">
@@ -8130,6 +8358,18 @@
     <xs:restriction base="xs:int">
       <xs:minInclusive value="0" />
       <xs:maxInclusive value="999" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NumberOfStudentsInClass">
+    <xs:annotation>
+      <xs:documentation>E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="3" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-NumberOtherStudentsAssignedSameSurrogateParent">

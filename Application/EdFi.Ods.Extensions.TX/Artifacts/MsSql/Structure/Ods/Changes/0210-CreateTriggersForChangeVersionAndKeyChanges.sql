@@ -206,6 +206,19 @@ BEGIN
 END	
 GO
 
+DROP TRIGGER IF EXISTS [tx].[tx_ReportingPeriodExt_TR_UpdateChangeVersion]
+GO
+
+CREATE TRIGGER [tx].[tx_ReportingPeriodExt_TR_UpdateChangeVersion] ON [tx].[ReportingPeriodExt] AFTER UPDATE AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [tx].[ReportingPeriodExt]
+    SET ChangeVersion = (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM [tx].[ReportingPeriodExt] u
+    WHERE EXISTS (SELECT 1 FROM inserted i WHERE i.id = u.id);
+END	
+GO
+
 DROP TRIGGER IF EXISTS [tx].[tx_SharedServiceArrangementExt_TR_UpdateChangeVersion]
 GO
 

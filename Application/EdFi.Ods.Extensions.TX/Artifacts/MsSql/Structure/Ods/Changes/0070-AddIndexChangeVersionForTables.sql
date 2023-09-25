@@ -95,6 +95,12 @@ BEGIN TRANSACTION
 COMMIT
 
 BEGIN TRANSACTION
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'tx.ReportingPeriodExt') AND name = N'UX_ReportingPeriodExt_ChangeVersion')
+    CREATE INDEX [UX_ReportingPeriodExt_ChangeVersion] ON [tx].[ReportingPeriodExt] ([ChangeVersion] ASC)
+    GO
+COMMIT
+
+BEGIN TRANSACTION
     IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'tx.SSAOrgAssociationExt') AND name = N'UX_SSAOrgAssociationExt_ChangeVersion')
     CREATE INDEX [UX_SSAOrgAssociationExt_ChangeVersion] ON [tx].[SSAOrgAssociationExt] ([ChangeVersion] ASC)
     GO

@@ -30,6 +30,8 @@ ALTER TABLE [tx].[PriorYearLeaverParent] ADD [CreatedByOwnershipTokenId] SMALLIN
 
 ALTER TABLE [tx].[PriorYearLeaverStudentParentAssociation] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
+ALTER TABLE [tx].[ReportingPeriodExt] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
+
 ALTER TABLE [tx].[SharedServiceArrangementExt] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
 ALTER TABLE [tx].[SpecialEducationProgramReportingPeriodAttendance] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;

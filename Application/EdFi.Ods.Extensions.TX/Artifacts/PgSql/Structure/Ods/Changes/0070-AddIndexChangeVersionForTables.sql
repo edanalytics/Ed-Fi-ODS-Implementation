@@ -30,6 +30,8 @@ CREATE INDEX IF NOT EXISTS UX_09795e_ChangeVersion ON tx.PriorYearLeaverParent(C
 
 CREATE INDEX IF NOT EXISTS UX_88af9a_ChangeVersion ON tx.PriorYearLeaverStudentParentAssociation(ChangeVersion);
 
+CREATE INDEX IF NOT EXISTS UX_f0bf2c_ChangeVersion ON tx.ReportingPeriodExt(ChangeVersion);
+
 CREATE INDEX IF NOT EXISTS UX_67e71e_ChangeVersion ON tx.SSAOrgAssociationExt(ChangeVersion);
 
 CREATE INDEX IF NOT EXISTS UX_0acbb2_ChangeVersion ON tx.SharedServiceArrangementExt(ChangeVersion);

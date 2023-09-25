@@ -128,6 +128,14 @@ ALTER TABLE [tx].[PriorYearLeaverStudentParentAssociation] ADD CONSTRAINT PriorY
 END
 
 
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[tx].[ReportingPeriodExt]') AND name = 'ChangeVersion')
+BEGIN
+ALTER TABLE [tx].[ReportingPeriodExt] ADD [ChangeVersion] [BIGINT] CONSTRAINT ReportingPeriodExt_DF_ChangeVersion DEFAULT (0) NOT NULL;
+ALTER TABLE [tx].[ReportingPeriodExt] DROP CONSTRAINT ReportingPeriodExt_DF_ChangeVersion;
+ALTER TABLE [tx].[ReportingPeriodExt] ADD CONSTRAINT ReportingPeriodExt_DF_ChangeVersion DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) For [ChangeVersion];
+END
+
+
 IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[tx].[SSAOrgAssociationExt]') AND name = 'ChangeVersion')
 BEGIN
 ALTER TABLE [tx].[SSAOrgAssociationExt] ADD [ChangeVersion] [BIGINT] CONSTRAINT SSAOrgAssociationExt_DF_ChangeVersion DEFAULT (0) NOT NULL;

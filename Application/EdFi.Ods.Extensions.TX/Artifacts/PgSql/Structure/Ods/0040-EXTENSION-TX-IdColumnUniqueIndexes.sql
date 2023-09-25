@@ -30,6 +30,8 @@ CREATE UNIQUE INDEX IF NOT EXISTS UX_09795e_Id ON tx.PriorYearLeaverParent(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_88af9a_Id ON tx.PriorYearLeaverStudentParentAssociation(Id);
 
+CREATE UNIQUE INDEX IF NOT EXISTS UX_f0bf2c_Id ON tx.ReportingPeriodExt(Id);
+
 CREATE UNIQUE INDEX IF NOT EXISTS UX_0acbb2_Id ON tx.SharedServiceArrangementExt(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_aae1c0_Id ON tx.SpecialEducationProgramReportingPeriodAttendance(Id);

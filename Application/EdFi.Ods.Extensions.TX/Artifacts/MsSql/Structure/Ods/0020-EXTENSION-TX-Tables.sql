@@ -1,25 +1,28 @@
 -- Table [tx].[ActualExt] --
 CREATE TABLE [tx].[ActualExt] (
+    [ActualFunctionDescriptorId] [INT] NOT NULL,
+    [ActualFundDescriptorId] [INT] NOT NULL,
+    [ActualObjectDescriptorId] [INT] NOT NULL,
+    [ActualProgramIntentDescriptorId] [INT] NOT NULL,
+    [BeginDate] [DATE] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [INT] NOT NULL,
-    [FunctionDescriptorId] [INT] NOT NULL,
-    [FundDescriptorId] [INT] NOT NULL,
-    [ObjectDescriptorId] [INT] NOT NULL,
     [Organization] [INT] NOT NULL,
-    [ProgramIntentDescriptorId] [INT] NOT NULL,
-    [ActualAmount] [INT] NOT NULL,
+    [ActualAmount] [DECIMAL](10, 0) NOT NULL,
+    [EndDate] [DATE] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [ActualExt_PK] PRIMARY KEY CLUSTERED (
+        [ActualFunctionDescriptorId] ASC,
+        [ActualFundDescriptorId] ASC,
+        [ActualObjectDescriptorId] ASC,
+        [ActualProgramIntentDescriptorId] ASC,
+        [BeginDate] ASC,
         [EducationOrganizationId] ASC,
         [FiscalYear] ASC,
-        [FunctionDescriptorId] ASC,
-        [FundDescriptorId] ASC,
-        [ObjectDescriptorId] ASC,
-        [Organization] ASC,
-        [ProgramIntentDescriptorId] ASC
+        [Organization] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -28,6 +31,42 @@ GO
 ALTER TABLE [tx].[ActualExt] ADD CONSTRAINT [ActualExt_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
 ALTER TABLE [tx].[ActualExt] ADD CONSTRAINT [ActualExt_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [tx].[ActualFunctionDescriptor] --
+CREATE TABLE [tx].[ActualFunctionDescriptor] (
+    [ActualFunctionDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [ActualFunctionDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [ActualFunctionDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[ActualFundDescriptor] --
+CREATE TABLE [tx].[ActualFundDescriptor] (
+    [ActualFundDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [ActualFundDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [ActualFundDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[ActualObjectDescriptor] --
+CREATE TABLE [tx].[ActualObjectDescriptor] (
+    [ActualObjectDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [ActualObjectDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [ActualObjectDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[ActualProgramIntentDescriptor] --
+CREATE TABLE [tx].[ActualProgramIntentDescriptor] (
+    [ActualProgramIntentDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [ActualProgramIntentDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [ActualProgramIntentDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
 -- Table [tx].[ADAEligibilityDescriptor] --
@@ -109,6 +148,15 @@ CREATE TABLE [tx].[AssessmentResultsObtainedDescriptor] (
 ) ON [PRIMARY]
 GO
 
+-- Table [tx].[AssociateDegreeIndicatorDescriptor] --
+CREATE TABLE [tx].[AssociateDegreeIndicatorDescriptor] (
+    [AssociateDegreeIndicatorDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [AssociateDegreeIndicatorDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [AssociateDegreeIndicatorDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [tx].[AuxiliaryRoleIdDescriptor] --
 CREATE TABLE [tx].[AuxiliaryRoleIdDescriptor] (
     [AuxiliaryRoleIdDescriptorId] [INT] NOT NULL,
@@ -122,9 +170,9 @@ GO
 CREATE TABLE [tx].[BasicReportingPeriodAttendance] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [TotalDaysAbsent] [DECIMAL](4, 1) NOT NULL,
     [TotalIneligibleDaysPresent] [DECIMAL](4, 1) NULL,
@@ -138,9 +186,9 @@ CREATE TABLE [tx].[BasicReportingPeriodAttendance] (
     CONSTRAINT [BasicReportingPeriodAttendance_PK] PRIMARY KEY CLUSTERED (
         [CalendarCode] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -165,9 +213,9 @@ CREATE TABLE [tx].[BilingualESLProgramReportingPeriodAttendance] (
     [BilingualESLFundingDescriptorId] [INT] NOT NULL,
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [TotalEligBilingualESLDaysPresent] [DECIMAL](4, 1) NULL,
     [RSTotalEligBilingualESLDaysPresent] [DECIMAL](4, 1) NULL,
@@ -180,9 +228,9 @@ CREATE TABLE [tx].[BilingualESLProgramReportingPeriodAttendance] (
         [BilingualESLFundingDescriptorId] ASC,
         [CalendarCode] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -195,26 +243,29 @@ GO
 
 -- Table [tx].[BudgetExt] --
 CREATE TABLE [tx].[BudgetExt] (
+    [BeginDate] [DATE] NOT NULL,
+    [BudgetFunctionDescriptorId] [INT] NOT NULL,
+    [BudgetFundDescriptorId] [INT] NOT NULL,
+    [BudgetObjectDescriptorId] [INT] NOT NULL,
+    [BudgetProgramIntentDescriptorId] [INT] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [INT] NOT NULL,
-    [FunctionDescriptorId] [INT] NOT NULL,
-    [FundDescriptorId] [INT] NOT NULL,
-    [ObjectDescriptorId] [INT] NOT NULL,
     [Organization] [INT] NOT NULL,
-    [ProgramIntentDescriptorId] [INT] NOT NULL,
-    [BudgetAmount] [INT] NOT NULL,
+    [BudgetAmount] [DECIMAL](10, 0) NOT NULL,
+    [EndDate] [DATE] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [BudgetExt_PK] PRIMARY KEY CLUSTERED (
+        [BeginDate] ASC,
+        [BudgetFunctionDescriptorId] ASC,
+        [BudgetFundDescriptorId] ASC,
+        [BudgetObjectDescriptorId] ASC,
+        [BudgetProgramIntentDescriptorId] ASC,
         [EducationOrganizationId] ASC,
         [FiscalYear] ASC,
-        [FunctionDescriptorId] ASC,
-        [FundDescriptorId] ASC,
-        [ObjectDescriptorId] ASC,
-        [Organization] ASC,
-        [ProgramIntentDescriptorId] ASC
+        [Organization] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -223,6 +274,42 @@ GO
 ALTER TABLE [tx].[BudgetExt] ADD CONSTRAINT [BudgetExt_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
 ALTER TABLE [tx].[BudgetExt] ADD CONSTRAINT [BudgetExt_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [tx].[BudgetFunctionDescriptor] --
+CREATE TABLE [tx].[BudgetFunctionDescriptor] (
+    [BudgetFunctionDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [BudgetFunctionDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [BudgetFunctionDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[BudgetFundDescriptor] --
+CREATE TABLE [tx].[BudgetFundDescriptor] (
+    [BudgetFundDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [BudgetFundDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [BudgetFundDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[BudgetObjectDescriptor] --
+CREATE TABLE [tx].[BudgetObjectDescriptor] (
+    [BudgetObjectDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [BudgetObjectDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [BudgetObjectDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[BudgetProgramIntentDescriptor] --
+CREATE TABLE [tx].[BudgetProgramIntentDescriptor] (
+    [BudgetProgramIntentDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [BudgetProgramIntentDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [BudgetProgramIntentDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
 -- Table [tx].[CalendarDateExtension] --
@@ -274,6 +361,15 @@ CREATE TABLE [tx].[ChildCountFundingDescriptor] (
 ) ON [PRIMARY]
 GO
 
+-- Table [tx].[CIStaffProgramIntentDescriptor] --
+CREATE TABLE [tx].[CIStaffProgramIntentDescriptor] (
+    [CIStaffProgramIntentDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [CIStaffProgramIntentDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [CIStaffProgramIntentDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [tx].[ClassTypeDescriptor] --
 CREATE TABLE [tx].[ClassTypeDescriptor] (
     [ClassTypeDescriptorId] [INT] NOT NULL,
@@ -285,8 +381,8 @@ GO
 
 -- Table [tx].[ContractedInstructionalStaffFTEExt] --
 CREATE TABLE [tx].[ContractedInstructionalStaffFTEExt] (
+    [CIStaffProgramIntentDescriptorId] [INT] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [ProgramIntentDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [TotalContractedInstrStaffFTE] [DECIMAL](5, 2) NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
@@ -294,8 +390,8 @@ CREATE TABLE [tx].[ContractedInstructionalStaffFTEExt] (
     [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [ContractedInstructionalStaffFTEExt_PK] PRIMARY KEY CLUSTERED (
+        [CIStaffProgramIntentDescriptorId] ASC,
         [EducationOrganizationId] ASC,
-        [ProgramIntentDescriptorId] ASC,
         [SchoolId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -357,9 +453,9 @@ CREATE TABLE [tx].[CTEProgramReportingPeriodAttendance] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [CTEServiceIdDescriptorId] [INT] NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [EligibleDaysPresentV1] [DECIMAL](4, 1) NULL,
     [RSEligibleDaysPresentV1] [DECIMAL](4, 1) NULL,
@@ -378,9 +474,9 @@ CREATE TABLE [tx].[CTEProgramReportingPeriodAttendance] (
         [CalendarCode] ASC,
         [CTEServiceIdDescriptorId] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -636,9 +732,9 @@ CREATE TABLE [tx].[FlexibleBilingualESLProgramReportingPeriodAttendance] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [FlexAttendanceProgramDescriptorId] [INT] NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [FlexTotalEligBilingualESLDaysPresent] [DECIMAL](4, 1) NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
@@ -650,9 +746,9 @@ CREATE TABLE [tx].[FlexibleBilingualESLProgramReportingPeriodAttendance] (
         [CalendarCode] ASC,
         [FlexAttendanceProgramDescriptorId] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -668,9 +764,9 @@ CREATE TABLE [tx].[FlexibleCTEProgramReportingPeriodAttendance] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [FlexAttendanceProgramDescriptorId] [INT] NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [FlexAttendTotalCareerTechMinutesPresent] [INT] NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
@@ -681,9 +777,9 @@ CREATE TABLE [tx].[FlexibleCTEProgramReportingPeriodAttendance] (
         [CalendarCode] ASC,
         [FlexAttendanceProgramDescriptorId] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -699,9 +795,9 @@ CREATE TABLE [tx].[FlexibleRegularProgramReportingPeriodAttendance] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [FlexAttendanceProgramDescriptorId] [INT] NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [FlexAttendTotalEligibleMinutesPresent] [INT] NOT NULL,
     [FlexAttendTotalIneligibleMinutesPresent] [INT] NOT NULL,
@@ -716,9 +812,9 @@ CREATE TABLE [tx].[FlexibleRegularProgramReportingPeriodAttendance] (
         [CalendarCode] ASC,
         [FlexAttendanceProgramDescriptorId] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -735,9 +831,9 @@ CREATE TABLE [tx].[FlexibleSpecialEducationProgramReportingPeriodAttendance] (
     [FlexAttendanceProgramDescriptorId] [INT] NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
     [InstructionalSettingDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [FlexAttendDaysEligibleInInstrSetting] [DECIMAL](4, 1) NOT NULL,
     [FlexAttendExcessMinutesInInstrSetting] [INT] NOT NULL,
@@ -750,9 +846,9 @@ CREATE TABLE [tx].[FlexibleSpecialEducationProgramReportingPeriodAttendance] (
         [FlexAttendanceProgramDescriptorId] ASC,
         [GradeLevelDescriptorId] ASC,
         [InstructionalSettingDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -952,6 +1048,15 @@ CREATE TABLE [tx].[NonCampusBasedInstructionDescriptor] (
 ) ON [PRIMARY]
 GO
 
+-- Table [tx].[NonEnrolledStudentUILActivityDescriptor] --
+CREATE TABLE [tx].[NonEnrolledStudentUILActivityDescriptor] (
+    [NonEnrolledStudentUILActivityDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [NonEnrolledStudentUILActivityDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [NonEnrolledStudentUILActivityDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [tx].[NSLPTypeDescriptor] --
 CREATE TABLE [tx].[NSLPTypeDescriptor] (
     [NSLPTypeDescriptorId] [INT] NOT NULL,
@@ -1006,12 +1111,12 @@ CREATE TABLE [tx].[PayrollExt] (
     [BeginDate] [DATE] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [INT] NOT NULL,
-    [FunctionDescriptorId] [INT] NOT NULL,
-    [FundDescriptorId] [INT] NOT NULL,
-    [ObjectDescriptorId] [INT] NOT NULL,
     [Organization] [INT] NOT NULL,
     [PayrollActivityDescriptorId] [INT] NOT NULL,
-    [ProgramIntentDescriptorId] [INT] NOT NULL,
+    [PayrollFunctionDescriptorId] [INT] NOT NULL,
+    [PayrollFundDescriptorId] [INT] NOT NULL,
+    [PayrollObjectDescriptorId] [INT] NOT NULL,
+    [PayrollProgramIntentDescriptorId] [INT] NOT NULL,
     [StaffUSI] [INT] NOT NULL,
     [PayrollAmount] [INT] NOT NULL,
     [EndDate] [DATE] NULL,
@@ -1023,12 +1128,12 @@ CREATE TABLE [tx].[PayrollExt] (
         [BeginDate] ASC,
         [EducationOrganizationId] ASC,
         [FiscalYear] ASC,
-        [FunctionDescriptorId] ASC,
-        [FundDescriptorId] ASC,
-        [ObjectDescriptorId] ASC,
         [Organization] ASC,
         [PayrollActivityDescriptorId] ASC,
-        [ProgramIntentDescriptorId] ASC,
+        [PayrollFunctionDescriptorId] ASC,
+        [PayrollFundDescriptorId] ASC,
+        [PayrollObjectDescriptorId] ASC,
+        [PayrollProgramIntentDescriptorId] ASC,
         [StaffUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -1038,6 +1143,42 @@ GO
 ALTER TABLE [tx].[PayrollExt] ADD CONSTRAINT [PayrollExt_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
 ALTER TABLE [tx].[PayrollExt] ADD CONSTRAINT [PayrollExt_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [tx].[PayrollFunctionDescriptor] --
+CREATE TABLE [tx].[PayrollFunctionDescriptor] (
+    [PayrollFunctionDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [PayrollFunctionDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [PayrollFunctionDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[PayrollFundDescriptor] --
+CREATE TABLE [tx].[PayrollFundDescriptor] (
+    [PayrollFundDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [PayrollFundDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [PayrollFundDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[PayrollObjectDescriptor] --
+CREATE TABLE [tx].[PayrollObjectDescriptor] (
+    [PayrollObjectDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [PayrollObjectDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [PayrollObjectDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[PayrollProgramIntentDescriptor] --
+CREATE TABLE [tx].[PayrollProgramIntentDescriptor] (
+    [PayrollProgramIntentDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [PayrollProgramIntentDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [PayrollProgramIntentDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
 -- Table [tx].[PKCurriculaDescriptor] --
@@ -1151,7 +1292,7 @@ CREATE TABLE [tx].[PriorYearLeaver] (
     [GenerationCodeDescriptorId] [INT] NULL,
     [SexDescriptorId] [INT] NULL,
     [HispanicLatinoEthnicity] [BIT] NULL,
-    [AssociateDegreeIndicator] [BIT] NULL,
+    [AssociateDegreeIndicatorDescriptorId] [INT] NULL,
     [FinancialAidApplicationDescriptorId] [INT] NULL,
     [AsOfStatusLastFridayOctoberDescriptorId] [INT] NOT NULL,
     [ParentalPermissionDescriptorId] [INT] NULL,
@@ -1177,6 +1318,8 @@ CREATE TABLE [tx].[PriorYearLeaver] (
     [DateEnteredUS] [DATE] NULL,
     [MultipleBirthStatus] [BIT] NULL,
     [BirthSexDescriptorId] [INT] NULL,
+    [LanguageDescriptorId] [INT] NULL,
+    [LanguageUseDescriptorId] [INT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
@@ -1301,55 +1444,22 @@ CREATE TABLE [tx].[PriorYearLeaverIndustryBasedCertificationSet] (
     [DateCertTaken] [DATE] NOT NULL,
     [IBCVendorDescriptorId] [INT] NOT NULL,
     [PostSecondaryCertificationLicensureDescriptorId] [INT] NOT NULL,
+    [PostSecondaryCertLicensureResultDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUId] [NVARCHAR](32) NOT NULL,
-    [PostSecondaryCertLicensureResultDescriptorId] [INT] NOT NULL,
     [IBCExamFeeAmount] [DECIMAL](5, 2) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [PriorYearLeaverIndustryBasedCertificationSet_PK] PRIMARY KEY CLUSTERED (
         [DateCertTaken] ASC,
         [IBCVendorDescriptorId] ASC,
         [PostSecondaryCertificationLicensureDescriptorId] ASC,
+        [PostSecondaryCertLicensureResultDescriptorId] ASC,
         [SchoolId] ASC,
         [StudentUId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [tx].[PriorYearLeaverIndustryBasedCertificationSet] ADD CONSTRAINT [PriorYearLeaverIndustryBasedCertificationSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [tx].[PriorYearLeaverLanguage] --
-CREATE TABLE [tx].[PriorYearLeaverLanguage] (
-    [LanguageDescriptorId] [INT] NOT NULL,
-    [SchoolId] [INT] NOT NULL,
-    [StudentUId] [NVARCHAR](32) NOT NULL,
-    [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [PriorYearLeaverLanguage_PK] PRIMARY KEY CLUSTERED (
-        [LanguageDescriptorId] ASC,
-        [SchoolId] ASC,
-        [StudentUId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [tx].[PriorYearLeaverLanguage] ADD CONSTRAINT [PriorYearLeaverLanguage_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [tx].[PriorYearLeaverLanguageUse] --
-CREATE TABLE [tx].[PriorYearLeaverLanguageUse] (
-    [LanguageDescriptorId] [INT] NOT NULL,
-    [LanguageUseDescriptorId] [INT] NOT NULL,
-    [SchoolId] [INT] NOT NULL,
-    [StudentUId] [NVARCHAR](32) NOT NULL,
-    [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [PriorYearLeaverLanguageUse_PK] PRIMARY KEY CLUSTERED (
-        [LanguageDescriptorId] ASC,
-        [LanguageUseDescriptorId] ASC,
-        [SchoolId] ASC,
-        [StudentUId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [tx].[PriorYearLeaverLanguageUse] ADD CONSTRAINT [PriorYearLeaverLanguageUse_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [tx].[PriorYearLeaverParent] --
@@ -1610,6 +1720,41 @@ CREATE TABLE [tx].[ReportAssessmentTypeDescriptor] (
 ) ON [PRIMARY]
 GO
 
+-- Table [tx].[ReportingPeriodDescriptor] --
+CREATE TABLE [tx].[ReportingPeriodDescriptor] (
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [ReportingPeriodDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [ReportingPeriodDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [tx].[ReportingPeriodExt] --
+CREATE TABLE [tx].[ReportingPeriodExt] (
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
+    [Date] [DATE] NOT NULL,
+    [CalendarCode] [NVARCHAR](60) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [BeginDate] [DATE] NOT NULL,
+    [EndDate] [DATE] NOT NULL,
+    [NumberDaysTaught] [INT] NOT NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
+    [Id] [UNIQUEIDENTIFIER] NOT NULL,
+    CONSTRAINT [ReportingPeriodExt_PK] PRIMARY KEY CLUSTERED (
+        [ReportingPeriodDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [tx].[ReportingPeriodExt] ADD CONSTRAINT [ReportingPeriodExt_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+ALTER TABLE [tx].[ReportingPeriodExt] ADD CONSTRAINT [ReportingPeriodExt_DF_Id] DEFAULT (newid()) FOR [Id]
+GO
+ALTER TABLE [tx].[ReportingPeriodExt] ADD CONSTRAINT [ReportingPeriodExt_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
 -- Table [tx].[RestraintEventExtension] --
 CREATE TABLE [tx].[RestraintEventExtension] (
     [RestraintEventIdentifier] [NVARCHAR](20) NOT NULL,
@@ -1655,18 +1800,12 @@ GO
 
 -- Table [tx].[SchoolCharterWaitlistSet] --
 CREATE TABLE [tx].[SchoolCharterWaitlistSet] (
-    [BeginDate] [DATE] NOT NULL,
-    [CharterAdmissionWaitlist] [BIT] NOT NULL,
-    [CharterEducationalEnrollmentCapacity] [INT] NOT NULL,
-    [NumberCharterStudentsEnrolled] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
-    [EndDate] [DATE] NULL,
+    [NumberCharterStudentsEnrolled] [INT] NOT NULL,
+    [CharterEducationalEnrollmentCapacity] [INT] NOT NULL,
+    [CharterAdmissionWaitlist] [BIT] NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SchoolCharterWaitlistSet_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
-        [CharterAdmissionWaitlist] ASC,
-        [CharterEducationalEnrollmentCapacity] ASC,
-        [NumberCharterStudentsEnrolled] ASC,
         [SchoolId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -1676,13 +1815,10 @@ GO
 
 -- Table [tx].[SchoolELOSet] --
 CREATE TABLE [tx].[SchoolELOSet] (
-    [BeginDate] [DATE] NOT NULL,
     [ELOTypeDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
-    [EndDate] [DATE] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SchoolELOSet_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
         [ELOTypeDescriptorId] ASC,
         [SchoolId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -1693,7 +1829,6 @@ GO
 
 -- Table [tx].[SchoolELOSetELOActivitySet] --
 CREATE TABLE [tx].[SchoolELOSetELOActivitySet] (
-    [BeginDate] [DATE] NOT NULL,
     [ELOActivityDescriptorId] [INT] NOT NULL,
     [ELOTypeDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
@@ -1701,7 +1836,6 @@ CREATE TABLE [tx].[SchoolELOSetELOActivitySet] (
     [ELOMinutesScheduledPerDay] [INT] NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SchoolELOSetELOActivitySet_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
         [ELOActivityDescriptorId] ASC,
         [ELOTypeDescriptorId] ASC,
         [SchoolId] ASC
@@ -1763,6 +1897,7 @@ CREATE TABLE [tx].[SectionSet] (
     [ClassTypeDescriptorId] [INT] NULL,
     [CTEHours] [INT] NULL,
     [EndDate] [DATE] NULL,
+    [ChildCareOperationNumber] [NVARCHAR](8) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SectionSet_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
@@ -1777,47 +1912,14 @@ GO
 ALTER TABLE [tx].[SectionSet] ADD CONSTRAINT [SectionSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
--- Table [tx].[SectionSetChildCareOperationNumber] --
-CREATE TABLE [tx].[SectionSetChildCareOperationNumber] (
-    [BeginDate] [DATE] NOT NULL,
-    [ChildCareOperationNumber] [NVARCHAR](8) NOT NULL,
-    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
-    [SchoolId] [INT] NOT NULL,
-    [SchoolYear] [SMALLINT] NOT NULL,
-    [SectionIdentifier] [NVARCHAR](255) NOT NULL,
-    [SessionName] [NVARCHAR](60) NOT NULL,
-    [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [SectionSetChildCareOperationNumber_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
-        [ChildCareOperationNumber] ASC,
-        [LocalCourseCode] ASC,
-        [SchoolId] ASC,
-        [SchoolYear] ASC,
-        [SectionIdentifier] ASC,
-        [SessionName] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [tx].[SectionSetChildCareOperationNumber] ADD CONSTRAINT [SectionSetChildCareOperationNumber_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [tx].[ServiceIdDescriptor] --
-CREATE TABLE [tx].[ServiceIdDescriptor] (
-    [ServiceIdDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [ServiceIdDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [ServiceIdDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
 -- Table [tx].[SharedServiceArrangementExt] --
 CREATE TABLE [tx].[SharedServiceArrangementExt] (
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [INT] NOT NULL,
-    [FundDescriptorId] [INT] NOT NULL,
+    [SSAFundDescriptorId] [INT] NOT NULL,
     [SSAMemberDistrictId] [INT] NOT NULL,
     [SSATypeDescriptorId] [INT] NOT NULL,
-    [ActualAmount] [INT] NOT NULL,
+    [ActualAmount] [DECIMAL](10, 0) NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
@@ -1825,7 +1927,7 @@ CREATE TABLE [tx].[SharedServiceArrangementExt] (
     CONSTRAINT [SharedServiceArrangementExt_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
         [FiscalYear] ASC,
-        [FundDescriptorId] ASC,
+        [SSAFundDescriptorId] ASC,
         [SSAMemberDistrictId] ASC,
         [SSATypeDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -1853,9 +1955,9 @@ CREATE TABLE [tx].[SpecialEducationProgramReportingPeriodAttendance] (
     [GradeLevelDescriptorId] [INT] NOT NULL,
     [InstructionalSettingDescriptorId] [INT] NOT NULL,
     [RegionalDaySchoolProgramForDeafDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [EligibleDaysPresentInInstrSetting] [DECIMAL](4, 1) NULL,
     [RSEligibleDaysPresentInInstrSetting] [DECIMAL](4, 1) NULL,
@@ -1873,9 +1975,9 @@ CREATE TABLE [tx].[SpecialEducationProgramReportingPeriodAttendance] (
         [GradeLevelDescriptorId] ASC,
         [InstructionalSettingDescriptorId] ASC,
         [RegionalDaySchoolProgramForDeafDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1890,9 +1992,9 @@ GO
 CREATE TABLE [tx].[SpecialProgramsReportingPeriodAttendance] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [GradeLevelDescriptorId] [INT] NOT NULL,
+    [ReportingPeriodDescriptorId] [INT] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
     [NumberDaysTaught] [INT] NOT NULL,
     [TotalEligPregRelSvcsDaysPresent] [DECIMAL](4, 1) NULL,
     [RSTotalEligPregRelSvcsDaysPresent] [DECIMAL](4, 1) NULL,
@@ -1910,9 +2012,9 @@ CREATE TABLE [tx].[SpecialProgramsReportingPeriodAttendance] (
     CONSTRAINT [SpecialProgramsReportingPeriodAttendance_PK] PRIMARY KEY CLUSTERED (
         [CalendarCode] ASC,
         [GradeLevelDescriptorId] ASC,
+        [ReportingPeriodDescriptorId] ASC,
         [SchoolId] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1921,6 +2023,15 @@ GO
 ALTER TABLE [tx].[SpecialProgramsReportingPeriodAttendance] ADD CONSTRAINT [SpecialProgramsReportingPeriodAttendance_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
 ALTER TABLE [tx].[SpecialProgramsReportingPeriodAttendance] ADD CONSTRAINT [SpecialProgramsReportingPeriodAttendance_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [tx].[SSAFundDescriptor] --
+CREATE TABLE [tx].[SSAFundDescriptor] (
+    [SSAFundDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [SSAFundDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [SSAFundDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
 -- Table [tx].[SSAOrgAssociationExt] --
@@ -1984,8 +2095,9 @@ CREATE TABLE [tx].[StaffEducationOrganizationAssignmentAssociationStaffServiceSe
     [StaffUSI] [INT] NOT NULL,
     [GradeLevelDescriptorId] [INT] NULL,
     [PopulationServedDescriptorId] [INT] NULL,
-    [MonthlyMinutes] [INT] NOT NULL,
+    [MonthlyMinutes] [INT] NULL,
     [StaffServiceEndDate] [DATE] NULL,
+    [NumberOfStudentsInClass] [INT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StaffEducationOrganizationAssignmentAssociationStaffServiceSet_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
@@ -2066,13 +2178,12 @@ GO
 
 -- Table [tx].[StaffParaprofessionalCertificationSet] --
 CREATE TABLE [tx].[StaffParaprofessionalCertificationSet] (
-    [BeginDate] [DATE] NOT NULL,
     [StaffUSI] [INT] NOT NULL,
     [ParaprofessionalCertification] [BIT] NULL,
+    [BeginDate] [DATE] NOT NULL,
     [EndDate] [DATE] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StaffParaprofessionalCertificationSet_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
         [StaffUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -2235,7 +2346,7 @@ CREATE TABLE [tx].[StudentAcademicRecordExtension] (
     [StudentUSI] [INT] NOT NULL,
     [TermDescriptorId] [INT] NOT NULL,
     [IndividualGraduationCommitteeReview] [BIT] NULL,
-    [AssociateDegreeIndicator] [BIT] NULL,
+    [AssociateDegreeIndicatorDescriptorId] [INT] NULL,
     [FHSPParticipant] [BIT] NULL,
     [FHSPDistingLevelParticipant] [BIT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -2256,10 +2367,10 @@ CREATE TABLE [tx].[StudentAcademicRecordIndustryBasedCertificationSet] (
     [EducationOrganizationId] [INT] NOT NULL,
     [IBCVendorDescriptorId] [INT] NOT NULL,
     [PostSecondaryCertificationLicensureDescriptorId] [INT] NOT NULL,
+    [PostSecondaryCertLicensureResultDescriptorId] [INT] NOT NULL,
     [SchoolYear] [SMALLINT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [TermDescriptorId] [INT] NOT NULL,
-    [PostSecondaryCertLicensureResultDescriptorId] [INT] NOT NULL,
     [IBCExamFeeAmount] [DECIMAL](5, 2) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentAcademicRecordIndustryBasedCertificationSet_PK] PRIMARY KEY CLUSTERED (
@@ -2267,6 +2378,7 @@ CREATE TABLE [tx].[StudentAcademicRecordIndustryBasedCertificationSet] (
         [EducationOrganizationId] ASC,
         [IBCVendorDescriptorId] ASC,
         [PostSecondaryCertificationLicensureDescriptorId] ASC,
+        [PostSecondaryCertLicensureResultDescriptorId] ASC,
         [SchoolYear] ASC,
         [StudentUSI] ASC,
         [TermDescriptorId] ASC
@@ -2405,24 +2517,6 @@ GO
 ALTER TABLE [tx].[StudentEducationOrganizationAssociationDyslexiaRiskSet] ADD CONSTRAINT [StudentEducationOrganizationAssociationDyslexiaRiskSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
--- Table [tx].[StudentEducationOrganizationAssociationDyslexiaScreeningExceptionReasonSet] --
-CREATE TABLE [tx].[StudentEducationOrganizationAssociationDyslexiaScreeningExceptionReasonSet] (
-    [BeginDate] [DATE] NOT NULL,
-    [EducationOrganizationId] [INT] NOT NULL,
-    [StudentUSI] [INT] NOT NULL,
-    [DyslexiaScreeningExceptionReasonDescriptorId] [INT] NOT NULL,
-    [EndDate] [DATE] NULL,
-    [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentEducationOrganizationAssociationDyslexiaScreeningExceptionReasonSet_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
-        [EducationOrganizationId] ASC,
-        [StudentUSI] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [tx].[StudentEducationOrganizationAssociationDyslexiaScreeningExceptionReasonSet] ADD CONSTRAINT [StudentEducationOrganizationAssociationDyslexiaScreeningExceptionReasonSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
 -- Table [tx].[StudentEducationOrganizationAssociationDyslexiaServicesSet] --
 CREATE TABLE [tx].[StudentEducationOrganizationAssociationDyslexiaServicesSet] (
     [BeginDate] [DATE] NOT NULL,
@@ -2530,26 +2624,6 @@ CREATE TABLE [tx].[StudentEducationOrganizationAssociationHomelessStatusSet] (
 ) ON [PRIMARY]
 GO
 ALTER TABLE [tx].[StudentEducationOrganizationAssociationHomelessStatusSet] ADD CONSTRAINT [StudentEducationOrganizationAssociationHomelessStatusSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [tx].[StudentEducationOrganizationAssociationLanguageSet] --
-CREATE TABLE [tx].[StudentEducationOrganizationAssociationLanguageSet] (
-    [BeginDate] [DATE] NOT NULL,
-    [EducationOrganizationId] [INT] NOT NULL,
-    [LanguageDescriptorId] [INT] NOT NULL,
-    [StudentUSI] [INT] NOT NULL,
-    [LanguageUseDescriptorId] [INT] NOT NULL,
-    [EndDate] [DATE] NULL,
-    [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentEducationOrganizationAssociationLanguageSet_PK] PRIMARY KEY CLUSTERED (
-        [BeginDate] ASC,
-        [EducationOrganizationId] ASC,
-        [LanguageDescriptorId] ASC,
-        [StudentUSI] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [tx].[StudentEducationOrganizationAssociationLanguageSet] ADD CONSTRAINT [StudentEducationOrganizationAssociationLanguageSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [tx].[StudentEducationOrganizationAssociationMilitaryConnectedStudentSet] --
@@ -2707,6 +2781,20 @@ GO
 ALTER TABLE [tx].[StudentLanguageInstructionProgramAssociationParentalPermissionSet] ADD CONSTRAINT [StudentLanguageInstructionProgramAssociationParentalPermissionSet_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
+-- Table [tx].[StudentNonEnrolledStudentUILActivity] --
+CREATE TABLE [tx].[StudentNonEnrolledStudentUILActivity] (
+    [NonEnrolledStudentUILActivityDescriptorId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    CONSTRAINT [StudentNonEnrolledStudentUILActivity_PK] PRIMARY KEY CLUSTERED (
+        [NonEnrolledStudentUILActivityDescriptorId] ASC,
+        [StudentUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [tx].[StudentNonEnrolledStudentUILActivity] ADD CONSTRAINT [StudentNonEnrolledStudentUILActivity_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
 -- Table [tx].[StudentProgramAttendanceEventExtension] --
 CREATE TABLE [tx].[StudentProgramAttendanceEventExtension] (
     [AttendanceEventCategoryDescriptorId] [INT] NOT NULL,
@@ -2740,6 +2828,8 @@ CREATE TABLE [tx].[StudentSchoolAssociationExtension] (
     [ADAEligibilityDescriptorId] [INT] NULL,
     [StudentAttributionDescriptorId] [INT] NULL,
     [EnrollmentTrackingVerificationDescriptorId] [INT] NULL,
+    [CampusIdOfResidence] [INT] NULL,
+    [CampusIdOfAccountability] [INT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
@@ -2805,19 +2895,20 @@ GO
 CREATE TABLE [tx].[StudentSpecialEducationProgramAssociationDisabilitySet] (
     [BeginDate] [DATE] NOT NULL,
     [DisabilityDescriptorId] [INT] NOT NULL,
+    [DisabilitySetBeginDate] [DATE] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
     [ProgramEducationOrganizationId] [INT] NOT NULL,
     [ProgramName] [NVARCHAR](60) NOT NULL,
     [ProgramTypeDescriptorId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [EligibilityDateDisabilities] [DATE] NULL,
-    [DisabilitySetBeginDate] [DATE] NOT NULL,
     [DisabilitySetEndDate] [DATE] NULL,
     [OrderOfDisability] [INT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSpecialEducationProgramAssociationDisabilitySet_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
         [DisabilityDescriptorId] ASC,
+        [DisabilitySetBeginDate] ASC,
         [EducationOrganizationId] ASC,
         [ProgramEducationOrganizationId] ASC,
         [ProgramName] ASC,
