@@ -1290,13 +1290,13 @@ GO
 -- Extended Properties [tx].[SchoolCharterWaitlistSet] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'CharterWaitlist with effective dates', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'SchoolId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1674. NumberCharterStudentsEnrolled indicates the number of students enrolled at a charter school’s campus as of the last Friday in September.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'NumberCharterStudentsEnrolled'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1676. CharterAdmissionWaitlist indicates whether the charter school campus uses a waitlist for admission.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'CharterAdmissionWaitlist'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1675. CharterEducationalEnrollmentCapacity indicates the number of students to which the charter school’s campus is able to provide instruction without exceeding staffing and facility limitations and the approved charter holder''s maximum enrollment.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'CharterEducationalEnrollmentCapacity'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1676. CharterAdmissionWaitlist indicates whether the charter school campus uses a waitlist for admission.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'CharterAdmissionWaitlist'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1674. NumberCharterStudentsEnrolled indicates the number of students enrolled at a charter school’s campus as of the last Friday in September.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'NumberCharterStudentsEnrolled'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SchoolCharterWaitlistSet', @level2type=N'COLUMN', @level2name=N'SchoolId'
 GO
 
 -- Extended Properties [tx].[SchoolELOSet] --

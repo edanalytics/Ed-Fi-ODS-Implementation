@@ -1600,7 +1600,7 @@
               <xs:documentation>NSLPType with effective dates</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="CharterWaitlistSet" type="EXTENSION-CharterWaitlistSet" minOccurs="0">
+          <xs:element name="CharterWaitlistSet" type="EXTENSION-CharterWaitlistSet">
             <xs:annotation>
               <xs:documentation>CharterWaitlist with effective dates</xs:documentation>
             </xs:annotation>

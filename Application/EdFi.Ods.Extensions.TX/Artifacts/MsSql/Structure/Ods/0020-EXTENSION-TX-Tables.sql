@@ -1665,12 +1665,15 @@ GO
 
 -- Table [tx].[SchoolCharterWaitlistSet] --
 CREATE TABLE [tx].[SchoolCharterWaitlistSet] (
-    [SchoolId] [INT] NOT NULL,
-    [NumberCharterStudentsEnrolled] [INT] NOT NULL,
-    [CharterEducationalEnrollmentCapacity] [INT] NOT NULL,
     [CharterAdmissionWaitlist] [BIT] NOT NULL,
+    [CharterEducationalEnrollmentCapacity] [INT] NOT NULL,
+    [NumberCharterStudentsEnrolled] [INT] NOT NULL,
+    [SchoolId] [INT] NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SchoolCharterWaitlistSet_PK] PRIMARY KEY CLUSTERED (
+        [CharterAdmissionWaitlist] ASC,
+        [CharterEducationalEnrollmentCapacity] ASC,
+        [NumberCharterStudentsEnrolled] ASC,
         [SchoolId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]

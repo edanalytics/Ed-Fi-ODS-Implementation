@@ -765,10 +765,10 @@ COMMENT ON COLUMN tx.SchoolCampusEnrollmentTypeSet.EndDate IS 'End date of the e
 
 -- Extended Properties [tx].[SchoolCharterWaitlistSet] --
 COMMENT ON TABLE tx.SchoolCharterWaitlistSet IS 'CharterWaitlist with effective dates';
-COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.SchoolId IS 'The identifier assigned to a school.';
-COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.NumberCharterStudentsEnrolled IS 'E1674. NumberCharterStudentsEnrolled indicates the number of students enrolled at a charter school’s campus as of the last Friday in September.';
-COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.CharterEducationalEnrollmentCapacity IS 'E1675. CharterEducationalEnrollmentCapacity indicates the number of students to which the charter school’s campus is able to provide instruction without exceeding staffing and facility limitations and the approved charter holder''s maximum enrollment.';
 COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.CharterAdmissionWaitlist IS 'E1676. CharterAdmissionWaitlist indicates whether the charter school campus uses a waitlist for admission.';
+COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.CharterEducationalEnrollmentCapacity IS 'E1675. CharterEducationalEnrollmentCapacity indicates the number of students to which the charter school’s campus is able to provide instruction without exceeding staffing and facility limitations and the approved charter holder''s maximum enrollment.';
+COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.NumberCharterStudentsEnrolled IS 'E1674. NumberCharterStudentsEnrolled indicates the number of students enrolled at a charter school’s campus as of the last Friday in September.';
+COMMENT ON COLUMN tx.SchoolCharterWaitlistSet.SchoolId IS 'The identifier assigned to a school.';
 
 -- Extended Properties [tx].[SchoolELOSet] --
 COMMENT ON TABLE tx.SchoolELOSet IS 'ELOSet captures data (with effective dates) for school participation in expanded learning opportunities.';
