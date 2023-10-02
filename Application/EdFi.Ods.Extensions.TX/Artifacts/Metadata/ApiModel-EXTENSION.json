@@ -4,7 +4,7 @@
     "logicalName": "TX",
     "physicalName": "tx",
     "description": "",
-    "version": "2024.2.1"
+    "version": "2024.1.0"
   },
   "aggregateDefinitions": [
     {
@@ -16,54 +16,6 @@
         {
           "schema": "tx",
           "name": "ActualExt"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "ActualFunctionDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "ActualFunctionDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "ActualFundDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "ActualFundDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "ActualObjectDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "ActualObjectDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "ActualProgramIntentDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "ActualProgramIntentDescriptor"
         }
       ]
     },
@@ -154,18 +106,6 @@
     {
       "aggregateRootEntityName": {
         "schema": "tx",
-        "name": "AssociateDegreeIndicatorDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "AssociateDegreeIndicatorDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
         "name": "AuxiliaryRoleIdDescriptor"
       },
       "aggregateEntityNames": [
@@ -226,54 +166,6 @@
     {
       "aggregateRootEntityName": {
         "schema": "tx",
-        "name": "BudgetFunctionDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "BudgetFunctionDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "BudgetFundDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "BudgetFundDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "BudgetObjectDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "BudgetObjectDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "BudgetProgramIntentDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "BudgetProgramIntentDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
         "name": "CalendarWaiverEventTypeDescriptor"
       },
       "aggregateEntityNames": [
@@ -304,18 +196,6 @@
         {
           "schema": "tx",
           "name": "ChildCountFundingDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "CIStaffProgramIntentDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "CIStaffProgramIntentDescriptor"
         }
       ]
     },
@@ -838,18 +718,6 @@
     {
       "aggregateRootEntityName": {
         "schema": "tx",
-        "name": "NonEnrolledStudentUILActivityDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "NonEnrolledStudentUILActivityDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
         "name": "NSLPTypeDescriptor"
       },
       "aggregateEntityNames": [
@@ -904,54 +772,6 @@
         {
           "schema": "tx",
           "name": "PayrollExt"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "PayrollFunctionDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "PayrollFunctionDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "PayrollFundDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "PayrollFundDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "PayrollObjectDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "PayrollObjectDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
-        "name": "PayrollProgramIntentDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "PayrollProgramIntentDescriptor"
         }
       ]
     },
@@ -1318,18 +1138,6 @@
     {
       "aggregateRootEntityName": {
         "schema": "tx",
-        "name": "SSAFundDescriptor"
-      },
-      "aggregateEntityNames": [
-        {
-          "schema": "tx",
-          "name": "SSAFundDescriptor"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "tx",
         "name": "SSAOrgAssociationExt"
       },
       "aggregateEntityNames": [
@@ -1614,10 +1422,6 @@
         {
           "schema": "tx",
           "name": "StudentCrisisEventSet"
-        },
-        {
-          "schema": "tx",
-          "name": "StudentNonEnrolledStudentUILActivity"
         }
       ]
     },
@@ -1774,13 +1578,11 @@
         {
           "propertyName": "ActualAmount",
           "propertyType": {
-            "dbType": "Decimal",
+            "dbType": "Int32",
             "maxLength": 0,
             "precision": 10,
             "scale": 0,
-            "isNullable": false,
-            "minValue": -9999999999,
-            "maxValue": 9999999999
+            "isNullable": false
           },
           "description": "E0774. ActualAmount indicates the dollar value associated with actual financial account information.",
           "isIdentifying": false,
@@ -1914,14 +1716,14 @@
         {
           "identifierName": "ActualExt_PK",
           "identifyingPropertyNames": [
-            "ActualFunctionDescriptorId",
-            "ActualFundDescriptorId",
-            "ActualObjectDescriptorId",
-            "ActualProgramIntentDescriptorId",
             "BeginDate",
             "EducationOrganizationId",
             "FiscalYear",
-            "Organization"
+            "FunctionDescriptorId",
+            "FundDescriptorId",
+            "ObjectDescriptorId",
+            "Organization",
+            "ProgramIntentDescriptorId"
           ],
           "isPrimary": true,
           "isUpdatable": false,
@@ -1948,106 +1750,6 @@
       "tableNames": {
         "sqlServer": "ActualExt",
         "postgreSql": "ActualExt"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "ActualFunctionDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "ActualFunctionDescriptor_PK",
-          "identifyingPropertyNames": [
-            "ActualFunctionDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "ActualFunctionDescriptor_PK",
-            "postgreSql": "ActualFunctionDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Function is populated from Code Table C146A.",
-      "tableNames": {
-        "sqlServer": "ActualFunctionDescriptor",
-        "postgreSql": "ActualFunctionDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "ActualFundDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "ActualFundDescriptor_PK",
-          "identifyingPropertyNames": [
-            "ActualFundDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "ActualFundDescriptor_PK",
-            "postgreSql": "ActualFundDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Fund is populated from Code Table C145A.",
-      "tableNames": {
-        "sqlServer": "ActualFundDescriptor",
-        "postgreSql": "ActualFundDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "ActualObjectDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "ActualObjectDescriptor_PK",
-          "identifyingPropertyNames": [
-            "ActualObjectDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "ActualObjectDescriptor_PK",
-            "postgreSql": "ActualObjectDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Object is populated from Code Table C159A.",
-      "tableNames": {
-        "sqlServer": "ActualObjectDescriptor",
-        "postgreSql": "ActualObjectDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "ActualProgramIntentDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "ActualProgramIntentDescriptor_PK",
-          "identifyingPropertyNames": [
-            "ActualProgramIntentDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "ActualProgramIntentDescriptor_PK",
-            "postgreSql": "ActualProgramIntentDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor ProgramIntent is populated from Code Table C147A.",
-      "tableNames": {
-        "sqlServer": "ActualProgramIntentDescriptor",
-        "postgreSql": "ActualProgramIntentDescriptor"
       }
     },
     {
@@ -2267,31 +1969,6 @@
       "tableNames": {
         "sqlServer": "AssessmentResultsObtainedDescriptor",
         "postgreSql": "AssessmentResultsObtainedDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "AssociateDegreeIndicatorDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "AssociateDegreeIndicatorDescriptor_PK",
-          "identifyingPropertyNames": [
-            "AssociateDegreeIndicatorDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "AssociateDegreeIndicatorDescriptor_PK",
-            "postgreSql": "AssociateDegreeIndicatorDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Function is populated from Code Table C235.",
-      "tableNames": {
-        "sqlServer": "AssociateDegreeIndicatorDescriptor",
-        "postgreSql": "AssociateDegreeIndicatorDescriptor"
       }
     },
     {
@@ -2775,13 +2452,11 @@
         {
           "propertyName": "BudgetAmount",
           "propertyType": {
-            "dbType": "Decimal",
+            "dbType": "Int32",
             "maxLength": 0,
             "precision": 10,
             "scale": 0,
-            "isNullable": false,
-            "minValue": -9999999999,
-            "maxValue": 9999999999
+            "isNullable": false
           },
           "description": "E0321. BudgetAmount indicates the dollar value associated with budget financial account information.",
           "isIdentifying": false,
@@ -2899,13 +2574,13 @@
           "identifierName": "BudgetExt_PK",
           "identifyingPropertyNames": [
             "BeginDate",
-            "BudgetFunctionDescriptorId",
-            "BudgetFundDescriptorId",
-            "BudgetObjectDescriptorId",
-            "BudgetProgramIntentDescriptorId",
             "EducationOrganizationId",
             "FiscalYear",
-            "Organization"
+            "FunctionDescriptorId",
+            "FundDescriptorId",
+            "ObjectDescriptorId",
+            "Organization",
+            "ProgramIntentDescriptorId"
           ],
           "isPrimary": true,
           "isUpdatable": false,
@@ -2932,106 +2607,6 @@
       "tableNames": {
         "sqlServer": "BudgetExt",
         "postgreSql": "BudgetExt"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "BudgetFunctionDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "BudgetFunctionDescriptor_PK",
-          "identifyingPropertyNames": [
-            "BudgetFunctionDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "BudgetFunctionDescriptor_PK",
-            "postgreSql": "BudgetFunctionDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Function is populated from Code Table C146B.",
-      "tableNames": {
-        "sqlServer": "BudgetFunctionDescriptor",
-        "postgreSql": "BudgetFunctionDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "BudgetFundDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "BudgetFundDescriptor_PK",
-          "identifyingPropertyNames": [
-            "BudgetFundDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "BudgetFundDescriptor_PK",
-            "postgreSql": "BudgetFundDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Fund is populated from Code Table C145B.",
-      "tableNames": {
-        "sqlServer": "BudgetFundDescriptor",
-        "postgreSql": "BudgetFundDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "BudgetObjectDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "BudgetObjectDescriptor_PK",
-          "identifyingPropertyNames": [
-            "BudgetObjectDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "BudgetObjectDescriptor_PK",
-            "postgreSql": "BudgetObjectDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Object is populated from Code Table C159B.",
-      "tableNames": {
-        "sqlServer": "BudgetObjectDescriptor",
-        "postgreSql": "BudgetObjectDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "BudgetProgramIntentDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "BudgetProgramIntentDescriptor_PK",
-          "identifyingPropertyNames": [
-            "BudgetProgramIntentDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "BudgetProgramIntentDescriptor_PK",
-            "postgreSql": "BudgetProgramIntentDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor ProgramIntent is populated from Code Table C147B.",
-      "tableNames": {
-        "sqlServer": "BudgetProgramIntentDescriptor",
-        "postgreSql": "BudgetProgramIntentDescriptor"
       }
     },
     {
@@ -3208,31 +2783,6 @@
     },
     {
       "schema": "tx",
-      "name": "CIStaffProgramIntentDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "CIStaffProgramIntentDescriptor_PK",
-          "identifyingPropertyNames": [
-            "CIStaffProgramIntentDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "CIStaffProgramIntentDescriptor_PK",
-            "postgreSql": "CIStaffProgramIntentDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor ProgramIntent is populated from Code Table C147C.",
-      "tableNames": {
-        "sqlServer": "CIStaffProgramIntentDescriptor",
-        "postgreSql": "CIStaffProgramIntentDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
       "name": "ClassTypeDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
@@ -3335,8 +2885,8 @@
         {
           "identifierName": "ContractedInstructionalStaffFTEExt_PK",
           "identifyingPropertyNames": [
-            "CIStaffProgramIntentDescriptorId",
             "EducationOrganizationId",
+            "ProgramIntentDescriptorId",
             "SchoolId"
           ],
           "isPrimary": true,
@@ -5992,31 +5542,6 @@
     },
     {
       "schema": "tx",
-      "name": "NonEnrolledStudentUILActivityDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "NonEnrolledStudentUILActivityDescriptor_PK",
-          "identifyingPropertyNames": [
-            "NonEnrolledStudentUILActivityDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "NonEnrolledStudentUILActivityDescriptor_PK",
-            "postgreSql": "NonEnrolledStudentUILActivityDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Function is populated from Code Table C234.",
-      "tableNames": {
-        "sqlServer": "NonEnrolledStudentUILActivityDescriptor",
-        "postgreSql": "NonEnrolledStudentUILActivityDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
       "name": "NSLPTypeDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
@@ -6306,12 +5831,12 @@
             "BeginDate",
             "EducationOrganizationId",
             "FiscalYear",
+            "FunctionDescriptorId",
+            "FundDescriptorId",
+            "ObjectDescriptorId",
             "Organization",
             "PayrollActivityDescriptorId",
-            "PayrollFunctionDescriptorId",
-            "PayrollFundDescriptorId",
-            "PayrollObjectDescriptorId",
-            "PayrollProgramIntentDescriptorId",
+            "ProgramIntentDescriptorId",
             "StaffUSI"
           ],
           "isPrimary": true,
@@ -6339,106 +5864,6 @@
       "tableNames": {
         "sqlServer": "PayrollExt",
         "postgreSql": "PayrollExt"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "PayrollFunctionDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "PayrollFunctionDescriptor_PK",
-          "identifyingPropertyNames": [
-            "PayrollFunctionDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "PayrollFunctionDescriptor_PK",
-            "postgreSql": "PayrollFunctionDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Function is populated from Code Table C146P.",
-      "tableNames": {
-        "sqlServer": "PayrollFunctionDescriptor",
-        "postgreSql": "PayrollFunctionDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "PayrollFundDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "PayrollFundDescriptor_PK",
-          "identifyingPropertyNames": [
-            "PayrollFundDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "PayrollFundDescriptor_PK",
-            "postgreSql": "PayrollFundDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Fund is populated from Code Table C145P.",
-      "tableNames": {
-        "sqlServer": "PayrollFundDescriptor",
-        "postgreSql": "PayrollFundDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "PayrollObjectDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "PayrollObjectDescriptor_PK",
-          "identifyingPropertyNames": [
-            "PayrollObjectDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "PayrollObjectDescriptor_PK",
-            "postgreSql": "PayrollObjectDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Object is populated from Code Table C159P.",
-      "tableNames": {
-        "sqlServer": "PayrollObjectDescriptor",
-        "postgreSql": "PayrollObjectDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
-      "name": "PayrollProgramIntentDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "PayrollProgramIntentDescriptor_PK",
-          "identifyingPropertyNames": [
-            "PayrollProgramIntentDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "PayrollProgramIntentDescriptor_PK",
-            "postgreSql": "PayrollProgramIntentDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor ProgramIntent is populated from Code Table C147P.",
-      "tableNames": {
-        "sqlServer": "PayrollProgramIntentDescriptor",
-        "postgreSql": "PayrollProgramIntentDescriptor"
       }
     },
     {
@@ -6720,6 +6145,23 @@
       "schema": "tx",
       "name": "PriorYearLeaver",
       "locallyDefinedProperties": [
+        {
+          "propertyName": "AssociateDegreeIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "E1596. AssociateDegreeIndicator indicates that the student earned an associate degree by August 31 immediately following graduation.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssociateDegreeIndicator",
+            "postgreSql": "AssociateDegreeIndicator"
+          }
+        },
         {
           "propertyName": "BirthCity",
           "propertyType": {
@@ -9996,13 +9438,11 @@
         {
           "propertyName": "ActualAmount",
           "propertyType": {
-            "dbType": "Decimal",
+            "dbType": "Int32",
             "maxLength": 0,
             "precision": 10,
             "scale": 0,
-            "isNullable": false,
-            "minValue": -9999999999,
-            "maxValue": 9999999999
+            "isNullable": false
           },
           "description": "E0774. ActualAmount indicates the dollar value associated with actual financial account information.",
           "isIdentifying": false,
@@ -10104,7 +9544,7 @@
           "identifyingPropertyNames": [
             "EducationOrganizationId",
             "FiscalYear",
-            "SSAFundDescriptorId",
+            "FundDescriptorId",
             "SSAMemberDistrictId",
             "SSATypeDescriptorId"
           ],
@@ -10720,31 +10160,6 @@
     },
     {
       "schema": "tx",
-      "name": "SSAFundDescriptor",
-      "locallyDefinedProperties": [],
-      "identifiers": [
-        {
-          "identifierName": "SSAFundDescriptor_PK",
-          "identifyingPropertyNames": [
-            "SSAFundDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "SSAFundDescriptor_PK",
-            "postgreSql": "SSAFundDescriptor_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Descriptor Fund is populated from Code Table C145S.",
-      "tableNames": {
-        "sqlServer": "SSAFundDescriptor",
-        "postgreSql": "SSAFundDescriptor"
-      }
-    },
-    {
-      "schema": "tx",
       "name": "SSAOrgAssociationExt",
       "locallyDefinedProperties": [
         {
@@ -10958,23 +10373,6 @@
           "columnNames": {
             "sqlServer": "MonthlyMinutes",
             "postgreSql": "MonthlyMinutes"
-          }
-        },
-        {
-          "propertyName": "NumberOfStudentsInClass",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "NumberOfStudentsInClass",
-            "postgreSql": "NumberOfStudentsInClass"
           }
         },
         {
@@ -12043,6 +11441,23 @@
       "schema": "tx",
       "name": "StudentAcademicRecordExtension",
       "locallyDefinedProperties": [
+        {
+          "propertyName": "AssociateDegreeIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "E1596. AssociateDegreeIndicator indicates that the student earned an associate degree prior to graduation from high school. ",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssociateDegreeIndicator",
+            "postgreSql": "AssociateDegreeIndicator"
+          }
+        },
         {
           "propertyName": "CreateDate",
           "propertyType": {
@@ -14092,50 +13507,6 @@
     },
     {
       "schema": "tx",
-      "name": "StudentNonEnrolledStudentUILActivity",
-      "locallyDefinedProperties": [
-        {
-          "propertyName": "CreateDate",
-          "propertyType": {
-            "dbType": "DateTime2",
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "CreateDate",
-            "postgreSql": "CreateDate"
-          }
-        }
-      ],
-      "identifiers": [
-        {
-          "identifierName": "StudentNonEnrolledStudentUILActivity_PK",
-          "identifyingPropertyNames": [
-            "NonEnrolledStudentUILActivityDescriptorId",
-            "StudentUSI"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "StudentNonEnrolledStudentUILActivity_PK",
-            "postgreSql": "StudentNonEnrolledStudentUILActivity_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "E1739. NonEnrolledStudentUILActivity indicates the University Interscholastic League (UIL) activity in which a non-enrolled student participated at a school district that allows participation of non-enrolled students under Section 33.0832.",
-      "tableNames": {
-        "sqlServer": "StudentNonEnrolledStudentUILActivity",
-        "postgreSql": "StudentNonEnrolledStudentUILActivity"
-      }
-    },
-    {
-      "schema": "tx",
       "name": "StudentProgramAttendanceEventExtension",
       "locallyDefinedProperties": [
         {
@@ -14187,40 +13558,6 @@
       "schema": "tx",
       "name": "StudentSchoolAssociationExtension",
       "locallyDefinedProperties": [
-        {
-          "propertyName": "CampusIdOfAccountability",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "E1027. CampusIdOfAccountability indicates the unique campus identification number to which a student’s attendance and/or leaver accountability data are attributed for campus accountability purposes.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "CampusIdOfAccountability",
-            "postgreSql": "CampusIdOfAccountability"
-          }
-        },
-        {
-          "propertyName": "CampusIdOfResidence",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "E0903. CampusIdOfResidence indicates the unique campus identification number corresponding to the campus attendance area in which the student currently resides.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "CampusIdOfResidence",
-            "postgreSql": "CampusIdOfResidence"
-          }
-        },
         {
           "propertyName": "CreateDate",
           "propertyType": {
@@ -15638,246 +14975,6 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_ActualExt_ActualFunctionDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualFunctionDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "ActualFunctionDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualFunctionDescriptorId",
-            "postgreSql": "ActualFunctionDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "ActualFunctionDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0317, C146. Function identifies a general operational area and groups together related activities.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualFunctionDescriptorId",
-            "postgreSql": "ActualFunctionDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_ActualExt_ActualFunctionDescriptor",
-        "postgreSql": "FK_e3a1b1_ActualFunctionDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_ActualExt_ActualFundDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualFundDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "ActualFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualFundDescriptorId",
-            "postgreSql": "ActualFundDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "ActualFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualFundDescriptorId",
-            "postgreSql": "ActualFundDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_ActualExt_ActualFundDescriptor",
-        "postgreSql": "FK_e3a1b1_ActualFundDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_ActualExt_ActualObjectDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualObjectDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "ActualObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualObjectDescriptorId",
-            "postgreSql": "ActualObjectDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "ActualObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0318, C159. Object identifies an account, a transaction, or a source of funds.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualObjectDescriptorId",
-            "postgreSql": "ActualObjectDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_ActualExt_ActualObjectDescriptor",
-        "postgreSql": "FK_e3a1b1_ActualObjectDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_ActualExt_ActualProgramIntentDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualProgramIntentDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "ActualProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualProgramIntentDescriptorId",
-            "postgreSql": "ActualProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "ActualExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "ActualProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "ActualProgramIntentDescriptorId",
-            "postgreSql": "ActualProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_ActualExt_ActualProgramIntentDescriptor",
-        "postgreSql": "FK_e3a1b1_ActualProgramIntentDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
         "name": "FK_ActualExt_EducationOrganization"
       },
       "cardinality": "OneToZeroOrMore",
@@ -15938,16 +15035,16 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_ActualFunctionDescriptor_Descriptor"
+        "name": "FK_ActualExt_FunctionDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "FunctionDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "FunctionDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -15957,20 +15054,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "FunctionDescriptorId",
+            "postgreSql": "FunctionDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "ActualFunctionDescriptor"
+        "name": "ActualExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "ActualFunctionDescriptorId",
+          "propertyName": "FunctionDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -15978,36 +15075,36 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0317, C146. Function identifies a general operational area and groups together related activities.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "ActualFunctionDescriptorId",
-            "postgreSql": "ActualFunctionDescriptorId"
+            "sqlServer": "FunctionDescriptorId",
+            "postgreSql": "FunctionDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_ActualFunctionDescriptor_Descriptor",
-        "postgreSql": "FK_d017dc_Descriptor"
+        "sqlServer": "FK_ActualExt_FunctionDescriptor",
+        "postgreSql": "FK_e3a1b1_FunctionDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_ActualFundDescriptor_Descriptor"
+        "name": "FK_ActualExt_FundDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "FundDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "FundDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -16017,20 +15114,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "ActualFundDescriptor"
+        "name": "ActualExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "ActualFundDescriptorId",
+          "propertyName": "FundDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -16038,36 +15135,36 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "ActualFundDescriptorId",
-            "postgreSql": "ActualFundDescriptorId"
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_ActualFundDescriptor_Descriptor",
-        "postgreSql": "FK_668c2d_Descriptor"
+        "sqlServer": "FK_ActualExt_FundDescriptor",
+        "postgreSql": "FK_e3a1b1_FundDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_ActualObjectDescriptor_Descriptor"
+        "name": "FK_ActualExt_ObjectDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "ObjectDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "ObjectDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -16077,20 +15174,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "ObjectDescriptorId",
+            "postgreSql": "ObjectDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "ActualObjectDescriptor"
+        "name": "ActualExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "ActualObjectDescriptorId",
+          "propertyName": "ObjectDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -16098,36 +15195,36 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0318, C159. Object identifies an account, a transaction, or a source of funds.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "ActualObjectDescriptorId",
-            "postgreSql": "ActualObjectDescriptorId"
+            "sqlServer": "ObjectDescriptorId",
+            "postgreSql": "ObjectDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_ActualObjectDescriptor_Descriptor",
-        "postgreSql": "FK_ec1911_Descriptor"
+        "sqlServer": "FK_ActualExt_ObjectDescriptor",
+        "postgreSql": "FK_e3a1b1_ObjectDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_ActualProgramIntentDescriptor_Descriptor"
+        "name": "FK_ActualExt_ProgramIntentDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "ProgramIntentDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "ProgramIntentDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -16137,20 +15234,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "ActualProgramIntentDescriptor"
+        "name": "ActualExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "ActualProgramIntentDescriptorId",
+          "propertyName": "ProgramIntentDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -16158,20 +15255,20 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "ActualProgramIntentDescriptorId",
-            "postgreSql": "ActualProgramIntentDescriptorId"
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_ActualProgramIntentDescriptor_Descriptor",
-        "postgreSql": "FK_77e711_Descriptor"
+        "sqlServer": "FK_ActualExt_ProgramIntentDescriptor",
+        "postgreSql": "FK_e3a1b1_ProgramIntentDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -16805,66 +15902,6 @@
       "constraintNames": {
         "sqlServer": "FK_AssessmentResultsObtainedDescriptor_Descriptor",
         "postgreSql": "FK_71bf40_Descriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_AssociateDegreeIndicatorDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "AssociateDegreeIndicatorDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "AssociateDegreeIndicatorDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "AssociateDegreeIndicatorDescriptorId",
-            "postgreSql": "AssociateDegreeIndicatorDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_AssociateDegreeIndicatorDescriptor_Descriptor",
-        "postgreSql": "FK_b8f1a7_Descriptor"
       },
       "potentiallyLogical": false
     },
@@ -17531,246 +16568,6 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_BudgetExt_BudgetFunctionDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetFunctionDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "BudgetFunctionDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetFunctionDescriptorId",
-            "postgreSql": "BudgetFunctionDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "BudgetFunctionDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0317, C146. Function identifies a general operational area and groups together related activities.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetFunctionDescriptorId",
-            "postgreSql": "BudgetFunctionDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_BudgetExt_BudgetFunctionDescriptor",
-        "postgreSql": "FK_1c17d1_BudgetFunctionDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_BudgetExt_BudgetFundDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetFundDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "BudgetFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetFundDescriptorId",
-            "postgreSql": "BudgetFundDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "BudgetFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetFundDescriptorId",
-            "postgreSql": "BudgetFundDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_BudgetExt_BudgetFundDescriptor",
-        "postgreSql": "FK_1c17d1_BudgetFundDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_BudgetExt_BudgetObjectDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetObjectDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "BudgetObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetObjectDescriptorId",
-            "postgreSql": "BudgetObjectDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "BudgetObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0318, C159. Object identifies an account, a transaction, or a source of funds.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetObjectDescriptorId",
-            "postgreSql": "BudgetObjectDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_BudgetExt_BudgetObjectDescriptor",
-        "postgreSql": "FK_1c17d1_BudgetObjectDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_BudgetExt_BudgetProgramIntentDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetProgramIntentDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "BudgetProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetProgramIntentDescriptorId",
-            "postgreSql": "BudgetProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "BudgetExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "BudgetProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "BudgetProgramIntentDescriptorId",
-            "postgreSql": "BudgetProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_BudgetExt_BudgetProgramIntentDescriptor",
-        "postgreSql": "FK_1c17d1_BudgetProgramIntentDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
         "name": "FK_BudgetExt_EducationOrganization"
       },
       "cardinality": "OneToZeroOrMore",
@@ -17831,16 +16628,16 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_BudgetFunctionDescriptor_Descriptor"
+        "name": "FK_BudgetExt_FunctionDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "FunctionDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "FunctionDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -17850,20 +16647,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "FunctionDescriptorId",
+            "postgreSql": "FunctionDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "BudgetFunctionDescriptor"
+        "name": "BudgetExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "BudgetFunctionDescriptorId",
+          "propertyName": "FunctionDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -17871,36 +16668,36 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0317, C146. Function identifies a general operational area and groups together related activities.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "BudgetFunctionDescriptorId",
-            "postgreSql": "BudgetFunctionDescriptorId"
+            "sqlServer": "FunctionDescriptorId",
+            "postgreSql": "FunctionDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_BudgetFunctionDescriptor_Descriptor",
-        "postgreSql": "FK_1f2721_Descriptor"
+        "sqlServer": "FK_BudgetExt_FunctionDescriptor",
+        "postgreSql": "FK_1c17d1_FunctionDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_BudgetFundDescriptor_Descriptor"
+        "name": "FK_BudgetExt_FundDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "FundDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "FundDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -17910,20 +16707,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "BudgetFundDescriptor"
+        "name": "BudgetExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "BudgetFundDescriptorId",
+          "propertyName": "FundDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -17931,36 +16728,36 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "BudgetFundDescriptorId",
-            "postgreSql": "BudgetFundDescriptorId"
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_BudgetFundDescriptor_Descriptor",
-        "postgreSql": "FK_91869f_Descriptor"
+        "sqlServer": "FK_BudgetExt_FundDescriptor",
+        "postgreSql": "FK_1c17d1_FundDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_BudgetObjectDescriptor_Descriptor"
+        "name": "FK_BudgetExt_ObjectDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "ObjectDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "ObjectDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -17970,20 +16767,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "ObjectDescriptorId",
+            "postgreSql": "ObjectDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "BudgetObjectDescriptor"
+        "name": "BudgetExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "BudgetObjectDescriptorId",
+          "propertyName": "ObjectDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -17991,36 +16788,36 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0318, C159. Object identifies an account, a transaction, or a source of funds.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "BudgetObjectDescriptorId",
-            "postgreSql": "BudgetObjectDescriptorId"
+            "sqlServer": "ObjectDescriptorId",
+            "postgreSql": "ObjectDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_BudgetObjectDescriptor_Descriptor",
-        "postgreSql": "FK_949d94_Descriptor"
+        "sqlServer": "FK_BudgetExt_ObjectDescriptor",
+        "postgreSql": "FK_1c17d1_ObjectDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_BudgetProgramIntentDescriptor_Descriptor"
+        "name": "FK_BudgetExt_ProgramIntentDescriptor"
       },
-      "cardinality": "OneToOneInheritance",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
+        "schema": "tx",
+        "name": "ProgramIntentDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "DescriptorId",
+          "propertyName": "ProgramIntentDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -18030,20 +16827,20 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "tx",
-        "name": "BudgetProgramIntentDescriptor"
+        "name": "BudgetExt"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "BudgetProgramIntentDescriptorId",
+          "propertyName": "ProgramIntentDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -18051,20 +16848,20 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "description": "E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "BudgetProgramIntentDescriptorId",
-            "postgreSql": "BudgetProgramIntentDescriptorId"
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_BudgetProgramIntentDescriptor_Descriptor",
-        "postgreSql": "FK_f3de4f_Descriptor"
+        "sqlServer": "FK_BudgetExt_ProgramIntentDescriptor",
+        "postgreSql": "FK_1c17d1_ProgramIntentDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -18472,66 +17269,6 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_CIStaffProgramIntentDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "CIStaffProgramIntentDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "CIStaffProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "CIStaffProgramIntentDescriptorId",
-            "postgreSql": "CIStaffProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_CIStaffProgramIntentDescriptor_Descriptor",
-        "postgreSql": "FK_32756d_Descriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
         "name": "FK_ClassTypeDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
@@ -18592,66 +17329,6 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_ContractedInstructionalStaffFTEExt_CIStaffProgramIntentDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "CIStaffProgramIntentDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "CIStaffProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "CIStaffProgramIntentDescriptorId",
-            "postgreSql": "CIStaffProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "ContractedInstructionalStaffFTEExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "CIStaffProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "CIStaffProgramIntentDescriptorId",
-            "postgreSql": "CIStaffProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_ContractedInstructionalStaffFTEExt_CIStaffProgramIntentDescriptor",
-        "postgreSql": "FK_c6c091_CIStaffProgramIntentDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
         "name": "FK_ContractedInstructionalStaffFTEExt_EducationOrganization"
       },
       "cardinality": "OneToZeroOrMore",
@@ -18706,6 +17383,66 @@
       "constraintNames": {
         "sqlServer": "FK_ContractedInstructionalStaffFTEExt_EducationOrganization",
         "postgreSql": "FK_c6c091_EducationOrganization"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
+        "name": "FK_ContractedInstructionalStaffFTEExt_ProgramIntentDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "tx",
+        "name": "ProgramIntentDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ProgramIntentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "ContractedInstructionalStaffFTEExt"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ProgramIntentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ContractedInstructionalStaffFTEExt_ProgramIntentDescriptor",
+        "postgreSql": "FK_c6c091_ProgramIntentDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -23814,66 +22551,6 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_NonEnrolledStudentUILActivityDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "NonEnrolledStudentUILActivityDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "NonEnrolledStudentUILActivityDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "NonEnrolledStudentUILActivityDescriptorId",
-            "postgreSql": "NonEnrolledStudentUILActivityDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_NonEnrolledStudentUILActivityDescriptor_Descriptor",
-        "postgreSql": "FK_b5caa6_Descriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
         "name": "FK_NSLPTypeDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
@@ -24293,6 +22970,186 @@
     {
       "fullName": {
         "schema": "tx",
+        "name": "FK_PayrollExt_FunctionDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "tx",
+        "name": "FunctionDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "FunctionDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FunctionDescriptorId",
+            "postgreSql": "FunctionDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "PayrollExt"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "FunctionDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "E0317, C146. Function identifies a general operational area and groups together related activities.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FunctionDescriptorId",
+            "postgreSql": "FunctionDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_PayrollExt_FunctionDescriptor",
+        "postgreSql": "FK_4c1df0_FunctionDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
+        "name": "FK_PayrollExt_FundDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "tx",
+        "name": "FundDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "FundDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "PayrollExt"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "FundDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "E0316, C145. Fund identifies the fund group and specific fund for payroll data.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_PayrollExt_FundDescriptor",
+        "postgreSql": "FK_4c1df0_FundDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
+        "name": "FK_PayrollExt_ObjectDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "tx",
+        "name": "ObjectDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ObjectDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ObjectDescriptorId",
+            "postgreSql": "ObjectDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "tx",
+        "name": "PayrollExt"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ObjectDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "E0318, C159. Object identifies an account, a transaction, or a source of funds.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ObjectDescriptorId",
+            "postgreSql": "ObjectDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_PayrollExt_ObjectDescriptor",
+        "postgreSql": "FK_4c1df0_ObjectDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "tx",
         "name": "FK_PayrollExt_PayrollActivityDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
@@ -24353,16 +23210,16 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_PayrollExt_PayrollFunctionDescriptor"
+        "name": "FK_PayrollExt_ProgramIntentDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "tx",
-        "name": "PayrollFunctionDescriptor"
+        "name": "ProgramIntentDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "PayrollFunctionDescriptorId",
+          "propertyName": "ProgramIntentDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -24374,8 +23231,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "PayrollFunctionDescriptorId",
-            "postgreSql": "PayrollFunctionDescriptorId"
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
           }
         }
       ],
@@ -24385,187 +23242,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "PayrollFunctionDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0317, C146. Function identifies a general operational area and groups together related activities.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "PayrollFunctionDescriptorId",
-            "postgreSql": "PayrollFunctionDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollExt_PayrollFunctionDescriptor",
-        "postgreSql": "FK_4c1df0_PayrollFunctionDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollExt_PayrollFundDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollFundDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "PayrollFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "PayrollFundDescriptorId",
-            "postgreSql": "PayrollFundDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0316, C145. Fund identifies the fund group and specific fund for payroll data.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "PayrollFundDescriptorId",
-            "postgreSql": "PayrollFundDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollExt_PayrollFundDescriptor",
-        "postgreSql": "FK_4c1df0_PayrollFundDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollExt_PayrollObjectDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollObjectDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "PayrollObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "PayrollObjectDescriptorId",
-            "postgreSql": "PayrollObjectDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E0318, C159. Object identifies an account, a transaction, or a source of funds.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "PayrollObjectDescriptorId",
-            "postgreSql": "PayrollObjectDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollExt_PayrollObjectDescriptor",
-        "postgreSql": "FK_4c1df0_PayrollObjectDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollExt_PayrollProgramIntentDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollProgramIntentDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "PayrollProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "PayrollProgramIntentDescriptorId",
-            "postgreSql": "PayrollProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollExt"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollProgramIntentDescriptorId",
+          "propertyName": "ProgramIntentDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -24577,16 +23254,16 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "PayrollProgramIntentDescriptorId",
-            "postgreSql": "PayrollProgramIntentDescriptorId"
+            "sqlServer": "ProgramIntentDescriptorId",
+            "postgreSql": "ProgramIntentDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_PayrollExt_PayrollProgramIntentDescriptor",
-        "postgreSql": "FK_4c1df0_PayrollProgramIntentDescriptor"
+        "sqlServer": "FK_PayrollExt_ProgramIntentDescriptor",
+        "postgreSql": "FK_4c1df0_ProgramIntentDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -24647,246 +23324,6 @@
       "constraintNames": {
         "sqlServer": "FK_PayrollExt_Staff",
         "postgreSql": "FK_4c1df0_Staff"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollFunctionDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollFunctionDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollFunctionDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "PayrollFunctionDescriptorId",
-            "postgreSql": "PayrollFunctionDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollFunctionDescriptor_Descriptor",
-        "postgreSql": "FK_4fb9c8_Descriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollFundDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollFundDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "PayrollFundDescriptorId",
-            "postgreSql": "PayrollFundDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollFundDescriptor_Descriptor",
-        "postgreSql": "FK_e9d5cc_Descriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollObjectDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollObjectDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollObjectDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "PayrollObjectDescriptorId",
-            "postgreSql": "PayrollObjectDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollObjectDescriptor_Descriptor",
-        "postgreSql": "FK_fbd61a_Descriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PayrollProgramIntentDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PayrollProgramIntentDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "PayrollProgramIntentDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "PayrollProgramIntentDescriptorId",
-            "postgreSql": "PayrollProgramIntentDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_PayrollProgramIntentDescriptor_Descriptor",
-        "postgreSql": "FK_883150_Descriptor"
       },
       "potentiallyLogical": false
     },
@@ -25607,66 +24044,6 @@
       "constraintNames": {
         "sqlServer": "FK_PriorYearLeaver_AsOfStatusLastFridayOctoberDescriptor",
         "postgreSql": "FK_51b088_AsOfStatusLastFridayOctoberDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_PriorYearLeaver_AssociateDegreeIndicatorDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "AssociateDegreeIndicatorDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "AssociateDegreeIndicatorDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "AssociateDegreeIndicatorDescriptorId",
-            "postgreSql": "AssociateDegreeIndicatorDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "PriorYearLeaver"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "AssociateDegreeIndicatorDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "E1596. AssociateDegreeIndicator indicates that the student earned an associate degree by August 31 immediately following graduation.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "AssociateDegreeIndicatorDescriptorId",
-            "postgreSql": "AssociateDegreeIndicatorDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": false,
-      "isRequired": false,
-      "constraintNames": {
-        "sqlServer": "FK_PriorYearLeaver_AssociateDegreeIndicatorDescriptor",
-        "postgreSql": "FK_51b088_AssociateDegreeIndicatorDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -31965,16 +30342,16 @@
     {
       "fullName": {
         "schema": "tx",
-        "name": "FK_SharedServiceArrangementExt_SSAFundDescriptor"
+        "name": "FK_SharedServiceArrangementExt_FundDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "tx",
-        "name": "SSAFundDescriptor"
+        "name": "FundDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "SSAFundDescriptorId",
+          "propertyName": "FundDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -31986,8 +30363,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "SSAFundDescriptorId",
-            "postgreSql": "SSAFundDescriptorId"
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
           }
         }
       ],
@@ -31997,7 +30374,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "SSAFundDescriptorId",
+          "propertyName": "FundDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -32009,16 +30386,16 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "SSAFundDescriptorId",
-            "postgreSql": "SSAFundDescriptorId"
+            "sqlServer": "FundDescriptorId",
+            "postgreSql": "FundDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_SharedServiceArrangementExt_SSAFundDescriptor",
-        "postgreSql": "FK_0acbb2_SSAFundDescriptor"
+        "sqlServer": "FK_SharedServiceArrangementExt_FundDescriptor",
+        "postgreSql": "FK_0acbb2_FundDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -32739,66 +31116,6 @@
       "constraintNames": {
         "sqlServer": "FK_SpecialProgramsReportingPeriodAttendance_Student",
         "postgreSql": "FK_6c730f_Student"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_SSAFundDescriptor_Descriptor"
-      },
-      "cardinality": "OneToOneInheritance",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Descriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "DescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "DescriptorId",
-            "postgreSql": "DescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "SSAFundDescriptor"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "SSAFundDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "SSAFundDescriptorId",
-            "postgreSql": "SSAFundDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_SSAFundDescriptor_Descriptor",
-        "postgreSql": "FK_e55dc6_Descriptor"
       },
       "potentiallyLogical": false
     },
@@ -35607,66 +33924,6 @@
       "constraintNames": {
         "sqlServer": "FK_StudentAcademicRecordEndorsementPursuing_StudentAcademicRecord",
         "postgreSql": "FK_a79ab1_StudentAcademicRecord"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_StudentAcademicRecordExtension_AssociateDegreeIndicatorDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "AssociateDegreeIndicatorDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "AssociateDegreeIndicatorDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "AssociateDegreeIndicatorDescriptorId",
-            "postgreSql": "AssociateDegreeIndicatorDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "StudentAcademicRecordExtension"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "AssociateDegreeIndicatorDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "E1596. AssociateDegreeIndicator indicates that the student earned an associate degree prior to graduation from high school. ",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "AssociateDegreeIndicatorDescriptorId",
-            "postgreSql": "AssociateDegreeIndicatorDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": false,
-      "isRequired": false,
-      "constraintNames": {
-        "sqlServer": "FK_StudentAcademicRecordExtension_AssociateDegreeIndicatorDescriptor",
-        "postgreSql": "FK_ee832f_AssociateDegreeIndicatorDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -39789,126 +38046,6 @@
       "constraintNames": {
         "sqlServer": "FK_StudentLanguageInstructionProgramAssociationParentalPermissionSet_StudentLanguageInstructionProgramAssociation",
         "postgreSql": "FK_710c81_StudentLanguageInstructionProgramAssociation"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_StudentNonEnrolledStudentUILActivity_NonEnrolledStudentUILActivityDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "tx",
-        "name": "NonEnrolledStudentUILActivityDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "NonEnrolledStudentUILActivityDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "NonEnrolledStudentUILActivityDescriptorId",
-            "postgreSql": "NonEnrolledStudentUILActivityDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "StudentNonEnrolledStudentUILActivity"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "NonEnrolledStudentUILActivityDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "E1739. NonEnrolledStudentUILActivity indicates the University Interscholastic League (UIL) activity in which a non-enrolled student participated at a school district that allows participation of non-enrolled students under Section 33.0832.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "NonEnrolledStudentUILActivityDescriptorId",
-            "postgreSql": "NonEnrolledStudentUILActivityDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentNonEnrolledStudentUILActivity_NonEnrolledStudentUILActivityDescriptor",
-        "postgreSql": "FK_cb84ea_NonEnrolledStudentUILActivityDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "tx",
-        "name": "FK_StudentNonEnrolledStudentUILActivity_Student"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Student"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "tx",
-        "name": "StudentNonEnrolledStudentUILActivity"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentNonEnrolledStudentUILActivity_Student",
-        "postgreSql": "FK_cb84ea_Student"
       },
       "potentiallyLogical": false
     },

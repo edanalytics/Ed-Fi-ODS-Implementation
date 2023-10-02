@@ -9,19 +9,19 @@ DECLARE
     dj2 edfi.descriptor%ROWTYPE;
     dj3 edfi.descriptor%ROWTYPE;
 BEGIN
-    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.actualfunctiondescriptorid;
+    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.functiondescriptorid;
 
-    SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.actualfunddescriptorid;
+    SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.funddescriptorid;
 
-    SELECT INTO dj2 * FROM edfi.descriptor j2 WHERE descriptorid = old.actualobjectdescriptorid;
+    SELECT INTO dj2 * FROM edfi.descriptor j2 WHERE descriptorid = old.objectdescriptorid;
 
-    SELECT INTO dj3 * FROM edfi.descriptor j3 WHERE descriptorid = old.actualprogramintentdescriptorid;
+    SELECT INTO dj3 * FROM edfi.descriptor j3 WHERE descriptorid = old.programintentdescriptorid;
 
     INSERT INTO tracked_changes_tx.actualext(
-        oldactualfunctiondescriptorid, oldactualfunctiondescriptornamespace, oldactualfunctiondescriptorcodevalue, oldactualfunddescriptorid, oldactualfunddescriptornamespace, oldactualfunddescriptorcodevalue, oldactualobjectdescriptorid, oldactualobjectdescriptornamespace, oldactualobjectdescriptorcodevalue, oldactualprogramintentdescriptorid, oldactualprogramintentdescriptornamespace, oldactualprogramintentdescriptorcodevalue, oldbegindate, oldeducationorganizationid, oldfiscalyear, oldorganization,
+        oldbegindate, oldeducationorganizationid, oldfiscalyear, oldfunctiondescriptorid, oldfunctiondescriptornamespace, oldfunctiondescriptorcodevalue, oldfunddescriptorid, oldfunddescriptornamespace, oldfunddescriptorcodevalue, oldobjectdescriptorid, oldobjectdescriptornamespace, oldobjectdescriptorcodevalue, oldorganization, oldprogramintentdescriptorid, oldprogramintentdescriptornamespace, oldprogramintentdescriptorcodevalue,
         id, discriminator, changeversion)
     VALUES (
-        OLD.actualfunctiondescriptorid, dj0.namespace, dj0.codevalue, OLD.actualfunddescriptorid, dj1.namespace, dj1.codevalue, OLD.actualobjectdescriptorid, dj2.namespace, dj2.codevalue, OLD.actualprogramintentdescriptorid, dj3.namespace, dj3.codevalue, OLD.begindate, OLD.educationorganizationid, OLD.fiscalyear, OLD.organization, 
+        OLD.begindate, OLD.educationorganizationid, OLD.fiscalyear, OLD.functiondescriptorid, dj0.namespace, dj0.codevalue, OLD.funddescriptorid, dj1.namespace, dj1.codevalue, OLD.objectdescriptorid, dj2.namespace, dj2.codevalue, OLD.organization, OLD.programintentdescriptorid, dj3.namespace, dj3.codevalue, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;
@@ -31,74 +31,6 @@ $BODY$ LANGUAGE plpgsql;
 IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'actualext') THEN
 CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.actualext 
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.actualext_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.actualfunctiondescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.ActualFunctionDescriptorId, b.codevalue, b.namespace, b.id, 'tx.ActualFunctionDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.ActualFunctionDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'actualfunctiondescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.actualfunctiondescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.actualfunctiondescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.actualfunddescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.ActualFundDescriptorId, b.codevalue, b.namespace, b.id, 'tx.ActualFundDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.ActualFundDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'actualfunddescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.actualfunddescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.actualfunddescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.actualobjectdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.ActualObjectDescriptorId, b.codevalue, b.namespace, b.id, 'tx.ActualObjectDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.ActualObjectDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'actualobjectdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.actualobjectdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.actualobjectdescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.actualprogramintentdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.ActualProgramIntentDescriptorId, b.codevalue, b.namespace, b.id, 'tx.ActualProgramIntentDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.ActualProgramIntentDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'actualprogramintentdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.actualprogramintentdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.actualprogramintentdescriptor_deleted();
 END IF;
 
 CREATE OR REPLACE FUNCTION tracked_changes_tx.adaeligibilitydescriptor_deleted()
@@ -220,23 +152,6 @@ CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.assessmentresultsobtaineddescript
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.assessmentresultsobtaineddescriptor_deleted();
 END IF;
 
-CREATE OR REPLACE FUNCTION tracked_changes_tx.associatedegreeindicatordescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.AssociateDegreeIndicatorDescriptorId, b.codevalue, b.namespace, b.id, 'tx.AssociateDegreeIndicatorDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.AssociateDegreeIndicatorDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'associatedegreeindicatordescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.associatedegreeindicatordescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.associatedegreeindicatordescriptor_deleted();
-END IF;
-
 CREATE OR REPLACE FUNCTION tracked_changes_tx.auxiliaryroleiddescriptor_deleted()
     RETURNS trigger AS
 $BODY$
@@ -343,19 +258,19 @@ DECLARE
     dj2 edfi.descriptor%ROWTYPE;
     dj3 edfi.descriptor%ROWTYPE;
 BEGIN
-    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.budgetfunctiondescriptorid;
+    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.functiondescriptorid;
 
-    SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.budgetfunddescriptorid;
+    SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.funddescriptorid;
 
-    SELECT INTO dj2 * FROM edfi.descriptor j2 WHERE descriptorid = old.budgetobjectdescriptorid;
+    SELECT INTO dj2 * FROM edfi.descriptor j2 WHERE descriptorid = old.objectdescriptorid;
 
-    SELECT INTO dj3 * FROM edfi.descriptor j3 WHERE descriptorid = old.budgetprogramintentdescriptorid;
+    SELECT INTO dj3 * FROM edfi.descriptor j3 WHERE descriptorid = old.programintentdescriptorid;
 
     INSERT INTO tracked_changes_tx.budgetext(
-        oldbegindate, oldbudgetfunctiondescriptorid, oldbudgetfunctiondescriptornamespace, oldbudgetfunctiondescriptorcodevalue, oldbudgetfunddescriptorid, oldbudgetfunddescriptornamespace, oldbudgetfunddescriptorcodevalue, oldbudgetobjectdescriptorid, oldbudgetobjectdescriptornamespace, oldbudgetobjectdescriptorcodevalue, oldbudgetprogramintentdescriptorid, oldbudgetprogramintentdescriptornamespace, oldbudgetprogramintentdescriptorcodevalue, oldeducationorganizationid, oldfiscalyear, oldorganization,
+        oldbegindate, oldeducationorganizationid, oldfiscalyear, oldfunctiondescriptorid, oldfunctiondescriptornamespace, oldfunctiondescriptorcodevalue, oldfunddescriptorid, oldfunddescriptornamespace, oldfunddescriptorcodevalue, oldobjectdescriptorid, oldobjectdescriptornamespace, oldobjectdescriptorcodevalue, oldorganization, oldprogramintentdescriptorid, oldprogramintentdescriptornamespace, oldprogramintentdescriptorcodevalue,
         id, discriminator, changeversion)
     VALUES (
-        OLD.begindate, OLD.budgetfunctiondescriptorid, dj0.namespace, dj0.codevalue, OLD.budgetfunddescriptorid, dj1.namespace, dj1.codevalue, OLD.budgetobjectdescriptorid, dj2.namespace, dj2.codevalue, OLD.budgetprogramintentdescriptorid, dj3.namespace, dj3.codevalue, OLD.educationorganizationid, OLD.fiscalyear, OLD.organization, 
+        OLD.begindate, OLD.educationorganizationid, OLD.fiscalyear, OLD.functiondescriptorid, dj0.namespace, dj0.codevalue, OLD.funddescriptorid, dj1.namespace, dj1.codevalue, OLD.objectdescriptorid, dj2.namespace, dj2.codevalue, OLD.organization, OLD.programintentdescriptorid, dj3.namespace, dj3.codevalue, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;
@@ -365,74 +280,6 @@ $BODY$ LANGUAGE plpgsql;
 IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'budgetext') THEN
 CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.budgetext 
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.budgetext_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.budgetfunctiondescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.BudgetFunctionDescriptorId, b.codevalue, b.namespace, b.id, 'tx.BudgetFunctionDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.BudgetFunctionDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'budgetfunctiondescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.budgetfunctiondescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.budgetfunctiondescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.budgetfunddescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.BudgetFundDescriptorId, b.codevalue, b.namespace, b.id, 'tx.BudgetFundDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.BudgetFundDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'budgetfunddescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.budgetfunddescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.budgetfunddescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.budgetobjectdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.BudgetObjectDescriptorId, b.codevalue, b.namespace, b.id, 'tx.BudgetObjectDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.BudgetObjectDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'budgetobjectdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.budgetobjectdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.budgetobjectdescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.budgetprogramintentdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.BudgetProgramIntentDescriptorId, b.codevalue, b.namespace, b.id, 'tx.BudgetProgramIntentDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.BudgetProgramIntentDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'budgetprogramintentdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.budgetprogramintentdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.budgetprogramintentdescriptor_deleted();
 END IF;
 
 CREATE OR REPLACE FUNCTION tracked_changes_tx.calendarwaivereventtypedescriptor_deleted()
@@ -486,23 +333,6 @@ CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.childcountfundingdescriptor
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.childcountfundingdescriptor_deleted();
 END IF;
 
-CREATE OR REPLACE FUNCTION tracked_changes_tx.cistaffprogramintentdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.CIStaffProgramIntentDescriptorId, b.codevalue, b.namespace, b.id, 'tx.CIStaffProgramIntentDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.CIStaffProgramIntentDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'cistaffprogramintentdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.cistaffprogramintentdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.cistaffprogramintentdescriptor_deleted();
-END IF;
-
 CREATE OR REPLACE FUNCTION tracked_changes_tx.classtypedescriptor_deleted()
     RETURNS trigger AS
 $BODY$
@@ -526,13 +356,13 @@ $BODY$
 DECLARE
     dj0 edfi.descriptor%ROWTYPE;
 BEGIN
-    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.cistaffprogramintentdescriptorid;
+    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.programintentdescriptorid;
 
     INSERT INTO tracked_changes_tx.contractedinstructionalstafffteext(
-        oldcistaffprogramintentdescriptorid, oldcistaffprogramintentdescriptornamespace, oldcistaffprogramintentdescriptorcodevalue, oldeducationorganizationid, oldschoolid,
+        oldeducationorganizationid, oldprogramintentdescriptorid, oldprogramintentdescriptornamespace, oldprogramintentdescriptorcodevalue, oldschoolid,
         id, discriminator, changeversion)
     VALUES (
-        OLD.cistaffprogramintentdescriptorid, dj0.namespace, dj0.codevalue, OLD.educationorganizationid, OLD.schoolid, 
+        OLD.educationorganizationid, OLD.programintentdescriptorid, dj0.namespace, dj0.codevalue, OLD.schoolid, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;
@@ -1343,23 +1173,6 @@ CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.noncampusbasedinstructiondescript
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.noncampusbasedinstructiondescriptor_deleted();
 END IF;
 
-CREATE OR REPLACE FUNCTION tracked_changes_tx.nonenrolledstudentuilactivitydescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.NonEnrolledStudentUILActivityDescriptorId, b.codevalue, b.namespace, b.id, 'tx.NonEnrolledStudentUILActivityDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.NonEnrolledStudentUILActivityDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'nonenrolledstudentuilactivitydescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.nonenrolledstudentuilactivitydescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.nonenrolledstudentuilactivitydescriptor_deleted();
-END IF;
-
 CREATE OR REPLACE FUNCTION tracked_changes_tx.nslptypedescriptor_deleted()
     RETURNS trigger AS
 $BODY$
@@ -1439,23 +1252,23 @@ DECLARE
     dj4 edfi.descriptor%ROWTYPE;
     dj5 edfi.staff%ROWTYPE;
 BEGIN
-    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.payrollactivitydescriptorid;
+    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.functiondescriptorid;
 
-    SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.payrollfunctiondescriptorid;
+    SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.funddescriptorid;
 
-    SELECT INTO dj2 * FROM edfi.descriptor j2 WHERE descriptorid = old.payrollfunddescriptorid;
+    SELECT INTO dj2 * FROM edfi.descriptor j2 WHERE descriptorid = old.objectdescriptorid;
 
-    SELECT INTO dj3 * FROM edfi.descriptor j3 WHERE descriptorid = old.payrollobjectdescriptorid;
+    SELECT INTO dj3 * FROM edfi.descriptor j3 WHERE descriptorid = old.payrollactivitydescriptorid;
 
-    SELECT INTO dj4 * FROM edfi.descriptor j4 WHERE descriptorid = old.payrollprogramintentdescriptorid;
+    SELECT INTO dj4 * FROM edfi.descriptor j4 WHERE descriptorid = old.programintentdescriptorid;
 
     SELECT INTO dj5 * FROM edfi.staff j5 WHERE staffusi = old.staffusi;
 
     INSERT INTO tracked_changes_tx.payrollext(
-        oldbegindate, oldeducationorganizationid, oldfiscalyear, oldorganization, oldpayrollactivitydescriptorid, oldpayrollactivitydescriptornamespace, oldpayrollactivitydescriptorcodevalue, oldpayrollfunctiondescriptorid, oldpayrollfunctiondescriptornamespace, oldpayrollfunctiondescriptorcodevalue, oldpayrollfunddescriptorid, oldpayrollfunddescriptornamespace, oldpayrollfunddescriptorcodevalue, oldpayrollobjectdescriptorid, oldpayrollobjectdescriptornamespace, oldpayrollobjectdescriptorcodevalue, oldpayrollprogramintentdescriptorid, oldpayrollprogramintentdescriptornamespace, oldpayrollprogramintentdescriptorcodevalue, oldstaffusi, oldstaffuniqueid,
+        oldbegindate, oldeducationorganizationid, oldfiscalyear, oldfunctiondescriptorid, oldfunctiondescriptornamespace, oldfunctiondescriptorcodevalue, oldfunddescriptorid, oldfunddescriptornamespace, oldfunddescriptorcodevalue, oldobjectdescriptorid, oldobjectdescriptornamespace, oldobjectdescriptorcodevalue, oldorganization, oldpayrollactivitydescriptorid, oldpayrollactivitydescriptornamespace, oldpayrollactivitydescriptorcodevalue, oldprogramintentdescriptorid, oldprogramintentdescriptornamespace, oldprogramintentdescriptorcodevalue, oldstaffusi, oldstaffuniqueid,
         id, discriminator, changeversion)
     VALUES (
-        OLD.begindate, OLD.educationorganizationid, OLD.fiscalyear, OLD.organization, OLD.payrollactivitydescriptorid, dj0.namespace, dj0.codevalue, OLD.payrollfunctiondescriptorid, dj1.namespace, dj1.codevalue, OLD.payrollfunddescriptorid, dj2.namespace, dj2.codevalue, OLD.payrollobjectdescriptorid, dj3.namespace, dj3.codevalue, OLD.payrollprogramintentdescriptorid, dj4.namespace, dj4.codevalue, OLD.staffusi, dj5.staffuniqueid, 
+        OLD.begindate, OLD.educationorganizationid, OLD.fiscalyear, OLD.functiondescriptorid, dj0.namespace, dj0.codevalue, OLD.funddescriptorid, dj1.namespace, dj1.codevalue, OLD.objectdescriptorid, dj2.namespace, dj2.codevalue, OLD.organization, OLD.payrollactivitydescriptorid, dj3.namespace, dj3.codevalue, OLD.programintentdescriptorid, dj4.namespace, dj4.codevalue, OLD.staffusi, dj5.staffuniqueid, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;
@@ -1465,74 +1278,6 @@ $BODY$ LANGUAGE plpgsql;
 IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'payrollext') THEN
 CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.payrollext 
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.payrollext_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.payrollfunctiondescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.PayrollFunctionDescriptorId, b.codevalue, b.namespace, b.id, 'tx.PayrollFunctionDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.PayrollFunctionDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'payrollfunctiondescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.payrollfunctiondescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.payrollfunctiondescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.payrollfunddescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.PayrollFundDescriptorId, b.codevalue, b.namespace, b.id, 'tx.PayrollFundDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.PayrollFundDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'payrollfunddescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.payrollfunddescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.payrollfunddescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.payrollobjectdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.PayrollObjectDescriptorId, b.codevalue, b.namespace, b.id, 'tx.PayrollObjectDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.PayrollObjectDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'payrollobjectdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.payrollobjectdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.payrollobjectdescriptor_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.payrollprogramintentdescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.PayrollProgramIntentDescriptorId, b.codevalue, b.namespace, b.id, 'tx.PayrollProgramIntentDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.PayrollProgramIntentDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'payrollprogramintentdescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.payrollprogramintentdescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.payrollprogramintentdescriptor_deleted();
 END IF;
 
 CREATE OR REPLACE FUNCTION tracked_changes_tx.pkcurriculadescriptor_deleted()
@@ -1915,15 +1660,15 @@ DECLARE
     dj0 edfi.descriptor%ROWTYPE;
     dj1 edfi.descriptor%ROWTYPE;
 BEGIN
-    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.ssafunddescriptorid;
+    SELECT INTO dj0 * FROM edfi.descriptor j0 WHERE descriptorid = old.funddescriptorid;
 
     SELECT INTO dj1 * FROM edfi.descriptor j1 WHERE descriptorid = old.ssatypedescriptorid;
 
     INSERT INTO tracked_changes_tx.sharedservicearrangementext(
-        oldeducationorganizationid, oldfiscalyear, oldssafunddescriptorid, oldssafunddescriptornamespace, oldssafunddescriptorcodevalue, oldssamemberdistrictid, oldssatypedescriptorid, oldssatypedescriptornamespace, oldssatypedescriptorcodevalue,
+        oldeducationorganizationid, oldfiscalyear, oldfunddescriptorid, oldfunddescriptornamespace, oldfunddescriptorcodevalue, oldssamemberdistrictid, oldssatypedescriptorid, oldssatypedescriptornamespace, oldssatypedescriptorcodevalue,
         id, discriminator, changeversion)
     VALUES (
-        OLD.educationorganizationid, OLD.fiscalyear, OLD.ssafunddescriptorid, dj0.namespace, dj0.codevalue, OLD.ssamemberdistrictid, OLD.ssatypedescriptorid, dj1.namespace, dj1.codevalue, 
+        OLD.educationorganizationid, OLD.fiscalyear, OLD.funddescriptorid, dj0.namespace, dj0.codevalue, OLD.ssamemberdistrictid, OLD.ssatypedescriptorid, dj1.namespace, dj1.codevalue, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;
@@ -2016,23 +1761,6 @@ $BODY$ LANGUAGE plpgsql;
 IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'specialprogramsreportingperiodattendance') THEN
 CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.specialprogramsreportingperiodattendance 
     FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.specialprogramsreportingperiodattendance_deleted();
-END IF;
-
-CREATE OR REPLACE FUNCTION tracked_changes_tx.ssafunddescriptor_deleted()
-    RETURNS trigger AS
-$BODY$
-BEGIN
-    INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.SSAFundDescriptorId, b.codevalue, b.namespace, b.id, 'tx.SSAFundDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.SSAFundDescriptorId = b.descriptorid ;
-
-    RETURN NULL;
-END;
-$BODY$ LANGUAGE plpgsql;
-
-IF NOT EXISTS(SELECT 1 FROM information_schema.triggers WHERE trigger_name = 'trackdeletes' AND event_object_schema = 'tx' AND event_object_table = 'ssafunddescriptor') THEN
-CREATE TRIGGER TrackDeletes AFTER DELETE ON tx.ssafunddescriptor 
-    FOR EACH ROW EXECUTE PROCEDURE tracked_changes_tx.ssafunddescriptor_deleted();
 END IF;
 
 CREATE OR REPLACE FUNCTION tracked_changes_tx.ssaorgassociationext_deleted()

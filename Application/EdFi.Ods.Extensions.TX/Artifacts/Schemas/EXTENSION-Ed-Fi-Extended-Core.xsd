@@ -32,27 +32,27 @@
               <xs:documentation>E0774. ActualAmount indicates the dollar value associated with actual financial account information.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ActualFund" type="EXTENSION-ActualFundDescriptorReferenceType">
+          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ActualFundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ActualFunction" type="EXTENSION-ActualFunctionDescriptorReferenceType">
+          <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ActualFunctionDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ActualObject" type="EXTENSION-ActualObjectDescriptorReferenceType">
+          <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ActualObjectDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -61,11 +61,11 @@
               <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ActualProgramIntent" type="EXTENSION-ActualProgramIntentDescriptorReferenceType">
+          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ActualProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -286,27 +286,27 @@
               <xs:documentation>E0321. BudgetAmount indicates the dollar value associated with budget financial account information.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="BudgetFund" type="EXTENSION-BudgetFundDescriptorReferenceType">
+          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-BudgetFundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="BudgetFunction" type="EXTENSION-BudgetFunctionDescriptorReferenceType">
+          <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-BudgetFunctionDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="BudgetObject" type="EXTENSION-BudgetObjectDescriptorReferenceType">
+          <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-BudgetObjectDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -315,11 +315,11 @@
               <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="BudgetProgramIntent" type="EXTENSION-BudgetProgramIntentDescriptorReferenceType">
+          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-BudgetProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -394,11 +394,11 @@
               <xs:documentation>E0266. The School denotes the campus with which the contracted staff is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="CIStaffProgramIntent" type="EXTENSION-CIStaffProgramIntentDescriptorReferenceType">
+          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-CIStaffProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1127,27 +1127,27 @@
               <xs:documentation>E0425. PayrollAmount indicates the dollar value that is paid to a staff member for a given payroll activity per year.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="PayrollFund" type="EXTENSION-PayrollFundDescriptorReferenceType">
+          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund for payroll data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-PayrollFundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="PayrollFunction" type="EXTENSION-PayrollFunctionDescriptorReferenceType">
+          <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-PayrollFunctionDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="PayrollObject" type="EXTENSION-PayrollObjectDescriptorReferenceType">
+          <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-PayrollObjectDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1156,11 +1156,11 @@
               <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="PayrollProgramIntent" type="EXTENSION-PayrollProgramIntentDescriptorReferenceType">
+          <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-PayrollProgramIntentDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -1266,12 +1266,9 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="AssociateDegreeIndicator" type="EXTENSION-AssociateDegreeIndicatorDescriptorReferenceType" minOccurs="0">
+          <xs:element name="AssociateDegreeIndicator" type="xs:boolean" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1596. AssociateDegreeIndicator indicates that the student earned an associate degree by August 31 immediately following graduation.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-AssociateDegreeIndicatorDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="FinancialAidApplication" type="EXTENSION-FinancialAidApplicationDescriptorReferenceType" minOccurs="0">
@@ -1674,11 +1671,11 @@
               <xs:documentation>E0774. ActualAmount indicates the dollar value associated with actual financial account information.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="SSAFund" type="EXTENSION-SSAFundDescriptorReferenceType">
+          <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
             <xs:annotation>
               <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-SSAFundDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -2020,12 +2017,9 @@
               <xs:documentation>E1563. IndividualGraduationCommitteeReview indicates whether an IGC has been established for a student regardless of which graduation program type is being pursued.  This is collected for students in grades 11 and 12.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="AssociateDegreeIndicator" type="EXTENSION-AssociateDegreeIndicatorDescriptorReferenceType" minOccurs="0">
+          <xs:element name="AssociateDegreeIndicator" type="xs:boolean" minOccurs="0">
             <xs:annotation>
               <xs:documentation>E1596. AssociateDegreeIndicator indicates that the student earned an associate degree prior to graduation from high school. </xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-AssociateDegreeIndicatorDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
           <xs:element name="FHSPParticipant" type="xs:boolean" minOccurs="0">
@@ -2319,14 +2313,6 @@
               <xs:documentation>CommonType CrisisEvent indicates a state health or weather-related event that impacts a group of students, and may require additional funding, educational, or social services. The event may or may not cause the student to leave the district or campus of residence.  A crisis event is designated by the Commissioner of Education.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="NonEnrolledStudentUILActivity" type="EXTENSION-NonEnrolledStudentUILActivityDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>E1739. NonEnrolledStudentUILActivity indicates the University Interscholastic League (UIL) activity in which a non-enrolled student participated at a school district that allows participation of non-enrolled students under Section 33.0832.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-NonEnrolledStudentUILActivityDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2356,50 +2342,6 @@
   <xs:annotation>
     <xs:documentation>===== Descriptors =====</xs:documentation>
   </xs:annotation>
-  <xs:complexType name="EXTENSION-ActualFunctionDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-ActualFundDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-ActualObjectDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-ActualProgramIntentDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-ADAEligibilityDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor ADAEligibility is populated from Code Table C059.</xs:documentation>
@@ -2477,17 +2419,6 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-AssociateDegreeIndicatorDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C235.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-AuxiliaryRoleIdDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor AuxiliaryRoleId is populated from code table C213.</xs:documentation>
@@ -2502,50 +2433,6 @@
   <xs:complexType name="EXTENSION-BilingualESLFundingDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor BilingualESLFunding is based on code table C225.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-BudgetFunctionDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146B.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-BudgetFundDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145B.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-BudgetObjectDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159B.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-BudgetProgramIntentDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147B.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -2579,17 +2466,6 @@
   <xs:complexType name="EXTENSION-ChildCountFundingDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor ChildCountFunding indicates under which federal program the student receiving special education and related services is counted. (C066)</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-CIStaffProgramIntentDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147C.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -2983,17 +2859,6 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-NonEnrolledStudentUILActivityDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C234.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-NSLPTypeDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor NSLPType is populated from code table C212.</xs:documentation>
@@ -3030,50 +2895,6 @@
   <xs:complexType name="EXTENSION-PayrollActivityDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor PayrollActivity is populated from Code Table C018.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-PayrollFunctionDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146P.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-PayrollFundDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145P.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-PayrollObjectDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159P.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-PayrollProgramIntentDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147P.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -3272,17 +3093,6 @@
   <xs:complexType name="EXTENSION-SharedServiceArrangementStaffDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor SharedServiceArrangementStaff is populated from code table C169</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-SSAFundDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145S.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -3724,16 +3534,6 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="CampusIdOfResidence" type="EXTENSION-CampusIdOfResidence" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>E0903. CampusIdOfResidence indicates the unique campus identification number corresponding to the campus attendance area in which the student currently resides.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CampusIdOfAccountability" type="EXTENSION-CampusIdOfAccountability" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>E1027. CampusIdOfAccountability indicates the unique campus identification number to which a student’s attendance and/or leaver accountability data are attributed for campus accountability purposes.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4061,27 +3861,27 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ActualFund" type="EXTENSION-ActualFundDescriptorReferenceType">
+      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ActualFundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ActualFunction" type="EXTENSION-ActualFunctionDescriptorReferenceType">
+      <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ActualFunctionDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ActualObject" type="EXTENSION-ActualObjectDescriptorReferenceType">
+      <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ActualObjectDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4090,11 +3890,11 @@
           <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ActualProgramIntent" type="EXTENSION-ActualProgramIntentDescriptorReferenceType">
+      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-ActualProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4270,27 +4070,27 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="BudgetFund" type="EXTENSION-BudgetFundDescriptorReferenceType">
+      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-BudgetFundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="BudgetFunction" type="EXTENSION-BudgetFunctionDescriptorReferenceType">
+      <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-BudgetFunctionDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="BudgetObject" type="EXTENSION-BudgetObjectDescriptorReferenceType">
+      <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-BudgetObjectDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4299,11 +4099,11 @@
           <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="BudgetProgramIntent" type="EXTENSION-BudgetProgramIntentDescriptorReferenceType">
+      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-BudgetProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4351,11 +4151,11 @@
           <xs:documentation>E0266. The School denotes the campus with which the contracted staff is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="CIStaffProgramIntent" type="EXTENSION-CIStaffProgramIntentDescriptorReferenceType">
+      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-CIStaffProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4868,27 +4668,27 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 1993-94 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="PayrollFund" type="EXTENSION-PayrollFundDescriptorReferenceType">
+      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund for payroll data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-PayrollFundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="PayrollFunction" type="EXTENSION-PayrollFunctionDescriptorReferenceType">
+      <xs:element name="Function" type="EXTENSION-FunctionDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0317, C146. Function identifies a general operational area and groups together related activities.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-PayrollFunctionDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FunctionDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
-      <xs:element name="PayrollObject" type="EXTENSION-PayrollObjectDescriptorReferenceType">
+      <xs:element name="Object" type="EXTENSION-ObjectDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0318, C159. Object identifies an account, a transaction, or a source of funds.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-PayrollObjectDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ObjectDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -4897,11 +4697,11 @@
           <xs:documentation>E0319. Organization identifies the unique organizational unit within the district with which the account is associated.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="PayrollProgramIntent" type="EXTENSION-PayrollProgramIntentDescriptorReferenceType">
+      <xs:element name="ProgramIntent" type="EXTENSION-ProgramIntentDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-PayrollProgramIntentDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-ProgramIntentDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -5119,11 +4919,11 @@
           <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 2013-14 fiscal year.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="SSAFund" type="EXTENSION-SSAFundDescriptorReferenceType">
+      <xs:element name="Fund" type="EXTENSION-FundDescriptorReferenceType">
         <xs:annotation>
           <xs:documentation>E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.</xs:documentation>
           <xs:appinfo>
-            <ann:Descriptor>EXTENSION-SSAFundDescriptor</ann:Descriptor>
+            <ann:Descriptor>EXTENSION-FundDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -5422,42 +5222,6 @@
   <xs:annotation>
     <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
   </xs:annotation>
-  <xs:simpleType name="EXTENSION-ActualFunctionDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-ActualFundDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-ActualObjectDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-ActualProgramIntentDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147A.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
   <xs:simpleType name="EXTENSION-ADAEligibilityDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor ADAEligibility is populated from Code Table C059.</xs:documentation>
@@ -5521,15 +5285,6 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-AssociateDegreeIndicatorDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C235.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
   <xs:simpleType name="EXTENSION-AuxiliaryRoleIdDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor AuxiliaryRoleId is populated from code table C213.</xs:documentation>
@@ -5542,42 +5297,6 @@
   <xs:simpleType name="EXTENSION-BilingualESLFundingDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor BilingualESLFunding is based on code table C225.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-BudgetFunctionDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146B.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-BudgetFundDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145B.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-BudgetObjectDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159B.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-BudgetProgramIntentDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147B.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -5605,15 +5324,6 @@
   <xs:simpleType name="EXTENSION-ChildCountFundingDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor ChildCountFunding indicates under which federal program the student receiving special education and related services is counted. (C066)</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-CIStaffProgramIntentDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147C.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -5935,15 +5645,6 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-NonEnrolledStudentUILActivityDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C234.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
   <xs:simpleType name="EXTENSION-NSLPTypeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor NSLPType is populated from code table C212.</xs:documentation>
@@ -5974,42 +5675,6 @@
   <xs:simpleType name="EXTENSION-PayrollActivityDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor PayrollActivity is populated from Code Table C018.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-PayrollFunctionDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146P.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-PayrollFundDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145P.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-PayrollObjectDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159P.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-PayrollProgramIntentDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147P.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -6172,15 +5837,6 @@
   <xs:simpleType name="EXTENSION-SharedServiceArrangementStaffDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor SharedServiceArrangementStaff is populated from code table C169</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-SSAFundDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145S.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -7314,11 +6970,6 @@
           <xs:documentation>E3061. StaffServiceEndDate indicates the month, day, and year for when the services supplied by the staff becomes false.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="NumberOfStudentsInClass" type="EXTENSION-NumberOfStudentsInClass" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="EXTENSION-StaffTypeSet">
@@ -7777,11 +7428,9 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:decimal">
+    <xs:restriction base="xs:int">
       <xs:minInclusive value="-9999999999" />
       <xs:maxInclusive value="9999999999" />
-      <xs:totalDigits value="10" />
-      <xs:fractionDigits value="0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-ActualLengthOfDisciplinaryAssignment">
@@ -7815,23 +7464,9 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:decimal">
+    <xs:restriction base="xs:int">
       <xs:minInclusive value="-9999999999" />
       <xs:maxInclusive value="9999999999" />
-      <xs:totalDigits value="10" />
-      <xs:fractionDigits value="0" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-CampusIdOfAccountability">
-    <xs:annotation>
-      <xs:documentation>E1027. CampusIdOfAccountability indicates the unique campus identification number to which a student’s attendance and/or leaver accountability data are attributed for campus accountability purposes.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Simple</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="xs:int">
-      <xs:minInclusive value="1" />
-      <xs:maxInclusive value="9" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-CampusIdOfEnrollmentSchoolDayLength">
@@ -7844,18 +7479,6 @@
     <xs:restriction base="xs:int">
       <xs:minInclusive value="0" />
       <xs:maxInclusive value="600" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-CampusIdOfResidence">
-    <xs:annotation>
-      <xs:documentation>E0903. CampusIdOfResidence indicates the unique campus identification number corresponding to the campus attendance area in which the student currently resides.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Simple</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="xs:int">
-      <xs:minInclusive value="1" />
-      <xs:maxInclusive value="9" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-CharterEducationalEnrollmentCapacity">
@@ -8358,18 +7981,6 @@
     <xs:restriction base="xs:int">
       <xs:minInclusive value="0" />
       <xs:maxInclusive value="999" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-NumberOfStudentsInClass">
-    <xs:annotation>
-      <xs:documentation>E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Simple</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="xs:int">
-      <xs:minInclusive value="0" />
-      <xs:maxInclusive value="3" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-NumberOtherStudentsAssignedSameSurrogateParent">

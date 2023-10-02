@@ -1,49 +1,25 @@
 -- Extended Properties [tx].[ActualExt] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The ActualExtension Domain Entity represents the sum of the financial transactions to date relating to a specific account.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0317, C146. Function identifies a general operational area and groups together related activities.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ActualFunctionDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ActualFundDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0318, C159. Object identifies an account, a transaction, or a source of funds.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ActualObjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ActualProgramIntentDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0317, C146. Function identifies a general operational area and groups together related activities.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'FunctionDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'FundDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0318, C159. Object identifies an account, a transaction, or a source of funds.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ObjectDescriptorId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0319. Organization identifies the unique organizational unit within the district with which the account is associated.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'Organization'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ProgramIntentDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0774. ActualAmount indicates the dollar value associated with actual financial account information.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'ActualAmount'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3020. EndDate indicates the month, day, and year for the specified data element becomes false of the student, staff, program, etc.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualExt', @level2type=N'COLUMN', @level2name=N'EndDate'
-GO
-
--- Extended Properties [tx].[ActualFunctionDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Function is populated from Code Table C146A.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualFunctionDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualFunctionDescriptor', @level2type=N'COLUMN', @level2name=N'ActualFunctionDescriptorId'
-GO
-
--- Extended Properties [tx].[ActualFundDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Fund is populated from Code Table C145A.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualFundDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualFundDescriptor', @level2type=N'COLUMN', @level2name=N'ActualFundDescriptorId'
-GO
-
--- Extended Properties [tx].[ActualObjectDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Object is populated from Code Table C159A.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualObjectDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualObjectDescriptor', @level2type=N'COLUMN', @level2name=N'ActualObjectDescriptorId'
-GO
-
--- Extended Properties [tx].[ActualProgramIntentDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ProgramIntent is populated from Code Table C147A.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualProgramIntentDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ActualProgramIntentDescriptor', @level2type=N'COLUMN', @level2name=N'ActualProgramIntentDescriptorId'
 GO
 
 -- Extended Properties [tx].[ADAEligibilityDescriptor] --
@@ -98,12 +74,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor AssessmentResultsObtained identifies the result of tools or assessments used to assess the student''s language acquisition. (DC163)', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'AssessmentResultsObtainedDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'AssessmentResultsObtainedDescriptor', @level2type=N'COLUMN', @level2name=N'AssessmentResultsObtainedDescriptorId'
-GO
-
--- Extended Properties [tx].[AssociateDegreeIndicatorDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Function is populated from Code Table C235.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'AssociateDegreeIndicatorDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'AssociateDegreeIndicatorDescriptor', @level2type=N'COLUMN', @level2name=N'AssociateDegreeIndicatorDescriptorId'
 GO
 
 -- Extended Properties [tx].[AuxiliaryRoleIdDescriptor] --
@@ -173,47 +143,23 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The BudgetExte
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3010. BeginDate indicates the month, day, and year for the specified data element becomes true of the student, staff, program, etc.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0317, C146. Function identifies a general operational area and groups together related activities.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'BudgetFunctionDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'BudgetFundDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0318, C159. Object identifies an account, a transaction, or a source of funds.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'BudgetObjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'BudgetProgramIntentDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0317, C146. Function identifies a general operational area and groups together related activities.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'FunctionDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund (when applicable) for budget data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'FundDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0318, C159. Object identifies an account, a transaction, or a source of funds.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'ObjectDescriptorId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0319. Organization identifies the unique organizational unit within the district with which the account is associated.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'Organization'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'ProgramIntentDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0321. BudgetAmount indicates the dollar value associated with budget financial account information.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'BudgetAmount'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3020. EndDate indicates the month, day, and year for the specified data element becomes false of the student, staff, program, etc.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetExt', @level2type=N'COLUMN', @level2name=N'EndDate'
-GO
-
--- Extended Properties [tx].[BudgetFunctionDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Function is populated from Code Table C146B.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetFunctionDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetFunctionDescriptor', @level2type=N'COLUMN', @level2name=N'BudgetFunctionDescriptorId'
-GO
-
--- Extended Properties [tx].[BudgetFundDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Fund is populated from Code Table C145B.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetFundDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetFundDescriptor', @level2type=N'COLUMN', @level2name=N'BudgetFundDescriptorId'
-GO
-
--- Extended Properties [tx].[BudgetObjectDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Object is populated from Code Table C159B.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetObjectDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetObjectDescriptor', @level2type=N'COLUMN', @level2name=N'BudgetObjectDescriptorId'
-GO
-
--- Extended Properties [tx].[BudgetProgramIntentDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ProgramIntent is populated from Code Table C147B.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetProgramIntentDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'BudgetProgramIntentDescriptor', @level2type=N'COLUMN', @level2name=N'BudgetProgramIntentDescriptorId'
 GO
 
 -- Extended Properties [tx].[CalendarDateExtension] --
@@ -254,12 +200,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ChildCountFundingDescriptor', @level2type=N'COLUMN', @level2name=N'ChildCountFundingDescriptorId'
 GO
 
--- Extended Properties [tx].[CIStaffProgramIntentDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ProgramIntent is populated from Code Table C147C.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'CIStaffProgramIntentDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'CIStaffProgramIntentDescriptor', @level2type=N'COLUMN', @level2name=N'CIStaffProgramIntentDescriptorId'
-GO
-
 -- Extended Properties [tx].[ClassTypeDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ClassType is populated from code table C179.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ClassTypeDescriptor'
 GO
@@ -269,9 +209,9 @@ GO
 -- Extended Properties [tx].[ContractedInstructionalStaffFTEExt] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The ContractedInstructionalStaffFTEExtension Domain Entity represents financial information for contracted staff by Program Intent Code at the LEA/Campus level.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ContractedInstructionalStaffFTEExt'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ContractedInstructionalStaffFTEExt', @level2type=N'COLUMN', @level2name=N'CIStaffProgramIntentDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ContractedInstructionalStaffFTEExt', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ContractedInstructionalStaffFTEExt', @level2type=N'COLUMN', @level2name=N'ProgramIntentDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ContractedInstructionalStaffFTEExt', @level2type=N'COLUMN', @level2name=N'SchoolId'
 GO
@@ -738,12 +678,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'NonCampusBasedInstructionDescriptor', @level2type=N'COLUMN', @level2name=N'NonCampusBasedInstructionDescriptorId'
 GO
 
--- Extended Properties [tx].[NonEnrolledStudentUILActivityDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Function is populated from Code Table C234.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'NonEnrolledStudentUILActivityDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'NonEnrolledStudentUILActivityDescriptor', @level2type=N'COLUMN', @level2name=N'NonEnrolledStudentUILActivityDescriptorId'
-GO
-
 -- Extended Properties [tx].[NSLPTypeDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor NSLPType is populated from code table C212.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'NSLPTypeDescriptor'
 GO
@@ -785,47 +719,23 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 1993-94 fiscal year.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0317, C146. Function identifies a general operational area and groups together related activities.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'FunctionDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund for payroll data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'FundDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0318, C159. Object identifies an account, a transaction, or a source of funds.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'ObjectDescriptorId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0319. Organization identifies the unique organizational unit within the district with which the account is associated.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'Organization'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0424, C018. PayrollActivity indicates the types of duty for which a staff member receives salary, salary supplements, or bonuses.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'PayrollActivityDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0317, C146. Function identifies a general operational area and groups together related activities.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'PayrollFunctionDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund for payroll data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'PayrollFundDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0318, C159. Object identifies an account, a transaction, or a source of funds.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'PayrollObjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'PayrollProgramIntentDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0320, C147. ProgramIntent identifies the cost of instruction and other services that are directed toward a particular need of a specific set of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'ProgramIntentDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a staff.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'StaffUSI'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0425. PayrollAmount indicates the dollar value that is paid to a staff member for a given payroll activity per year.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'PayrollAmount'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3020. EndDate indicates the month, day, and year for the specified data element becomes false of the student, staff, program, etc.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollExt', @level2type=N'COLUMN', @level2name=N'EndDate'
-GO
-
--- Extended Properties [tx].[PayrollFunctionDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Function is populated from Code Table C146P.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollFunctionDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollFunctionDescriptor', @level2type=N'COLUMN', @level2name=N'PayrollFunctionDescriptorId'
-GO
-
--- Extended Properties [tx].[PayrollFundDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Fund is populated from Code Table C145P.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollFundDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollFundDescriptor', @level2type=N'COLUMN', @level2name=N'PayrollFundDescriptorId'
-GO
-
--- Extended Properties [tx].[PayrollObjectDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Object is populated from Code Table C159P.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollObjectDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollObjectDescriptor', @level2type=N'COLUMN', @level2name=N'PayrollObjectDescriptorId'
-GO
-
--- Extended Properties [tx].[PayrollProgramIntentDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ProgramIntent is populated from Code Table C147P.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollProgramIntentDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PayrollProgramIntentDescriptor', @level2type=N'COLUMN', @level2name=N'PayrollProgramIntentDescriptorId'
 GO
 
 -- Extended Properties [tx].[PKCurriculaDescriptor] --
@@ -917,7 +827,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A person''s ge
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1064. HispanicLatinoEthnicity is an indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central and South America, and other Spanish cultures, regardless of race. The term, "Spanish origin," can be used in addition to "Hispanic or Latino."', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PriorYearLeaver', @level2type=N'COLUMN', @level2name=N'HispanicLatinoEthnicity'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1596. AssociateDegreeIndicator indicates that the student earned an associate degree by August 31 immediately following graduation.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PriorYearLeaver', @level2type=N'COLUMN', @level2name=N'AssociateDegreeIndicatorDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1596. AssociateDegreeIndicator indicates that the student earned an associate degree by August 31 immediately following graduation.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PriorYearLeaver', @level2type=N'COLUMN', @level2name=N'AssociateDegreeIndicator'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1724, C230. The FinancialAidApplication indicates the manner in which the student completed the graduation requirement of either completing a financial aid application (FAFSA or TAFSA) or submitting an exemption.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PriorYearLeaver', @level2type=N'COLUMN', @level2name=N'FinancialAidApplicationDescriptorId'
 GO
@@ -1486,7 +1396,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 2013-14 fiscal year.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SharedServiceArrangementExt', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SharedServiceArrangementExt', @level2type=N'COLUMN', @level2name=N'SSAFundDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0316, C145. Fund identifies the fund group and specific fund (when applicable) for actual financial data.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SharedServiceArrangementExt', @level2type=N'COLUMN', @level2name=N'FundDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0981. SSAMemberDistrictID indicates the county-district number of the school district (as registered with the Texas Education Agency) which is a member district in the shared services arrangement.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SharedServiceArrangementExt', @level2type=N'COLUMN', @level2name=N'SSAMemberDistrictId'
 GO
@@ -1569,12 +1479,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1685. RATotalEligResidentialFacilityDaysPresent indicates the total number of days the student was remote asynchronous present and eligible for LEA services in a Residential Facility during a particular reporting period.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SpecialProgramsReportingPeriodAttendance', @level2type=N'COLUMN', @level2name=N'RATotalEligResidentialFacilityDaysPresent'
 GO
 
--- Extended Properties [tx].[SSAFundDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Fund is populated from Code Table C145S.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SSAFundDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SSAFundDescriptor', @level2type=N'COLUMN', @level2name=N'SSAFundDescriptorId'
-GO
-
 -- Extended Properties [tx].[SSAOrgAssociationExt] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The SSAOrgAssociationExtension Domain Entity identifies the ESC/LEA fiscal agents and the ESC and/or LEA member(s) for each type of shared services arrangement (SSA) that exists among two or more ESCs and or LEAs.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'SSAOrgAssociationExt'
 GO
@@ -1627,8 +1531,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1057. MonthlyMinutes is the total number of minutes devoted to a particular service in a standard month. A standard month is considered to be the four weeks in October including the PEIMS Fall snapshot date (last Friday in October).', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationAssignmentAssociationStaffServiceSet', @level2type=N'COLUMN', @level2name=N'MonthlyMinutes'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3061. StaffServiceEndDate indicates the month, day, and year for when the services supplied by the staff becomes false.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationAssignmentAssociationStaffServiceSet', @level2type=N'COLUMN', @level2name=N'StaffServiceEndDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationAssignmentAssociationStaffServiceSet', @level2type=N'COLUMN', @level2name=N'NumberOfStudentsInClass'
 GO
 
 -- Extended Properties [tx].[StaffEducationOrganizationEmploymentAssociationAuxiliaryRoleIdSet] --
@@ -1848,7 +1750,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The term for t
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1563. IndividualGraduationCommitteeReview indicates whether an IGC has been established for a student regardless of which graduation program type is being pursued.  This is collected for students in grades 11 and 12.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentAcademicRecordExtension', @level2type=N'COLUMN', @level2name=N'IndividualGraduationCommitteeReview'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1596. AssociateDegreeIndicator indicates that the student earned an associate degree prior to graduation from high school. ', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentAcademicRecordExtension', @level2type=N'COLUMN', @level2name=N'AssociateDegreeIndicatorDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1596. AssociateDegreeIndicator indicates that the student earned an associate degree prior to graduation from high school. ', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentAcademicRecordExtension', @level2type=N'COLUMN', @level2name=N'AssociateDegreeIndicator'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3030. FHSPParticipant indicates whether a student is currently enrolled in the Foundation High School Program.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentAcademicRecordExtension', @level2type=N'COLUMN', @level2name=N'FHSPParticipant'
 GO
@@ -2219,14 +2121,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3043. ParentalPermissionSetEndDate indicates the month, day, and year when the student no longer participates in the required bilingual or English as a Second Language (ESL) program. (See 19 TAC§89.1240.)', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentLanguageInstructionProgramAssociationParentalPermissionSet', @level2type=N'COLUMN', @level2name=N'ParentalPermissionSetEndDate'
 GO
 
--- Extended Properties [tx].[StudentNonEnrolledStudentUILActivity] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1739. NonEnrolledStudentUILActivity indicates the University Interscholastic League (UIL) activity in which a non-enrolled student participated at a school district that allows participation of non-enrolled students under Section 33.0832.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentNonEnrolledStudentUILActivity'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1739. NonEnrolledStudentUILActivity indicates the University Interscholastic League (UIL) activity in which a non-enrolled student participated at a school district that allows participation of non-enrolled students under Section 33.0832.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentNonEnrolledStudentUILActivity', @level2type=N'COLUMN', @level2name=N'NonEnrolledStudentUILActivityDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentNonEnrolledStudentUILActivity', @level2type=N'COLUMN', @level2name=N'StudentUSI'
-GO
-
 -- Extended Properties [tx].[StudentProgramAttendanceEventExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentProgramAttendanceEventExtension'
 GO
@@ -2277,10 +2171,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1000, C161. S
 - student-initiated transfer due to remote learning.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'StudentAttributionDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E3080, C351. The EnrollmentTrackingVerification indicates the status of the enrollment event.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'EnrollmentTrackingVerificationDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0903. CampusIdOfResidence indicates the unique campus identification number corresponding to the campus attendance area in which the student currently resides.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'CampusIdOfResidence'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1027. CampusIdOfAccountability indicates the unique campus identification number to which a student’s attendance and/or leaver accountability data are attributed for campus accountability purposes.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'CampusIdOfAccountability'
 GO
 
 -- Extended Properties [tx].[StudentSectionAssociationExtension] --
