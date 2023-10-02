@@ -1384,9 +1384,6 @@ REFERENCES edfi.School (SchoolId)
 ON DELETE CASCADE
 ;
 
-CREATE INDEX FK_739ae9_School
-ON tx.SchoolCharterWaitlistSet (SchoolId ASC);
-
 ALTER TABLE tx.SchoolELOSet ADD CONSTRAINT FK_1e38b8_ELOTypeDescriptor FOREIGN KEY (ELOTypeDescriptorId)
 REFERENCES tx.ELOTypeDescriptor (ELOTypeDescriptorId)
 ;

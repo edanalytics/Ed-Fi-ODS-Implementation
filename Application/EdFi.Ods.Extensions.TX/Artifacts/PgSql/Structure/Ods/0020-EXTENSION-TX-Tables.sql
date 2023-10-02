@@ -1139,12 +1139,12 @@ ALTER TABLE tx.SchoolCampusEnrollmentTypeSet ALTER COLUMN CreateDate SET DEFAULT
 
 -- Table tx.SchoolCharterWaitlistSet --
 CREATE TABLE tx.SchoolCharterWaitlistSet (
-    CharterAdmissionWaitlist BOOLEAN NOT NULL,
-    CharterEducationalEnrollmentCapacity INT NOT NULL,
-    NumberCharterStudentsEnrolled INT NOT NULL,
     SchoolId INT NOT NULL,
+    NumberCharterStudentsEnrolled INT NOT NULL,
+    CharterEducationalEnrollmentCapacity INT NOT NULL,
+    CharterAdmissionWaitlist BOOLEAN NOT NULL,
     CreateDate TIMESTAMP NOT NULL,
-    CONSTRAINT SchoolCharterWaitlistSet_PK PRIMARY KEY (CharterAdmissionWaitlist, CharterEducationalEnrollmentCapacity, NumberCharterStudentsEnrolled, SchoolId)
+    CONSTRAINT SchoolCharterWaitlistSet_PK PRIMARY KEY (SchoolId)
 );
 ALTER TABLE tx.SchoolCharterWaitlistSet ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 

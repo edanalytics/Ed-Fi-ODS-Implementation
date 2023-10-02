@@ -8889,7 +8889,7 @@
             "isNullable": false
           },
           "description": "E1676. CharterAdmissionWaitlist indicates whether the charter school campus uses a waitlist for admission.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "CharterAdmissionWaitlist",
@@ -8906,7 +8906,7 @@
             "isNullable": false
           },
           "description": "E1675. CharterEducationalEnrollmentCapacity indicates the number of students to which the charter school’s campus is able to provide instruction without exceeding staffing and facility limitations and the approved charter holder's maximum enrollment.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "CharterEducationalEnrollmentCapacity",
@@ -8940,7 +8940,7 @@
             "isNullable": false
           },
           "description": "E1674. NumberCharterStudentsEnrolled indicates the number of students enrolled at a charter school’s campus as of the last Friday in September.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "NumberCharterStudentsEnrolled",
@@ -8952,9 +8952,6 @@
         {
           "identifierName": "SchoolCharterWaitlistSet_PK",
           "identifyingPropertyNames": [
-            "CharterAdmissionWaitlist",
-            "CharterEducationalEnrollmentCapacity",
-            "NumberCharterStudentsEnrolled",
             "SchoolId"
           ],
           "isPrimary": true,
@@ -29098,7 +29095,7 @@
         "schema": "tx",
         "name": "FK_SchoolCharterWaitlistSet_School"
       },
-      "cardinality": "OneToZeroOrMore",
+      "cardinality": "OneToOne",
       "primaryEntityFullName": {
         "schema": "edfi",
         "name": "School"

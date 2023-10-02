@@ -1521,10 +1521,6 @@ REFERENCES [edfi].[School] ([SchoolId])
 ON DELETE CASCADE
 GO
 
-CREATE NONCLUSTERED INDEX [FK_SchoolCharterWaitlistSet_School]
-ON [tx].[SchoolCharterWaitlistSet] ([SchoolId] ASC)
-GO
-
 ALTER TABLE [tx].[SchoolELOSet] WITH CHECK ADD CONSTRAINT [FK_SchoolELOSet_ELOTypeDescriptor] FOREIGN KEY ([ELOTypeDescriptorId])
 REFERENCES [tx].[ELOTypeDescriptor] ([ELOTypeDescriptorId])
 GO
