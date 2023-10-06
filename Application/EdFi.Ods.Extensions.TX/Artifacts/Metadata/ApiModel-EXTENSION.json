@@ -1580,9 +1580,11 @@
           "propertyType": {
             "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 12,
-            "scale": 2,
-            "isNullable": false
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false,
+            "minValue": -9999999999,
+            "maxValue": 9999999999
           },
           "description": "E0774. ActualAmount indicates the dollar value associated with actual financial account information.",
           "isIdentifying": false,
@@ -2454,9 +2456,11 @@
           "propertyType": {
             "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 12,
-            "scale": 2,
-            "isNullable": false
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false,
+            "minValue": -9999999999,
+            "maxValue": 9999999999
           },
           "description": "E0321. BudgetAmount indicates the dollar value associated with budget financial account information.",
           "isIdentifying": false,
@@ -9440,9 +9444,11 @@
           "propertyType": {
             "dbType": "Decimal",
             "maxLength": 0,
-            "precision": 12,
-            "scale": 2,
-            "isNullable": false
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false,
+            "minValue": -9999999999,
+            "maxValue": 9999999999
           },
           "description": "E0774. ActualAmount indicates the dollar value associated with actual financial account information.",
           "isIdentifying": false,

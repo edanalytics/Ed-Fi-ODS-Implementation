@@ -1600,7 +1600,7 @@
               <xs:documentation>NSLPType with effective dates</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="CharterWaitlistSet" type="EXTENSION-CharterWaitlistSet">
+          <xs:element name="CharterWaitlistSet" type="EXTENSION-CharterWaitlistSet" minOccurs="0">
             <xs:annotation>
               <xs:documentation>CharterWaitlist with effective dates</xs:documentation>
             </xs:annotation>
@@ -7429,8 +7429,10 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="12" />
-      <xs:fractionDigits value="2" />
+      <xs:minInclusive value="-9999999999" />
+      <xs:maxInclusive value="9999999999" />
+      <xs:totalDigits value="10" />
+      <xs:fractionDigits value="0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-ActualLengthOfDisciplinaryAssignment">
@@ -7465,8 +7467,10 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
-      <xs:totalDigits value="12" />
-      <xs:fractionDigits value="2" />
+      <xs:minInclusive value="-9999999999" />
+      <xs:maxInclusive value="9999999999" />
+      <xs:totalDigits value="10" />
+      <xs:fractionDigits value="0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-CampusIdOfEnrollmentSchoolDayLength">
