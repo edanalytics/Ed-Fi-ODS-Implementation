@@ -200,6 +200,9 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="TribalAffiliationDescriptor" type="TribalAffiliationDescriptor" />
         <xs:element name="VisaDescriptor" type="VisaDescriptor" />
         <xs:element name="WeaponDescriptor" type="WeaponDescriptor" />
+        <xs:element name="ActualFunctionDescriptor" type="EXTENSION-ActualFunctionDescriptor" />
+        <xs:element name="ActualObjectDescriptor" type="EXTENSION-ActualObjectDescriptor" />
+        <xs:element name="ActualProgramIntentDescriptor" type="EXTENSION-ActualProgramIntentDescriptor" />
         <xs:element name="ADAEligibilityDescriptor" type="EXTENSION-ADAEligibilityDescriptor" />
         <xs:element name="ApiOperationTypeDescriptor" type="EXTENSION-ApiOperationTypeDescriptor" />
         <xs:element name="ApplicationTypeDescriptor" type="EXTENSION-ApplicationTypeDescriptor" />
@@ -207,11 +210,18 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="AsOfStatusLastDayEnrollmentDescriptor" type="EXTENSION-AsOfStatusLastDayEnrollmentDescriptor" />
         <xs:element name="AsOfStatusLastFridayOctoberDescriptor" type="EXTENSION-AsOfStatusLastFridayOctoberDescriptor" />
         <xs:element name="AssessmentResultsObtainedDescriptor" type="EXTENSION-AssessmentResultsObtainedDescriptor" />
+        <xs:element name="AssociateDegreeIndicatorDescriptor" type="EXTENSION-AssociateDegreeIndicatorDescriptor" />
+        <xs:element name="ActualFundDescriptor" type="EXTENSION-ActualFundDescriptor" />
         <xs:element name="AuxiliaryRoleIdDescriptor" type="EXTENSION-AuxiliaryRoleIdDescriptor" />
         <xs:element name="BilingualESLFundingDescriptor" type="EXTENSION-BilingualESLFundingDescriptor" />
+        <xs:element name="BudgetFunctionDescriptor" type="EXTENSION-BudgetFunctionDescriptor" />
+        <xs:element name="BudgetFundDescriptor" type="EXTENSION-BudgetFundDescriptor" />
+        <xs:element name="BudgetObjectDescriptor" type="EXTENSION-BudgetObjectDescriptor" />
+        <xs:element name="BudgetProgramIntentDescriptor" type="EXTENSION-BudgetProgramIntentDescriptor" />
         <xs:element name="CalendarWaiverEventTypeDescriptor" type="EXTENSION-CalendarWaiverEventTypeDescriptor" />
         <xs:element name="CampusEnrollmentTypeDescriptor" type="EXTENSION-CampusEnrollmentTypeDescriptor" />
         <xs:element name="ChildCountFundingDescriptor" type="EXTENSION-ChildCountFundingDescriptor" />
+        <xs:element name="CIStaffProgramIntentDescriptor" type="EXTENSION-CIStaffProgramIntentDescriptor" />
         <xs:element name="ClassTypeDescriptor" type="EXTENSION-ClassTypeDescriptor" />
         <xs:element name="CourseSequenceDescriptor" type="EXTENSION-CourseSequenceDescriptor" />
         <xs:element name="CrisisEventDescriptor" type="EXTENSION-CrisisEventDescriptor" />
@@ -247,10 +257,15 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="LangAcqServicesProvidedDescriptor" type="EXTENSION-LangAcqServicesProvidedDescriptor" />
         <xs:element name="MilitaryConnectedStudentDescriptor" type="EXTENSION-MilitaryConnectedStudentDescriptor" />
         <xs:element name="NonCampusBasedInstructionDescriptor" type="EXTENSION-NonCampusBasedInstructionDescriptor" />
+        <xs:element name="NonEnrolledStudentUILActivityDescriptor" type="EXTENSION-NonEnrolledStudentUILActivityDescriptor" />
         <xs:element name="NSLPTypeDescriptor" type="EXTENSION-NSLPTypeDescriptor" />
         <xs:element name="ObjectDescriptor" type="EXTENSION-ObjectDescriptor" />
         <xs:element name="ParentalPermissionDescriptor" type="EXTENSION-ParentalPermissionDescriptor" />
         <xs:element name="PayrollActivityDescriptor" type="EXTENSION-PayrollActivityDescriptor" />
+        <xs:element name="PayrollFunctionDescriptor" type="EXTENSION-PayrollFunctionDescriptor" />
+        <xs:element name="PayrollFundDescriptor" type="EXTENSION-PayrollFundDescriptor" />
+        <xs:element name="PayrollObjectDescriptor" type="EXTENSION-PayrollObjectDescriptor" />
+        <xs:element name="PayrollProgramIntentDescriptor" type="EXTENSION-PayrollProgramIntentDescriptor" />
         <xs:element name="PKCurriculaDescriptor" type="EXTENSION-PKCurriculaDescriptor" />
         <xs:element name="PKFundingSourceDescriptor" type="EXTENSION-PKFundingSourceDescriptor" />
         <xs:element name="PKProgramEvaluationTypeDescriptor" type="EXTENSION-PKProgramEvaluationTypeDescriptor" />
@@ -269,6 +284,7 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="ReportingPeriodDescriptor" type="EXTENSION-ReportingPeriodDescriptor" />
         <xs:element name="RestraintStaffTypeDescriptor" type="EXTENSION-RestraintStaffTypeDescriptor" />
         <xs:element name="SharedServiceArrangementStaffDescriptor" type="EXTENSION-SharedServiceArrangementStaffDescriptor" />
+        <xs:element name="SSAFundDescriptor" type="EXTENSION-SSAFundDescriptor" />
         <xs:element name="SSATypeDescriptor" type="EXTENSION-SSATypeDescriptor" />
         <xs:element name="StaffServiceDescriptor" type="EXTENSION-StaffServiceDescriptor" />
         <xs:element name="StaffTypeDescriptor" type="EXTENSION-StaffTypeDescriptor" />
