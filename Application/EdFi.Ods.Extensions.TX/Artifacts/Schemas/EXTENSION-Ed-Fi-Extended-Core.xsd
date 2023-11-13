@@ -27,7 +27,7 @@
               <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ActualAmount" type="EXTENSION-ActualAmount">
+          <xs:element name="ActualAmount" type="xs:long">
             <xs:annotation>
               <xs:documentation>E0774. ActualAmount indicates the dollar value associated with actual financial account information.</xs:documentation>
             </xs:annotation>
@@ -281,7 +281,7 @@
               <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 6 for the 2015-16 fiscal year.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="BudgetAmount" type="EXTENSION-BudgetAmount">
+          <xs:element name="BudgetAmount" type="xs:long">
             <xs:annotation>
               <xs:documentation>E0321. BudgetAmount indicates the dollar value associated with budget financial account information.</xs:documentation>
             </xs:annotation>
@@ -1658,7 +1658,7 @@
               <xs:documentation>E0974. FiscalYear is the last digit of the fiscal year, e.g., the fiscal year is 4 for the 2013-14 fiscal year.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ActualAmount" type="EXTENSION-ActualAmount">
+          <xs:element name="ActualAmount" type="xs:long">
             <xs:annotation>
               <xs:documentation>E0774. ActualAmount indicates the dollar value associated with actual financial account information.</xs:documentation>
             </xs:annotation>
@@ -2818,28 +2818,6 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-FunctionDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-FundDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-GenerationCodeDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor GenerationCode is based on Code Table C012</xs:documentation>
@@ -2986,17 +2964,6 @@
   <xs:complexType name="EXTENSION-NSLPTypeDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor NSLPType is populated from code table C212.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-ObjectDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -3184,17 +3151,6 @@
   <xs:complexType name="EXTENSION-PreferredHomeCommunicationMethodDescriptor">
     <xs:annotation>
       <xs:documentation>Descriptor PreferredHomeCommunicationMethod identifies the preferred unique communication method used by the child at home. (C313)</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-ProgramIntentDescriptor">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -3507,9 +3463,9 @@
     <xs:complexContent>
       <xs:extension base="StaffSectionAssociation">
         <xs:sequence>
-          <xs:element name="NumberOfStudentInClass" type="EXTENSION-NumberOfStudentInClass" minOccurs="0">
+          <xs:element name="NumberOfStudentsInClass" type="EXTENSION-NumberOfStudentsInClass" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>E0170. NumberOfStudentInClass indicates the number of students in membership in the class.</xs:documentation>
+              <xs:documentation>E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="MonthlyMinutes" type="EXTENSION-MonthlyMinutes" minOccurs="0">
@@ -5798,24 +5754,6 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-FunctionDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Function is populated from Code Table C146.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-FundDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Fund is populated from Code Table C145.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
   <xs:simpleType name="EXTENSION-GenerationCodeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor GenerationCode is based on Code Table C012</xs:documentation>
@@ -5936,15 +5874,6 @@
   <xs:simpleType name="EXTENSION-NSLPTypeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor NSLPType is populated from code table C212.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-ObjectDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor Object is populated from Code Table C159.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -6098,15 +6027,6 @@
   <xs:simpleType name="EXTENSION-PreferredHomeCommunicationMethodDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Descriptor PreferredHomeCommunicationMethod identifies the preferred unique communication method used by the child at home. (C313)</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-ProgramIntentDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>Descriptor ProgramIntent is populated from Code Table C147.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -7746,11 +7666,8 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:decimal">
-      <xs:minInclusive value="-9999999999" />
+    <xs:restriction base="xs:long">
       <xs:maxInclusive value="9999999999" />
-      <xs:totalDigits value="10" />
-      <xs:fractionDigits value="0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-ActualLengthOfDisciplinaryAssignment">
@@ -7784,11 +7701,8 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:decimal">
-      <xs:minInclusive value="-9999999999" />
+    <xs:restriction base="xs:long">
       <xs:maxInclusive value="9999999999" />
-      <xs:totalDigits value="10" />
-      <xs:fractionDigits value="0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-CampusIdOfAccountability">
@@ -8315,18 +8229,6 @@
     <xs:restriction base="xs:int">
       <xs:minInclusive value="0" />
       <xs:maxInclusive value="99999" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-NumberOfStudentInClass">
-    <xs:annotation>
-      <xs:documentation>E0170. NumberOfStudentInClass indicates the number of students in membership in the class.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Simple</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="xs:int">
-      <xs:minInclusive value="0" />
-      <xs:maxInclusive value="999" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-NumberOfStudentsInClass">

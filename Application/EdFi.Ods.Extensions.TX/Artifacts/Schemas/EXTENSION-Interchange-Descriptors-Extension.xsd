@@ -201,6 +201,7 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="VisaDescriptor" type="VisaDescriptor" />
         <xs:element name="WeaponDescriptor" type="WeaponDescriptor" />
         <xs:element name="ActualFunctionDescriptor" type="EXTENSION-ActualFunctionDescriptor" />
+        <xs:element name="ActualFundDescriptor" type="EXTENSION-ActualFundDescriptor" />
         <xs:element name="ActualObjectDescriptor" type="EXTENSION-ActualObjectDescriptor" />
         <xs:element name="ActualProgramIntentDescriptor" type="EXTENSION-ActualProgramIntentDescriptor" />
         <xs:element name="ADAEligibilityDescriptor" type="EXTENSION-ADAEligibilityDescriptor" />
@@ -211,7 +212,6 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="AsOfStatusLastFridayOctoberDescriptor" type="EXTENSION-AsOfStatusLastFridayOctoberDescriptor" />
         <xs:element name="AssessmentResultsObtainedDescriptor" type="EXTENSION-AssessmentResultsObtainedDescriptor" />
         <xs:element name="AssociateDegreeIndicatorDescriptor" type="EXTENSION-AssociateDegreeIndicatorDescriptor" />
-        <xs:element name="ActualFundDescriptor" type="EXTENSION-ActualFundDescriptor" />
         <xs:element name="AuxiliaryRoleIdDescriptor" type="EXTENSION-AuxiliaryRoleIdDescriptor" />
         <xs:element name="BilingualESLFundingDescriptor" type="EXTENSION-BilingualESLFundingDescriptor" />
         <xs:element name="BudgetFunctionDescriptor" type="EXTENSION-BudgetFunctionDescriptor" />
@@ -243,8 +243,6 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="FlexAttendanceProgramDescriptor" type="EXTENSION-FlexAttendanceProgramDescriptor" />
         <xs:element name="FosterCareTypeDescriptor" type="EXTENSION-FosterCareTypeDescriptor" />
         <xs:element name="FrequencyOfServicesDescriptor" type="EXTENSION-FrequencyOfServicesDescriptor" />
-        <xs:element name="FunctionDescriptor" type="EXTENSION-FunctionDescriptor" />
-        <xs:element name="FundDescriptor" type="EXTENSION-FundDescriptor" />
         <xs:element name="GenerationCodeDescriptor" type="EXTENSION-GenerationCodeDescriptor" />
         <xs:element name="GiftedTalentedProgramDescriptor" type="EXTENSION-GiftedTalentedProgramDescriptor" />
         <xs:element name="HearingAmplificationAccessDescriptor" type="EXTENSION-HearingAmplificationAccessDescriptor" />
@@ -259,7 +257,6 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="NonCampusBasedInstructionDescriptor" type="EXTENSION-NonCampusBasedInstructionDescriptor" />
         <xs:element name="NonEnrolledStudentUILActivityDescriptor" type="EXTENSION-NonEnrolledStudentUILActivityDescriptor" />
         <xs:element name="NSLPTypeDescriptor" type="EXTENSION-NSLPTypeDescriptor" />
-        <xs:element name="ObjectDescriptor" type="EXTENSION-ObjectDescriptor" />
         <xs:element name="ParentalPermissionDescriptor" type="EXTENSION-ParentalPermissionDescriptor" />
         <xs:element name="PayrollActivityDescriptor" type="EXTENSION-PayrollActivityDescriptor" />
         <xs:element name="PayrollFunctionDescriptor" type="EXTENSION-PayrollFunctionDescriptor" />
@@ -277,7 +274,6 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="PostSecondaryCertLicensureResultDescriptor" type="EXTENSION-PostSecondaryCertLicensureResultDescriptor" />
         <xs:element name="PPCDServiceLocationDescriptor" type="EXTENSION-PPCDServiceLocationDescriptor" />
         <xs:element name="PreferredHomeCommunicationMethodDescriptor" type="EXTENSION-PreferredHomeCommunicationMethodDescriptor" />
-        <xs:element name="ProgramIntentDescriptor" type="EXTENSION-ProgramIntentDescriptor" />
         <xs:element name="ProgramOfStudyDescriptor" type="EXTENSION-ProgramOfStudyDescriptor" />
         <xs:element name="RegionalDaySchoolProgramForDeafDescriptor" type="EXTENSION-RegionalDaySchoolProgramForDeafDescriptor" />
         <xs:element name="ReportAssessmentTypeDescriptor" type="EXTENSION-ReportAssessmentTypeDescriptor" />

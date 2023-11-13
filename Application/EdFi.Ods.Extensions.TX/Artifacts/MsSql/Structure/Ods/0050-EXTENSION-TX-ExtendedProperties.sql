@@ -622,18 +622,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'FrequencyOfServicesDescriptor', @level2type=N'COLUMN', @level2name=N'FrequencyOfServicesDescriptorId'
 GO
 
--- Extended Properties [tx].[FunctionDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Function is populated from Code Table C146.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'FunctionDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'FunctionDescriptor', @level2type=N'COLUMN', @level2name=N'FunctionDescriptorId'
-GO
-
--- Extended Properties [tx].[FundDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Fund is populated from Code Table C145.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'FundDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'FundDescriptor', @level2type=N'COLUMN', @level2name=N'FundDescriptorId'
-GO
-
 -- Extended Properties [tx].[GenerationCodeDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor GenerationCode is based on Code Table C012', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'GenerationCodeDescriptor'
 GO
@@ -748,12 +736,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor NSLPType is populated from code table C212.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'NSLPTypeDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'NSLPTypeDescriptor', @level2type=N'COLUMN', @level2name=N'NSLPTypeDescriptorId'
-GO
-
--- Extended Properties [tx].[ObjectDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor Object is populated from Code Table C159.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ObjectDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ObjectDescriptor', @level2type=N'COLUMN', @level2name=N'ObjectDescriptorId'
 GO
 
 -- Extended Properties [tx].[ParentalPermissionDescriptor] --
@@ -1313,12 +1295,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication that the telephone number should not be published.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'PriorYearLeaverTelephone', @level2type=N'COLUMN', @level2name=N'DoNotPublishIndicator'
 GO
 
--- Extended Properties [tx].[ProgramIntentDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ProgramIntent is populated from Code Table C147.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ProgramIntentDescriptor'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ProgramIntentDescriptor', @level2type=N'COLUMN', @level2name=N'ProgramIntentDescriptorId'
-GO
-
 -- Extended Properties [tx].[ProgramOfStudyDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Descriptor ProgramOfStudy is populated from code table C220.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'ProgramOfStudyDescriptor'
 GO
@@ -1734,7 +1710,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a staff.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'StaffUSI'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0170. NumberOfStudentInClass indicates the number of students in membership in the class.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'NumberOfStudentInClass'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'NumberOfStudentsInClass'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'E1057. is the total number of minutes devoted to a particular service in a standard month. A standard month is considered to be the four weeks in October including the PEIMS Fall snapshot date (last Friday in October).', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'MonthlyMinutes'
 GO

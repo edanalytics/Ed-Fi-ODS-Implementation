@@ -8,7 +8,7 @@ CREATE TABLE tx.ActualExt (
     EducationOrganizationId INT NOT NULL,
     FiscalYear INT NOT NULL,
     Organization INT NOT NULL,
-    ActualAmount DECIMAL(10, 0) NOT NULL,
+    ActualAmount BIGINT NOT NULL,
     EndDate DATE NULL,
     Discriminator VARCHAR(128) NULL,
     CreateDate TIMESTAMP NOT NULL,
@@ -170,7 +170,7 @@ CREATE TABLE tx.BudgetExt (
     EducationOrganizationId INT NOT NULL,
     FiscalYear INT NOT NULL,
     Organization INT NOT NULL,
-    BudgetAmount DECIMAL(10, 0) NOT NULL,
+    BudgetAmount BIGINT NOT NULL,
     EndDate DATE NULL,
     Discriminator VARCHAR(128) NULL,
     CreateDate TIMESTAMP NOT NULL,
@@ -584,18 +584,6 @@ CREATE TABLE tx.FrequencyOfServicesDescriptor (
     CONSTRAINT FrequencyOfServicesDescriptor_PK PRIMARY KEY (FrequencyOfServicesDescriptorId)
 );
 
--- Table tx.FunctionDescriptor --
-CREATE TABLE tx.FunctionDescriptor (
-    FunctionDescriptorId INT NOT NULL,
-    CONSTRAINT FunctionDescriptor_PK PRIMARY KEY (FunctionDescriptorId)
-);
-
--- Table tx.FundDescriptor --
-CREATE TABLE tx.FundDescriptor (
-    FundDescriptorId INT NOT NULL,
-    CONSTRAINT FundDescriptor_PK PRIMARY KEY (FundDescriptorId)
-);
-
 -- Table tx.GenerationCodeDescriptor --
 CREATE TABLE tx.GenerationCodeDescriptor (
     GenerationCodeDescriptorId INT NOT NULL,
@@ -709,12 +697,6 @@ CREATE TABLE tx.NonEnrolledStudentUILActivityDescriptor (
 CREATE TABLE tx.NSLPTypeDescriptor (
     NSLPTypeDescriptorId INT NOT NULL,
     CONSTRAINT NSLPTypeDescriptor_PK PRIMARY KEY (NSLPTypeDescriptorId)
-);
-
--- Table tx.ObjectDescriptor --
-CREATE TABLE tx.ObjectDescriptor (
-    ObjectDescriptorId INT NOT NULL,
-    CONSTRAINT ObjectDescriptor_PK PRIMARY KEY (ObjectDescriptorId)
 );
 
 -- Table tx.ParentalPermissionDescriptor --
@@ -1167,12 +1149,6 @@ CREATE TABLE tx.PriorYearLeaverTelephone (
 );
 ALTER TABLE tx.PriorYearLeaverTelephone ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 
--- Table tx.ProgramIntentDescriptor --
-CREATE TABLE tx.ProgramIntentDescriptor (
-    ProgramIntentDescriptorId INT NOT NULL,
-    CONSTRAINT ProgramIntentDescriptor_PK PRIMARY KEY (ProgramIntentDescriptorId)
-);
-
 -- Table tx.ProgramOfStudyDescriptor --
 CREATE TABLE tx.ProgramOfStudyDescriptor (
     ProgramOfStudyDescriptorId INT NOT NULL,
@@ -1334,7 +1310,7 @@ CREATE TABLE tx.SharedServiceArrangementExt (
     SSAFundDescriptorId INT NOT NULL,
     SSAMemberDistrictId INT NOT NULL,
     SSATypeDescriptorId INT NOT NULL,
-    ActualAmount DECIMAL(10, 0) NOT NULL,
+    ActualAmount BIGINT NOT NULL,
     Discriminator VARCHAR(128) NULL,
     CreateDate TIMESTAMP NOT NULL,
     LastModifiedDate TIMESTAMP NOT NULL,
@@ -1525,7 +1501,7 @@ CREATE TABLE tx.StaffSectionAssociationExtension (
     SectionIdentifier VARCHAR(255) NOT NULL,
     SessionName VARCHAR(60) NOT NULL,
     StaffUSI INT NOT NULL,
-    NumberOfStudentInClass INT NULL,
+    NumberOfStudentsInClass INT NULL,
     MonthlyMinutes INT NULL,
     NumberDaysTaughtWeek1 INT NULL,
     NumberDaysTaughtWeek2 INT NULL,

@@ -718,16 +718,6 @@ REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [tx].[FunctionDescriptor] WITH CHECK ADD CONSTRAINT [FK_FunctionDescriptor_Descriptor] FOREIGN KEY ([FunctionDescriptorId])
-REFERENCES [edfi].[Descriptor] ([DescriptorId])
-ON DELETE CASCADE
-GO
-
-ALTER TABLE [tx].[FundDescriptor] WITH CHECK ADD CONSTRAINT [FK_FundDescriptor_Descriptor] FOREIGN KEY ([FundDescriptorId])
-REFERENCES [edfi].[Descriptor] ([DescriptorId])
-ON DELETE CASCADE
-GO
-
 ALTER TABLE [tx].[GenerationCodeDescriptor] WITH CHECK ADD CONSTRAINT [FK_GenerationCodeDescriptor_Descriptor] FOREIGN KEY ([GenerationCodeDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
@@ -849,11 +839,6 @@ ON DELETE CASCADE
 GO
 
 ALTER TABLE [tx].[NSLPTypeDescriptor] WITH CHECK ADD CONSTRAINT [FK_NSLPTypeDescriptor_Descriptor] FOREIGN KEY ([NSLPTypeDescriptorId])
-REFERENCES [edfi].[Descriptor] ([DescriptorId])
-ON DELETE CASCADE
-GO
-
-ALTER TABLE [tx].[ObjectDescriptor] WITH CHECK ADD CONSTRAINT [FK_ObjectDescriptor_Descriptor] FOREIGN KEY ([ObjectDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
@@ -1543,11 +1528,6 @@ GO
 
 CREATE NONCLUSTERED INDEX [FK_PriorYearLeaverTelephone_TelephoneNumberTypeDescriptor]
 ON [tx].[PriorYearLeaverTelephone] ([TelephoneNumberTypeDescriptorId] ASC)
-GO
-
-ALTER TABLE [tx].[ProgramIntentDescriptor] WITH CHECK ADD CONSTRAINT [FK_ProgramIntentDescriptor_Descriptor] FOREIGN KEY ([ProgramIntentDescriptorId])
-REFERENCES [edfi].[Descriptor] ([DescriptorId])
-ON DELETE CASCADE
 GO
 
 ALTER TABLE [tx].[ProgramOfStudyDescriptor] WITH CHECK ADD CONSTRAINT [FK_ProgramOfStudyDescriptor_Descriptor] FOREIGN KEY ([ProgramOfStudyDescriptorId])

@@ -1223,48 +1223,6 @@ ALTER TABLE [tx].[FrequencyOfServicesDescriptor] ENABLE TRIGGER [tx_FrequencyOfS
 GO
 
 
-DROP TRIGGER IF EXISTS [tx].[tx_FunctionDescriptor_TR_DeleteTracking]
-GO
-
-CREATE TRIGGER [tx].[tx_FunctionDescriptor_TR_DeleteTracking] ON [tx].[FunctionDescriptor] AFTER DELETE AS
-BEGIN
-    IF @@rowcount = 0 
-        RETURN
-
-    SET NOCOUNT ON
-
-    INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.FunctionDescriptorId, b.CodeValue, b.Namespace, b.Id, 'tx.FunctionDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
-    FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.FunctionDescriptorId = b.DescriptorId
-END
-GO
-
-ALTER TABLE [tx].[FunctionDescriptor] ENABLE TRIGGER [tx_FunctionDescriptor_TR_DeleteTracking]
-GO
-
-
-DROP TRIGGER IF EXISTS [tx].[tx_FundDescriptor_TR_DeleteTracking]
-GO
-
-CREATE TRIGGER [tx].[tx_FundDescriptor_TR_DeleteTracking] ON [tx].[FundDescriptor] AFTER DELETE AS
-BEGIN
-    IF @@rowcount = 0 
-        RETURN
-
-    SET NOCOUNT ON
-
-    INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.FundDescriptorId, b.CodeValue, b.Namespace, b.Id, 'tx.FundDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
-    FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.FundDescriptorId = b.DescriptorId
-END
-GO
-
-ALTER TABLE [tx].[FundDescriptor] ENABLE TRIGGER [tx_FundDescriptor_TR_DeleteTracking]
-GO
-
-
 DROP TRIGGER IF EXISTS [tx].[tx_GenerationCodeDescriptor_TR_DeleteTracking]
 GO
 
@@ -1556,27 +1514,6 @@ END
 GO
 
 ALTER TABLE [tx].[NSLPTypeDescriptor] ENABLE TRIGGER [tx_NSLPTypeDescriptor_TR_DeleteTracking]
-GO
-
-
-DROP TRIGGER IF EXISTS [tx].[tx_ObjectDescriptor_TR_DeleteTracking]
-GO
-
-CREATE TRIGGER [tx].[tx_ObjectDescriptor_TR_DeleteTracking] ON [tx].[ObjectDescriptor] AFTER DELETE AS
-BEGIN
-    IF @@rowcount = 0 
-        RETURN
-
-    SET NOCOUNT ON
-
-    INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.ObjectDescriptorId, b.CodeValue, b.Namespace, b.Id, 'tx.ObjectDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
-    FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.ObjectDescriptorId = b.DescriptorId
-END
-GO
-
-ALTER TABLE [tx].[ObjectDescriptor] ENABLE TRIGGER [tx_ObjectDescriptor_TR_DeleteTracking]
 GO
 
 
@@ -2026,27 +1963,6 @@ END
 GO
 
 ALTER TABLE [tx].[PriorYearLeaverStudentParentAssociation] ENABLE TRIGGER [tx_PriorYearLeaverStudentParentAssociation_TR_DeleteTracking]
-GO
-
-
-DROP TRIGGER IF EXISTS [tx].[tx_ProgramIntentDescriptor_TR_DeleteTracking]
-GO
-
-CREATE TRIGGER [tx].[tx_ProgramIntentDescriptor_TR_DeleteTracking] ON [tx].[ProgramIntentDescriptor] AFTER DELETE AS
-BEGIN
-    IF @@rowcount = 0 
-        RETURN
-
-    SET NOCOUNT ON
-
-    INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.ProgramIntentDescriptorId, b.CodeValue, b.Namespace, b.Id, 'tx.ProgramIntentDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
-    FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.ProgramIntentDescriptorId = b.DescriptorId
-END
-GO
-
-ALTER TABLE [tx].[ProgramIntentDescriptor] ENABLE TRIGGER [tx_ProgramIntentDescriptor_TR_DeleteTracking]
 GO
 
 

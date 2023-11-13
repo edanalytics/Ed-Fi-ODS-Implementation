@@ -8,7 +8,7 @@ CREATE TABLE [tx].[ActualExt] (
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [INT] NOT NULL,
     [Organization] [INT] NOT NULL,
-    [ActualAmount] [DECIMAL](10, 0) NOT NULL,
+    [ActualAmount] [BIGINT] NOT NULL,
     [EndDate] [DATE] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -251,7 +251,7 @@ CREATE TABLE [tx].[BudgetExt] (
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [INT] NOT NULL,
     [Organization] [INT] NOT NULL,
-    [BudgetAmount] [DECIMAL](10, 0) NOT NULL,
+    [BudgetAmount] [BIGINT] NOT NULL,
     [EndDate] [DATE] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -877,24 +877,6 @@ CREATE TABLE [tx].[FrequencyOfServicesDescriptor] (
 ) ON [PRIMARY]
 GO
 
--- Table [tx].[FunctionDescriptor] --
-CREATE TABLE [tx].[FunctionDescriptor] (
-    [FunctionDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [FunctionDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [FunctionDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
--- Table [tx].[FundDescriptor] --
-CREATE TABLE [tx].[FundDescriptor] (
-    [FundDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [FundDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [FundDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
 -- Table [tx].[GenerationCodeDescriptor] --
 CREATE TABLE [tx].[GenerationCodeDescriptor] (
     [GenerationCodeDescriptorId] [INT] NOT NULL,
@@ -1062,15 +1044,6 @@ CREATE TABLE [tx].[NSLPTypeDescriptor] (
     [NSLPTypeDescriptorId] [INT] NOT NULL,
     CONSTRAINT [NSLPTypeDescriptor_PK] PRIMARY KEY CLUSTERED (
         [NSLPTypeDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
--- Table [tx].[ObjectDescriptor] --
-CREATE TABLE [tx].[ObjectDescriptor] (
-    [ObjectDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [ObjectDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [ObjectDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1716,15 +1689,6 @@ GO
 ALTER TABLE [tx].[PriorYearLeaverTelephone] ADD CONSTRAINT [PriorYearLeaverTelephone_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
--- Table [tx].[ProgramIntentDescriptor] --
-CREATE TABLE [tx].[ProgramIntentDescriptor] (
-    [ProgramIntentDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [ProgramIntentDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [ProgramIntentDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
 -- Table [tx].[ProgramOfStudyDescriptor] --
 CREATE TABLE [tx].[ProgramOfStudyDescriptor] (
     [ProgramOfStudyDescriptorId] [INT] NOT NULL,
@@ -1951,7 +1915,7 @@ CREATE TABLE [tx].[SharedServiceArrangementExt] (
     [SSAFundDescriptorId] [INT] NOT NULL,
     [SSAMemberDistrictId] [INT] NOT NULL,
     [SSATypeDescriptorId] [INT] NOT NULL,
-    [ActualAmount] [DECIMAL](10, 0) NOT NULL,
+    [ActualAmount] [BIGINT] NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
@@ -2231,7 +2195,7 @@ CREATE TABLE [tx].[StaffSectionAssociationExtension] (
     [SectionIdentifier] [NVARCHAR](255) NOT NULL,
     [SessionName] [NVARCHAR](60) NOT NULL,
     [StaffUSI] [INT] NOT NULL,
-    [NumberOfStudentInClass] [INT] NULL,
+    [NumberOfStudentsInClass] [INT] NULL,
     [MonthlyMinutes] [INT] NULL,
     [NumberDaysTaughtWeek1] [INT] NULL,
     [NumberDaysTaughtWeek2] [INT] NULL,

@@ -370,14 +370,6 @@ COMMENT ON COLUMN tx.FosterCareTypeDescriptor.FosterCareTypeDescriptorId IS 'A u
 COMMENT ON TABLE tx.FrequencyOfServicesDescriptor IS 'Descriptor FrequencyOfServices identifies the frequency with which a student receives services. (C315)';
 COMMENT ON COLUMN tx.FrequencyOfServicesDescriptor.FrequencyOfServicesDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
 
--- Extended Properties [tx].[FunctionDescriptor] --
-COMMENT ON TABLE tx.FunctionDescriptor IS 'Descriptor Function is populated from Code Table C146.';
-COMMENT ON COLUMN tx.FunctionDescriptor.FunctionDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
-
--- Extended Properties [tx].[FundDescriptor] --
-COMMENT ON TABLE tx.FundDescriptor IS 'Descriptor Fund is populated from Code Table C145.';
-COMMENT ON COLUMN tx.FundDescriptor.FundDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
-
 -- Extended Properties [tx].[GenerationCodeDescriptor] --
 COMMENT ON TABLE tx.GenerationCodeDescriptor IS 'Descriptor GenerationCode is based on Code Table C012';
 COMMENT ON COLUMN tx.GenerationCodeDescriptor.GenerationCodeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
@@ -452,10 +444,6 @@ COMMENT ON COLUMN tx.NonEnrolledStudentUILActivityDescriptor.NonEnrolledStudentU
 -- Extended Properties [tx].[NSLPTypeDescriptor] --
 COMMENT ON TABLE tx.NSLPTypeDescriptor IS 'Descriptor NSLPType is populated from code table C212.';
 COMMENT ON COLUMN tx.NSLPTypeDescriptor.NSLPTypeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
-
--- Extended Properties [tx].[ObjectDescriptor] --
-COMMENT ON TABLE tx.ObjectDescriptor IS 'Descriptor Object is populated from Code Table C159.';
-COMMENT ON COLUMN tx.ObjectDescriptor.ObjectDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
 
 -- Extended Properties [tx].[ParentalPermissionDescriptor] --
 COMMENT ON TABLE tx.ParentalPermissionDescriptor IS 'Descriptor ParentalPermission indicates whether the student''s parent or legal guardian has approved placement of the student in the required bilingual or English as a Second Language (ESL) program. (See 19 TAC §89.1240.) (C093)';
@@ -784,10 +772,6 @@ COMMENT ON COLUMN tx.PriorYearLeaverTelephone.OrderOfPriority IS 'The order of p
 COMMENT ON COLUMN tx.PriorYearLeaverTelephone.TextMessageCapabilityIndicator IS 'An indication that the telephone number is technically capable of sending and receiving Short Message Service (SMS) text messages.';
 COMMENT ON COLUMN tx.PriorYearLeaverTelephone.DoNotPublishIndicator IS 'An indication that the telephone number should not be published.';
 
--- Extended Properties [tx].[ProgramIntentDescriptor] --
-COMMENT ON TABLE tx.ProgramIntentDescriptor IS 'Descriptor ProgramIntent is populated from Code Table C147.';
-COMMENT ON COLUMN tx.ProgramIntentDescriptor.ProgramIntentDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
-
 -- Extended Properties [tx].[ProgramOfStudyDescriptor] --
 COMMENT ON TABLE tx.ProgramOfStudyDescriptor IS 'Descriptor ProgramOfStudy is populated from code table C220.';
 COMMENT ON COLUMN tx.ProgramOfStudyDescriptor.ProgramOfStudyDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
@@ -1023,7 +1007,7 @@ COMMENT ON COLUMN tx.StaffSectionAssociationExtension.SchoolYear IS 'The identif
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.SectionIdentifier IS 'The local identifier assigned to a section.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.SessionName IS 'The identifier for the calendar for the academic session.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.StaffUSI IS 'A unique alphanumeric code assigned to a staff.';
-COMMENT ON COLUMN tx.StaffSectionAssociationExtension.NumberOfStudentInClass IS 'E0170. NumberOfStudentInClass indicates the number of students in membership in the class.';
+COMMENT ON COLUMN tx.StaffSectionAssociationExtension.NumberOfStudentsInClass IS 'E0170. NumberOfStudentsInClass indicates the number of students in membership in the class.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.MonthlyMinutes IS 'E1057. is the total number of minutes devoted to a particular service in a standard month. A standard month is considered to be the four weeks in October including the PEIMS Fall snapshot date (last Friday in October).';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.NumberDaysTaughtWeek1 IS 'E1604. NumberDaysTaughtWeek1 indicates, for a physical education teaching staff responsibility, the number of days in which physical education instruction is provided for each course section by campus during the first week of the 4 weeks in October that includes the last Friday in October.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.NumberDaysTaughtWeek2 IS 'E1605. NumberDaysTaughtWeek2 indicates, for a physical education teaching staff responsibility, the number of days in which physical education instruction is provided for each course section by campus during the first week of the 4 weeks in October that includes the last Friday in October.';

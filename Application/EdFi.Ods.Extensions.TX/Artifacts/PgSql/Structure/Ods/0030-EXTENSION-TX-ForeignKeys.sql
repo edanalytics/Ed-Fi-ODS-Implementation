@@ -658,16 +658,6 @@ REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
 ;
 
-ALTER TABLE tx.FunctionDescriptor ADD CONSTRAINT FK_8397f0_Descriptor FOREIGN KEY (FunctionDescriptorId)
-REFERENCES edfi.Descriptor (DescriptorId)
-ON DELETE CASCADE
-;
-
-ALTER TABLE tx.FundDescriptor ADD CONSTRAINT FK_f23409_Descriptor FOREIGN KEY (FundDescriptorId)
-REFERENCES edfi.Descriptor (DescriptorId)
-ON DELETE CASCADE
-;
-
 ALTER TABLE tx.GenerationCodeDescriptor ADD CONSTRAINT FK_de43bd_Descriptor FOREIGN KEY (GenerationCodeDescriptorId)
 REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
@@ -783,11 +773,6 @@ ON DELETE CASCADE
 ;
 
 ALTER TABLE tx.NSLPTypeDescriptor ADD CONSTRAINT FK_bbdb8c_Descriptor FOREIGN KEY (NSLPTypeDescriptorId)
-REFERENCES edfi.Descriptor (DescriptorId)
-ON DELETE CASCADE
-;
-
-ALTER TABLE tx.ObjectDescriptor ADD CONSTRAINT FK_bd38bc_Descriptor FOREIGN KEY (ObjectDescriptorId)
 REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
 ;
@@ -1408,11 +1393,6 @@ REFERENCES edfi.TelephoneNumberTypeDescriptor (TelephoneNumberTypeDescriptorId)
 
 CREATE INDEX FK_92c3bc_TelephoneNumberTypeDescriptor
 ON tx.PriorYearLeaverTelephone (TelephoneNumberTypeDescriptorId ASC);
-
-ALTER TABLE tx.ProgramIntentDescriptor ADD CONSTRAINT FK_8b9399_Descriptor FOREIGN KEY (ProgramIntentDescriptorId)
-REFERENCES edfi.Descriptor (DescriptorId)
-ON DELETE CASCADE
-;
 
 ALTER TABLE tx.ProgramOfStudyDescriptor ADD CONSTRAINT FK_a1877b_Descriptor FOREIGN KEY (ProgramOfStudyDescriptorId)
 REFERENCES edfi.Descriptor (DescriptorId)
