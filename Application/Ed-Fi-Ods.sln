@@ -103,7 +103,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdFi.Admin.DataAccess", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdFi.Ods.Features.IdentityManagement", "..\..\Ed-Fi-ODS\Application\EdFi.Ods.Features.IdentityManagement\EdFi.Ods.Features.IdentityManagement.csproj", "{2CE388E3-98D7-48C1-94CB-BB0392B9267F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.EdFiXAssessmentRoster", "EdFi.Ods.Extensions.EdFiXAssessmentRoster\EdFi.Ods.Extensions.EdFiXAssessmentRoster.csproj", "{301B5454-1296-4D43-BB0B-826B1C056CBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdFi.Ods.Extensions.EdFiXAssessmentRoster", "EdFi.Ods.Extensions.EdFiXAssessmentRoster\EdFi.Ods.Extensions.EdFiXAssessmentRoster.csproj", "{301B5454-1296-4D43-BB0B-826B1C056CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.TPDM", "EdFi.Ods.Extensions.TPDM\EdFi.Ods.Extensions.TPDM.csproj", "{4806EDCB-0E9B-44F9-AE17-C6B53FFAEF01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -235,6 +237,10 @@ Global
 		{301B5454-1296-4D43-BB0B-826B1C056CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{301B5454-1296-4D43-BB0B-826B1C056CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{301B5454-1296-4D43-BB0B-826B1C056CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4806EDCB-0E9B-44F9-AE17-C6B53FFAEF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4806EDCB-0E9B-44F9-AE17-C6B53FFAEF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4806EDCB-0E9B-44F9-AE17-C6B53FFAEF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4806EDCB-0E9B-44F9-AE17-C6B53FFAEF01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -273,6 +279,7 @@ Global
 		{58CC50F2-2768-43C1-844C-7BA9DC6E16FE} = {75DEFF48-FA3B-4461-A889-6C6C26362D3C}
 		{2CE388E3-98D7-48C1-94CB-BB0392B9267F} = {E214F607-B637-4AF5-9A68-61CB86507E4A}
 		{301B5454-1296-4D43-BB0B-826B1C056CBB} = {F25ED154-FB97-4F39-933B-808D1B3B6D3E}
+		{4806EDCB-0E9B-44F9-AE17-C6B53FFAEF01} = {F25ED154-FB97-4F39-933B-808D1B3B6D3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91F27EA2-CFF0-4054-A019-B8AA23AF9319}
