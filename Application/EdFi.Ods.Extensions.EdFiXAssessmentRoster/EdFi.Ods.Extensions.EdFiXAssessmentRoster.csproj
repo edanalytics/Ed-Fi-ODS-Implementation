@@ -1,8 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>EdFi.Ods.Extensions.EdFiXAssessmentRoster</AssemblyName>
+		<StandardVersion Condition="'$(StandardVersion)' == '' ">5.0.0</StandardVersion>
+		<ExtensionVersion Condition="'$(ExtensionVersion)' == '' ">1.0.0</ExtensionVersion>
+  </PropertyGroup>	
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>EdFi.Ods.Extensions.EdFiXAssessmentRoster</RootNamespace>
+    <AssemblyName>EdFi.Ods.Extensions.EdFiXAssessmentRoster</AssemblyName>
     <RestorePackages>true</RestorePackages>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
@@ -11,27 +15,28 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Artifacts\**\Metadata\*.xml">
+    <Compile Remove="Versions\*\Standard\**" />
+    <EmbeddedResource Remove="Versions\*\Standard\**" />
+    <None Remove="Versions\*\Standard\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\**\Metadata\*.xml">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Content>
-    <Content Include="Artifacts\**\MsSql\*.sql">
+    <Content Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\**\*.sql">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Content>
-	<Content Include="Artifacts\**\PgSql\*.sql">
-	  <AutoGen>True</AutoGen>
-	  <DesignTime>True</DesignTime>
-	</Content>
-    <EmbeddedResource Include="Artifacts\**\Schemas\*.xsd">
+    <EmbeddedResource Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\Schemas\*.xsd">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <SubType>Designer</SubType>
+      <LogicalName>$(RootNamespace).Artifacts.Schemas.%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -43,24 +48,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Artifacts\Metadata\**\ApiModel-EXTENSION.json">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="**\*.generated.hbm.xml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="assemblyMetadata.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)..\..\Ed-Fi-ODS\Application\EdFi.Ods.Api\EdFi.Ods.Api.csproj" />
-    <ProjectReference Include="$(SolutionDir)..\..\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj" />
-    <ProjectReference Include="$(SolutionDir)..\..\Ed-Fi-ODS\Application\EdFi.Ods.Security\EdFi.Ods.Security.csproj" />
-    <ProjectReference Include="$(SolutionDir)..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
+    <Compile Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\**\*.cs" />
+    <EmbeddedResource Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\Metadata\ApiModel-EXTENSION.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Designer</SubType>
+      <LogicalName>$(RootNamespace).Artifacts.Metadata.%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\**\*.generated.hbm.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Designer</SubType>
+      <LogicalName>$(RootNamespace).$([System.String]::Copy('%(RecursiveDir)').Replace('/', '.').Replace('\', '.'))%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Api\EdFi.Ods.Api.csproj" />
+    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj" />
+    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
   </ItemGroup>
 </Project>
