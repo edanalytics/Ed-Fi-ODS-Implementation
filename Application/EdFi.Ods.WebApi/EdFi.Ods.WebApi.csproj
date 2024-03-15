@@ -49,7 +49,6 @@
     <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
     <ProjectReference Include="..\..\..\Ed-Fi-ODS-Implementation\Application\EdFi.Ods.Features.OwnershipBasedAuthorization\EdFi.Ods.Features.OwnershipBasedAuthorization.csproj" />
     <ProjectReference Include="..\EdFi.Ods.Extensions.EdFiXAssessmentRoster\EdFi.Ods.Extensions.EdFiXAssessmentRoster.csproj" />
-    <ProjectReference Include="..\EdFi.Ods.Extensions.TPDM\EdFi.Ods.Extensions.TPDM.csproj" />
   </ItemGroup>
 
   <ItemGroup>
