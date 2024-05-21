@@ -1,0 +1,4 @@
+
+CREATE INDEX IF NOT EXISTS IX_EducationOrganizationOtherPersonnel_LocalEducationAgencyId ON idoe.EducationOrganizationOtherPersonnel(LocalEducationAgencyId) INCLUDE (Id);
+
+CREATE INDEX IF NOT EXISTS IX_StudentEducationOrganizationAssessmentAccommodation_EducationOrganizationId ON idoe.StudentEducationOrganizationAssessmentAccommodation(EducationOrganizationId) INCLUDE (Id);
