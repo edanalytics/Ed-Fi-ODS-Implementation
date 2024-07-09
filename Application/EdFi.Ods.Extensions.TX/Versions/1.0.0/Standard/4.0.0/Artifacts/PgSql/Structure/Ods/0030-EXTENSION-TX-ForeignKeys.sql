@@ -1690,8 +1690,8 @@ REFERENCES tx.SharedServiceArrangementStaffDescriptor (SharedServiceArrangementS
 CREATE INDEX FK_2dc783_SharedServiceArrangementStaffDescriptor
 ON tx.StaffSectionAssociationExtension (SharedServiceArrangementStaffDescriptorId ASC);
 
-ALTER TABLE tx.StaffSectionAssociationExtension ADD CONSTRAINT FK_2dc783_StaffSectionAssociation FOREIGN KEY (LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName, StaffUSI)
-REFERENCES edfi.StaffSectionAssociation (LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName, StaffUSI)
+ALTER TABLE tx.StaffSectionAssociationExtension ADD CONSTRAINT FK_2dc783_StaffSectionAssociation FOREIGN KEY (BeginDate, LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName, StaffUSI)
+REFERENCES edfi.StaffSectionAssociation (BeginDate, LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName, StaffUSI)
 ON DELETE CASCADE
 ON UPDATE CASCADE
 ;

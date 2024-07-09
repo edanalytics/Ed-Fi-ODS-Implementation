@@ -11941,6 +11941,7 @@
         {
           "identifierName": "StaffSectionAssociationExtension_PK",
           "identifyingPropertyNames": [
+            "BeginDate",
             "LocalCourseCode",
             "SchoolId",
             "SchoolYear",
@@ -35186,6 +35187,24 @@
       },
       "primaryEntityProperties": [
         {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of a teacher's assignment to the section. If blank, defaults to the first day of the first grading period for the section.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
           "propertyName": "LocalCourseCode",
           "propertyType": {
             "dbType": "String",
@@ -35296,6 +35315,24 @@
         "name": "StaffSectionAssociationExtension"
       },
       "secondaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of a teacher's assignment to the section. If blank, defaults to the first day of the first grading period for the section.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
         {
           "propertyName": "LocalCourseCode",
           "propertyType": {

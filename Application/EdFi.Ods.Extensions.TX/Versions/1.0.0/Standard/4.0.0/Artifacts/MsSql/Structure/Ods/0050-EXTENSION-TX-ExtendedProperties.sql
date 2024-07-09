@@ -1713,6 +1713,8 @@ GO
 -- Extended Properties [tx].[StaffSectionAssociationExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Month, day, and year of a teacher''s assignment to the section. If blank, defaults to the first day of the first grading period for the section.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'tx', @level1type=N'TABLE', @level1name=N'StaffSectionAssociationExtension', @level2type=N'COLUMN', @level2name=N'SchoolId'
