@@ -2214,6 +2214,7 @@ GO
 
 -- Table [tx].[StaffSectionAssociationExtension] --
 CREATE TABLE [tx].[StaffSectionAssociationExtension] (
+    [BeginDate] [DATE] NOT NULL,
     [LocalCourseCode] [NVARCHAR](60) NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [SchoolYear] [SMALLINT] NOT NULL,
@@ -2233,6 +2234,7 @@ CREATE TABLE [tx].[StaffSectionAssociationExtension] (
     [SharedServiceArrangementStaffDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StaffSectionAssociationExtension_PK] PRIMARY KEY CLUSTERED (
+        [BeginDate] ASC,
         [LocalCourseCode] ASC,
         [SchoolId] ASC,
         [SchoolYear] ASC,

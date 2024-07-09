@@ -1511,6 +1511,7 @@ ALTER TABLE tx.StaffParaprofessionalCertificationSet ALTER COLUMN CreateDate SET
 
 -- Table tx.StaffSectionAssociationExtension --
 CREATE TABLE tx.StaffSectionAssociationExtension (
+    BeginDate DATE NOT NULL,
     LocalCourseCode VARCHAR(60) NOT NULL,
     SchoolId INT NOT NULL,
     SchoolYear SMALLINT NOT NULL,
@@ -1529,7 +1530,7 @@ CREATE TABLE tx.StaffSectionAssociationExtension (
     NumberOfStudentsInClass INT NULL,
     SharedServiceArrangementStaffDescriptorId INT NULL,
     CreateDate TIMESTAMP NOT NULL,
-    CONSTRAINT StaffSectionAssociationExtension_PK PRIMARY KEY (LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName, StaffUSI)
+    CONSTRAINT StaffSectionAssociationExtension_PK PRIMARY KEY (BeginDate, LocalCourseCode, SchoolId, SchoolYear, SectionIdentifier, SessionName, StaffUSI)
 );
 ALTER TABLE tx.StaffSectionAssociationExtension ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 

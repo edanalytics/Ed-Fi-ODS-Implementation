@@ -1008,6 +1008,7 @@ COMMENT ON COLUMN tx.StaffParaprofessionalCertificationSet.ParaprofessionalCerti
 
 -- Extended Properties [tx].[StaffSectionAssociationExtension] --
 COMMENT ON TABLE tx.StaffSectionAssociationExtension IS '';
+COMMENT ON COLUMN tx.StaffSectionAssociationExtension.BeginDate IS 'Month, day, and year of a teacher''s assignment to the section. If blank, defaults to the first day of the first grading period for the section.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.LocalCourseCode IS 'The local code assigned by the School that identifies the course offering provided for the instruction of students.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.SchoolId IS 'The identifier assigned to a school.';
 COMMENT ON COLUMN tx.StaffSectionAssociationExtension.SchoolYear IS 'The identifier for the school year.';
