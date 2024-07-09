@@ -215,7 +215,7 @@ function Initialize-DevelopmentEnvironment {
         $script:result += Reset-TestSecurityDatabase
 
         if (-not ($NoDeploy)) {
-            $script:result += Reset-TestPopulatedTemplateDatabase
+            #$script:result += Reset-TestPopulatedTemplateDatabase
 
             $params = @{
                 InstallType   = $InstallType
