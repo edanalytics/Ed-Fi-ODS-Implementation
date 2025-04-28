@@ -1,0 +1,121 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+		<StandardVersion Condition="'$(StandardVersion)' == '' ">5.1.0</StandardVersion>
+		<ExtensionVersion Condition="'$(ExtensionVersion)' == '' ">2026.1.0</ExtensionVersion>
+  </PropertyGroup>	
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>EdFi.Ods.Extensions.TX</RootNamespace>
+    <AssemblyName>EdFi.Ods.Extensions.TX</AssemblyName>
+    <RestorePackages>true</RestorePackages>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Versions\*\Standard\**" />
+    <EmbeddedResource Remove="Versions\*\Standard\**" />
+    <None Remove="Versions\*\Standard\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\**\Metadata\*.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\**\*.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <EmbeddedResource Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\Schemas\*.xsd">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <LogicalName>$(RootNamespace).Artifacts.Schemas.%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EdFi.Ods.Extensions.TX.nuspec">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="Marker_EdFi_Ods_Extensions_TX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Metadata\ApiModel-EXTENSION.json" />
+    <EmbeddedResource Include="assemblyMetadata.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\**\*.cs" />
+    <EmbeddedResource Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\Artifacts\Metadata\ApiModel-EXTENSION.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Designer</SubType>
+      <LogicalName>$(RootNamespace).Artifacts.Metadata.%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Versions\$(ExtensionVersion)\Standard\$(StandardVersion)\**\*.generated.hbm.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Designer</SubType>
+      <LogicalName>$(RootNamespace).$([System.String]::Copy('%(RecursiveDir)').Replace('/', '.').Replace('\', '.'))%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\0010-EXTENSION-TX-Schemas.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\0020-EXTENSION-TX-Tables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\0030-EXTENSION-TX-ForeignKeys.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\0040-EXTENSION-TX-IdColumnUniqueIndexes.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\0050-EXTENSION-TX-ExtendedProperties.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\1410-EXTENSION-TX-CreateIndex-EdOrgIdsRelationship-AuthPerformance.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0010-CreateChangesSchema.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0020-CreateChangeVersionSequence.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0030-AddColumnChangeVersionForTables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0070-AddIndexChangeVersionForTables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0200-CreateTrackedChangeTables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0210-CreateTriggersForChangeVersionAndKeyChanges.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\Changes\0220-CreateTriggersForDeleteTracking.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Structure\Ods\RecordOwnership\0010-AddColumnOwnershipTokenForTable.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\0010-EXTENSION-TX-Schemas.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\0020-EXTENSION-TX-Tables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\0030-EXTENSION-TX-ForeignKeys.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\0040-EXTENSION-TX-IdColumnUniqueIndexes.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\0050-EXTENSION-TX-ExtendedProperties.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\1410-EXTENSION-TX-CreateIndex-EdOrgIdsRelationship-AuthPerformance.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0010-CreateChangesSchema.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0020-CreateChangeVersionSequence.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0030-AddColumnChangeVersionForTables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0070-AddIndexChangeVersionForTables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0200-CreateTrackedChangeTables.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0210-CreateTriggersForChangeVersionAndKeyChanges.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\Changes\0220-CreateTriggersForDeleteTracking.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\RecordOwnership\0010-AddColumnOwnershipTokenForTable.sql" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Ed-Fi-Extended-Core.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-AssessmentMetadata-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-Descriptors-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-EducationOrganization-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-EducationOrgCalendar-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-MasterSchedule-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-Parent-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-StaffAssociation-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-Student-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-StudentAttendance-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-StudentDiscipline-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-StudentEnrollment-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-StudentProgram-Extension.xsd" />
+    <None Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\Schemas\EXTENSION-Interchange-StudentTranscript-Extension.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Api\EdFi.Ods.Api.csproj" />
+    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj" />
+    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Versions\2026.1.0\Standard\4.0.0\Artifacts\MsSql\Data\Ods\" />
+  </ItemGroup>
+</Project>
