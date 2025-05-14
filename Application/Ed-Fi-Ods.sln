@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Features.IdentityM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.EdFiXAssessmentRoster", "EdFi.Ods.Extensions.EdFiXAssessmentRoster\EdFi.Ods.Extensions.EdFiXAssessmentRoster.csproj", "{B6C53F3F-3B94-4531-B01B-7A878689BB4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.TPDM", "EdFi.Ods.Extensions.TPDM\EdFi.Ods.Extensions.TPDM.csproj", "{C3AFB93E-2248-4239-A258-1D1AECFED9B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,6 +237,10 @@ Global
 		{B6C53F3F-3B94-4531-B01B-7A878689BB4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6C53F3F-3B94-4531-B01B-7A878689BB4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6C53F3F-3B94-4531-B01B-7A878689BB4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3AFB93E-2248-4239-A258-1D1AECFED9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3AFB93E-2248-4239-A258-1D1AECFED9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3AFB93E-2248-4239-A258-1D1AECFED9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3AFB93E-2248-4239-A258-1D1AECFED9B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -273,6 +279,7 @@ Global
 		{58CC50F2-2768-43C1-844C-7BA9DC6E16FE} = {75DEFF48-FA3B-4461-A889-6C6C26362D3C}
 		{2CE388E3-98D7-48C1-94CB-BB0392B9267F} = {E214F607-B637-4AF5-9A68-61CB86507E4A}
 		{B6C53F3F-3B94-4531-B01B-7A878689BB4B} = {F25ED154-FB97-4F39-933B-808D1B3B6D3E}
+		{C3AFB93E-2248-4239-A258-1D1AECFED9B0} = {F25ED154-FB97-4F39-933B-808D1B3B6D3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91F27EA2-CFF0-4054-A019-B8AA23AF9319}
