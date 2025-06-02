@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/5.2.0" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/5.2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="Ed-Fi-Core.xsd" />
+  <xs:annotation>
+    <xs:documentation>===== Ed-Fi 5.2.0 Extensions =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Domain Entities =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Descriptors =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-CTECredentialDescriptor">
+    <xs:annotation>
+      <xs:documentation>The earned credential, including certification or license, related to the CTE field of study.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CTEFundCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>The category of funding or financial aid the student received.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CTSODescriptor">
+    <xs:annotation>
+      <xs:documentation>The national CTSO organization a student is a member of related to their CTE program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Associations =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-StudentCTEProgramAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentCTEProgramAssociation">
+        <xs:sequence>
+          <xs:element name="AverageDailyMinutesOfInstruction" type="EXTENSION-AverageDailyMinutesOfInstruction">
+            <xs:annotation>
+              <xs:documentation>The average minutes of daily instruction for this student in the CTE program.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CTSO" type="EXTENSION-CTSODescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The national CTSO organization the student is a member of related to their CTE program.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-CTSODescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SecondProgramSemesterEnrollment" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates data reflects status information for second semester of course enrollment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CourseReference" type="CourseReferenceType">
+            <xs:annotation>
+              <xs:documentation>The CTE program associated with this enrollment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CoopPlacement" type="EXTENSION-CoopPlacement" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Collection of Student Cooperative Education Placement as required by Perkins V. Also used to identify where students who attend CTE go after high school graduation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CTECredential" type="EXTENSION-CTECredential" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Collection of earned credentials, including certifications and licensures related to the field of study.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PostSecondaryCredits" type="EXTENSION-PostSecondaryCredits" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Collection of earned post-secondary credits related to the field of study.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-CTECredentialDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The earned credential, including certification or license, related to the CTE field of study.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CTEFundCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The category of funding or financial aid the student received.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CTSODescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The national CTSO organization a student is a member of related to their CTE program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Common Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-CoopPlacement">
+    <xs:annotation>
+      <xs:documentation>Collection of Student Cooperative Education Placement as required by Perkins V. Also used to identify where students who attend CTE go after high school graduation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CoopIdentifier" type="EXTENSION-CoopIdentifier">
+        <xs:annotation>
+          <xs:documentation>Unique identifier assigned by CTE Center for placement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CoopStartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Start date of student cooperative education placement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CoopEndDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>End date of student cooperative education placement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CumulativeHours" type="EXTENSION-CumulativeHours">
+        <xs:annotation>
+          <xs:documentation>Total hours a student has accumulated through cooperative education experiences.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CoopLocation" type="EXTENSION-CoopLocation">
+        <xs:annotation>
+          <xs:documentation>Location associated with the cooperative education or internship placement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CTECredential">
+    <xs:annotation>
+      <xs:documentation>List of earned credentials, including certifications and licensures related to the field of study.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CTECredential" type="EXTENSION-CTECredentialDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The credential earned by the student. Relates to CredentialId in legacy system.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-CTECredentialDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CTECredentialDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The date the student earned the credential. Relates to DateObtained in legacy system.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PostSecondaryCredits">
+    <xs:annotation>
+      <xs:documentation>List of related Post-Secondary credits that apply to the CTE program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CourseReference" type="CourseReferenceType">
+        <xs:annotation>
+          <xs:documentation>The Post-Secondary course for which credit was earned.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransferCreditDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date the course credit was earned at a Post-Secondary institution.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransferCredits" type="EXTENSION-TransferCredits">
+        <xs:annotation>
+          <xs:documentation>The number of credits a student earned for the course.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CTEFundCategory" type="EXTENSION-CTEFundCategoryDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The category of funding or financial aid the student received.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-CTEFundCategoryDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Enumerations and Enumerated Collections =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== String Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-CoopIdentifier">
+    <xs:annotation>
+      <xs:documentation>Unique identifier assigned by CTE Center for placement.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CoopLocation">
+    <xs:annotation>
+      <xs:documentation>Location associated with the cooperative education or internship placement.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-AverageDailyMinutesOfInstruction">
+    <xs:annotation>
+      <xs:documentation>The average minutes of daily instruction for this student in the CTE program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="30" />
+      <xs:maxInclusive value="999" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CumulativeHours">
+    <xs:annotation>
+      <xs:documentation>Total hours a student has accumulated through cooperative education experiences.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="6" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-TransferCredits">
+    <xs:annotation>
+      <xs:documentation>The number of credits a student earned for the course.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
