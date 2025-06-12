@@ -5,8 +5,8 @@
   </PropertyGroup>	
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>EdFi.Ods.Extensions.EdFiXAssessmentRoster</RootNamespace>
-    <AssemblyName>EdFi.Ods.Extensions.EdFiXAssessmentRoster</AssemblyName>
+    <RootNamespace>EdFi.Ods.Extensions.EdFiXassessmentRoster</RootNamespace>
+    <AssemblyName>EdFi.Ods.Extensions.EdFiXassessmentRoster</AssemblyName>
     <RestorePackages>true</RestorePackages>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
@@ -40,11 +40,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EdFi.Ods.Extensions.EdFiXAssessmentRoster.nuspec">
+    <Content Include="EdFi.Ods.Extensions.EdFiXassessmentRoster.nuspec">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Content>
-    <Content Include="Marker_EdFi_Ods_Extensions_EdFiXAssessmentRoster.cs">
+    <Content Include="Marker_EdFi_Ods_Extensions_EdFiXassessmentRoster.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Content>

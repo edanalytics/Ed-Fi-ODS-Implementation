@@ -1,7 +1,7 @@
 {
   "odsApiVersion": "7.3",
   "schemaDefinition": {
-    "logicalName": "EdFiXAssessmentRoster",
+    "logicalName": "EdFiXassessmentRoster",
     "physicalName": "edfixassessmentroster",
     "description": "",
     "version": "1.0.0"
