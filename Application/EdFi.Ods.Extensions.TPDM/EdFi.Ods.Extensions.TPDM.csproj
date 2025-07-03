@@ -68,17 +68,7 @@
       <LogicalName>$(RootNamespace).$([System.String]::Copy('%(RecursiveDir)').Replace('/', '.').Replace('\', '.'))%(Filename)%(Extension)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Authorization\EntityAuthorizationContextProviders.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Controllers\Controllers.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\ExceptionHandling\DatabaseMetadata.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Models\Entities\Entities.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Models\Interfaces\EntityInterfaces.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Models\Mappers\EntityMapper.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Pipelines\CreateOrUpdatePipelines.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Requests\Requests.generated.cs" />
-    <Compile Include="Versions\1.2.0\Standard\5.2.0\Resources\Resources.generated.cs" />
-  </ItemGroup>
+  <!-- Removed explicit compile entries as they are already included by the wildcard pattern above -->
   <ItemGroup>
     <None Include="Versions\1.2.0\Standard\5.2.0\Artifacts\MsSql\Structure\Ods\0010-EXTENSION-TPDM-Schemas.sql" />
     <None Include="Versions\1.2.0\Standard\5.2.0\Artifacts\MsSql\Structure\Ods\0020-EXTENSION-TPDM-Tables.sql" />
