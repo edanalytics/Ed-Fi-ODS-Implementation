@@ -180,7 +180,7 @@ function Initialize-DevelopmentEnvironment {
                     throw "Value '{0}' is an invalid version. Supply a valid version in the format 'X.Y.Z' where X, Y, and Z are non-zero digits."
                 }
         })]
-        [String] $ExtensionVersion = '1.1.0',
+        [String] $ExtensionVersion = '1.2.0',
 		
 		[Parameter(Mandatory=$false)]
         [String] $JavaPath
