@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>EdFi.Ods.Extensions.EdFiXAssessmentRoster.$extensionversion$.Standard.$standardversion$</id>
+    <id>EdFi.Ods.Extensions.EdFiXassessmentRoster.$extensionversion$.Standard.$standardversion$</id>
     <version>1.0.0</version>
     <authors>Ed-Fi Alliance</authors>
     <owners>Ed-Fi Alliance</owners>
     <copyright>$copyright$</copyright>
     <projectUrl>https://github.com/Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>EdFi.Ods.Extensions.EdFiXAssessmentRoster.$extensionversion$.Standard.$standardversion$</description>
+    <description>EdFi.Ods.Extensions.EdFiXassessmentRoster.$extensionversion$.Standard.$standardversion$</description>
     <releaseNotes></releaseNotes>
   </metadata>
   <files>
     <file src="Versions/$extensionversion$/Standard/$standardversion$/Artifacts/**/*.sql" target="."/>
     <file src="Versions/$extensionversion$/Standard/$standardversion$/Artifacts/**/*.json" target="."/>
     <file src="assemblyMetadata.json" target="."/>
-    <file src="bin\$configuration$\net8.0\EdFi.Ods.Extensions.EdFiXAssessmentRoster.dll" target="."/>
+    <file src="bin\$configuration$\net8.0\EdFi.Ods.Extensions.EdFiXassessmentRoster.dll" target="."/>
   </files>
 </package>
