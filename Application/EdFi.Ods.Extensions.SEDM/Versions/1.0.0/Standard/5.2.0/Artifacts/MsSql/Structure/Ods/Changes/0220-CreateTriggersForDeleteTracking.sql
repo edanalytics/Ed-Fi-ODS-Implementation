@@ -82,34 +82,34 @@ ALTER TABLE [sedm].[FrequencyPeriodDescriptor] ENABLE TRIGGER [sedm_FrequencyPer
 GO
 
 
-DROP TRIGGER IF EXISTS [sedm].[sedm_IDEAEvent_TR_DeleteTracking]
+DROP TRIGGER IF EXISTS [sedm].[sedm_IdeaEvent_TR_DeleteTracking]
 GO
 
-CREATE TRIGGER [sedm].[sedm_IDEAEvent_TR_DeleteTracking] ON [sedm].[IDEAEvent] AFTER DELETE AS
+CREATE TRIGGER [sedm].[sedm_IdeaEvent_TR_DeleteTracking] ON [sedm].[IdeaEvent] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 
         RETURN
 
     SET NOCOUNT ON
 
-    INSERT INTO [tracked_changes_sedm].[IDEAEvent](OldEducationOrganizationId, OldIDEAEventDescriptorId, OldIDEAEventDescriptorNamespace, OldIDEAEventDescriptorCodeValue, OldIDEAEventID, OldStudentUSI, OldStudentUniqueId, Id, Discriminator, ChangeVersion)
-    SELECT d.EducationOrganizationId, d.IDEAEventDescriptorId, j0.Namespace, j0.CodeValue, d.IDEAEventID, d.StudentUSI, j1.StudentUniqueId, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    INSERT INTO [tracked_changes_sedm].[IdeaEvent](OldEducationOrganizationId, OldIdeaEventDescriptorId, OldIdeaEventDescriptorNamespace, OldIdeaEventDescriptorCodeValue, OldIDEAEventID, OldStudentUSI, OldStudentUniqueId, Id, Discriminator, ChangeVersion)
+    SELECT d.EducationOrganizationId, d.IdeaEventDescriptorId, j0.Namespace, j0.CodeValue, d.IDEAEventID, d.StudentUSI, j1.StudentUniqueId, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
         INNER JOIN edfi.Descriptor j0
-            ON d.IDEAEventDescriptorId = j0.DescriptorId
+            ON d.IdeaEventDescriptorId = j0.DescriptorId
         INNER JOIN edfi.Student j1
             ON d.StudentUSI = j1.StudentUSI
 END
 GO
 
-ALTER TABLE [sedm].[IDEAEvent] ENABLE TRIGGER [sedm_IDEAEvent_TR_DeleteTracking]
+ALTER TABLE [sedm].[IdeaEvent] ENABLE TRIGGER [sedm_IdeaEvent_TR_DeleteTracking]
 GO
 
 
-DROP TRIGGER IF EXISTS [sedm].[sedm_IDEAEventDescriptor_TR_DeleteTracking]
+DROP TRIGGER IF EXISTS [sedm].[sedm_IdeaEventDescriptor_TR_DeleteTracking]
 GO
 
-CREATE TRIGGER [sedm].[sedm_IDEAEventDescriptor_TR_DeleteTracking] ON [sedm].[IDEAEventDescriptor] AFTER DELETE AS
+CREATE TRIGGER [sedm].[sedm_IdeaEventDescriptor_TR_DeleteTracking] ON [sedm].[IdeaEventDescriptor] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 
         RETURN
@@ -117,20 +117,20 @@ BEGIN
     SET NOCOUNT ON
 
     INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.IDEAEventDescriptorId, b.CodeValue, b.Namespace, b.Id, 'sedm.IDEAEventDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    SELECT  d.IdeaEventDescriptorId, b.CodeValue, b.Namespace, b.Id, 'sedm.IdeaEventDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.IDEAEventDescriptorId = b.DescriptorId
+            INNER JOIN edfi.Descriptor b ON d.IdeaEventDescriptorId = b.DescriptorId
 END
 GO
 
-ALTER TABLE [sedm].[IDEAEventDescriptor] ENABLE TRIGGER [sedm_IDEAEventDescriptor_TR_DeleteTracking]
+ALTER TABLE [sedm].[IdeaEventDescriptor] ENABLE TRIGGER [sedm_IdeaEventDescriptor_TR_DeleteTracking]
 GO
 
 
-DROP TRIGGER IF EXISTS [sedm].[sedm_IEPGoalDescriptor_TR_DeleteTracking]
+DROP TRIGGER IF EXISTS [sedm].[sedm_IepGoalDescriptor_TR_DeleteTracking]
 GO
 
-CREATE TRIGGER [sedm].[sedm_IEPGoalDescriptor_TR_DeleteTracking] ON [sedm].[IEPGoalDescriptor] AFTER DELETE AS
+CREATE TRIGGER [sedm].[sedm_IepGoalDescriptor_TR_DeleteTracking] ON [sedm].[IepGoalDescriptor] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 
         RETURN
@@ -138,20 +138,20 @@ BEGIN
     SET NOCOUNT ON
 
     INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.IEPGoalDescriptorId, b.CodeValue, b.Namespace, b.Id, 'sedm.IEPGoalDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    SELECT  d.IepGoalDescriptorId, b.CodeValue, b.Namespace, b.Id, 'sedm.IepGoalDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.IEPGoalDescriptorId = b.DescriptorId
+            INNER JOIN edfi.Descriptor b ON d.IepGoalDescriptorId = b.DescriptorId
 END
 GO
 
-ALTER TABLE [sedm].[IEPGoalDescriptor] ENABLE TRIGGER [sedm_IEPGoalDescriptor_TR_DeleteTracking]
+ALTER TABLE [sedm].[IepGoalDescriptor] ENABLE TRIGGER [sedm_IepGoalDescriptor_TR_DeleteTracking]
 GO
 
 
-DROP TRIGGER IF EXISTS [sedm].[sedm_IEPStatusDescriptor_TR_DeleteTracking]
+DROP TRIGGER IF EXISTS [sedm].[sedm_IepStatusDescriptor_TR_DeleteTracking]
 GO
 
-CREATE TRIGGER [sedm].[sedm_IEPStatusDescriptor_TR_DeleteTracking] ON [sedm].[IEPStatusDescriptor] AFTER DELETE AS
+CREATE TRIGGER [sedm].[sedm_IepStatusDescriptor_TR_DeleteTracking] ON [sedm].[IepStatusDescriptor] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 
         RETURN
@@ -159,13 +159,13 @@ BEGIN
     SET NOCOUNT ON
 
     INSERT INTO [tracked_changes_edfi].[Descriptor](OldDescriptorId, OldCodeValue, OldNamespace, Id, Discriminator, ChangeVersion)
-    SELECT  d.IEPStatusDescriptorId, b.CodeValue, b.Namespace, b.Id, 'sedm.IEPStatusDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    SELECT  d.IepStatusDescriptorId, b.CodeValue, b.Namespace, b.Id, 'sedm.IepStatusDescriptor', (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
-            INNER JOIN edfi.Descriptor b ON d.IEPStatusDescriptorId = b.DescriptorId
+            INNER JOIN edfi.Descriptor b ON d.IepStatusDescriptorId = b.DescriptorId
 END
 GO
 
-ALTER TABLE [sedm].[IEPStatusDescriptor] ENABLE TRIGGER [sedm_IEPStatusDescriptor_TR_DeleteTracking]
+ALTER TABLE [sedm].[IepStatusDescriptor] ENABLE TRIGGER [sedm_IepStatusDescriptor_TR_DeleteTracking]
 GO
 
 
@@ -393,8 +393,8 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [tracked_changes_sedm].[StudentIEPServiceDelivery](OldEducationOrganizationId, OldIEPServiceDeliveryID, OldServiceDeliveryDate, OldServiceDeliveryDescriptorId, OldServiceDeliveryDescriptorNamespace, OldServiceDeliveryDescriptorCodeValue, OldStudentUSI, OldStudentUniqueId, Id, Discriminator, ChangeVersion)
-    SELECT d.EducationOrganizationId, d.IEPServiceDeliveryID, d.ServiceDeliveryDate, d.ServiceDeliveryDescriptorId, j0.Namespace, j0.CodeValue, d.StudentUSI, j1.StudentUniqueId, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    INSERT INTO [tracked_changes_sedm].[StudentIEPServiceDelivery](OldEducationOrganizationId, OldIEPFinalizedDate, OldIEPServiceDeliveryID, OldServiceDeliveryDate, OldServiceDeliveryDescriptorId, OldServiceDeliveryDescriptorNamespace, OldServiceDeliveryDescriptorCodeValue, OldStudentIEPAssociationID, OldStudentUSI, OldStudentUniqueId, Id, Discriminator, ChangeVersion)
+    SELECT d.EducationOrganizationId, d.IEPFinalizedDate, d.IEPServiceDeliveryID, d.ServiceDeliveryDate, d.ServiceDeliveryDescriptorId, j0.Namespace, j0.CodeValue, d.StudentIEPAssociationID, d.StudentUSI, j1.StudentUniqueId, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
         INNER JOIN edfi.Descriptor j0
             ON d.ServiceDeliveryDescriptorId = j0.DescriptorId
@@ -417,8 +417,8 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [tracked_changes_sedm].[StudentIEPServicePrescription](OldEducationOrganizationId, OldServicePrescriptionDate, OldServicePrescriptionDescriptorId, OldServicePrescriptionDescriptorNamespace, OldServicePrescriptionDescriptorCodeValue, OldStudentUSI, OldStudentUniqueId, Id, Discriminator, ChangeVersion)
-    SELECT d.EducationOrganizationId, d.ServicePrescriptionDate, d.ServicePrescriptionDescriptorId, j0.Namespace, j0.CodeValue, d.StudentUSI, j1.StudentUniqueId, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    INSERT INTO [tracked_changes_sedm].[StudentIEPServicePrescription](OldEducationOrganizationId, OldIEPFinalizedDate, OldServicePrescriptionDate, OldServicePrescriptionDescriptorId, OldServicePrescriptionDescriptorNamespace, OldServicePrescriptionDescriptorCodeValue, OldStudentIEPAssociationID, OldStudentUSI, OldStudentUniqueId, Id, Discriminator, ChangeVersion)
+    SELECT d.EducationOrganizationId, d.IEPFinalizedDate, d.ServicePrescriptionDate, d.ServicePrescriptionDescriptorId, j0.Namespace, j0.CodeValue, d.StudentIEPAssociationID, d.StudentUSI, j1.StudentUniqueId, d.Id, d.Discriminator, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
         INNER JOIN edfi.Descriptor j0
             ON d.ServicePrescriptionDescriptorId = j0.DescriptorId

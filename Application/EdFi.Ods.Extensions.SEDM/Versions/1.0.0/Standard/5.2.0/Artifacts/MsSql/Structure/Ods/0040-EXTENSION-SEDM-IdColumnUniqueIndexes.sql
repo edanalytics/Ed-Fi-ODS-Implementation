@@ -1,6 +1,6 @@
 BEGIN TRANSACTION
-    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'sedm.IDEAEvent') AND name = N'UX_IDEAEvent_Id')
-    CREATE UNIQUE NONCLUSTERED INDEX UX_IDEAEvent_Id ON [sedm].[IDEAEvent]
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'sedm.IdeaEvent') AND name = N'UX_IdeaEvent_Id')
+    CREATE UNIQUE NONCLUSTERED INDEX UX_IdeaEvent_Id ON [sedm].[IdeaEvent]
     (Id) WITH (PAD_INDEX = ON, FILLFACTOR = 75, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
     GO
 COMMIT

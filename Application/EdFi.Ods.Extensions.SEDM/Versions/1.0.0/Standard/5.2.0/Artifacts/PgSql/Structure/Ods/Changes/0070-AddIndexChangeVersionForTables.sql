@@ -1,4 +1,4 @@
-CREATE INDEX IF NOT EXISTS UX_a16a88_ChangeVersion ON sedm.IDEAEvent(ChangeVersion);
+CREATE INDEX IF NOT EXISTS UX_2fdbd1_ChangeVersion ON sedm.IdeaEvent(ChangeVersion);
 
 CREATE INDEX IF NOT EXISTS UX_d153ae_ChangeVersion ON sedm.StudentIEP(ChangeVersion);
 

@@ -226,9 +226,9 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="EventComplianceDescriptor" type="EXTENSION-EventComplianceDescriptor" />
         <xs:element name="EventReasonDescriptor" type="EXTENSION-EventReasonDescriptor" />
         <xs:element name="FrequencyPeriodDescriptor" type="EXTENSION-FrequencyPeriodDescriptor" />
-        <xs:element name="IDEAEventDescriptor" type="EXTENSION-IDEAEventDescriptor" />
-        <xs:element name="IEPGoalDescriptor" type="EXTENSION-IEPGoalDescriptor" />
-        <xs:element name="IEPStatusDescriptor" type="EXTENSION-IEPStatusDescriptor" />
+        <xs:element name="IdeaEventDescriptor" type="EXTENSION-IdeaEventDescriptor" />
+        <xs:element name="IepGoalDescriptor" type="EXTENSION-IepGoalDescriptor" />
+        <xs:element name="IepStatusDescriptor" type="EXTENSION-IepStatusDescriptor" />
         <xs:element name="ServiceComplianceDescriptor" type="EXTENSION-ServiceComplianceDescriptor" />
         <xs:element name="ServiceDeliveryDescriptor" type="EXTENSION-ServiceDeliveryDescriptor" />
         <xs:element name="ServiceLocationTypeDescriptor" type="EXTENSION-ServiceLocationTypeDescriptor" />

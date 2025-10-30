@@ -1,6 +1,6 @@
 BEGIN TRANSACTION
-    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'sedm.IDEAEvent') AND name = N'UX_IDEAEvent_ChangeVersion')
-    CREATE INDEX [UX_IDEAEvent_ChangeVersion] ON [sedm].[IDEAEvent] ([ChangeVersion] ASC)
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'sedm.IdeaEvent') AND name = N'UX_IdeaEvent_ChangeVersion')
+    CREATE INDEX [UX_IdeaEvent_ChangeVersion] ON [sedm].[IdeaEvent] ([ChangeVersion] ASC)
     GO
 COMMIT
 

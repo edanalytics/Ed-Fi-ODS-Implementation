@@ -1,6 +1,6 @@
-CREATE SEQUENCE [sedm].[IDEAEvent_AggSeq] START WITH -2147483648 INCREMENT BY 1;
-ALTER TABLE [sedm].[IDEAEvent] ADD AggregateId int NOT NULL DEFAULT NEXT VALUE FOR [sedm].[IDEAEvent_AggSeq], AggregateData varbinary(8000);
-CREATE INDEX [IX_IDEAEvent_AggregateId] ON [sedm].[IDEAEvent] (AggregateId);
+CREATE SEQUENCE [sedm].[IdeaEvent_AggSeq] START WITH -2147483648 INCREMENT BY 1;
+ALTER TABLE [sedm].[IdeaEvent] ADD AggregateId int NOT NULL DEFAULT NEXT VALUE FOR [sedm].[IdeaEvent_AggSeq], AggregateData varbinary(8000);
+CREATE INDEX [IX_IdeaEvent_AggregateId] ON [sedm].[IdeaEvent] (AggregateId);
 
 CREATE SEQUENCE [sedm].[StudentIEP_AggSeq] START WITH -2147483648 INCREMENT BY 1;
 ALTER TABLE [sedm].[StudentIEP] ADD AggregateId int NOT NULL DEFAULT NEXT VALUE FOR [sedm].[StudentIEP_AggSeq], AggregateData varbinary(8000);

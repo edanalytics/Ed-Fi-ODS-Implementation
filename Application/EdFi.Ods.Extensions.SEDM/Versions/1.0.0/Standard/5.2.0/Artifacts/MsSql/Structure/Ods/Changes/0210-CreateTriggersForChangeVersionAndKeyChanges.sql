@@ -1,12 +1,12 @@
-DROP TRIGGER IF EXISTS [sedm].[sedm_IDEAEvent_TR_UpdateChangeVersion]
+DROP TRIGGER IF EXISTS [sedm].[sedm_IdeaEvent_TR_UpdateChangeVersion]
 GO
 
-CREATE TRIGGER [sedm].[sedm_IDEAEvent_TR_UpdateChangeVersion] ON [sedm].[IDEAEvent] AFTER UPDATE AS
+CREATE TRIGGER [sedm].[sedm_IdeaEvent_TR_UpdateChangeVersion] ON [sedm].[IdeaEvent] AFTER UPDATE AS
 BEGIN
     SET NOCOUNT ON;
-    UPDATE [sedm].[IDEAEvent]
+    UPDATE [sedm].[IdeaEvent]
     SET ChangeVersion = (NEXT VALUE FOR [changes].[ChangeVersionSequence])
-    FROM [sedm].[IDEAEvent] u
+    FROM [sedm].[IdeaEvent] u
     WHERE EXISTS (SELECT 1 FROM inserted i WHERE i.id = u.id);
 END	
 GO

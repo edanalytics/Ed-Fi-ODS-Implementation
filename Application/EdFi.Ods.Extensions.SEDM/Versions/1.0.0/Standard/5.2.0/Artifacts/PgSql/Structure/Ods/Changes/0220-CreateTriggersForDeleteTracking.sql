@@ -100,8 +100,8 @@ CREATE OR REPLACE FUNCTION tracked_changes_sedm.ideaeventdescriptor_deleted()
 $BODY$
 BEGIN
     INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.IDEAEventDescriptorId, b.codevalue, b.namespace, b.id, 'sedm.IDEAEventDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.IDEAEventDescriptorId = b.descriptorid ;
+    SELECT OLD.IdeaEventDescriptorId, b.codevalue, b.namespace, b.id, 'sedm.IdeaEventDescriptor', nextval('changes.ChangeVersionSequence')
+    FROM edfi.descriptor b WHERE old.IdeaEventDescriptorId = b.descriptorid ;
 
     RETURN NULL;
 END;
@@ -117,8 +117,8 @@ CREATE OR REPLACE FUNCTION tracked_changes_sedm.iepgoaldescriptor_deleted()
 $BODY$
 BEGIN
     INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.IEPGoalDescriptorId, b.codevalue, b.namespace, b.id, 'sedm.IEPGoalDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.IEPGoalDescriptorId = b.descriptorid ;
+    SELECT OLD.IepGoalDescriptorId, b.codevalue, b.namespace, b.id, 'sedm.IepGoalDescriptor', nextval('changes.ChangeVersionSequence')
+    FROM edfi.descriptor b WHERE old.IepGoalDescriptorId = b.descriptorid ;
 
     RETURN NULL;
 END;
@@ -134,8 +134,8 @@ CREATE OR REPLACE FUNCTION tracked_changes_sedm.iepstatusdescriptor_deleted()
 $BODY$
 BEGIN
     INSERT INTO tracked_changes_edfi.descriptor(olddescriptorid, oldcodevalue, oldnamespace, id, discriminator, changeversion)
-    SELECT OLD.IEPStatusDescriptorId, b.codevalue, b.namespace, b.id, 'sedm.IEPStatusDescriptor', nextval('changes.ChangeVersionSequence')
-    FROM edfi.descriptor b WHERE old.IEPStatusDescriptorId = b.descriptorid ;
+    SELECT OLD.IepStatusDescriptorId, b.codevalue, b.namespace, b.id, 'sedm.IepStatusDescriptor', nextval('changes.ChangeVersionSequence')
+    FROM edfi.descriptor b WHERE old.IepStatusDescriptorId = b.descriptorid ;
 
     RETURN NULL;
 END;
@@ -356,10 +356,10 @@ BEGIN
     SELECT INTO dj1 * FROM edfi.student j1 WHERE studentusi = old.studentusi;
 
     INSERT INTO tracked_changes_sedm.studentiepservicedelivery(
-        oldeducationorganizationid, oldiepservicedeliveryid, oldservicedeliverydate, oldservicedeliverydescriptorid, oldservicedeliverydescriptornamespace, oldservicedeliverydescriptorcodevalue, oldstudentusi, oldstudentuniqueid,
+        oldeducationorganizationid, oldiepfinalizeddate, oldiepservicedeliveryid, oldservicedeliverydate, oldservicedeliverydescriptorid, oldservicedeliverydescriptornamespace, oldservicedeliverydescriptorcodevalue, oldstudentiepassociationid, oldstudentusi, oldstudentuniqueid,
         id, discriminator, changeversion)
     VALUES (
-        OLD.educationorganizationid, OLD.iepservicedeliveryid, OLD.servicedeliverydate, OLD.servicedeliverydescriptorid, dj0.namespace, dj0.codevalue, OLD.studentusi, dj1.studentuniqueid, 
+        OLD.educationorganizationid, OLD.iepfinalizeddate, OLD.iepservicedeliveryid, OLD.servicedeliverydate, OLD.servicedeliverydescriptorid, dj0.namespace, dj0.codevalue, OLD.studentiepassociationid, OLD.studentusi, dj1.studentuniqueid, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;
@@ -383,10 +383,10 @@ BEGIN
     SELECT INTO dj1 * FROM edfi.student j1 WHERE studentusi = old.studentusi;
 
     INSERT INTO tracked_changes_sedm.studentiepserviceprescription(
-        oldeducationorganizationid, oldserviceprescriptiondate, oldserviceprescriptiondescriptorid, oldserviceprescriptiondescriptornamespace, oldserviceprescriptiondescriptorcodevalue, oldstudentusi, oldstudentuniqueid,
+        oldeducationorganizationid, oldiepfinalizeddate, oldserviceprescriptiondate, oldserviceprescriptiondescriptorid, oldserviceprescriptiondescriptornamespace, oldserviceprescriptiondescriptorcodevalue, oldstudentiepassociationid, oldstudentusi, oldstudentuniqueid,
         id, discriminator, changeversion)
     VALUES (
-        OLD.educationorganizationid, OLD.serviceprescriptiondate, OLD.serviceprescriptiondescriptorid, dj0.namespace, dj0.codevalue, OLD.studentusi, dj1.studentuniqueid, 
+        OLD.educationorganizationid, OLD.iepfinalizeddate, OLD.serviceprescriptiondate, OLD.serviceprescriptiondescriptorid, dj0.namespace, dj0.codevalue, OLD.studentiepassociationid, OLD.studentusi, dj1.studentuniqueid, 
         OLD.id, OLD.discriminator, nextval('changes.changeversionsequence'));
 
     RETURN NULL;

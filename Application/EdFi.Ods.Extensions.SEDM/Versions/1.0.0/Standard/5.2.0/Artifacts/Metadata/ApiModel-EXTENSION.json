@@ -58,48 +58,48 @@
     {
       "aggregateRootEntityName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "aggregateEntityNames": [
         {
           "schema": "sedm",
-          "name": "IDEAEvent"
+          "name": "IdeaEvent"
         }
       ]
     },
     {
       "aggregateRootEntityName": {
         "schema": "sedm",
-        "name": "IDEAEventDescriptor"
+        "name": "IdeaEventDescriptor"
       },
       "aggregateEntityNames": [
         {
           "schema": "sedm",
-          "name": "IDEAEventDescriptor"
+          "name": "IdeaEventDescriptor"
         }
       ]
     },
     {
       "aggregateRootEntityName": {
         "schema": "sedm",
-        "name": "IEPGoalDescriptor"
+        "name": "IepGoalDescriptor"
       },
       "aggregateEntityNames": [
         {
           "schema": "sedm",
-          "name": "IEPGoalDescriptor"
+          "name": "IepGoalDescriptor"
         }
       ]
     },
     {
       "aggregateRootEntityName": {
         "schema": "sedm",
-        "name": "IEPStatusDescriptor"
+        "name": "IepStatusDescriptor"
       },
       "aggregateEntityNames": [
         {
           "schema": "sedm",
-          "name": "IEPStatusDescriptor"
+          "name": "IepStatusDescriptor"
         }
       ]
     },
@@ -187,7 +187,7 @@
         },
         {
           "schema": "sedm",
-          "name": "StudentIEPIDEAEvent"
+          "name": "StudentIEPIdeaEvent"
         }
       ]
     },
@@ -239,7 +239,7 @@
         },
         {
           "schema": "sedm",
-          "name": "StudentIEPGoalIDEAEvent"
+          "name": "StudentIEPGoalIdeaEvent"
         }
       ]
     },
@@ -259,7 +259,7 @@
         },
         {
           "schema": "sedm",
-          "name": "StudentIEPServiceDeliveryIDEAEvent"
+          "name": "StudentIEPServiceDeliveryIdeaEvent"
         },
         {
           "schema": "sedm",
@@ -279,7 +279,11 @@
         },
         {
           "schema": "sedm",
-          "name": "StudentIEPServicePrescriptionIDEAEvent"
+          "name": "StudentIEPServicePrescriptionIdeaEvent"
+        },
+        {
+          "schema": "sedm",
+          "name": "StudentIEPServicePrescriptionStaff"
         }
       ]
     }
@@ -388,8 +392,26 @@
     },
     {
       "schema": "sedm",
-      "name": "IDEAEvent",
+      "name": "IdeaEvent",
       "locallyDefinedProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date when the IDEA related event started.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
         {
           "propertyName": "CreateDate",
           "propertyType": {
@@ -408,25 +430,7 @@
           }
         },
         {
-          "propertyName": "EventBeginDate",
-          "propertyType": {
-            "dbType": "Date",
-            "minLength": 0,
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The date when the IDEA related event started.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EventBeginDate",
-            "postgreSql": "EventBeginDate"
-          }
-        },
-        {
-          "propertyName": "EventEndDate",
+          "propertyName": "EndDate",
           "propertyType": {
             "dbType": "Date",
             "minLength": 0,
@@ -439,8 +443,8 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "EventEndDate",
-            "postgreSql": "EventEndDate"
+            "sqlServer": "EndDate",
+            "postgreSql": "EndDate"
           }
         },
         {
@@ -483,7 +487,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -516,113 +520,113 @@
       ],
       "identifiers": [
         {
-          "identifierName": "IDEAEvent_PK",
+          "identifierName": "IdeaEvent_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
-            "IDEAEventDescriptorId",
+            "IdeaEventDescriptorId",
             "IDEAEventID",
             "StudentUSI"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "IDEAEvent_PK",
-            "postgreSql": "IDEAEvent_PK"
+            "sqlServer": "IdeaEvent_PK",
+            "postgreSql": "IdeaEvent_PK"
           }
         },
         {
-          "identifierName": "UX_IDEAEvent_Id",
+          "identifierName": "UX_IdeaEvent_Id",
           "identifyingPropertyNames": [
             "Id"
           ],
           "isPrimary": false,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "UX_IDEAEvent_Id",
-            "postgreSql": "UX_a16a88_Id"
+            "sqlServer": "UX_IdeaEvent_Id",
+            "postgreSql": "UX_2fdbd1_Id"
           }
         }
       ],
       "isAbstract": false,
       "description": "An IDEA related student event describing status, dates and narrative.",
       "tableNames": {
-        "sqlServer": "IDEAEvent",
-        "postgreSql": "IDEAEvent"
+        "sqlServer": "IdeaEvent",
+        "postgreSql": "IdeaEvent"
       }
     },
     {
       "schema": "sedm",
-      "name": "IDEAEventDescriptor",
+      "name": "IdeaEventDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
         {
-          "identifierName": "IDEAEventDescriptor_PK",
+          "identifierName": "IdeaEventDescriptor_PK",
           "identifyingPropertyNames": [
-            "IDEAEventDescriptorId"
+            "IdeaEventDescriptorId"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "IDEAEventDescriptor_PK",
-            "postgreSql": "IDEAEventDescriptor_PK"
+            "sqlServer": "IdeaEventDescriptor_PK",
+            "postgreSql": "IdeaEventDescriptor_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "IDEA event type. Examples: Referral for Evaluation, IEP Approved, Parental COnsent Given, Evaluation Complete.",
       "tableNames": {
-        "sqlServer": "IDEAEventDescriptor",
-        "postgreSql": "IDEAEventDescriptor"
+        "sqlServer": "IdeaEventDescriptor",
+        "postgreSql": "IdeaEventDescriptor"
       }
     },
     {
       "schema": "sedm",
-      "name": "IEPGoalDescriptor",
+      "name": "IepGoalDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
         {
-          "identifierName": "IEPGoalDescriptor_PK",
+          "identifierName": "IepGoalDescriptor_PK",
           "identifyingPropertyNames": [
-            "IEPGoalDescriptorId"
+            "IepGoalDescriptorId"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "IEPGoalDescriptor_PK",
-            "postgreSql": "IEPGoalDescriptor_PK"
+            "sqlServer": "IepGoalDescriptor_PK",
+            "postgreSql": "IepGoalDescriptor_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "A focused goal for an IEP.",
       "tableNames": {
-        "sqlServer": "IEPGoalDescriptor",
-        "postgreSql": "IEPGoalDescriptor"
+        "sqlServer": "IepGoalDescriptor",
+        "postgreSql": "IepGoalDescriptor"
       }
     },
     {
       "schema": "sedm",
-      "name": "IEPStatusDescriptor",
+      "name": "IepStatusDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
         {
-          "identifierName": "IEPStatusDescriptor_PK",
+          "identifierName": "IepStatusDescriptor_PK",
           "identifyingPropertyNames": [
-            "IEPStatusDescriptorId"
+            "IepStatusDescriptorId"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "IEPStatusDescriptor_PK",
-            "postgreSql": "IEPStatusDescriptor_PK"
+            "sqlServer": "IepStatusDescriptor_PK",
+            "postgreSql": "IepStatusDescriptor_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "The current status of the student IEP.",
       "tableNames": {
-        "sqlServer": "IEPStatusDescriptor",
-        "postgreSql": "IEPStatusDescriptor"
+        "sqlServer": "IepStatusDescriptor",
+        "postgreSql": "IepStatusDescriptor"
       }
     },
     {
@@ -977,7 +981,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -1485,7 +1489,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 256,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -1555,7 +1559,7 @@
     },
     {
       "schema": "sedm",
-      "name": "StudentIEPGoalIDEAEvent",
+      "name": "StudentIEPGoalIdeaEvent",
       "locallyDefinedProperties": [
         {
           "propertyName": "CreateDate",
@@ -1577,34 +1581,34 @@
       ],
       "identifiers": [
         {
-          "identifierName": "StudentIEPGoalIDEAEvent_PK",
+          "identifierName": "StudentIEPGoalIdeaEvent_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
             "IEPFinalizedDate",
             "IEPGoalID",
             "StudentIEPAssociationID",
             "StudentUSI",
-            "IDEAEventDescriptorId",
+            "IdeaEventDescriptorId",
             "IDEAEventID"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "StudentIEPGoalIDEAEvent_PK",
-            "postgreSql": "StudentIEPGoalIDEAEvent_PK"
+            "sqlServer": "StudentIEPGoalIdeaEvent_PK",
+            "postgreSql": "StudentIEPGoalIdeaEvent_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "A reference to one or more student IDEA events.",
       "tableNames": {
-        "sqlServer": "StudentIEPGoalIDEAEvent",
-        "postgreSql": "StudentIEPGoalIDEAEvent"
+        "sqlServer": "StudentIEPGoalIdeaEvent",
+        "postgreSql": "StudentIEPGoalIdeaEvent"
       }
     },
     {
       "schema": "sedm",
-      "name": "StudentIEPIDEAEvent",
+      "name": "StudentIEPIdeaEvent",
       "locallyDefinedProperties": [
         {
           "propertyName": "CreateDate",
@@ -1626,28 +1630,28 @@
       ],
       "identifiers": [
         {
-          "identifierName": "StudentIEPIDEAEvent_PK",
+          "identifierName": "StudentIEPIdeaEvent_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
             "IEPFinalizedDate",
             "StudentIEPAssociationID",
             "StudentUSI",
-            "IDEAEventDescriptorId",
+            "IdeaEventDescriptorId",
             "IDEAEventID"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "StudentIEPIDEAEvent_PK",
-            "postgreSql": "StudentIEPIDEAEvent_PK"
+            "sqlServer": "StudentIEPIdeaEvent_PK",
+            "postgreSql": "StudentIEPIdeaEvent_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "A reference to one or more student IDEA events.",
       "tableNames": {
-        "sqlServer": "StudentIEPIDEAEvent",
-        "postgreSql": "StudentIEPIDEAEvent"
+        "sqlServer": "StudentIEPIdeaEvent",
+        "postgreSql": "StudentIEPIdeaEvent"
       }
     },
     {
@@ -1693,7 +1697,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -1747,9 +1751,11 @@
           "identifierName": "StudentIEPServiceDelivery_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "IEPFinalizedDate",
             "IEPServiceDeliveryID",
             "ServiceDeliveryDate",
             "ServiceDeliveryDescriptorId",
+            "StudentIEPAssociationID",
             "StudentUSI"
           ],
           "isPrimary": true,
@@ -1896,9 +1902,11 @@
           "identifierName": "StudentIEPServiceDeliveryExternalServiceProvider_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "IEPFinalizedDate",
             "IEPServiceDeliveryID",
             "ServiceDeliveryDate",
             "ServiceDeliveryDescriptorId",
+            "StudentIEPAssociationID",
             "StudentUSI",
             "ProviderCode",
             "ProviderFirstName",
@@ -1921,7 +1929,7 @@
     },
     {
       "schema": "sedm",
-      "name": "StudentIEPServiceDeliveryIDEAEvent",
+      "name": "StudentIEPServiceDeliveryIdeaEvent",
       "locallyDefinedProperties": [
         {
           "propertyName": "CreateDate",
@@ -1943,29 +1951,31 @@
       ],
       "identifiers": [
         {
-          "identifierName": "StudentIEPServiceDeliveryIDEAEvent_PK",
+          "identifierName": "StudentIEPServiceDeliveryIdeaEvent_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "IEPFinalizedDate",
             "IEPServiceDeliveryID",
             "ServiceDeliveryDate",
             "ServiceDeliveryDescriptorId",
+            "StudentIEPAssociationID",
             "StudentUSI",
-            "IDEAEventDescriptorId",
+            "IdeaEventDescriptorId",
             "IDEAEventID"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "StudentIEPServiceDeliveryIDEAEvent_PK",
-            "postgreSql": "StudentIEPServiceDeliveryIDEAEvent_PK"
+            "sqlServer": "StudentIEPServiceDeliveryIdeaEvent_PK",
+            "postgreSql": "StudentIEPServiceDeliveryIdeaEvent_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "A reference to one or more student IDEA events.",
       "tableNames": {
-        "sqlServer": "StudentIEPServiceDeliveryIDEAEvent",
-        "postgreSql": "StudentIEPServiceDeliveryIDEAEvent"
+        "sqlServer": "StudentIEPServiceDeliveryIdeaEvent",
+        "postgreSql": "StudentIEPServiceDeliveryIdeaEvent"
       }
     },
     {
@@ -2013,9 +2023,11 @@
           "identifierName": "StudentIEPServiceDeliveryServiceProvider_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "IEPFinalizedDate",
             "IEPServiceDeliveryID",
             "ServiceDeliveryDate",
             "ServiceDeliveryDescriptorId",
+            "StudentIEPAssociationID",
             "StudentUSI",
             "StaffUSI"
           ],
@@ -2183,8 +2195,10 @@
           "identifierName": "StudentIEPServicePrescription_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "IEPFinalizedDate",
             "ServicePrescriptionDate",
             "ServicePrescriptionDescriptorId",
+            "StudentIEPAssociationID",
             "StudentUSI"
           ],
           "isPrimary": true,
@@ -2216,7 +2230,7 @@
     },
     {
       "schema": "sedm",
-      "name": "StudentIEPServicePrescriptionIDEAEvent",
+      "name": "StudentIEPServicePrescriptionIdeaEvent",
       "locallyDefinedProperties": [
         {
           "propertyName": "CreateDate",
@@ -2238,28 +2252,79 @@
       ],
       "identifiers": [
         {
-          "identifierName": "StudentIEPServicePrescriptionIDEAEvent_PK",
+          "identifierName": "StudentIEPServicePrescriptionIdeaEvent_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "IEPFinalizedDate",
             "ServicePrescriptionDate",
             "ServicePrescriptionDescriptorId",
+            "StudentIEPAssociationID",
             "StudentUSI",
-            "IDEAEventDescriptorId",
+            "IdeaEventDescriptorId",
             "IDEAEventID"
           ],
           "isPrimary": true,
           "isUpdatable": false,
           "constraintNames": {
-            "sqlServer": "StudentIEPServicePrescriptionIDEAEvent_PK",
-            "postgreSql": "StudentIEPServicePrescriptionIDEAEvent_PK"
+            "sqlServer": "StudentIEPServicePrescriptionIdeaEvent_PK",
+            "postgreSql": "StudentIEPServicePrescriptionIdeaEvent_PK"
           }
         }
       ],
       "isAbstract": false,
       "description": "A reference to one or more student IDEA events.",
       "tableNames": {
-        "sqlServer": "StudentIEPServicePrescriptionIDEAEvent",
-        "postgreSql": "StudentIEPServicePrescriptionIDEAEvent"
+        "sqlServer": "StudentIEPServicePrescriptionIdeaEvent",
+        "postgreSql": "StudentIEPServicePrescriptionIdeaEvent"
+      }
+    },
+    {
+      "schema": "sedm",
+      "name": "StudentIEPServicePrescriptionStaff",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentIEPServicePrescriptionStaff_PK",
+          "identifyingPropertyNames": [
+            "EducationOrganizationId",
+            "IEPFinalizedDate",
+            "ServicePrescriptionDate",
+            "ServicePrescriptionDescriptorId",
+            "StudentIEPAssociationID",
+            "StudentUSI",
+            "StaffUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentIEPServicePrescriptionStaff_PK",
+            "postgreSql": "StudentIEPServicePrescriptionStaff_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "A reference to the staff member(s) assigned to provide the prescribed service.",
+      "tableNames": {
+        "sqlServer": "StudentIEPServicePrescriptionStaff",
+        "postgreSql": "StudentIEPServicePrescriptionStaff"
       }
     }
   ],
@@ -2507,7 +2572,7 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IDEAEvent_EducationOrganization"
+        "name": "FK_IdeaEvent_EducationOrganization"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -2535,7 +2600,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -2559,15 +2624,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_IDEAEvent_EducationOrganization",
-        "postgreSql": "FK_a16a88_EducationOrganization"
+        "sqlServer": "FK_IdeaEvent_EducationOrganization",
+        "postgreSql": "FK_2fdbd1_EducationOrganization"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IDEAEvent_EventComplianceDescriptor"
+        "name": "FK_IdeaEvent_EventComplianceDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -2595,7 +2660,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -2619,15 +2684,15 @@
       "isIdentifying": false,
       "isRequired": false,
       "constraintNames": {
-        "sqlServer": "FK_IDEAEvent_EventComplianceDescriptor",
-        "postgreSql": "FK_a16a88_EventComplianceDescriptor"
+        "sqlServer": "FK_IdeaEvent_EventComplianceDescriptor",
+        "postgreSql": "FK_2fdbd1_EventComplianceDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IDEAEvent_EventReasonDescriptor"
+        "name": "FK_IdeaEvent_EventReasonDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -2655,7 +2720,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -2679,24 +2744,24 @@
       "isIdentifying": false,
       "isRequired": false,
       "constraintNames": {
-        "sqlServer": "FK_IDEAEvent_EventReasonDescriptor",
-        "postgreSql": "FK_a16a88_EventReasonDescriptor"
+        "sqlServer": "FK_IdeaEvent_EventReasonDescriptor",
+        "postgreSql": "FK_2fdbd1_EventReasonDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IDEAEvent_IDEAEventDescriptor"
+        "name": "FK_IdeaEvent_IdeaEventDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEventDescriptor"
+        "name": "IdeaEventDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -2708,18 +2773,18 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         }
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -2731,23 +2796,23 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_IDEAEvent_IDEAEventDescriptor",
-        "postgreSql": "FK_a16a88_IDEAEventDescriptor"
+        "sqlServer": "FK_IdeaEvent_IdeaEventDescriptor",
+        "postgreSql": "FK_2fdbd1_IdeaEventDescriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IDEAEvent_Student"
+        "name": "FK_IdeaEvent_Student"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -2775,7 +2840,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -2799,15 +2864,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_IDEAEvent_Student",
-        "postgreSql": "FK_a16a88_Student"
+        "sqlServer": "FK_IdeaEvent_Student",
+        "postgreSql": "FK_2fdbd1_Student"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IDEAEventDescriptor_Descriptor"
+        "name": "FK_IdeaEventDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
       "primaryEntityFullName": {
@@ -2835,11 +2900,11 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEventDescriptor"
+        "name": "IdeaEventDescriptor"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -2851,23 +2916,23 @@
           "isIdentifying": true,
           "isServerAssigned": true,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_IDEAEventDescriptor_Descriptor",
-        "postgreSql": "FK_cbac23_Descriptor"
+        "sqlServer": "FK_IdeaEventDescriptor_Descriptor",
+        "postgreSql": "FK_b809cd_Descriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IEPGoalDescriptor_Descriptor"
+        "name": "FK_IepGoalDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
       "primaryEntityFullName": {
@@ -2895,11 +2960,11 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IEPGoalDescriptor"
+        "name": "IepGoalDescriptor"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "IEPGoalDescriptorId",
+          "propertyName": "IepGoalDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -2911,23 +2976,23 @@
           "isIdentifying": true,
           "isServerAssigned": true,
           "columnNames": {
-            "sqlServer": "IEPGoalDescriptorId",
-            "postgreSql": "IEPGoalDescriptorId"
+            "sqlServer": "IepGoalDescriptorId",
+            "postgreSql": "IepGoalDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_IEPGoalDescriptor_Descriptor",
-        "postgreSql": "FK_9eedd8_Descriptor"
+        "sqlServer": "FK_IepGoalDescriptor_Descriptor",
+        "postgreSql": "FK_ee5d44_Descriptor"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_IEPStatusDescriptor_Descriptor"
+        "name": "FK_IepStatusDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
       "primaryEntityFullName": {
@@ -2955,11 +3020,11 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "IEPStatusDescriptor"
+        "name": "IepStatusDescriptor"
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "IEPStatusDescriptorId",
+          "propertyName": "IepStatusDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -2971,16 +3036,16 @@
           "isIdentifying": true,
           "isServerAssigned": true,
           "columnNames": {
-            "sqlServer": "IEPStatusDescriptorId",
-            "postgreSql": "IEPStatusDescriptorId"
+            "sqlServer": "IepStatusDescriptorId",
+            "postgreSql": "IepStatusDescriptorId"
           }
         }
       ],
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_IEPStatusDescriptor_Descriptor",
-        "postgreSql": "FK_275df5_Descriptor"
+        "sqlServer": "FK_IepStatusDescriptor_Descriptor",
+        "postgreSql": "FK_28eed9_Descriptor"
       },
       "potentiallyLogical": false
     },
@@ -3407,16 +3472,16 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEP_IEPStatusDescriptor"
+        "name": "FK_StudentIEP_IepStatusDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IEPStatusDescriptor"
+        "name": "IepStatusDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "IEPStatusDescriptorId",
+          "propertyName": "IepStatusDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -3428,8 +3493,8 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IEPStatusDescriptorId",
-            "postgreSql": "IEPStatusDescriptorId"
+            "sqlServer": "IepStatusDescriptorId",
+            "postgreSql": "IepStatusDescriptorId"
           }
         }
       ],
@@ -3439,7 +3504,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "IEPStatusDescriptorId",
+          "propertyName": "IepStatusDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -3451,16 +3516,16 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IEPStatusDescriptorId",
-            "postgreSql": "IEPStatusDescriptorId"
+            "sqlServer": "IepStatusDescriptorId",
+            "postgreSql": "IepStatusDescriptorId"
           }
         }
       ],
       "isIdentifying": false,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEP_IEPStatusDescriptor",
-        "postgreSql": "FK_d153ae_IEPStatusDescriptor"
+        "sqlServer": "FK_StudentIEP_IepStatusDescriptor",
+        "postgreSql": "FK_d153ae_IepStatusDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -3647,126 +3712,6 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPAccommodationCollection_EducationOrganization"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "EducationOrganization"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPAccommodationCollection"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPAccommodationCollection_EducationOrganization",
-        "postgreSql": "FK_1314b5_EducationOrganization"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPAccommodationCollection_Student"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Student"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPAccommodationCollection"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPAccommodationCollection_Student",
-        "postgreSql": "FK_1314b5_Student"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
         "name": "FK_StudentIEPAccommodationCollection_StudentIEP"
       },
       "cardinality": "OneToOne",
@@ -3815,7 +3760,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -3891,7 +3836,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4041,7 +3986,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4117,7 +4062,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4153,126 +4098,6 @@
       "constraintNames": {
         "sqlServer": "FK_StudentIEPAccommodationCollectionAccommodation_StudentIEPAccommodationCollection",
         "postgreSql": "FK_dd3bc3_StudentIEPAccommodationCollection"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPDisabilityCollection_EducationOrganization"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "EducationOrganization"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPDisabilityCollection"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPDisabilityCollection_EducationOrganization",
-        "postgreSql": "FK_0f858c_EducationOrganization"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPDisabilityCollection_Student"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Student"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPDisabilityCollection"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPDisabilityCollection_Student",
-        "postgreSql": "FK_0f858c_Student"
       },
       "potentiallyLogical": false
     },
@@ -4327,7 +4152,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4403,7 +4228,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4613,7 +4438,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4689,7 +4514,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4839,7 +4664,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4932,7 +4757,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -4991,76 +4816,16 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPGoal_EducationOrganization"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "EducationOrganization"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPGoal"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPGoal_EducationOrganization",
-        "postgreSql": "FK_5453a5_EducationOrganization"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPGoal_IEPGoalDescriptor"
+        "name": "FK_StudentIEPGoal_IepGoalDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IEPGoalDescriptor"
+        "name": "IepGoalDescriptor"
       },
       "primaryEntityProperties": [
         {
-          "propertyName": "IEPGoalDescriptorId",
+          "propertyName": "IepGoalDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -5072,8 +4837,8 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IEPGoalDescriptorId",
-            "postgreSql": "IEPGoalDescriptorId"
+            "sqlServer": "IepGoalDescriptorId",
+            "postgreSql": "IepGoalDescriptorId"
           }
         }
       ],
@@ -5083,7 +4848,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "IEPGoalDescriptorId",
+          "propertyName": "IepGoalDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -5095,76 +4860,16 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IEPGoalDescriptorId",
-            "postgreSql": "IEPGoalDescriptorId"
+            "sqlServer": "IepGoalDescriptorId",
+            "postgreSql": "IepGoalDescriptorId"
           }
         }
       ],
       "isIdentifying": false,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPGoal_IEPGoalDescriptor",
-        "postgreSql": "FK_5453a5_IEPGoalDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPGoal_Student"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Student"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPGoal"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPGoal_Student",
-        "postgreSql": "FK_5453a5_Student"
+        "sqlServer": "FK_StudentIEPGoal_IepGoalDescriptor",
+        "postgreSql": "FK_5453a5_IepGoalDescriptor"
       },
       "potentiallyLogical": false
     },
@@ -5219,7 +4924,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5295,7 +5000,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5337,12 +5042,12 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPGoalIDEAEvent_IDEAEvent"
+        "name": "FK_StudentIEPGoalIdeaEvent_IdeaEvent"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "primaryEntityProperties": [
         {
@@ -5363,7 +5068,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -5375,8 +5080,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -5384,7 +5089,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5417,7 +5122,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPGoalIDEAEvent"
+        "name": "StudentIEPGoalIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -5438,7 +5143,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -5450,8 +5155,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -5459,7 +5164,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5493,15 +5198,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPGoalIDEAEvent_IDEAEvent",
-        "postgreSql": "FK_77bb8b_IDEAEvent"
+        "sqlServer": "FK_StudentIEPGoalIdeaEvent_IdeaEvent",
+        "postgreSql": "FK_b841d7_IdeaEvent"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPGoalIDEAEvent_StudentIEPGoal"
+        "name": "FK_StudentIEPGoalIdeaEvent_StudentIEPGoal"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -5549,7 +5254,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 256,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5567,7 +5272,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5600,7 +5305,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPGoalIDEAEvent"
+        "name": "StudentIEPGoalIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -5643,7 +5348,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 256,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5661,7 +5366,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5695,20 +5400,20 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPGoalIDEAEvent_StudentIEPGoal",
-        "postgreSql": "FK_77bb8b_StudentIEPGoal"
+        "sqlServer": "FK_StudentIEPGoalIdeaEvent_StudentIEPGoal",
+        "postgreSql": "FK_b841d7_StudentIEPGoal"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPIDEAEvent_IDEAEvent"
+        "name": "FK_StudentIEPIdeaEvent_IdeaEvent"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "primaryEntityProperties": [
         {
@@ -5729,7 +5434,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -5741,8 +5446,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -5750,7 +5455,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5783,7 +5488,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPIDEAEvent"
+        "name": "StudentIEPIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -5804,7 +5509,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -5816,8 +5521,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -5825,7 +5530,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5859,15 +5564,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPIDEAEvent_IDEAEvent",
-        "postgreSql": "FK_879a3f_IDEAEvent"
+        "sqlServer": "FK_StudentIEPIdeaEvent_IdeaEvent",
+        "postgreSql": "FK_618a2f_IdeaEvent"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPIDEAEvent_StudentIEP"
+        "name": "FK_StudentIEPIdeaEvent_StudentIEP"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -5915,7 +5620,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -5948,7 +5653,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPIDEAEvent"
+        "name": "StudentIEPIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -5991,7 +5696,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -6025,68 +5730,8 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPIDEAEvent_StudentIEP",
-        "postgreSql": "FK_879a3f_StudentIEP"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPServiceDelivery_EducationOrganization"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "EducationOrganization"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPServiceDelivery"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPServiceDelivery_EducationOrganization",
-        "postgreSql": "FK_524fcd_EducationOrganization"
+        "sqlServer": "FK_StudentIEPIdeaEvent_StudentIEP",
+        "postgreSql": "FK_618a2f_StudentIEP"
       },
       "potentiallyLogical": false
     },
@@ -6213,14 +5858,67 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPServiceDelivery_Student"
+        "name": "FK_StudentIEPServiceDelivery_StudentIEP"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Student"
+        "schema": "sedm",
+        "name": "StudentIEP"
       },
       "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int64",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
+          }
+        },
         {
           "propertyName": "StudentUSI",
           "propertyType": {
@@ -6232,7 +5930,7 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": true,
+          "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "StudentUSI",
             "postgreSql": "StudentUSI"
@@ -6244,6 +5942,59 @@
         "name": "StudentIEPServiceDelivery"
       },
       "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int64",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
+          }
+        },
         {
           "propertyName": "StudentUSI",
           "propertyType": {
@@ -6263,172 +6014,6 @@
         }
       ],
       "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPServiceDelivery_Student",
-        "postgreSql": "FK_524fcd_Student"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPServiceDelivery_StudentIEP"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEP"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        },
-        {
-          "propertyName": "IEPFinalizedDate",
-          "propertyType": {
-            "dbType": "Date",
-            "minLength": 0,
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "IEPFinalizedDate",
-            "postgreSql": "IEPFinalizedDate"
-          }
-        },
-        {
-          "propertyName": "StudentIEPAssociationID",
-          "propertyType": {
-            "dbType": "String",
-            "minLength": 0,
-            "maxLength": 1024,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier assigned by the provider or source system of IEP services.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentIEPAssociationID",
-            "postgreSql": "StudentIEPAssociationID"
-          }
-        },
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPServiceDelivery"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        },
-        {
-          "propertyName": "IEPFinalizedDate",
-          "propertyType": {
-            "dbType": "Date",
-            "minLength": 0,
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "IEPFinalizedDate",
-            "postgreSql": "IEPFinalizedDate"
-          }
-        },
-        {
-          "propertyName": "StudentIEPAssociationID",
-          "propertyType": {
-            "dbType": "String",
-            "minLength": 0,
-            "maxLength": 1024,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier assigned by the provider or source system of IEP services.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentIEPAssociationID",
-            "postgreSql": "StudentIEPAssociationID"
-          }
-        },
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": false,
       "isRequired": true,
       "constraintNames": {
         "sqlServer": "FK_StudentIEPServiceDelivery_StudentIEP",
@@ -6465,6 +6050,24 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "ServicePrescriptionDate",
           "propertyType": {
             "dbType": "Date",
@@ -6497,6 +6100,24 @@
           "columnNames": {
             "sqlServer": "ServicePrescriptionDescriptorId",
             "postgreSql": "ServicePrescriptionDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -6540,6 +6161,24 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "ServicePrescriptionDate",
           "propertyType": {
             "dbType": "Date",
@@ -6572,6 +6211,24 @@
           "columnNames": {
             "sqlServer": "ServicePrescriptionDescriptorId",
             "postgreSql": "ServicePrescriptionDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -6629,11 +6286,29 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "IEPServiceDeliveryID",
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -6679,6 +6354,24 @@
           "columnNames": {
             "sqlServer": "ServiceDeliveryDescriptorId",
             "postgreSql": "ServiceDeliveryDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -6722,11 +6415,29 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "IEPServiceDeliveryID",
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -6772,6 +6483,24 @@
           "columnNames": {
             "sqlServer": "ServiceDeliveryDescriptorId",
             "postgreSql": "ServiceDeliveryDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -6803,12 +6532,12 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPServiceDeliveryIDEAEvent_IDEAEvent"
+        "name": "FK_StudentIEPServiceDeliveryIdeaEvent_IdeaEvent"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "primaryEntityProperties": [
         {
@@ -6829,7 +6558,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -6841,8 +6570,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -6850,7 +6579,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -6883,7 +6612,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPServiceDeliveryIDEAEvent"
+        "name": "StudentIEPServiceDeliveryIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -6904,7 +6633,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -6916,8 +6645,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -6925,7 +6654,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -6959,15 +6688,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPServiceDeliveryIDEAEvent_IDEAEvent",
-        "postgreSql": "FK_a62d81_IDEAEvent"
+        "sqlServer": "FK_StudentIEPServiceDeliveryIdeaEvent_IdeaEvent",
+        "postgreSql": "FK_999eca_IdeaEvent"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPServiceDeliveryIDEAEvent_StudentIEPServiceDelivery"
+        "name": "FK_StudentIEPServiceDeliveryIdeaEvent_StudentIEPServiceDelivery"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -6993,11 +6722,29 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "IEPServiceDeliveryID",
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -7043,6 +6790,24 @@
           "columnNames": {
             "sqlServer": "ServiceDeliveryDescriptorId",
             "postgreSql": "ServiceDeliveryDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -7065,7 +6830,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPServiceDeliveryIDEAEvent"
+        "name": "StudentIEPServiceDeliveryIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -7086,11 +6851,29 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "IEPServiceDeliveryID",
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -7136,6 +6919,24 @@
           "columnNames": {
             "sqlServer": "ServiceDeliveryDescriptorId",
             "postgreSql": "ServiceDeliveryDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -7159,8 +6960,8 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPServiceDeliveryIDEAEvent_StudentIEPServiceDelivery",
-        "postgreSql": "FK_a62d81_StudentIEPServiceDelivery"
+        "sqlServer": "FK_StudentIEPServiceDeliveryIdeaEvent_StudentIEPServiceDelivery",
+        "postgreSql": "FK_999eca_StudentIEPServiceDelivery"
       },
       "potentiallyLogical": false
     },
@@ -7253,11 +7054,29 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "IEPServiceDeliveryID",
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -7303,6 +7122,24 @@
           "columnNames": {
             "sqlServer": "ServiceDeliveryDescriptorId",
             "postgreSql": "ServiceDeliveryDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -7346,11 +7183,29 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "IEPServiceDeliveryID",
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -7396,6 +7251,24 @@
           "columnNames": {
             "sqlServer": "ServiceDeliveryDescriptorId",
             "postgreSql": "ServiceDeliveryDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -7481,66 +7354,6 @@
       "constraintNames": {
         "sqlServer": "FK_StudentIEPServicePrescription_DurationPeriodDescriptor",
         "postgreSql": "FK_d0ad1a_DurationPeriodDescriptor"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPServicePrescription_EducationOrganization"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "EducationOrganization"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPServicePrescription"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int64",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPServicePrescription_EducationOrganization",
-        "postgreSql": "FK_d0ad1a_EducationOrganization"
       },
       "potentiallyLogical": false
     },
@@ -7727,126 +7540,6 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPServicePrescription_Staff"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Staff"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "StaffUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a staff.",
-          "isIdentifying": false,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "StaffUSI",
-            "postgreSql": "StaffUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPServicePrescription"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "StaffUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "A unique alphanumeric code assigned to a staff.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StaffUSI",
-            "postgreSql": "StaffUSI"
-          }
-        }
-      ],
-      "isIdentifying": false,
-      "isRequired": false,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPServicePrescription_Staff",
-        "postgreSql": "FK_d0ad1a_Staff"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
-        "name": "FK_StudentIEPServicePrescription_Student"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Student"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": true,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "sedm",
-        "name": "StudentIEPServicePrescription"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentIEPServicePrescription_Student",
-        "postgreSql": "FK_d0ad1a_Student"
-      },
-      "potentiallyLogical": false
-    },
-    {
-      "fullName": {
-        "schema": "sedm",
         "name": "FK_StudentIEPServicePrescription_StudentIEP"
       },
       "cardinality": "OneToZeroOrMore",
@@ -7865,7 +7558,7 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "EducationOrganizationId",
@@ -7883,7 +7576,7 @@
             "isNullable": false
           },
           "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "IEPFinalizedDate",
@@ -7895,13 +7588,13 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
           },
           "description": "A unique identifier assigned by the provider or source system of IEP services.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "StudentIEPAssociationID",
@@ -7918,7 +7611,7 @@
             "isNullable": false
           },
           "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "StudentUSI",
@@ -7941,7 +7634,7 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "EducationOrganizationId",
@@ -7959,7 +7652,7 @@
             "isNullable": false
           },
           "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "IEPFinalizedDate",
@@ -7971,13 +7664,13 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
           },
           "description": "A unique identifier assigned by the provider or source system of IEP services.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "StudentIEPAssociationID",
@@ -7994,7 +7687,7 @@
             "isNullable": false
           },
           "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
             "sqlServer": "StudentUSI",
@@ -8002,7 +7695,7 @@
           }
         }
       ],
-      "isIdentifying": false,
+      "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
         "sqlServer": "FK_StudentIEPServicePrescription_StudentIEP",
@@ -8013,12 +7706,12 @@
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPServicePrescriptionIDEAEvent_IDEAEvent"
+        "name": "FK_StudentIEPServicePrescriptionIdeaEvent_IdeaEvent"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "sedm",
-        "name": "IDEAEvent"
+        "name": "IdeaEvent"
       },
       "primaryEntityProperties": [
         {
@@ -8039,7 +7732,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -8051,8 +7744,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -8060,7 +7753,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -8093,7 +7786,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPServicePrescriptionIDEAEvent"
+        "name": "StudentIEPServicePrescriptionIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -8114,7 +7807,7 @@
           }
         },
         {
-          "propertyName": "IDEAEventDescriptorId",
+          "propertyName": "IdeaEventDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -8126,8 +7819,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "IDEAEventDescriptorId",
-            "postgreSql": "IDEAEventDescriptorId"
+            "sqlServer": "IdeaEventDescriptorId",
+            "postgreSql": "IdeaEventDescriptorId"
           }
         },
         {
@@ -8135,7 +7828,7 @@
           "propertyType": {
             "dbType": "String",
             "minLength": 0,
-            "maxLength": 1024,
+            "maxLength": 128,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -8169,15 +7862,15 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPServicePrescriptionIDEAEvent_IDEAEvent",
-        "postgreSql": "FK_cf3b90_IDEAEvent"
+        "sqlServer": "FK_StudentIEPServicePrescriptionIdeaEvent_IdeaEvent",
+        "postgreSql": "FK_440435_IdeaEvent"
       },
       "potentiallyLogical": false
     },
     {
       "fullName": {
         "schema": "sedm",
-        "name": "FK_StudentIEPServicePrescriptionIDEAEvent_StudentIEPServicePrescription"
+        "name": "FK_StudentIEPServicePrescriptionIdeaEvent_StudentIEPServicePrescription"
       },
       "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
@@ -8203,6 +7896,24 @@
           }
         },
         {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
           "propertyName": "ServicePrescriptionDate",
           "propertyType": {
             "dbType": "Date",
@@ -8235,6 +7946,24 @@
           "columnNames": {
             "sqlServer": "ServicePrescriptionDescriptorId",
             "postgreSql": "ServicePrescriptionDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -8257,7 +7986,7 @@
       ],
       "secondaryEntityFullName": {
         "schema": "sedm",
-        "name": "StudentIEPServicePrescriptionIDEAEvent"
+        "name": "StudentIEPServicePrescriptionIdeaEvent"
       },
       "secondaryEntityProperties": [
         {
@@ -8275,6 +8004,24 @@
           "columnNames": {
             "sqlServer": "EducationOrganizationId",
             "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
           }
         },
         {
@@ -8310,6 +8057,24 @@
           "columnNames": {
             "sqlServer": "ServicePrescriptionDescriptorId",
             "postgreSql": "ServicePrescriptionDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
           }
         },
         {
@@ -8333,8 +8098,304 @@
       "isIdentifying": true,
       "isRequired": true,
       "constraintNames": {
-        "sqlServer": "FK_StudentIEPServicePrescriptionIDEAEvent_StudentIEPServicePrescription",
-        "postgreSql": "FK_cf3b90_StudentIEPServicePrescription"
+        "sqlServer": "FK_StudentIEPServicePrescriptionIdeaEvent_StudentIEPServicePrescription",
+        "postgreSql": "FK_440435_StudentIEPServicePrescription"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "sedm",
+        "name": "FK_StudentIEPServicePrescriptionStaff_Staff"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Staff"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "StaffUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a staff.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "StaffUSI",
+            "postgreSql": "StaffUSI"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "sedm",
+        "name": "StudentIEPServicePrescriptionStaff"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "StaffUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a staff.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StaffUSI",
+            "postgreSql": "StaffUSI"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentIEPServicePrescriptionStaff_Staff",
+        "postgreSql": "FK_e04f06_Staff"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "sedm",
+        "name": "FK_StudentIEPServicePrescriptionStaff_StudentIEPServicePrescription"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "sedm",
+        "name": "StudentIEPServicePrescription"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int64",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
+          "propertyName": "ServicePrescriptionDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the service was prescribed.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ServicePrescriptionDate",
+            "postgreSql": "ServicePrescriptionDate"
+          }
+        },
+        {
+          "propertyName": "ServicePrescriptionDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of service prescribed. Examples include: Auditory Specialist, Vocational Therapy.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ServicePrescriptionDescriptorId",
+            "postgreSql": "ServicePrescriptionDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "sedm",
+        "name": "StudentIEPServicePrescriptionStaff"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int64",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "IEPFinalizedDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPFinalizedDate",
+            "postgreSql": "IEPFinalizedDate"
+          }
+        },
+        {
+          "propertyName": "ServicePrescriptionDate",
+          "propertyType": {
+            "dbType": "Date",
+            "minLength": 0,
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The date the service was prescribed.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ServicePrescriptionDate",
+            "postgreSql": "ServicePrescriptionDate"
+          }
+        },
+        {
+          "propertyName": "ServicePrescriptionDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of service prescribed. Examples include: Auditory Specialist, Vocational Therapy.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ServicePrescriptionDescriptorId",
+            "postgreSql": "ServicePrescriptionDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentIEPAssociationID",
+          "propertyType": {
+            "dbType": "String",
+            "minLength": 0,
+            "maxLength": 128,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier assigned by the provider or source system of IEP services.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentIEPAssociationID",
+            "postgreSql": "StudentIEPAssociationID"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentIEPServicePrescriptionStaff_StudentIEPServicePrescription",
+        "postgreSql": "FK_e04f06_StudentIEPServicePrescription"
       },
       "potentiallyLogical": false
     }

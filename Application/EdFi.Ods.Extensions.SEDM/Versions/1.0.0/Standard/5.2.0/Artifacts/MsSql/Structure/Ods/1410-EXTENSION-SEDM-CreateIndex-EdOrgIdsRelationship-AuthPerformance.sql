@@ -1,7 +1,7 @@
 
-IF NOT EXISTS(SELECT * FROM sys.indexes WHERE name='IX_IDEAEvent_EducationOrganizationId' AND object_id = OBJECT_ID('sedm.IDEAEvent')) 
+IF NOT EXISTS(SELECT * FROM sys.indexes WHERE name='IX_IdeaEvent_EducationOrganizationId' AND object_id = OBJECT_ID('sedm.IdeaEvent')) 
 BEGIN
-    CREATE INDEX IX_IDEAEvent_EducationOrganizationId ON [sedm].[IDEAEvent](EducationOrganizationId) INCLUDE (Id)
+    CREATE INDEX IX_IdeaEvent_EducationOrganizationId ON [sedm].[IdeaEvent](EducationOrganizationId) INCLUDE (Id)
 END;
 
 IF NOT EXISTS(SELECT * FROM sys.indexes WHERE name='IX_StudentIEP_EducationOrganizationId' AND object_id = OBJECT_ID('sedm.StudentIEP')) 

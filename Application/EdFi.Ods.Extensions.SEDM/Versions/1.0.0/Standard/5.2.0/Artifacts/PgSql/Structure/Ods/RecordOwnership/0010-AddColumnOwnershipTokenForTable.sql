@@ -1,4 +1,4 @@
-ALTER TABLE sedm.IDEAEvent ADD CreatedByOwnershipTokenId SMALLINT NULL;
+ALTER TABLE sedm.IdeaEvent ADD CreatedByOwnershipTokenId SMALLINT NULL;
 
 ALTER TABLE sedm.StudentIEP ADD CreatedByOwnershipTokenId SMALLINT NULL;
 

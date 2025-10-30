@@ -1,5 +1,5 @@
 
-CREATE INDEX IF NOT EXISTS IX_IDEAEvent_EducationOrganizationId ON sedm.IDEAEvent(EducationOrganizationId) INCLUDE (Id);
+CREATE INDEX IF NOT EXISTS IX_IdeaEvent_EducationOrganizationId ON sedm.IdeaEvent(EducationOrganizationId) INCLUDE (Id);
 
 CREATE INDEX IF NOT EXISTS IX_StudentIEP_EducationOrganizationId ON sedm.StudentIEP(EducationOrganizationId) INCLUDE (Id);
 

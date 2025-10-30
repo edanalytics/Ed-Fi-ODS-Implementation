@@ -2,8 +2,8 @@
 DO $$
 BEGIN
 IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='sedm' AND table_name='ideaevent' AND column_name='changeversion') THEN
-ALTER TABLE sedm.IDEAEvent ADD ChangeVersion BIGINT DEFAULT (0) NOT NULL;
-ALTER TABLE sedm.IDEAEvent ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');
+ALTER TABLE sedm.IdeaEvent ADD ChangeVersion BIGINT DEFAULT (0) NOT NULL;
+ALTER TABLE sedm.IdeaEvent ALTER ChangeVersion SET DEFAULT nextval('changes.ChangeVersionSequence');
 END IF;
 
 IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='sedm' AND table_name='studentiep' AND column_name='changeversion') THEN

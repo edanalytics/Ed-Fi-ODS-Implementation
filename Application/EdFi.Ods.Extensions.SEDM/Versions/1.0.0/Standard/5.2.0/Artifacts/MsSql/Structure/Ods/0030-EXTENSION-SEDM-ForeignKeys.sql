@@ -18,49 +18,49 @@ REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [sedm].[IDEAEvent] WITH CHECK ADD CONSTRAINT [FK_IDEAEvent_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
+ALTER TABLE [sedm].[IdeaEvent] WITH CHECK ADD CONSTRAINT [FK_IdeaEvent_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
 REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
 GO
 
-ALTER TABLE [sedm].[IDEAEvent] WITH CHECK ADD CONSTRAINT [FK_IDEAEvent_EventComplianceDescriptor] FOREIGN KEY ([EventComplianceDescriptorId])
+ALTER TABLE [sedm].[IdeaEvent] WITH CHECK ADD CONSTRAINT [FK_IdeaEvent_EventComplianceDescriptor] FOREIGN KEY ([EventComplianceDescriptorId])
 REFERENCES [sedm].[EventComplianceDescriptor] ([EventComplianceDescriptorId])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_IDEAEvent_EventComplianceDescriptor]
-ON [sedm].[IDEAEvent] ([EventComplianceDescriptorId] ASC)
+CREATE NONCLUSTERED INDEX [FK_IdeaEvent_EventComplianceDescriptor]
+ON [sedm].[IdeaEvent] ([EventComplianceDescriptorId] ASC)
 GO
 
-ALTER TABLE [sedm].[IDEAEvent] WITH CHECK ADD CONSTRAINT [FK_IDEAEvent_EventReasonDescriptor] FOREIGN KEY ([EventReasonDescriptorId])
+ALTER TABLE [sedm].[IdeaEvent] WITH CHECK ADD CONSTRAINT [FK_IdeaEvent_EventReasonDescriptor] FOREIGN KEY ([EventReasonDescriptorId])
 REFERENCES [sedm].[EventReasonDescriptor] ([EventReasonDescriptorId])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_IDEAEvent_EventReasonDescriptor]
-ON [sedm].[IDEAEvent] ([EventReasonDescriptorId] ASC)
+CREATE NONCLUSTERED INDEX [FK_IdeaEvent_EventReasonDescriptor]
+ON [sedm].[IdeaEvent] ([EventReasonDescriptorId] ASC)
 GO
 
-ALTER TABLE [sedm].[IDEAEvent] WITH CHECK ADD CONSTRAINT [FK_IDEAEvent_IDEAEventDescriptor] FOREIGN KEY ([IDEAEventDescriptorId])
-REFERENCES [sedm].[IDEAEventDescriptor] ([IDEAEventDescriptorId])
+ALTER TABLE [sedm].[IdeaEvent] WITH CHECK ADD CONSTRAINT [FK_IdeaEvent_IdeaEventDescriptor] FOREIGN KEY ([IdeaEventDescriptorId])
+REFERENCES [sedm].[IdeaEventDescriptor] ([IdeaEventDescriptorId])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_IDEAEvent_IDEAEventDescriptor]
-ON [sedm].[IDEAEvent] ([IDEAEventDescriptorId] ASC)
+CREATE NONCLUSTERED INDEX [FK_IdeaEvent_IdeaEventDescriptor]
+ON [sedm].[IdeaEvent] ([IdeaEventDescriptorId] ASC)
 GO
 
-ALTER TABLE [sedm].[IDEAEvent] WITH CHECK ADD CONSTRAINT [FK_IDEAEvent_Student] FOREIGN KEY ([StudentUSI])
+ALTER TABLE [sedm].[IdeaEvent] WITH CHECK ADD CONSTRAINT [FK_IdeaEvent_Student] FOREIGN KEY ([StudentUSI])
 REFERENCES [edfi].[Student] ([StudentUSI])
 GO
 
-ALTER TABLE [sedm].[IDEAEventDescriptor] WITH CHECK ADD CONSTRAINT [FK_IDEAEventDescriptor_Descriptor] FOREIGN KEY ([IDEAEventDescriptorId])
+ALTER TABLE [sedm].[IdeaEventDescriptor] WITH CHECK ADD CONSTRAINT [FK_IdeaEventDescriptor_Descriptor] FOREIGN KEY ([IdeaEventDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [sedm].[IEPGoalDescriptor] WITH CHECK ADD CONSTRAINT [FK_IEPGoalDescriptor_Descriptor] FOREIGN KEY ([IEPGoalDescriptorId])
+ALTER TABLE [sedm].[IepGoalDescriptor] WITH CHECK ADD CONSTRAINT [FK_IepGoalDescriptor_Descriptor] FOREIGN KEY ([IepGoalDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [sedm].[IEPStatusDescriptor] WITH CHECK ADD CONSTRAINT [FK_IEPStatusDescriptor_Descriptor] FOREIGN KEY ([IEPStatusDescriptorId])
+ALTER TABLE [sedm].[IepStatusDescriptor] WITH CHECK ADD CONSTRAINT [FK_IepStatusDescriptor_Descriptor] FOREIGN KEY ([IepStatusDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
 GO
@@ -99,12 +99,12 @@ ALTER TABLE [sedm].[StudentIEP] WITH CHECK ADD CONSTRAINT [FK_StudentIEP_Educati
 REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
 GO
 
-ALTER TABLE [sedm].[StudentIEP] WITH CHECK ADD CONSTRAINT [FK_StudentIEP_IEPStatusDescriptor] FOREIGN KEY ([IEPStatusDescriptorId])
-REFERENCES [sedm].[IEPStatusDescriptor] ([IEPStatusDescriptorId])
+ALTER TABLE [sedm].[StudentIEP] WITH CHECK ADD CONSTRAINT [FK_StudentIEP_IepStatusDescriptor] FOREIGN KEY ([IepStatusDescriptorId])
+REFERENCES [sedm].[IepStatusDescriptor] ([IepStatusDescriptorId])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_StudentIEP_IEPStatusDescriptor]
-ON [sedm].[StudentIEP] ([IEPStatusDescriptorId] ASC)
+CREATE NONCLUSTERED INDEX [FK_StudentIEP_IepStatusDescriptor]
+ON [sedm].[StudentIEP] ([IepStatusDescriptorId] ASC)
 GO
 
 ALTER TABLE [sedm].[StudentIEP] WITH CHECK ADD CONSTRAINT [FK_StudentIEP_ReasonExitedDescriptor] FOREIGN KEY ([ReasonExitedDescriptorId])
@@ -127,14 +127,6 @@ ALTER TABLE [sedm].[StudentIEP] WITH CHECK ADD CONSTRAINT [FK_StudentIEP_Student
 REFERENCES [edfi].[Student] ([StudentUSI])
 GO
 
-ALTER TABLE [sedm].[StudentIEPAccommodationCollection] WITH CHECK ADD CONSTRAINT [FK_StudentIEPAccommodationCollection_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
-REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
-GO
-
-ALTER TABLE [sedm].[StudentIEPAccommodationCollection] WITH CHECK ADD CONSTRAINT [FK_StudentIEPAccommodationCollection_Student] FOREIGN KEY ([StudentUSI])
-REFERENCES [edfi].[Student] ([StudentUSI])
-GO
-
 ALTER TABLE [sedm].[StudentIEPAccommodationCollection] WITH CHECK ADD CONSTRAINT [FK_StudentIEPAccommodationCollection_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 REFERENCES [sedm].[StudentIEP] ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 GO
@@ -150,14 +142,6 @@ GO
 ALTER TABLE [sedm].[StudentIEPAccommodationCollectionAccommodation] WITH CHECK ADD CONSTRAINT [FK_StudentIEPAccommodationCollectionAccommodation_StudentIEPAccommodationCollection] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 REFERENCES [sedm].[StudentIEPAccommodationCollection] ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
-GO
-
-ALTER TABLE [sedm].[StudentIEPDisabilityCollection] WITH CHECK ADD CONSTRAINT [FK_StudentIEPDisabilityCollection_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
-REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
-GO
-
-ALTER TABLE [sedm].[StudentIEPDisabilityCollection] WITH CHECK ADD CONSTRAINT [FK_StudentIEPDisabilityCollection_Student] FOREIGN KEY ([StudentUSI])
-REFERENCES [edfi].[Student] ([StudentUSI])
 GO
 
 ALTER TABLE [sedm].[StudentIEPDisabilityCollection] WITH CHECK ADD CONSTRAINT [FK_StudentIEPDisabilityCollection_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
@@ -198,20 +182,12 @@ REFERENCES [sedm].[StudentIEPDisabilityCollectionDisability] ([EducationOrganiza
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [sedm].[StudentIEPGoal] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoal_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
-REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
+ALTER TABLE [sedm].[StudentIEPGoal] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoal_IepGoalDescriptor] FOREIGN KEY ([IepGoalDescriptorId])
+REFERENCES [sedm].[IepGoalDescriptor] ([IepGoalDescriptorId])
 GO
 
-ALTER TABLE [sedm].[StudentIEPGoal] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoal_IEPGoalDescriptor] FOREIGN KEY ([IEPGoalDescriptorId])
-REFERENCES [sedm].[IEPGoalDescriptor] ([IEPGoalDescriptorId])
-GO
-
-CREATE NONCLUSTERED INDEX [FK_StudentIEPGoal_IEPGoalDescriptor]
-ON [sedm].[StudentIEPGoal] ([IEPGoalDescriptorId] ASC)
-GO
-
-ALTER TABLE [sedm].[StudentIEPGoal] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoal_Student] FOREIGN KEY ([StudentUSI])
-REFERENCES [edfi].[Student] ([StudentUSI])
+CREATE NONCLUSTERED INDEX [FK_StudentIEPGoal_IepGoalDescriptor]
+ON [sedm].[StudentIEPGoal] ([IepGoalDescriptorId] ASC)
 GO
 
 ALTER TABLE [sedm].[StudentIEPGoal] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoal_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
@@ -222,34 +198,30 @@ CREATE NONCLUSTERED INDEX [FK_StudentIEPGoal_StudentIEP]
 ON [sedm].[StudentIEPGoal] ([EducationOrganizationId] ASC, [IEPFinalizedDate] ASC, [StudentIEPAssociationID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPGoalIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoalIDEAEvent_IDEAEvent] FOREIGN KEY ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
-REFERENCES [sedm].[IDEAEvent] ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPGoalIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoalIdeaEvent_IdeaEvent] FOREIGN KEY ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
+REFERENCES [sedm].[IdeaEvent] ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_StudentIEPGoalIDEAEvent_IDEAEvent]
-ON [sedm].[StudentIEPGoalIDEAEvent] ([EducationOrganizationId] ASC, [IDEAEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
+CREATE NONCLUSTERED INDEX [FK_StudentIEPGoalIdeaEvent_IdeaEvent]
+ON [sedm].[StudentIEPGoalIdeaEvent] ([EducationOrganizationId] ASC, [IdeaEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPGoalIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoalIDEAEvent_StudentIEPGoal] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [IEPGoalID], [StudentIEPAssociationID], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPGoalIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPGoalIdeaEvent_StudentIEPGoal] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [IEPGoalID], [StudentIEPAssociationID], [StudentUSI])
 REFERENCES [sedm].[StudentIEPGoal] ([EducationOrganizationId], [IEPFinalizedDate], [IEPGoalID], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [sedm].[StudentIEPIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPIDEAEvent_IDEAEvent] FOREIGN KEY ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
-REFERENCES [sedm].[IDEAEvent] ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPIdeaEvent_IdeaEvent] FOREIGN KEY ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
+REFERENCES [sedm].[IdeaEvent] ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_StudentIEPIDEAEvent_IDEAEvent]
-ON [sedm].[StudentIEPIDEAEvent] ([EducationOrganizationId] ASC, [IDEAEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
+CREATE NONCLUSTERED INDEX [FK_StudentIEPIdeaEvent_IdeaEvent]
+ON [sedm].[StudentIEPIdeaEvent] ([EducationOrganizationId] ASC, [IdeaEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPIDEAEvent_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPIdeaEvent_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 REFERENCES [sedm].[StudentIEP] ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
-GO
-
-ALTER TABLE [sedm].[StudentIEPServiceDelivery] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDelivery_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
-REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
 GO
 
 ALTER TABLE [sedm].[StudentIEPServiceDelivery] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDelivery_ServiceDeliveryDescriptor] FOREIGN KEY ([ServiceDeliveryDescriptorId])
@@ -268,10 +240,6 @@ CREATE NONCLUSTERED INDEX [FK_StudentIEPServiceDelivery_ServiceProviderTypeDescr
 ON [sedm].[StudentIEPServiceDelivery] ([ServiceProviderTypeDescriptorId] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServiceDelivery] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDelivery_Student] FOREIGN KEY ([StudentUSI])
-REFERENCES [edfi].[Student] ([StudentUSI])
-GO
-
 ALTER TABLE [sedm].[StudentIEPServiceDelivery] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDelivery_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 REFERENCES [sedm].[StudentIEP] ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 GO
@@ -280,29 +248,29 @@ CREATE NONCLUSTERED INDEX [FK_StudentIEPServiceDelivery_StudentIEP]
 ON [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId] ASC, [IEPFinalizedDate] ASC, [StudentIEPAssociationID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServiceDelivery] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDelivery_StudentIEPServicePrescription] FOREIGN KEY ([EducationOrganizationId], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentUSI])
-REFERENCES [sedm].[StudentIEPServicePrescription] ([EducationOrganizationId], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServiceDelivery] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDelivery_StudentIEPServicePrescription] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+REFERENCES [sedm].[StudentIEPServicePrescription] ([EducationOrganizationId], [IEPFinalizedDate], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentIEPAssociationID], [StudentUSI])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_StudentIEPServiceDelivery_StudentIEPServicePrescription]
-ON [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId] ASC, [ServicePrescriptionDate] ASC, [ServicePrescriptionDescriptorId] ASC, [StudentUSI] ASC)
+ON [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId] ASC, [IEPFinalizedDate] ASC, [ServicePrescriptionDate] ASC, [ServicePrescriptionDescriptorId] ASC, [StudentIEPAssociationID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryExternalServiceProvider_StudentIEPServiceDelivery] FOREIGN KEY ([EducationOrganizationId], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentUSI])
-REFERENCES [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryExternalServiceProvider_StudentIEPServiceDelivery] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+REFERENCES [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId], [IEPFinalizedDate], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [sedm].[StudentIEPServiceDeliveryIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryIDEAEvent_IDEAEvent] FOREIGN KEY ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
-REFERENCES [sedm].[IDEAEvent] ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServiceDeliveryIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryIdeaEvent_IdeaEvent] FOREIGN KEY ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
+REFERENCES [sedm].[IdeaEvent] ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_StudentIEPServiceDeliveryIDEAEvent_IDEAEvent]
-ON [sedm].[StudentIEPServiceDeliveryIDEAEvent] ([EducationOrganizationId] ASC, [IDEAEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
+CREATE NONCLUSTERED INDEX [FK_StudentIEPServiceDeliveryIdeaEvent_IdeaEvent]
+ON [sedm].[StudentIEPServiceDeliveryIdeaEvent] ([EducationOrganizationId] ASC, [IdeaEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServiceDeliveryIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryIDEAEvent_StudentIEPServiceDelivery] FOREIGN KEY ([EducationOrganizationId], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentUSI])
-REFERENCES [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServiceDeliveryIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryIdeaEvent_StudentIEPServiceDelivery] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+REFERENCES [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId], [IEPFinalizedDate], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
 GO
 
@@ -314,8 +282,8 @@ CREATE NONCLUSTERED INDEX [FK_StudentIEPServiceDeliveryServiceProvider_Staff]
 ON [sedm].[StudentIEPServiceDeliveryServiceProvider] ([StaffUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServiceDeliveryServiceProvider] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryServiceProvider_StudentIEPServiceDelivery] FOREIGN KEY ([EducationOrganizationId], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentUSI])
-REFERENCES [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServiceDeliveryServiceProvider] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServiceDeliveryServiceProvider_StudentIEPServiceDelivery] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+REFERENCES [sedm].[StudentIEPServiceDelivery] ([EducationOrganizationId], [IEPFinalizedDate], [IEPServiceDeliveryID], [ServiceDeliveryDate], [ServiceDeliveryDescriptorId], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
 GO
 
@@ -325,10 +293,6 @@ GO
 
 CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescription_DurationPeriodDescriptor]
 ON [sedm].[StudentIEPServicePrescription] ([DurationPeriodDescriptorId] ASC)
-GO
-
-ALTER TABLE [sedm].[StudentIEPServicePrescription] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescription_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
-REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
 GO
 
 ALTER TABLE [sedm].[StudentIEPServicePrescription] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescription_FrequencyPeriodDescriptor] FOREIGN KEY ([FrequencyPeriodDescriptorId])
@@ -355,22 +319,6 @@ CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescription_ServicePrescriptionD
 ON [sedm].[StudentIEPServicePrescription] ([ServicePrescriptionDescriptorId] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServicePrescription] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescription_Staff] FOREIGN KEY ([StaffUSI])
-REFERENCES [edfi].[Staff] ([StaffUSI])
-GO
-
-CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescription_Staff]
-ON [sedm].[StudentIEPServicePrescription] ([StaffUSI] ASC)
-GO
-
-ALTER TABLE [sedm].[StudentIEPServicePrescription] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescription_Student] FOREIGN KEY ([StudentUSI])
-REFERENCES [edfi].[Student] ([StudentUSI])
-GO
-
-CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescription_Student]
-ON [sedm].[StudentIEPServicePrescription] ([StudentUSI] ASC)
-GO
-
 ALTER TABLE [sedm].[StudentIEPServicePrescription] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescription_StudentIEP] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 REFERENCES [sedm].[StudentIEP] ([EducationOrganizationId], [IEPFinalizedDate], [StudentIEPAssociationID], [StudentUSI])
 GO
@@ -379,16 +327,29 @@ CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescription_StudentIEP]
 ON [sedm].[StudentIEPServicePrescription] ([EducationOrganizationId] ASC, [IEPFinalizedDate] ASC, [StudentIEPAssociationID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServicePrescriptionIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescriptionIDEAEvent_IDEAEvent] FOREIGN KEY ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
-REFERENCES [sedm].[IDEAEvent] ([EducationOrganizationId], [IDEAEventDescriptorId], [IDEAEventID], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServicePrescriptionIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescriptionIdeaEvent_IdeaEvent] FOREIGN KEY ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
+REFERENCES [sedm].[IdeaEvent] ([EducationOrganizationId], [IdeaEventDescriptorId], [IDEAEventID], [StudentUSI])
 GO
 
-CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescriptionIDEAEvent_IDEAEvent]
-ON [sedm].[StudentIEPServicePrescriptionIDEAEvent] ([EducationOrganizationId] ASC, [IDEAEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
+CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescriptionIdeaEvent_IdeaEvent]
+ON [sedm].[StudentIEPServicePrescriptionIdeaEvent] ([EducationOrganizationId] ASC, [IdeaEventDescriptorId] ASC, [IDEAEventID] ASC, [StudentUSI] ASC)
 GO
 
-ALTER TABLE [sedm].[StudentIEPServicePrescriptionIDEAEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescriptionIDEAEvent_StudentIEPServicePrescription] FOREIGN KEY ([EducationOrganizationId], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentUSI])
-REFERENCES [sedm].[StudentIEPServicePrescription] ([EducationOrganizationId], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentUSI])
+ALTER TABLE [sedm].[StudentIEPServicePrescriptionIdeaEvent] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescriptionIdeaEvent_StudentIEPServicePrescription] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+REFERENCES [sedm].[StudentIEPServicePrescription] ([EducationOrganizationId], [IEPFinalizedDate], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [sedm].[StudentIEPServicePrescriptionStaff] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescriptionStaff_Staff] FOREIGN KEY ([StaffUSI])
+REFERENCES [edfi].[Staff] ([StaffUSI])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_StudentIEPServicePrescriptionStaff_Staff]
+ON [sedm].[StudentIEPServicePrescriptionStaff] ([StaffUSI] ASC)
+GO
+
+ALTER TABLE [sedm].[StudentIEPServicePrescriptionStaff] WITH CHECK ADD CONSTRAINT [FK_StudentIEPServicePrescriptionStaff_StudentIEPServicePrescription] FOREIGN KEY ([EducationOrganizationId], [IEPFinalizedDate], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentIEPAssociationID], [StudentUSI])
+REFERENCES [sedm].[StudentIEPServicePrescription] ([EducationOrganizationId], [IEPFinalizedDate], [ServicePrescriptionDate], [ServicePrescriptionDescriptorId], [StudentIEPAssociationID], [StudentUSI])
 ON DELETE CASCADE
 GO
 

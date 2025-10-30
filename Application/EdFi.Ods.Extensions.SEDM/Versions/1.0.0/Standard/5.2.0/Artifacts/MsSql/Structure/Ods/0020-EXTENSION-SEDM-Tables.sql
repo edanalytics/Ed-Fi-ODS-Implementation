@@ -34,59 +34,59 @@ CREATE TABLE [sedm].[FrequencyPeriodDescriptor] (
 ) ON [PRIMARY]
 GO
 
--- Table [sedm].[IDEAEvent] --
-CREATE TABLE [sedm].[IDEAEvent] (
+-- Table [sedm].[IdeaEvent] --
+CREATE TABLE [sedm].[IdeaEvent] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
-    [IDEAEventDescriptorId] [INT] NOT NULL,
-    [IDEAEventID] [NVARCHAR](1024) NOT NULL,
+    [IdeaEventDescriptorId] [INT] NOT NULL,
+    [IDEAEventID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [EventBeginDate] [DATE] NOT NULL,
+    [BeginDate] [DATE] NOT NULL,
+    [EndDate] [DATE] NOT NULL,
     [EventComplianceDescriptorId] [INT] NULL,
-    [EventEndDate] [DATE] NOT NULL,
     [EventNarrative] [NVARCHAR](2048) NULL,
     [EventReasonDescriptorId] [INT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
-    CONSTRAINT [IDEAEvent_PK] PRIMARY KEY CLUSTERED (
+    CONSTRAINT [IdeaEvent_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
-        [IDEAEventDescriptorId] ASC,
+        [IdeaEventDescriptorId] ASC,
         [IDEAEventID] ASC,
         [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [sedm].[IDEAEvent] ADD CONSTRAINT [IDEAEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
+ALTER TABLE [sedm].[IdeaEvent] ADD CONSTRAINT [IdeaEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
 GO
-ALTER TABLE [sedm].[IDEAEvent] ADD CONSTRAINT [IDEAEvent_DF_Id] DEFAULT (newid()) FOR [Id]
+ALTER TABLE [sedm].[IdeaEvent] ADD CONSTRAINT [IdeaEvent_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
-ALTER TABLE [sedm].[IDEAEvent] ADD CONSTRAINT [IDEAEvent_DF_LastModifiedDate] DEFAULT (getutcdate()) FOR [LastModifiedDate]
+ALTER TABLE [sedm].[IdeaEvent] ADD CONSTRAINT [IdeaEvent_DF_LastModifiedDate] DEFAULT (getutcdate()) FOR [LastModifiedDate]
 GO
 
--- Table [sedm].[IDEAEventDescriptor] --
-CREATE TABLE [sedm].[IDEAEventDescriptor] (
-    [IDEAEventDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [IDEAEventDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [IDEAEventDescriptorId] ASC
+-- Table [sedm].[IdeaEventDescriptor] --
+CREATE TABLE [sedm].[IdeaEventDescriptor] (
+    [IdeaEventDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [IdeaEventDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [IdeaEventDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
--- Table [sedm].[IEPGoalDescriptor] --
-CREATE TABLE [sedm].[IEPGoalDescriptor] (
-    [IEPGoalDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [IEPGoalDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [IEPGoalDescriptorId] ASC
+-- Table [sedm].[IepGoalDescriptor] --
+CREATE TABLE [sedm].[IepGoalDescriptor] (
+    [IepGoalDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [IepGoalDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [IepGoalDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
--- Table [sedm].[IEPStatusDescriptor] --
-CREATE TABLE [sedm].[IEPStatusDescriptor] (
-    [IEPStatusDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [IEPStatusDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [IEPStatusDescriptorId] ASC
+-- Table [sedm].[IepStatusDescriptor] --
+CREATE TABLE [sedm].[IepStatusDescriptor] (
+    [IepStatusDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [IepStatusDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [IepStatusDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -149,12 +149,12 @@ GO
 CREATE TABLE [sedm].[StudentIEP] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [IEPAmendedDate] [DATE] NULL,
     [IEPBeginDate] [DATE] NOT NULL,
     [IEPEndDate] [DATE] NOT NULL,
-    [IEPStatusDescriptorId] [INT] NOT NULL,
+    [IepStatusDescriptorId] [INT] NOT NULL,
     [MedicallyFragile] [BIT] NULL,
     [MultiplyDisabled] [BIT] NULL,
     [ReasonExitedDescriptorId] [INT] NULL,
@@ -184,7 +184,7 @@ GO
 CREATE TABLE [sedm].[StudentIEPAccommodationCollection] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -209,7 +209,7 @@ GO
 CREATE TABLE [sedm].[StudentIEPAccommodationCollectionAccommodation] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [AccommodationDescriptorId] [INT] NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -229,7 +229,7 @@ GO
 CREATE TABLE [sedm].[StudentIEPDisabilityCollection] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -254,7 +254,7 @@ GO
 CREATE TABLE [sedm].[StudentIEPDisabilityCollectionDisability] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [DisabilityDescriptorId] [INT] NOT NULL,
     [DisabilityDeterminationSourceTypeDescriptorId] [INT] NULL,
@@ -277,7 +277,7 @@ GO
 CREATE TABLE [sedm].[StudentIEPDisabilityCollectionDisabilityDesignation] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [DisabilityDescriptorId] [INT] NOT NULL,
     [DisabilityDesignationDescriptorId] [INT] NOT NULL,
@@ -299,12 +299,12 @@ GO
 CREATE TABLE [sedm].[StudentIEPGoal] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [IEPGoalID] [NVARCHAR](256) NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [IEPGoalID] [NVARCHAR](128) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [GoalAchievementPeriodBeginDate] [DATE] NULL,
     [GoalAchievementPeriodEndDate] [DATE] NULL,
-    [IEPGoalDescriptorId] [INT] NOT NULL,
+    [IepGoalDescriptorId] [INT] NOT NULL,
     [IEPGoalDetails] [NVARCHAR](2048) NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
@@ -326,73 +326,75 @@ GO
 ALTER TABLE [sedm].[StudentIEPGoal] ADD CONSTRAINT [StudentIEPGoal_DF_LastModifiedDate] DEFAULT (getutcdate()) FOR [LastModifiedDate]
 GO
 
--- Table [sedm].[StudentIEPGoalIDEAEvent] --
-CREATE TABLE [sedm].[StudentIEPGoalIDEAEvent] (
+-- Table [sedm].[StudentIEPGoalIdeaEvent] --
+CREATE TABLE [sedm].[StudentIEPGoalIdeaEvent] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [IEPGoalID] [NVARCHAR](256) NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [IEPGoalID] [NVARCHAR](128) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [IDEAEventDescriptorId] [INT] NOT NULL,
-    [IDEAEventID] [NVARCHAR](1024) NOT NULL,
+    [IdeaEventDescriptorId] [INT] NOT NULL,
+    [IDEAEventID] [NVARCHAR](128) NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentIEPGoalIDEAEvent_PK] PRIMARY KEY CLUSTERED (
+    CONSTRAINT [StudentIEPGoalIdeaEvent_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
         [IEPFinalizedDate] ASC,
         [IEPGoalID] ASC,
         [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC,
-        [IDEAEventDescriptorId] ASC,
+        [IdeaEventDescriptorId] ASC,
         [IDEAEventID] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [sedm].[StudentIEPGoalIDEAEvent] ADD CONSTRAINT [StudentIEPGoalIDEAEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
+ALTER TABLE [sedm].[StudentIEPGoalIdeaEvent] ADD CONSTRAINT [StudentIEPGoalIdeaEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
 GO
 
--- Table [sedm].[StudentIEPIDEAEvent] --
-CREATE TABLE [sedm].[StudentIEPIDEAEvent] (
+-- Table [sedm].[StudentIEPIdeaEvent] --
+CREATE TABLE [sedm].[StudentIEPIdeaEvent] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
     [IEPFinalizedDate] [DATE] NOT NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [IDEAEventDescriptorId] [INT] NOT NULL,
-    [IDEAEventID] [NVARCHAR](1024) NOT NULL,
+    [IdeaEventDescriptorId] [INT] NOT NULL,
+    [IDEAEventID] [NVARCHAR](128) NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentIEPIDEAEvent_PK] PRIMARY KEY CLUSTERED (
+    CONSTRAINT [StudentIEPIdeaEvent_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
         [IEPFinalizedDate] ASC,
         [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC,
-        [IDEAEventDescriptorId] ASC,
+        [IdeaEventDescriptorId] ASC,
         [IDEAEventID] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [sedm].[StudentIEPIDEAEvent] ADD CONSTRAINT [StudentIEPIDEAEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
+ALTER TABLE [sedm].[StudentIEPIdeaEvent] ADD CONSTRAINT [StudentIEPIdeaEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
 GO
 
 -- Table [sedm].[StudentIEPServiceDelivery] --
 CREATE TABLE [sedm].[StudentIEPServiceDelivery] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
-    [IEPServiceDeliveryID] [NVARCHAR](1024) NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
+    [IEPServiceDeliveryID] [NVARCHAR](128) NOT NULL,
     [ServiceDeliveryDate] [DATE] NOT NULL,
     [ServiceDeliveryDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [IEPFinalizedDate] [DATE] NOT NULL,
     [ServicePrescriptionDate] [DATE] NULL,
     [ServicePrescriptionDescriptorId] [INT] NULL,
     [ServiceProviderTypeDescriptorId] [INT] NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentIEPServiceDelivery_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
         [IEPServiceDeliveryID] ASC,
         [ServiceDeliveryDate] ASC,
         [ServiceDeliveryDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -407,9 +409,11 @@ GO
 -- Table [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] --
 CREATE TABLE [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
-    [IEPServiceDeliveryID] [NVARCHAR](1024) NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
+    [IEPServiceDeliveryID] [NVARCHAR](128) NOT NULL,
     [ServiceDeliveryDate] [DATE] NOT NULL,
     [ServiceDeliveryDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [ProviderCode] [NVARCHAR](1024) NOT NULL,
     [ProviderFirstName] [NVARCHAR](1024) NOT NULL,
@@ -419,9 +423,11 @@ CREATE TABLE [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] (
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentIEPServiceDeliveryExternalServiceProvider_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
         [IEPServiceDeliveryID] ASC,
         [ServiceDeliveryDate] ASC,
         [ServiceDeliveryDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC,
         [ProviderCode] ASC,
         [ProviderFirstName] ASC,
@@ -432,45 +438,53 @@ GO
 ALTER TABLE [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] ADD CONSTRAINT [StudentIEPServiceDeliveryExternalServiceProvider_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
 GO
 
--- Table [sedm].[StudentIEPServiceDeliveryIDEAEvent] --
-CREATE TABLE [sedm].[StudentIEPServiceDeliveryIDEAEvent] (
+-- Table [sedm].[StudentIEPServiceDeliveryIdeaEvent] --
+CREATE TABLE [sedm].[StudentIEPServiceDeliveryIdeaEvent] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
-    [IEPServiceDeliveryID] [NVARCHAR](1024) NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
+    [IEPServiceDeliveryID] [NVARCHAR](128) NOT NULL,
     [ServiceDeliveryDate] [DATE] NOT NULL,
     [ServiceDeliveryDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [IDEAEventDescriptorId] [INT] NOT NULL,
-    [IDEAEventID] [NVARCHAR](1024) NOT NULL,
+    [IdeaEventDescriptorId] [INT] NOT NULL,
+    [IDEAEventID] [NVARCHAR](128) NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentIEPServiceDeliveryIDEAEvent_PK] PRIMARY KEY CLUSTERED (
+    CONSTRAINT [StudentIEPServiceDeliveryIdeaEvent_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
         [IEPServiceDeliveryID] ASC,
         [ServiceDeliveryDate] ASC,
         [ServiceDeliveryDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC,
-        [IDEAEventDescriptorId] ASC,
+        [IdeaEventDescriptorId] ASC,
         [IDEAEventID] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [sedm].[StudentIEPServiceDeliveryIDEAEvent] ADD CONSTRAINT [StudentIEPServiceDeliveryIDEAEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
+ALTER TABLE [sedm].[StudentIEPServiceDeliveryIdeaEvent] ADD CONSTRAINT [StudentIEPServiceDeliveryIdeaEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
 GO
 
 -- Table [sedm].[StudentIEPServiceDeliveryServiceProvider] --
 CREATE TABLE [sedm].[StudentIEPServiceDeliveryServiceProvider] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
-    [IEPServiceDeliveryID] [NVARCHAR](1024) NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
+    [IEPServiceDeliveryID] [NVARCHAR](128) NOT NULL,
     [ServiceDeliveryDate] [DATE] NOT NULL,
     [ServiceDeliveryDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [StaffUSI] [INT] NOT NULL,
     [PrimaryProvider] [BIT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentIEPServiceDeliveryServiceProvider_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
         [IEPServiceDeliveryID] ASC,
         [ServiceDeliveryDate] ASC,
         [ServiceDeliveryDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC,
         [StaffUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -482,8 +496,10 @@ GO
 -- Table [sedm].[StudentIEPServicePrescription] --
 CREATE TABLE [sedm].[StudentIEPServicePrescription] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
     [ServicePrescriptionDate] [DATE] NOT NULL,
     [ServicePrescriptionDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [BeginDate] [DATE] NOT NULL,
     [DurationMinutes] [DECIMAL](5, 2) NOT NULL,
@@ -491,18 +507,17 @@ CREATE TABLE [sedm].[StudentIEPServicePrescription] (
     [EndDate] [DATE] NULL,
     [FrequencyPeriodDescriptorId] [INT] NOT NULL,
     [FrequencyValue] [DECIMAL](5, 2) NOT NULL,
-    [IEPFinalizedDate] [DATE] NOT NULL,
     [ServiceLocationTypeDescriptorId] [INT] NOT NULL,
-    [StaffUSI] [INT] NULL,
-    [StudentIEPAssociationID] [NVARCHAR](1024) NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentIEPServicePrescription_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
         [ServicePrescriptionDate] ASC,
         [ServicePrescriptionDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -514,25 +529,53 @@ GO
 ALTER TABLE [sedm].[StudentIEPServicePrescription] ADD CONSTRAINT [StudentIEPServicePrescription_DF_LastModifiedDate] DEFAULT (getutcdate()) FOR [LastModifiedDate]
 GO
 
--- Table [sedm].[StudentIEPServicePrescriptionIDEAEvent] --
-CREATE TABLE [sedm].[StudentIEPServicePrescriptionIDEAEvent] (
+-- Table [sedm].[StudentIEPServicePrescriptionIdeaEvent] --
+CREATE TABLE [sedm].[StudentIEPServicePrescriptionIdeaEvent] (
     [EducationOrganizationId] [BIGINT] NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
     [ServicePrescriptionDate] [DATE] NOT NULL,
     [ServicePrescriptionDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [IDEAEventDescriptorId] [INT] NOT NULL,
-    [IDEAEventID] [NVARCHAR](1024) NOT NULL,
+    [IdeaEventDescriptorId] [INT] NOT NULL,
+    [IDEAEventID] [NVARCHAR](128) NOT NULL,
     [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentIEPServicePrescriptionIDEAEvent_PK] PRIMARY KEY CLUSTERED (
+    CONSTRAINT [StudentIEPServicePrescriptionIdeaEvent_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
         [ServicePrescriptionDate] ASC,
         [ServicePrescriptionDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
         [StudentUSI] ASC,
-        [IDEAEventDescriptorId] ASC,
+        [IdeaEventDescriptorId] ASC,
         [IDEAEventID] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [sedm].[StudentIEPServicePrescriptionIDEAEvent] ADD CONSTRAINT [StudentIEPServicePrescriptionIDEAEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
+ALTER TABLE [sedm].[StudentIEPServicePrescriptionIdeaEvent] ADD CONSTRAINT [StudentIEPServicePrescriptionIdeaEvent_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
+GO
+
+-- Table [sedm].[StudentIEPServicePrescriptionStaff] --
+CREATE TABLE [sedm].[StudentIEPServicePrescriptionStaff] (
+    [EducationOrganizationId] [BIGINT] NOT NULL,
+    [IEPFinalizedDate] [DATE] NOT NULL,
+    [ServicePrescriptionDate] [DATE] NOT NULL,
+    [ServicePrescriptionDescriptorId] [INT] NOT NULL,
+    [StudentIEPAssociationID] [NVARCHAR](128) NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [StaffUSI] [INT] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    CONSTRAINT [StudentIEPServicePrescriptionStaff_PK] PRIMARY KEY CLUSTERED (
+        [EducationOrganizationId] ASC,
+        [IEPFinalizedDate] ASC,
+        [ServicePrescriptionDate] ASC,
+        [ServicePrescriptionDescriptorId] ASC,
+        [StudentIEPAssociationID] ASC,
+        [StudentUSI] ASC,
+        [StaffUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [sedm].[StudentIEPServicePrescriptionStaff] ADD CONSTRAINT [StudentIEPServicePrescriptionStaff_DF_CreateDate] DEFAULT (getutcdate()) FOR [CreateDate]
 GO
 

@@ -1,10 +1,10 @@
 
 -- For performance reasons on existing data sets, all existing records will start with ChangeVersion of 0.
-IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[sedm].[IDEAEvent]') AND name = 'ChangeVersion')
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[sedm].[IdeaEvent]') AND name = 'ChangeVersion')
 BEGIN
-ALTER TABLE [sedm].[IDEAEvent] ADD [ChangeVersion] [BIGINT] CONSTRAINT IDEAEvent_DF_ChangeVersion DEFAULT (0) NOT NULL;
-ALTER TABLE [sedm].[IDEAEvent] DROP CONSTRAINT IDEAEvent_DF_ChangeVersion;
-ALTER TABLE [sedm].[IDEAEvent] ADD CONSTRAINT IDEAEvent_DF_ChangeVersion DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) For [ChangeVersion];
+ALTER TABLE [sedm].[IdeaEvent] ADD [ChangeVersion] [BIGINT] CONSTRAINT IdeaEvent_DF_ChangeVersion DEFAULT (0) NOT NULL;
+ALTER TABLE [sedm].[IdeaEvent] DROP CONSTRAINT IdeaEvent_DF_ChangeVersion;
+ALTER TABLE [sedm].[IdeaEvent] ADD CONSTRAINT IdeaEvent_DF_ChangeVersion DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) For [ChangeVersion];
 END
 
 

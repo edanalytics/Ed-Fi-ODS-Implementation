@@ -1,8 +1,8 @@
 
-DROP INDEX IF EXISTS IX_IDEAEvent_EducationOrganizationId;
-CREATE INDEX IF NOT EXISTS IX_IDEAEvent_EducationOrganizationId ON sedm.IDEAEvent(EducationOrganizationId) INCLUDE (AggregateId);
+DROP INDEX IF EXISTS IX_IdeaEvent_EducationOrganizationId;
+CREATE INDEX IF NOT EXISTS IX_IdeaEvent_EducationOrganizationId ON sedm.IdeaEvent(EducationOrganizationId) INCLUDE (AggregateId);
 
-CREATE INDEX IF NOT EXISTS IX_IDEAEvent_StudentUSI ON sedm.IDEAEvent(StudentUSI) INCLUDE (AggregateId);
+CREATE INDEX IF NOT EXISTS IX_IdeaEvent_StudentUSI ON sedm.IdeaEvent(StudentUSI) INCLUDE (AggregateId);
 
 DROP INDEX IF EXISTS IX_StudentIEP_EducationOrganizationId;
 CREATE INDEX IF NOT EXISTS IX_StudentIEP_EducationOrganizationId ON sedm.StudentIEP(EducationOrganizationId) INCLUDE (AggregateId);
@@ -33,5 +33,3 @@ DROP INDEX IF EXISTS IX_StudentIEPServicePrescription_EducationOrganizationId;
 CREATE INDEX IF NOT EXISTS IX_StudentIEPServicePrescription_EducationOrganizationId ON sedm.StudentIEPServicePrescription(EducationOrganizationId) INCLUDE (AggregateId);
 
 CREATE INDEX IF NOT EXISTS IX_StudentIEPServicePrescription_StudentUSI ON sedm.StudentIEPServicePrescription(StudentUSI) INCLUDE (AggregateId);
-
-CREATE INDEX IF NOT EXISTS IX_StudentIEPServicePrescription_StaffUSI ON sedm.StudentIEPServicePrescription(StaffUSI) INCLUDE (AggregateId);

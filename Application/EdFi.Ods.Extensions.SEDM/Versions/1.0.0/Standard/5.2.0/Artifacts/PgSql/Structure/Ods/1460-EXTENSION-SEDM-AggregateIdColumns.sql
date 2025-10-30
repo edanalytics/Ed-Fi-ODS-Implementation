@@ -1,7 +1,7 @@
 
-CREATE SEQUENCE sedm.IDEAEvent_aggseq START WITH -2147483648 INCREMENT BY 1 MINVALUE -2147483648;
-ALTER TABLE sedm.IDEAEvent ADD COLUMN AggregateId int NOT NULL DEFAULT nextval('sedm.IDEAEvent_aggseq'), ADD COLUMN AggregateData bytea;
-CREATE INDEX ix_IDEAEvent_aggid ON sedm.IDEAEvent (AggregateId);
+CREATE SEQUENCE sedm.IdeaEvent_aggseq START WITH -2147483648 INCREMENT BY 1 MINVALUE -2147483648;
+ALTER TABLE sedm.IdeaEvent ADD COLUMN AggregateId int NOT NULL DEFAULT nextval('sedm.IdeaEvent_aggseq'), ADD COLUMN AggregateData bytea;
+CREATE INDEX ix_IdeaEvent_aggid ON sedm.IdeaEvent (AggregateId);
 
 
 CREATE SEQUENCE sedm.StudentIEP_aggseq START WITH -2147483648 INCREMENT BY 1 MINVALUE -2147483648;
