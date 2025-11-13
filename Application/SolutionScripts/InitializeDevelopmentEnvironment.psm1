@@ -154,7 +154,7 @@ function Initialize-DevelopmentEnvironment {
         [String] $StandardVersion = '5.0.0',
 
         [Parameter(Mandatory=$false)]
-        [ValidateSet('1.0.0', '1.1.0')]
+        [ValidateSet('1.0.0', '1.1.0', '1.2.0')]
         [String] $ExtensionVersion = '1.1.0'
     )
 
