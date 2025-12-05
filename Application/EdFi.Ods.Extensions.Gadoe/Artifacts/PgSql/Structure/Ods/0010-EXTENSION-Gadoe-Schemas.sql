@@ -1,0 +1,1 @@
+CREATE SCHEMA gadoe AUTHORIZATION postgres;
