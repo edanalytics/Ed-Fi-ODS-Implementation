@@ -109,6 +109,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Security.DataAccess.In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.EdFiXassessmentRoster", "EdFi.Ods.Extensions.EdFiXassessmentRoster\EdFi.Ods.Extensions.EdFiXassessmentRoster.csproj", "{0B49F47B-ED67-4B15-8EF1-02D72E233934}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.SEDM", "EdFi.Ods.Extensions.SEDM\EdFi.Ods.Extensions.SEDM.csproj", "{1333AAA0-CC0A-4022-90EA-DFE0AB40BB01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -247,6 +249,10 @@ Global
 		{0B49F47B-ED67-4B15-8EF1-02D72E233934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B49F47B-ED67-4B15-8EF1-02D72E233934}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B49F47B-ED67-4B15-8EF1-02D72E233934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1333AAA0-CC0A-4022-90EA-DFE0AB40BB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1333AAA0-CC0A-4022-90EA-DFE0AB40BB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1333AAA0-CC0A-4022-90EA-DFE0AB40BB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1333AAA0-CC0A-4022-90EA-DFE0AB40BB01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
