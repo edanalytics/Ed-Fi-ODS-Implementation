@@ -97,9 +97,24 @@
     <None Include="Versions\1.2.0\Standard\4.0.0\Artifacts\PgSql\Structure\Ods\RecordOwnership\0010-AddColumnOwnershipTokenForTable.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Api\EdFi.Ods.Api.csproj" />
-    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj" />
-    <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
+    <Reference Include="EdFi.Ods.Api">
+      <HintPath>C:\epdm_7.1patch4\EdFi.Ods.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="EdFi.Ods.Common">
+      <HintPath>C:\epdm_7.1patch4\EdFi.Ods.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="EdFi.Ods.Standard">
+      <HintPath>C:\epdm_7.1patch4\EdFi.Ods.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\epdm_7.1patch4\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>C:\epdm_7.1patch4\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="EdFi.Common">
+      <HintPath>C:\epdm_7.1patch4\EdFi.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Versions\1.2.0\Standard\4.0.0\Artifacts\MsSql\Data\Ods\" />
