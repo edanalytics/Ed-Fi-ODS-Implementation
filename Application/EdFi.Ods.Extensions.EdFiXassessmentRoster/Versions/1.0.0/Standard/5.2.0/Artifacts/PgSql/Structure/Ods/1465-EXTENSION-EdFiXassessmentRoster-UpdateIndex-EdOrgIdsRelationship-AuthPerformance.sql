@@ -1,0 +1,11 @@
+
+DROP INDEX IF EXISTS IX_AssessmentAdministrationParticipation_AssigningEducationOrganizationId;
+CREATE INDEX IF NOT EXISTS IX_AssessmentAdministrationParticipation_AssigningEducationOrganizationId ON edfixassessmentroster.AssessmentAdministrationParticipation(AssigningEducationOrganizationId) INCLUDE (AggregateId);
+
+DROP INDEX IF EXISTS IX_StudentAssessmentRegistration_AssigningEducationOrganizationId;
+CREATE INDEX IF NOT EXISTS IX_StudentAssessmentRegistration_AssigningEducationOrganizationId ON edfixassessmentroster.StudentAssessmentRegistration(AssigningEducationOrganizationId) INCLUDE (AggregateId);
+
+DROP INDEX IF EXISTS IX_StudentAssessmentRegistration_EducationOrganizationId;
+CREATE INDEX IF NOT EXISTS IX_StudentAssessmentRegistration_EducationOrganizationId ON edfixassessmentroster.StudentAssessmentRegistration(EducationOrganizationId) INCLUDE (AggregateId);
+
+CREATE INDEX IF NOT EXISTS IX_StudentAssessmentRegistration_StudentUSI ON edfixassessmentroster.StudentAssessmentRegistration(StudentUSI) INCLUDE (AggregateId);
