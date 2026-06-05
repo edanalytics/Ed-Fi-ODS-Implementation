@@ -19,6 +19,7 @@
     <EmbeddedResource Include="Resources\Swashbuckle_index.html" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="log4net" Version="3.3.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
   <ItemGroup>

@@ -238,10 +238,10 @@ function Initialize-DevelopmentEnvironment {
 
         if (-not $NoRebuild) {
             if (-not $NoRestore) {
-                $script:result += Invoke-RebuildSolution  -buildConfiguration "Debug"  -verbosity "minimal" -solutionPath (Get-RepositoryResolvedPath "Application/Ed-Fi-Ods.sln") -noRestore $false -standardVersion $StandardVersion
+                $script:result += Invoke-RebuildSolution  -buildConfiguration "Debug"  -verbosity "minimal" -solutionPath (Get-RepositoryResolvedPath "Application/Ed-Fi-Ods.sln") -noRestore $false -standardVersion $StandardVersion -ExtensionVersion $ExtensionVersion
             }
             else {
-                $script:result += Invoke-RebuildSolution -standardVersion $StandardVersion
+                $script:result += Invoke-RebuildSolution -standardVersion $StandardVersion -ExtensionVersion $ExtensionVersion
             }
         }
 
@@ -338,11 +338,20 @@ Function Invoke-RebuildSolution {
         [string] $solutionPath = (Get-RepositoryResolvedPath "Application/Ed-Fi-Ods.sln"),
         [Boolean] $noRestore = $false,
         [ValidateSet('4.0.0', '5.0.0')]
-        [string]  $standardVersion
+        [string]  $standardVersion,
+        [ValidateScript({
+                if ($_ -match '^(?!0\.0\.0)\d+\.\d+\.\d+?$') {
+                    $true
+                } else {
+                    throw "Value '{0}' is an invalid version. Supply a valid version in the format 'X.Y.Z' where X, Y, and Z are non-zero digits."
+                }
+        })]
+        [string] $ExtensionVersion
     )
     Invoke-Task -name $MyInvocation.MyCommand.Name -task {
         if ((Get-DeploymentSettings).Engine -eq 'PostgreSQL') { $buildConfiguration = 'Npgsql' }
         if (-not [string]::IsNullOrWhiteSpace($env:msbuild_buildConfiguration)) { $buildConfiguration = $env:msbuild_buildConfiguration }
+        if ([string]::IsNullOrWhiteSpace($ExtensionVersion)) { $ExtensionVersion = (Get-DeploymentSettings).ApiSettings.ExtensionVersion }
 
         $params = @{
             Path               = $solutionPath
@@ -350,6 +359,7 @@ Function Invoke-RebuildSolution {
             LogVerbosityLevel  = $verbosity
             noRestore          = $noRestore
             standardVersion    = $StandardVersion
+            extensionVersion   = $ExtensionVersion
         }
 
         ($params).GetEnumerator() | Sort-Object -Property Name | Format-Table -HideTableHeaders -AutoSize -Wrap | Out-Host
@@ -361,11 +371,11 @@ Function Invoke-RebuildSolution {
 
         Write-Host -ForegroundColor Magenta "& dotnet build $solutionPath -c $buildConfiguration -v $verbosity /flp:v=$verbosity /flp:logfile=$buildLogFilePath"
         if ($noRestore) {
-            & dotnet build $solutionPath -c $buildConfiguration -v $verbosity /flp:v=$verbosity /flp:logfile=$buildLogFilePath --no-restore -p:StandardVersion=$StandardVersion | Out-Host
+            & dotnet build $solutionPath -c $buildConfiguration -v $verbosity /flp:v=$verbosity /flp:logfile=$buildLogFilePath --no-restore -p:StandardVersion=$StandardVersion -p:ExtensionVersion=$ExtensionVersion | Out-Host
         }
         else
         {
-            & dotnet build $solutionPath -c $buildConfiguration -v $verbosity /flp:v=$verbosity /flp:logfile=$buildLogFilePath  -p:StandardVersion=$StandardVersion | Out-Host
+            & dotnet build $solutionPath -c $buildConfiguration -v $verbosity /flp:v=$verbosity /flp:logfile=$buildLogFilePath  -p:StandardVersion=$StandardVersion -p:ExtensionVersion=$ExtensionVersion | Out-Host
         }
 
         # If we can't find the build's log file in order to inspect it, write a warning and return null.

@@ -31,6 +31,7 @@
   </Choose>
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="log4net" Version="3.3.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
     <PackageReference Include="NHibernate" Version="5.5.2" />
@@ -45,6 +46,7 @@
     <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Features\EdFi.Ods.Features.csproj" />
     <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
     <ProjectReference Include="..\..\..\Ed-Fi-ODS-Implementation\Application\EdFi.Ods.Features.OwnershipBasedAuthorization\EdFi.Ods.Features.OwnershipBasedAuthorization.csproj" />
+    <ProjectReference Include="..\EdFi.Ods.Extensions.TPDM\EdFi.Ods.Extensions.TPDM.csproj" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
