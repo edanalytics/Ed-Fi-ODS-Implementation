@@ -97,17 +97,14 @@ function Install-DotNetTool {
         Uninstall-DotNetTool $Path $Name $installedVersion
     }
 
+    # Do not pass --add-source: SDK 9/10 cannot combine it with package source mapping.
+    # $Source is kept for caller compatibility; installs use sources from NuGet.Config.
     $arguments = @(
         $Name, 
         "--version", $Version, 
         "--tool-path", $Path, 
         "--no-cache"
     )
-
-    # Add each source as a separate --add-source argument
-    foreach ($src in $Source) {
-        $arguments += @("--add-source", $src)
-    }
 
     Write-Host "Installing $Name version $Version to $Path"
     Write-Host -ForegroundColor Magenta "& dotnet tool install $arguments"

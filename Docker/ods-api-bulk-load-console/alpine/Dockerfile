@@ -9,7 +9,6 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0.203-alpine3.23@sha256:0191ff386e93923edf7
 ARG BULKLOAD_VERSION
 
 RUN dotnet tool install -g \
-    --add-source https://pkgs.dev.azure.com/ed-fi-alliance/Ed-Fi-Alliance-OSS/_packaging/EdFi/nuget/v3/index.json \
     EdFi.Suite3.BulkLoadClient.Console --version $BULKLOAD_VERSION && \
     rm -f /root/.dotnet/tools/.store/edfi.suite3.bulkloadclient.console/$BULKLOAD_VERSION/edfi.suite3.bulkloadclient.console/$BULKLOAD_VERSION/tools/net10.0/any/log4net.config
 
