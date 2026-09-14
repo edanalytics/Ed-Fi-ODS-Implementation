@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
-		<StandardVersion Condition="'$(StandardVersion)' == '' ">6.1.0</StandardVersion>
+		<StandardVersion Condition="'$(StandardVersion)' == '' ">5.2.0</StandardVersion>
 	</PropertyGroup>
 	<PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -48,6 +48,7 @@
     <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Features\EdFi.Ods.Features.csproj" />
     <ProjectReference Include="..\..\..\Ed-Fi-ODS\Application\EdFi.Ods.Standard\EdFi.Ods.Standard.csproj" />
     <ProjectReference Include="..\..\..\Ed-Fi-ODS-Implementation\Application\EdFi.Ods.Features.OwnershipBasedAuthorization\EdFi.Ods.Features.OwnershipBasedAuthorization.csproj" />
+    <ProjectReference Include="..\EdFi.Ods.Extensions.SEDM\EdFi.Ods.Extensions.SEDM.csproj" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />

@@ -1,0 +1,243 @@
+-- Extended Properties [sedm].[DurationPeriodDescriptor] --
+COMMENT ON TABLE sedm.DurationPeriodDescriptor IS 'The frequency period for the prescribed service duration. Examples include: Per Session, Per Week, Per Month.';
+COMMENT ON COLUMN sedm.DurationPeriodDescriptor.DurationPeriodDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[EventComplianceDescriptor] --
+COMMENT ON TABLE sedm.EventComplianceDescriptor IS 'The policy or law for which an event is compliant.';
+COMMENT ON COLUMN sedm.EventComplianceDescriptor.EventComplianceDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[EventReasonDescriptor] --
+COMMENT ON TABLE sedm.EventReasonDescriptor IS 'Reason the event occured.';
+COMMENT ON COLUMN sedm.EventReasonDescriptor.EventReasonDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[FrequencyPeriodDescriptor] --
+COMMENT ON TABLE sedm.FrequencyPeriodDescriptor IS 'The frequency period for the prescribed service. Examples include: Session, Week, Month.';
+COMMENT ON COLUMN sedm.FrequencyPeriodDescriptor.FrequencyPeriodDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[IdeaEvent] --
+COMMENT ON TABLE sedm.IdeaEvent IS 'An IDEA related student event describing status, dates and narrative.';
+COMMENT ON COLUMN sedm.IdeaEvent.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.IdeaEvent.IdeaEventDescriptorId IS 'The IDEA event recorded for the student.';
+COMMENT ON COLUMN sedm.IdeaEvent.IDEAEventID IS 'A unique identifier for the event record as assigned by the provider of IEP services.';
+COMMENT ON COLUMN sedm.IdeaEvent.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.IdeaEvent.BeginDate IS 'The date when the IDEA related event started.';
+COMMENT ON COLUMN sedm.IdeaEvent.EndDate IS 'The date when the IDEA event concluded.';
+COMMENT ON COLUMN sedm.IdeaEvent.EventComplianceDescriptorId IS 'The type of compliance represented by this event.';
+COMMENT ON COLUMN sedm.IdeaEvent.EventNarrative IS 'Detailed and summary notes recorded during the event.';
+COMMENT ON COLUMN sedm.IdeaEvent.EventReasonDescriptorId IS 'The reason why the IDEA event occured.';
+
+-- Extended Properties [sedm].[IdeaEventDescriptor] --
+COMMENT ON TABLE sedm.IdeaEventDescriptor IS 'IDEA event type. Examples: Referral for Evaluation, IEP Approved, Parental COnsent Given, Evaluation Complete.';
+COMMENT ON COLUMN sedm.IdeaEventDescriptor.IdeaEventDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[IepGoalDescriptor] --
+COMMENT ON TABLE sedm.IepGoalDescriptor IS 'A focused goal for an IEP.';
+COMMENT ON COLUMN sedm.IepGoalDescriptor.IepGoalDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[IepStatusDescriptor] --
+COMMENT ON TABLE sedm.IepStatusDescriptor IS 'The current status of the student IEP.';
+COMMENT ON COLUMN sedm.IepStatusDescriptor.IepStatusDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[ServiceComplianceDescriptor] --
+COMMENT ON TABLE sedm.ServiceComplianceDescriptor IS 'The policy or law for which a prescribed service is compliant.';
+COMMENT ON COLUMN sedm.ServiceComplianceDescriptor.ServiceComplianceDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[ServiceDeliveryDescriptor] --
+COMMENT ON TABLE sedm.ServiceDeliveryDescriptor IS 'The type of service provided to a student.';
+COMMENT ON COLUMN sedm.ServiceDeliveryDescriptor.ServiceDeliveryDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[ServiceLocationTypeDescriptor] --
+COMMENT ON TABLE sedm.ServiceLocationTypeDescriptor IS 'The location type where the prescribed service is to be provided. Examples include: Home, Hospital, School.';
+COMMENT ON COLUMN sedm.ServiceLocationTypeDescriptor.ServiceLocationTypeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[ServicePrescriptionDescriptor] --
+COMMENT ON TABLE sedm.ServicePrescriptionDescriptor IS 'The type of service prescribed.';
+COMMENT ON COLUMN sedm.ServicePrescriptionDescriptor.ServicePrescriptionDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[ServiceProviderTypeDescriptor] --
+COMMENT ON TABLE sedm.ServiceProviderTypeDescriptor IS 'Indicates service provider type, including specialist, internal staff, external staff, etc.';
+COMMENT ON COLUMN sedm.ServiceProviderTypeDescriptor.ServiceProviderTypeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[ServiceReasonDescriptor] --
+COMMENT ON TABLE sedm.ServiceReasonDescriptor IS 'Reason the service was prescribed. Examples include: Counselor Assigned, IEP Team Determination.';
+COMMENT ON COLUMN sedm.ServiceReasonDescriptor.ServiceReasonDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [sedm].[StudentIEP] --
+COMMENT ON TABLE sedm.StudentIEP IS 'This association describes summary IEP data for a student receiving special education services.';
+COMMENT ON COLUMN sedm.StudentIEP.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEP.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEP.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEP.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEP.IEPAmendedDate IS 'The date when IEP was last amended, if any. When amended, a new StudentIEP should be created with the amended data recorded.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEP.IEPBeginDate IS 'The effective start date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEP.IEPEndDate IS 'The effective end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEP.IepStatusDescriptorId IS 'The current status of this IEP.';
+COMMENT ON COLUMN sedm.StudentIEP.MedicallyFragile IS 'Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements.';
+COMMENT ON COLUMN sedm.StudentIEP.MultiplyDisabled IS 'Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements.';
+COMMENT ON COLUMN sedm.StudentIEP.ReasonExitedDescriptorId IS 'The reason the student left and stop receiving special education services.';
+COMMENT ON COLUMN sedm.StudentIEP.SchoolHoursPerWeek IS 'Indicates the total number of hours of instructional time per week for the school that the student attends.';
+COMMENT ON COLUMN sedm.StudentIEP.SpecialEducationHoursPerWeek IS 'Indicates the total number of hours of time per week specific to special education related services.';
+COMMENT ON COLUMN sedm.StudentIEP.SpecialEducationSettingDescriptorId IS 'The major instructional setting (more than 50 percent of a student''s special education program).';
+
+-- Extended Properties [sedm].[StudentIEPAccommodationCollection] --
+COMMENT ON TABLE sedm.StudentIEPAccommodationCollection IS 'The accommodations prescribed to a student as part of their IEP.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollection.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollection.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollection.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollection.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+
+-- Extended Properties [sedm].[StudentIEPAccommodationCollectionAccommodation] --
+COMMENT ON TABLE sedm.StudentIEPAccommodationCollectionAccommodation IS 'The special variation(s) to be used in how various services (in general) are presented, how they are administered, or how the student is allowed to respond. This generally refers to changes that do not substantially alter the content that the service renders. The proper use of accommodations does not substantially change academic level or performance criteria.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollectionAccommodation.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollectionAccommodation.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollectionAccommodation.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollectionAccommodation.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPAccommodationCollectionAccommodation.AccommodationDescriptorId IS 'The special variation(s) to be used in how various services (in general) are presented, how they are administered, or how the student is allowed to respond. This generally refers to changes that do not substantially alter the content that the service renders. The proper use of accommodations does not substantially change academic level or performance criteria.';
+
+-- Extended Properties [sedm].[StudentIEPDisabilityCollection] --
+COMMENT ON TABLE sedm.StudentIEPDisabilityCollection IS 'The disabilities prescribed to a student as part of their IEP.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollection.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollection.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollection.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollection.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+
+-- Extended Properties [sedm].[StudentIEPDisabilityCollectionDisability] --
+COMMENT ON TABLE sedm.StudentIEPDisabilityCollectionDisability IS 'The disability condition(s) that best describes an individual''s impairment, as related to special education services received.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.DisabilityDescriptorId IS 'A disability category that describes a individual''s impairment.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.DisabilityDeterminationSourceTypeDescriptorId IS 'The source that provided the disability determination.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.DisabilityDiagnosis IS 'A description of the disability diagnosis.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisability.OrderOfDisability IS 'The order by severity of individual''s disabilities: 1- Primary, 2 -  Secondary, 3 - Tertiary, etc.';
+
+-- Extended Properties [sedm].[StudentIEPDisabilityCollectionDisabilityDesignation] --
+COMMENT ON TABLE sedm.StudentIEPDisabilityCollectionDisabilityDesignation IS 'Whether the disability is IDEA, Section 504, or other disability designation.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisabilityDesignation.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisabilityDesignation.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisabilityDesignation.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisabilityDesignation.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisabilityDesignation.DisabilityDescriptorId IS 'A disability category that describes a individual''s impairment.';
+COMMENT ON COLUMN sedm.StudentIEPDisabilityCollectionDisabilityDesignation.DisabilityDesignationDescriptorId IS 'Whether the disability is IDEA, Section 504, or other disability designation.';
+
+-- Extended Properties [sedm].[StudentIEPGoal] --
+COMMENT ON TABLE sedm.StudentIEPGoal IS 'A goal prescribed to a student as part of their IEP.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.IEPGoalID IS 'A unique identifier assigned by the provider of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.GoalAchievementPeriodBeginDate IS 'The first date of the period assigned for achieving the stated goal.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.GoalAchievementPeriodEndDate IS 'The last date of the period assigned for achieving the stated goal.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.IepGoalDescriptorId IS 'A focused goal prescribed as part of the IEP. Examples include Academic Goal, Behavioral Goal, Attendance Goal.';
+COMMENT ON COLUMN sedm.StudentIEPGoal.IEPGoalDetails IS 'Instructions or other details specific to the student and/or provider for achieving the stated goal.';
+
+-- Extended Properties [sedm].[StudentIEPGoalIdeaEvent] --
+COMMENT ON TABLE sedm.StudentIEPGoalIdeaEvent IS 'A reference to one or more student IDEA events.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.IEPGoalID IS 'A unique identifier assigned by the provider of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.IdeaEventDescriptorId IS 'The IDEA event recorded for the student.';
+COMMENT ON COLUMN sedm.StudentIEPGoalIdeaEvent.IDEAEventID IS 'A unique identifier for the event record as assigned by the provider of IEP services.';
+
+-- Extended Properties [sedm].[StudentIEPIdeaEvent] --
+COMMENT ON TABLE sedm.StudentIEPIdeaEvent IS 'A reference to one or more student IDEA events.';
+COMMENT ON COLUMN sedm.StudentIEPIdeaEvent.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPIdeaEvent.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPIdeaEvent.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPIdeaEvent.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPIdeaEvent.IdeaEventDescriptorId IS 'The IDEA event recorded for the student.';
+COMMENT ON COLUMN sedm.StudentIEPIdeaEvent.IDEAEventID IS 'A unique identifier for the event record as assigned by the provider of IEP services.';
+
+-- Extended Properties [sedm].[StudentIEPServiceDelivery] --
+COMMENT ON TABLE sedm.StudentIEPServiceDelivery IS 'Services delivered to a student as prescribed by their IEP.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.IEPServiceDeliveryID IS 'A unique identifier assigned by the provider of IEP services for the delivery record.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.ServiceDeliveryDate IS 'The date when prescribed services were delivered for a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.ServiceDeliveryDescriptorId IS 'The type of services delivered to the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.ServicePrescriptionDate IS 'The date the service was prescribed.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.ServicePrescriptionDescriptorId IS 'The type of service prescribed. Examples include: Auditory Specialist, Vocational Therapy.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDelivery.ServiceProviderTypeDescriptorId IS 'Indicates service provider type, including specialist, internal staff, external staff, etc.';
+
+-- Extended Properties [sedm].[StudentIEPServiceDeliveryExternalServiceProvider] --
+COMMENT ON TABLE sedm.StudentIEPServiceDeliveryExternalServiceProvider IS 'The external service provider that delivered the prescribed service to the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.IEPServiceDeliveryID IS 'A unique identifier assigned by the provider of IEP services for the delivery record.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.ServiceDeliveryDate IS 'The date when prescribed services were delivered for a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.ServiceDeliveryDescriptorId IS 'The type of services delivered to the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.ProviderCode IS 'A code assigned to the external service provider.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.ProviderFirstName IS 'The first name of the external service provider.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.ProviderLastSurname IS 'The last name of the external service provider.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.PrimaryProvider IS 'Primary External Service Provider.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryExternalServiceProvider.ProviderMiddleName IS 'The middle name of the external service provider.';
+
+-- Extended Properties [sedm].[StudentIEPServiceDeliveryIdeaEvent] --
+COMMENT ON TABLE sedm.StudentIEPServiceDeliveryIdeaEvent IS 'A reference to one or more student IDEA events.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.IEPServiceDeliveryID IS 'A unique identifier assigned by the provider of IEP services for the delivery record.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.ServiceDeliveryDate IS 'The date when prescribed services were delivered for a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.ServiceDeliveryDescriptorId IS 'The type of services delivered to the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.IdeaEventDescriptorId IS 'The IDEA event recorded for the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryIdeaEvent.IDEAEventID IS 'A unique identifier for the event record as assigned by the provider of IEP services.';
+
+-- Extended Properties [sedm].[StudentIEPServiceDeliveryServiceProvider] --
+COMMENT ON TABLE sedm.StudentIEPServiceDeliveryServiceProvider IS 'The internal service provider that delivered the prescribed service to the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.IEPServiceDeliveryID IS 'A unique identifier assigned by the provider of IEP services for the delivery record.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.ServiceDeliveryDate IS 'The date when prescribed services were delivered for a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.ServiceDeliveryDescriptorId IS 'The type of services delivered to the student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.StaffUSI IS 'A unique alphanumeric code assigned to a staff.';
+COMMENT ON COLUMN sedm.StudentIEPServiceDeliveryServiceProvider.PrimaryProvider IS 'Primary ServiceProvider.';
+
+-- Extended Properties [sedm].[StudentIEPServicePrescription] --
+COMMENT ON TABLE sedm.StudentIEPServicePrescription IS 'The service prescribed to a student as part of their IEP.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.ServicePrescriptionDate IS 'The date the service was prescribed.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.ServicePrescriptionDescriptorId IS 'The type of service prescribed. Examples include: Auditory Specialist, Vocational Therapy.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.BeginDate IS 'The effective date when service is to begin.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.DurationMinutes IS 'The length of time for the prescribed service in minutes.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.DurationPeriodDescriptorId IS 'The frequency period for the prescribed service duration. Examples include: Per Session, Per Week, Per Month.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.EndDate IS 'The effective date when the prescribed service ended.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.FrequencyPeriodDescriptorId IS 'The frequency period for the prescribed service. Examples include: Session, Week, Month.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.FrequencyValue IS 'The number of times the prescribed service is to be provided within the specified duration period.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescription.ServiceLocationTypeDescriptorId IS 'The location type where the prescribed service is to be provided. Examples include: Home, Hospital, School.';
+
+-- Extended Properties [sedm].[StudentIEPServicePrescriptionIdeaEvent] --
+COMMENT ON TABLE sedm.StudentIEPServicePrescriptionIdeaEvent IS 'A reference to one or more student IDEA events.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.ServicePrescriptionDate IS 'The date the service was prescribed.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.ServicePrescriptionDescriptorId IS 'The type of service prescribed. Examples include: Auditory Specialist, Vocational Therapy.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.IdeaEventDescriptorId IS 'The IDEA event recorded for the student.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionIdeaEvent.IDEAEventID IS 'A unique identifier for the event record as assigned by the provider of IEP services.';
+
+-- Extended Properties [sedm].[StudentIEPServicePrescriptionStaff] --
+COMMENT ON TABLE sedm.StudentIEPServicePrescriptionStaff IS 'A reference to the staff member(s) assigned to provide the prescribed service.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.EducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.IEPFinalizedDate IS 'The date the most recent IEP was finalized.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.ServicePrescriptionDate IS 'The date the service was prescribed.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.ServicePrescriptionDescriptorId IS 'The type of service prescribed. Examples include: Auditory Specialist, Vocational Therapy.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.StudentIEPAssociationID IS 'A unique identifier assigned by the provider or source system of IEP services.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
+COMMENT ON COLUMN sedm.StudentIEPServicePrescriptionStaff.StaffUSI IS 'A unique alphanumeric code assigned to a staff.';
+
